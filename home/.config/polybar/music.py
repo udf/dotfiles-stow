@@ -91,12 +91,12 @@ def get_trackname(player, metadata):
 
 
 def print_status(player=None, metadata=None):
-    output = []
+    output = ""
     percentage_progress = 0
 
     def append_output(data, fmt='{}'):
         if data:
-            output.append(fmt.format(data))
+            output += fmt.format(data)
 
     global current_player
     if player is None:
@@ -121,10 +121,10 @@ def print_status(player=None, metadata=None):
             append_output(position, '[{}]')
             append_output(get_trackname(player, metadata), ' {}')
     except:
-        output = []
+        output = ""
 
     global prev_output
-    output = ljust_clip(''.join(output), output_width)
+    output = ljust_clip(output, output_width)
     if output != prev_output:
         end_underline_pos = round(percentage_progress * output_width)
         print('%{u#fff}' + output[:end_underline_pos] + '%{-u}' + output[end_underline_pos:], flush=True)
