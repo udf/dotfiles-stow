@@ -136,6 +136,14 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
+# Theme colors
+# class                 border  backgr. text    indic.   child_border
+client.focused          #556064 #1ABB9B #2F3D44 #454948
+client.focused_inactive #2F3D44 #2F3D44 #bac4c7 #454948
+client.unfocused        #556064 #bac4c7 #2F3D44 #FDF6E3
+client.urgent           #CB4B16 #FDF6E3 #bac4c7 #268BD2
+client.background       #2B2C2B
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
