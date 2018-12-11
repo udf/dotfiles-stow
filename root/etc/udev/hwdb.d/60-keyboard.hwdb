@@ -1,0 +1,4 @@
+# stole this from streetwalrus, if you're reading this, send a frog wearing a tophat
+evdev:atkbd:dmi:*
+ KEYBOARD_KEY_3a=esc
+# KEYBOARD_KEY_1=capslock # because muscle memory makes me hit capslock a lot
