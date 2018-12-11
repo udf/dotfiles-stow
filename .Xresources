@@ -1,0 +1,71 @@
+Xcursor.size: 16
+Xft.antialias: 1
+Xft.hinting: 0
+Xft.hintstyle: hintslight
+Xft.rgba: none
+Xft.lcdfilter: none
+
+! special
+*.foreground:   #d8d8d8
+*.background:   #12171a
+*.cursorColor:  #1ABB9B
+
+! black
+*.color0:       #222d31
+*.color8:       #585858
+
+! red
+*.color1:       #ab4642
+*.color9:       #cc3d3d
+
+! green
+*.color2:       #6db36d
+*.color10:      #66cc66
+
+! yellow
+*.color3:       #f7ca88
+*.color11:      #f7bf6f
+
+! blue
+*.color4:       #7cafc2
+*.color12:      #52a3cc
+
+! magenta
+*.color5:       #ba8baf
+*.color13:      #ba5da6
+
+! cyan
+*.color6:       #1abb9b
+*.color14:      #00ba95
+
+! white
+*.color7:       #d8d8d8
+*.color15:      #ffffff
+
+! URxvt options
+URxvt*termName: rxvt-unicode-256color
+URxvt*font: xft:Hack:pixelsize=12:antialias=true:hinting=true
+URxvt*boldFont: xft:Hack:bold:pixelsize=12:antialias=true:hinting=true
+URxvt.letterSpace: true 
+URxvt.depth: 32
+URxvt*cursorBlink: true
+
+! scrolling
+URxvt*scrollBar: true
+URxvt*scrollBar_right: true
+URxvt*thickness: 5
+URxvt*scrollColor: #1ABB9B
+URxvt*scrollstyle: plain
+URxvt*scrollWithBuffer: true
+URxvt*scrollTtyKeypress: true
+URxvt*saveLines: 10000
+URxvt*scrollTtyOutput: false
+
+! Normal copy-paste keybindings without perls
+URxvt.iso14755: false
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+
+! Keyboard scrolling
+URxvt.keysym.Shift-Up: command:\033]720;1\007
+URxvt.keysym.Shift-Down: command:\033]721;1\007
