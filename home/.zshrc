@@ -10,6 +10,22 @@ setopt histignoredups
 setopt histreduceblanks
 setopt INC_APPEND_HISTORY
 
+# escape key codes
+bindkey -e
+bindkey "\e[5~" beginning-of-history    # PAGE UP
+bindkey "\e[6~" end-of-history          # PAGE DOWN
+bindkey "\e[7~" beginning-of-line       # HOME
+bindkey "\e[8~" end-of-line             # END
+bindkey "\e[3~" delete-char             # DELETE
+bindkey "\e[2~" quoted-insert           # INSERT
+
+bindkey "\e[1;5C" forward-word
+bindkey "\e[1;5D" backward-word
+bindkey "\e[1;5E" backward-kill-word
+
+# make *-word commands not match these characters
+WORDCHARS='*?_[]~=;!#$%^(){}<>'
+
 # automatically cd on dir name
 setopt autocd
 
