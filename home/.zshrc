@@ -86,3 +86,10 @@ bindkey "^X" clip_cmd
 
 # Add Python package binaries to path
 export PATH="$HOME/.local/bin:$PATH"
+
+# history search plugin
+source ~/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=green,fg=white,bold'
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='bg=red,fg=white,bold'
+bindkey "\e[A"  history-substring-search-up
+bindkey "\e[B"  history-substring-search-down
