@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+xset -b
+
 xrdb ~/.Xresources
 
 case "$(hostname)" in
