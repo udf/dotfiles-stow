@@ -1,0 +1,1 @@
+/vm/drive	-fstype=auto,blksize=4096	:/dev/external_vm
