@@ -75,6 +75,7 @@ alias subl='subl3'
 alias p='pacman'
 alias v='nvim'
 alias valgrindlc='valgrind --leak-check=full --show-leak-kinds=all'
+alias sv='sudo --preserve-env=HOME nvim'
 
 # copy current command line to clipboard
 zmodload zsh/parameter
