@@ -7,7 +7,7 @@ xrdb ~/.Xresources
 
 case "$(hostname)" in
 "karen-chan")
-    POST_CMD='compton &' 
+    POST_CMD='compton &; pulseffects &'
     ;;
 "arch-vm")
     xrandr --output VGA-1 --mode 1920x1080
