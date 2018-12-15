@@ -1,4 +1,3 @@
-export TERM='xterm'
 export GPG_TTY=$(tty)
 
 # History
