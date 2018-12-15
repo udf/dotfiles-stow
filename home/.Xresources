@@ -5,42 +5,44 @@ Xft.hintstyle: hintslight
 Xft.rgba: none
 Xft.lcdfilter: none
 
+URxvt*background: [85]#12171a
+
 ! special
-*.foreground:   #d8d8d8
-*.background:   #12171a
-*.cursorColor:  #1ABB9B
-
+*.foreground:   #c5c8c6
+*.background:   #16171a
+*.cursorColor:  #c5c8c6
 ! black
-*.color0:       #222d31
-*.color8:       #585858
-
+*.color0:       #282a2e
+*.color8:       #373b41
 ! red
-*.color1:       #ab4642
-*.color9:       #cc3d3d
-
+*.color1:       #a54242
+*.color9:       #cc6666
 ! green
-*.color2:       #6db36d
-*.color10:      #66cc66
-
+*.color2:       #8c9440
+*.color10:      #b5bd68
 ! yellow
-*.color3:       #f7ca88
-*.color11:      #f7bf6f
-
+*.color3:       #de935f
+*.color11:      #f0c674
 ! blue
-*.color4:       #7cafc2
-*.color12:      #52a3cc
-
+*.color4:       #5f819d
+*.color12:      #81a2be
 ! magenta
-*.color5:       #ba8baf
-*.color13:      #ba5da6
-
+*.color5:       #85678f
+*.color13:      #b294bb
 ! cyan
-*.color6:       #1abb9b
-*.color14:      #00ba95
-
+*.color6:       #5e8d87
+*.color14:      #8abeb7
 ! white
-*.color7:       #d8d8d8
-*.color15:      #ffffff
+*.color7:       #707880
+*.color15:      #c5c8c6
+! base16 extra colors
+*color16: #ae81ff
+*color17: #ff8d5c
+! base16 extra gray shades
+*color18: #252730
+*color19: #373b48
+*color20: #5c6278
+*color21: #8089a8
 
 ! URxvt options
 URxvt*termName: rxvt-unicode-256color
