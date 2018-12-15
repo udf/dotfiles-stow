@@ -117,6 +117,7 @@ for_window [title="GIMP Startup"] move workspace $ws4
 
 for_window [class="Subl3" title=".+\(blag\) - Sublime Text.+"] focus; floating enable; move scratchpad; scratchpad show; move position 964 24; resize set 952 1052; move scratchpad
 
+for_window [class="Pulseeffects"] move workspace $ws8
 
 # Workspaces
 set $ws1 "1"
