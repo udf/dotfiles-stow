@@ -14,6 +14,9 @@ setopt INC_APPEND_HISTORY
 autoload -Uz compinit
 compinit
 
+# dircolours
+eval $(dircolors ~/.dir_colors)
+
 # escape key codes
 bindkey -e
 bindkey "\e[5~" beginning-of-history    # PAGE UP
