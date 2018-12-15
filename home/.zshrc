@@ -24,7 +24,7 @@ bindkey "\e[1;5D" backward-word
 bindkey "\e[1;5E" backward-kill-word
 
 # make *-word commands not match these characters
-WORDCHARS='*?_[]~;!#$%^(){}<>'
+WORDCHARS='*?_[]~!#$%^(){}<>'
 
 # automatically cd on dir name
 setopt autocd
