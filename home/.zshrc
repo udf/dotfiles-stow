@@ -10,6 +10,10 @@ setopt histignoredups
 setopt histreduceblanks
 setopt INC_APPEND_HISTORY
 
+# completion
+autoload -Uz compinit
+compinit
+
 # escape key codes
 bindkey -e
 bindkey "\e[5~" beginning-of-history    # PAGE UP
