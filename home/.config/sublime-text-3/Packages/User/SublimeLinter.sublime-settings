@@ -1,0 +1,12 @@
+// SublimeLinter Settings - User
+{
+	"linters": {
+		"pycodestyle": {
+			"disable": false,
+			"args": ["--max-line-length", "100"]
+		}
+	},
+	"paths": {
+		"linux": ["~/.local/bin"]
+	}
+}

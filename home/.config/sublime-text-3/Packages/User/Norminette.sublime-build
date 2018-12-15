@@ -1,0 +1,13 @@
+{
+	"shell_cmd": "norminette \"$file\" | sed -u 's/Error:/Error (line 1):/'",
+	"working_dir": "$file_path",
+	"file_patterns": ["*.c", "*.h"],
+	"file_regex": "Norme: (.+)",
+	"line_regex": "Error(?: \\(line )?(\\d*)(?:, col )?(\\d*)\\)?: (.+)",
+	"variants": [
+		{
+			"name": "Recursive",
+			"shell_cmd": "normr | sed -u 's/Error:/Error (line 1):/'",
+		}
+	]
+}
