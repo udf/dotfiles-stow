@@ -1,1 +1,1 @@
-/vm/drive	-fstype=exfat		:/dev/external_vm
+/vm/drive	-fstype=hfsplus		:/dev/external_vm
