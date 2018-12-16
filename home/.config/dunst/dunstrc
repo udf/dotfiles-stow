@@ -166,7 +166,7 @@
     close = mod4+shift+x
 
     # Close all notifications.
-    close_all = mod4+shift+space
+    close_all = mod4+shift+z
 
     # Redisplay last message(s).
     history = mod4+shift+a
