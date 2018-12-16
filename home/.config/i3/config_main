@@ -3,13 +3,12 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono 8 
 gaps inner 7
 
-
 # window manager management
-bindsym $mod+Shift+c reload
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+c exec "gen_config.sh && i3-msg reload"
+bindsym $mod+Shift+r exec "gen_config.sh && i3-msg restart"
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 
@@ -93,31 +92,12 @@ bindsym $mod+z scratchpad show
 # auto focus gimp when urgent
 for_window [urgent="latest" class="Gimp"] focus
 
-for_window [title="alsamixer"] floating enable border pixel 1
 for_window [class="Lxappearance"] floating enable sticky enable border normal
 for_window [class="Pavucontrol"] floating enable
 for_window [class="qt5ct"] floating enable sticky enable border normal
 for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
 for_window [window_role="gimp-toolbox-color-dialog"] move position mouse
-
 for_window [class="TelegramDesktop" title="Media viewer"] move absolute position center
-
-
-# window workspaces
-for_window [class="TelegramDesktop"] move workspace $ws1
-for_window [instance="term_music"] move workspace $ws1
-
-for_window [class="Subl3" title=".+"] move workspace $ws2
-for_window [class="Subl3" window_role="GtkFileChooserDialog"] move workspace current
-
-for_window [class="Firefox"] move workspace $ws3
-
-for_window [class="Gimp" window_role="gimp-image-window-1"] move workspace $ws4
-for_window [title="GIMP Startup"] move workspace $ws4
-
-for_window [class="Subl3" title=".+\(blag\) - Sublime Text.+"] focus; floating enable; move scratchpad; scratchpad show; move position 964 24; resize set 952 1052; move scratchpad
-
-for_window [class="Pulseeffects"] move workspace $ws8
 
 # Workspaces
 set $ws1 "1"
@@ -188,7 +168,6 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id telegram-desktop
 exec --no-startup-id subl3
 exec --no-startup-id firefox
-exec --no-startup-id urxvt -name term_music -e sh -c 'htop; zsh'
 #exec --no-startup-id subl3 $HOME/proj/p/udf.github.io/blag.sublime-project
 #exec --no-startup-id $HOME/wp/setter.sh
 #exec --no-startup-id locator.sh
