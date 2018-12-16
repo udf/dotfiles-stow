@@ -1,6 +1,7 @@
 #!/bin/zsh
 
 xset -b
+xset s off 
 numlockx &
 
 xrdb ~/.Xresources
