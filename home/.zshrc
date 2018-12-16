@@ -83,6 +83,8 @@ alias p='pacman'
 alias v='nvim'
 alias valgrindlc='valgrind --leak-check=full --show-leak-kinds=all'
 alias sv='sudo --preserve-env=HOME nvim'
+alias gitc='git commit'
+alias gita='git add'
 
 # copy current command line to clipboard
 zmodload zsh/parameter
