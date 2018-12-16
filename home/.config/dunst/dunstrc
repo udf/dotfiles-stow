@@ -169,13 +169,10 @@
     close_all = mod4+shift+space
 
     # Redisplay last message(s).
-    # On the US keyboard layout "grave" is normally above TAB and left
-    # of "1". Make sure this key actually exists on your keyboard layout,
-    # e.g. check output of 'xmodmap -pke'
     history = mod4+shift+a
 
     # Context menu.
-    context = mod4+shift+r
+    context = mod4+shift+v
 
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
