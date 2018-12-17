@@ -5,4 +5,4 @@ for_window [class="Pulseeffects"] move workspace $ws8
 
 # autostart programs
 exec --no-startup-id pulseeffects
-exec --no-startup-id compton
+exec_always --no-startup-id killall compton; compton
