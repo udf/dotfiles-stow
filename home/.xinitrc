@@ -2,6 +2,8 @@
 
 xset -b
 xset s off 
+xset -dpms
+
 numlockx &
 
 xrdb ~/.Xresources
