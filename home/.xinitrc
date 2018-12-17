@@ -4,14 +4,11 @@ xset -b
 xset s off 
 xset -dpms
 
-numlockx &
-
-xrdb ~/.Xresources
-
-$HOME/scripts/gen_config.sh
-
 DESKTOP_KEY="AAAAC3NzaC1lZDI1NTE5AAAAIF0496p9x/zRn/f2ePFOV5H7xjlBltqQmVsZ6kgbM6pc" 
 ssh-keyscan -t ed25519 10.0.2.2 | grep $DESKTOP_KEY && export VM_IS_HOME=1
+
+xrdb ~/.Xresources
+$HOME/scripts/gen_config.sh
 
 case "$(hostname)" in
 "karen-chan")
@@ -27,5 +24,6 @@ case "$(hostname)" in
     ;;
 esac
 
+numlockx &
 dunst &
 i3
