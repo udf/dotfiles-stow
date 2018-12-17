@@ -1,3 +1,5 @@
+gaps inner 3
+
 # window workspaces
 for_window [class="Pulseeffects"] move workspace $ws8
 

@@ -1,3 +1,5 @@
+gaps inner 5
+
 # window workspaces
 for_window [class="TelegramDesktop"] move workspace $ws1
 for_window [instance="term_music"] move workspace $ws1

@@ -4,7 +4,6 @@
 
 set $mod Mod4
 font pango:DejaVu Sans Mono 8 
-gaps inner 7
 
 # window manager management
 bindsym $mod+Shift+c exec "gen_config.sh && i3-msg reload"
