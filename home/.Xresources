@@ -9,7 +9,7 @@ URxvt*background: [85]#12171a
 
 ! special
 *.foreground:   #dce0dd
-*.background:   #16171a
+*.background:   #12171a
 *.cursorColor:  #c5c8c6
 ! black
 *.color0:       #3e4147
