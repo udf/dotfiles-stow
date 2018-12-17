@@ -166,6 +166,6 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id telegram-desktop
 exec --no-startup-id subl3
 exec --no-startup-id firefox
-#exec --no-startup-id subl3 $HOME/proj/p/udf.github.io/blag.sublime-project
-#exec --no-startup-id $HOME/wp/setter.sh
-#exec --no-startup-id locator.sh
+
+# ----------------------------------------------------------------------------
+
