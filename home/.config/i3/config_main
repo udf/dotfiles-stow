@@ -163,7 +163,6 @@ mode "$mode_system" {
 
 
 # autostart applications
-exec --no-startup-id numlockx
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id telegram-desktop
 exec --no-startup-id subl3
