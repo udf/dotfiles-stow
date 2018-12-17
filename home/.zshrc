@@ -85,6 +85,8 @@ alias valgrindlc='valgrind --leak-check=full --show-leak-kinds=all'
 alias sv='sudo --preserve-env=HOME nvim'
 alias gitc='git commit'
 alias gita='git add'
+alias gitd='git diff'
+alias gitds='git diff --stat'
 
 # copy current command line to clipboard
 zmodload zsh/parameter
