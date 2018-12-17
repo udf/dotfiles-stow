@@ -163,16 +163,16 @@
     # Xev might be helpful to find names for keys.
 
     # Close notification.
-    close = mod4+shift+x
+    close = mod4+ctrl+s
 
     # Close all notifications.
-    close_all = mod4+shift+z
+    close_all = mod4+ctrl+space
 
     # Redisplay last message(s).
-    history = mod4+shift+a
+    history = mod4+ctrl+d
 
     # Context menu.
-    context = mod4+shift+v
+    context = mod4+ctrl+f
 
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
