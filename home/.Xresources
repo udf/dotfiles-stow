@@ -39,7 +39,7 @@ URxvt*background: [85]#12171a
 *color16: #ae81ff
 *color17: #ff8d5c
 ! base16 extra gray shades
-*color18: #333333
+*color18: [85]#333333
 *color19: #4c4c4c
 *color20: #b3b3b3
 *color21: #e6e6e6
