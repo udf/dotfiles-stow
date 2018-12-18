@@ -6,6 +6,7 @@ Xft.rgba: none
 Xft.lcdfilter: none
 
 URxvt*background: [85]#12171a
+URxvt*colorUL: #86a2b0
 
 ! special
 *.foreground:   #dce0dd
@@ -67,6 +68,19 @@ URxvt*scrollTtyOutput: false
 URxvt.iso14755: false
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+
+! perl extensions
+URxvt.perl-ext: default,url-select,keyboard-select
+
+! url-select
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.url-select.autocopy:  true
+URxvt.url-select.launcher:  xdg-open
+URxvt.url-select.underline: true
+
+! keyboard-select
+URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+URxvt.keysym.M-s:           perl:keyboard-select:search
 
 ! escape codes
 URxvt.keysym.Control-Left: \033[1;5D

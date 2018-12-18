@@ -91,10 +91,10 @@ bindsym $mod+z scratchpad show
 # auto focus gimp when urgent
 for_window [urgent="latest" class="Gimp"] focus
 
-for_window [class="Lxappearance"] floating enable sticky enable border normal
-for_window [class="Pavucontrol"] floating enable
-for_window [class="qt5ct"] floating enable sticky enable border normal
-for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
+for_window [class="Lxappearance"] floating enable sticky enable
+for_window [class="Pavucontrol"] floating enable sticky enable
+for_window [class="qt5ct"] floating enable sticky enable
+for_window [class="Qtconfig-qt4"] floating enable sticky enable
 for_window [window_role="gimp-toolbox-color-dialog"] move position mouse
 for_window [class="TelegramDesktop" title="Media viewer"] move absolute position center
 
