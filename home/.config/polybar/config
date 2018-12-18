@@ -36,6 +36,14 @@ margin-bottom = 0
 
 [bar/karen-chan]
 inherit = main_bar
+bottom = true
+line-size = 2
+padding-left = 10
+padding-right = 105
+
+modules-left=musicinfo i3 xwindow
+modules-center = volume date
+modules-right = cpu memory filesystem downspeed upspeed
 
 
 [main_bar]
