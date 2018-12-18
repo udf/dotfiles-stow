@@ -28,9 +28,11 @@ bmagenta = ${xrdb:color5}
 bcyan = ${xrdb:color6}
 bwhite = ${xrdb:color7}
 
+
 [global/wm]
 margin-top=0
 margin-bottom=0
+
 
 [bar/main_bar]
 width = 100%
@@ -77,6 +79,7 @@ label=%output%
 format=<label>
 tail=true
 
+
 [module/i3]
 type            = internal/i3
 format          = <label-state><label-mode>
@@ -110,12 +113,14 @@ interval=1
 label-connected= %downspeed:4%
 format-connected-underline=${colors.green}
 
+
 [module/upspeed]
 type=internal/network
 interface=enp0s3
 interval=1
 label-connected= %upspeed:4%
 format-connected-underline=${colors.green}
+
 
 [module/cpu]
 type=internal/cpu
@@ -131,6 +136,7 @@ ramp-load-5 = %{u#ff9100}
 ramp-load-6 = %{u#ff4800}
 ramp-load-7 = %{u#ff0000}
 
+
 [module/memory]
 type=internal/memory
 interval=5
@@ -145,6 +151,7 @@ ramp-used-5 = %{u#ff9100}
 ramp-used-6 = %{u#ff4800}
 ramp-used-7 = %{u#ff0000}
 
+
 [module/filesystem]
 type = internal/fs
 interval = 10
@@ -152,6 +159,7 @@ mount-0 = /
 fixed-values = true
 label-mounted =  %used%
 format-mounted-underline=${colors.white}
+
 
 [module/volume]
 type=internal/pulseaudio
@@ -163,6 +171,7 @@ label-muted-underline=${colors.bred}
 ramp-volume-0=
 ramp-volume-1=
 ramp-volume-2=
+
 
 [module/date]
 type=internal/date
