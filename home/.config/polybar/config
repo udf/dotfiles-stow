@@ -110,6 +110,12 @@ label-urgent-foreground    = ${colors.foreground}
 label-urgent-padding       = 0
 
 
+[module/xwindow]
+type=internal/xwindow
+label=%title:0:100:...%
+label-padding=1
+
+
 [module/downspeed]
 type=internal/network
 interface=enp0s3
