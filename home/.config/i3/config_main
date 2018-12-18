@@ -49,7 +49,7 @@ bindsym $mod+Ctrl+c exec dup_term.sh
 bindsym $mod+b exec ranger
 bindsym $mod+Shift+n --release exec "killall dunst; exec notify-send -a i3 'restarted dunst'"
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
-bindsym $mod+Ctrl+a exec "killall -q pavucontrol; pavucontrol"
+bindsym $mod+Ctrl+a exec "killall -q pavucontrol || pavucontrol"
 
 
 # window management
