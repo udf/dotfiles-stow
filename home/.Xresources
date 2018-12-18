@@ -1,13 +1,7 @@
-Xcursor.size: 16
-Xft.antialias: 1
-Xft.hinting: 0
-Xft.hintstyle: hintslight
-Xft.rgba: none
-Xft.lcdfilter: none
-
+! Colours
 URxvt*background: [85]#12171a
 URxvt*colorUL: #86a2b0
-
+URxvt*scrollColor: #dce0dd
 ! special
 *.foreground:   #dce0dd
 *.background:   #12171a
@@ -45,6 +39,16 @@ URxvt*colorUL: #86a2b0
 *color20: #9faab3
 *color21: #dae0e6
 
+
+! X settings
+Xcursor.size: 16
+Xft.antialias: 1
+Xft.hinting: 0
+Xft.hintstyle: hintslight
+Xft.rgba: none
+Xft.lcdfilter: none
+
+
 ! URxvt options
 URxvt*termName: xterm-256color
 URxvt*font: xft:Hack:pixelsize=12:antialias=true:hinting=true
@@ -57,7 +61,6 @@ URxvt*cursorBlink: true
 URxvt*scrollBar: true
 URxvt*scrollBar_right: true
 URxvt*thickness: 5
-URxvt*scrollColor: #1ABB9B
 URxvt*scrollstyle: plain
 URxvt*scrollWithBuffer: true
 URxvt*scrollTtyKeypress: true

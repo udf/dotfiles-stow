@@ -12,12 +12,18 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 
 # theme colors
-# class                 border  backgr. text    indic.   child_border
-client.focused          #556064 #1ABB9B #2F3D44 #454948
-client.focused_inactive #2F3D44 #2F3D44 #bac4c7 #454948
-client.unfocused        #556064 #bac4c7 #2F3D44 #FDF6E3
-client.urgent           #CB4B16 #FDF6E3 #bac4c7 #268BD2
-client.background       #2B2C2B
+set_from_resource  $bgr_color  background
+set_from_resource  $fgr_color  foreground
+set_from_resource  $red_color  color9
+set_from_resource  $grd_color  color0
+set_from_resource  $grb_color  color8
+set_from_resource  $gre_color  color2
+
+#                        border      background  text        split_indicator
+client.focused           $grb_color  $fgr_color  $bgr_color  $gre_color
+client.unfocused         $grd_color  $bgr_color  $grb_color  $gre_color
+client.focused_inactive  $grb_color  $grd_color  $fgr_color  $gre_color
+client.urgent            $red_color  $red_color  $bgr_color  $gre_color
 
 
 # program management
