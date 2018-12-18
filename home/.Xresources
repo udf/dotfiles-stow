@@ -6,6 +6,7 @@ Xft.rgba: none
 Xft.lcdfilter: none
 
 URxvt*background: [85]#12171a
+URxvt*colorUL: #86a2b0
 
 ! special
 *.foreground:   #dce0dd
