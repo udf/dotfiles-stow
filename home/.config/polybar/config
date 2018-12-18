@@ -37,6 +37,11 @@ margin-bottom = 0
 [bar/arch-vm]
 inherit = main_bar
 
+line-size = 1
+
+padding-left = 2
+padding-right = 2
+
 modules-left = i3 musicinfo
 modules-center = volume date
 modules-right = cpu memory filesystem downspeed upspeed
@@ -45,7 +50,9 @@ modules-right = cpu memory filesystem downspeed upspeed
 [bar/karen-chan]
 inherit = main_bar
 bottom = true
+
 line-size = 2
+
 padding-left = 10
 padding-right = 105
 
@@ -62,11 +69,7 @@ fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 1
 line-color = #f00
-
-padding-left = 2
-padding-right = 2
 
 module-margin-left = 0
 module-margin-right = 1
