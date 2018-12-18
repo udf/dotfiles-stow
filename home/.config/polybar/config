@@ -34,6 +34,10 @@ margin-top = 0
 margin-bottom = 0
 
 
+[bar/arch-vm]
+inherit = main_bar
+
+
 [bar/karen-chan]
 inherit = main_bar
 bottom = true
