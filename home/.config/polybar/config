@@ -30,8 +30,8 @@ bwhite = ${xrdb:color7}
 
 
 [global/wm]
-margin-top=0
-margin-bottom=0
+margin-top = 0
+margin-bottom = 0
 
 
 [bar/karen-chan]
@@ -52,91 +52,91 @@ line-color = #f00
 padding-left = 2
 padding-right = 2
 
-module-margin-left=0
-module-margin-right=1
+module-margin-left = 0
+module-margin-right = 1
 
-font-0=Hack:pixelsize=9;0
-font-1=FontAwesome:pixelsize=9;0
-font-2=Noto Sans Mono CJK JP:pixelsize=9;0
-font-3=Noto Sans Mono CJK KR:pixelsize=9;0
-font-4=Noto Sans Mono CJK SC:pixelsize=9;0
-font-5=Noto Sans Mono CJK TC:pixelsize=9;0
+font-0 = Hack:pixelsize=9;0
+font-1 = FontAwesome:pixelsize=9;0
+font-2 = Noto Sans Mono CJK JP:pixelsize=9;0
+font-3 = Noto Sans Mono CJK KR:pixelsize=9;0
+font-4 = Noto Sans Mono CJK SC:pixelsize=9;0
+font-5 = Noto Sans Mono CJK TC:pixelsize=9;0
 
 modules-left = i3 musicinfo
 modules-center = volume date
 modules-right = cpu memory filesystem downspeed upspeed
 
-tray-position=right
-tray-padding=5
-tray-transparent=false
-tray-maxsize=18
-tray-detached=false
-tray-background=${colors.background}
+tray-position = right
+tray-padding = 5
+tray-transparent = false
+tray-maxsize = 18
+tray-detached = false
+tray-background = ${colors.background}
 
-wm-restack=i3
+wm-restack = i3
 
 
 [module/musicinfo]
-type=custom/script
-exec=~/.config/polybar/music.py 105
-label=%output%
-format=<label>
-tail=true
+type = custom/script
+exec = ~/.config/polybar/music.py 105
+label = %output%
+format = <label>
+tail = true
 
 
 [module/i3]
-type            = internal/i3
-format          = <label-state><label-mode>
-index-sort      = true
+type = internal/i3
+format = <label-state><label-mode>
+index-sort = true
 wrapping-scroll = true
-pin-workspaces  = true
+pin-workspaces = true
 
-label-mode-foreground      = ${colors.blue}
-label-mode-background      = ${colors.background}
+label-mode-foreground = ${colors.blue}
+label-mode-background = ${colors.background}
 
-label-focused              = " %name% " 
-label-focused-background   = #1abb9b
-label-focused-foreground   = ${colors.background}
-label-focused-padding      = 0
+label-focused = " %name% " 
+label-focused-background = #1abb9b
+label-focused-foreground = ${colors.background}
+label-focused-padding = 0
 
-label-unfocused            = " %name% "
+label-unfocused = " %name% "
 label-unfocused-background = ${colors.background}
 label-unfocused-foreground = ${colors.foreground}
-label-unfocused-padding    = 0
+label-unfocused-padding = 0
 
-label-urgent               = " %name% "
-label-urgent-background    = ${colors.red}
-label-urgent-foreground    = ${colors.foreground}
-label-urgent-padding       = 0
+label-urgent = " %name% "
+label-urgent-background = ${colors.red}
+label-urgent-foreground = ${colors.foreground}
+label-urgent-padding = 0
 
 
 [module/xwindow]
-type=internal/xwindow
-label=%title:0:100:...%
-label-padding=1
+type = internal/xwindow
+label = %title:0:100:...%
+label-padding = 1
 
 
 [module/downspeed]
-type=internal/network
-interface=enp0s3
-interval=1
-label-connected= %downspeed:4%
-format-connected-underline=${colors.green}
+type = internal/network
+interface = enp0s3
+interval = 1
+label-connected =  %downspeed:4%
+format-connected-underline = ${colors.green}
 
 
 [module/upspeed]
-type=internal/network
-interface=enp0s3
-interval=1
-label-connected= %upspeed:4%
-format-connected-underline=${colors.green}
+type = internal/network
+interface = enp0s3
+interval = 1
+label-connected =  %upspeed:4%
+format-connected-underline = ${colors.green}
 
 
 [module/cpu]
-type=internal/cpu
-interval=1
-format=<ramp-load><label>
-label= %percentage:2%%
+type = internal/cpu
+interval = 1
+format = <ramp-load><label>
+label =  %percentage:2%%
 ramp-load-0 = %{u#00ff00}
 ramp-load-1 = %{u#48ff00}
 ramp-load-2 = %{u#91ff00}
@@ -148,10 +148,10 @@ ramp-load-7 = %{u#ff0000}
 
 
 [module/memory]
-type=internal/memory
-interval=5
-format=<ramp-used><label>
-label= %percentage_used:2%%
+type = internal/memory
+interval = 5
+format = <ramp-used><label>
+label =  %percentage_used:2%%
 ramp-used-0 = %{u#00ff00}
 ramp-used-1 = %{u#48ff00}
 ramp-used-2 = %{u#91ff00}
@@ -168,26 +168,26 @@ interval = 10
 mount-0 = /
 fixed-values = true
 label-mounted =  %used%
-format-mounted-underline=${colors.white}
+format-mounted-underline = ${colors.white}
 
 
 [module/volume]
-type=internal/pulseaudio
+type = internal/pulseaudio
 label-volume = %percentage%%
-format-volume=<ramp-volume> <label-volume>
-format-volume-underline=${colors.bwhite}
-label-muted= 0%
-label-muted-underline=${colors.bred}
-ramp-volume-0=
-ramp-volume-1=
-ramp-volume-2=
+format-volume = <ramp-volume> <label-volume>
+format-volume-underline = ${colors.bwhite}
+label-muted =  0%
+label-muted-underline = ${colors.bred}
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
 
 
 [module/date]
-type=internal/date
-interval=1
-date=" %a %b %d"
-time="%T "
-format-prefix-foreground=${colors.foreground}
-format-underline=${colors.bwhite}
-label=%date% %time%
+type = internal/date
+interval = 1
+date = " %a %b %d"
+time = "%T "
+format-prefix-foreground = ${colors.foreground}
+format-underline = ${colors.bwhite}
+label = %date% %time%
