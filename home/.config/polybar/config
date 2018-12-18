@@ -60,6 +60,8 @@ modules-left = musicinfo i3 xwindow
 modules-center = volume date
 modules-right = cpu memory filesystem downspeed upspeed
 
+tray-offset-x=-15
+
 
 [main_bar]
 width = 100%
