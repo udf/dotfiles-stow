@@ -34,7 +34,11 @@ margin-top=0
 margin-bottom=0
 
 
-[bar/main_bar]
+[bar/karen-chan]
+inherit = main_bar
+
+
+[main_bar]
 width = 100%
 height = 20
 fixed-center = true
