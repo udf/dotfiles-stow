@@ -58,7 +58,7 @@ padding-right = 105
 
 modules-left = musicinfo i3 xwindow
 modules-center = volume date
-modules-right = cpu memory filesystem downspeed upspeed
+modules-right = downspeed upspeed cpu memory filesystem
 
 tray-offset-x=-15
 
