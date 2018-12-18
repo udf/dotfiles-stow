@@ -14,7 +14,7 @@ case "$(hostname)" in
 "karen-chan")
     ;;
 "arch-vm")
-    xrandr --newmode "desktophost" 155.02  1888 2008 2208 2528  987 988 991 1022  -HSync +Vsync
+    xrandr --newmode "desktophost" 157.87  1912 2024 2232 2552  996 997 1000 1031  -HSync +Vsync
     xrandr --addmode VGA-1 desktophost
     if [[ -v VM_IS_HOME ]]; then
         xrandr --output VGA-1 --mode desktophost
