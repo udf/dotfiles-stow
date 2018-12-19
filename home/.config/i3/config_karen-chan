@@ -1,5 +1,7 @@
 gaps inner 3
 
+bindsym $mod+d exec rofi -show run -modi run -width 20 -location 6 -yoffset -20 -lines 7 -columns 2
+
 # window workspaces
 for_window [class="Pulseeffects"] move workspace $ws8
 

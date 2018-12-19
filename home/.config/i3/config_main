@@ -64,7 +64,6 @@ bindsym --release Ctrl+Print exec --no-startup-id screenshot.sh -s -e "gimp"
 
 
 # program keys
-bindsym $mod+d exec dmenu_run
 bindsym $mod+c exec i3-sensible-terminal
 bindsym $mod+Ctrl+c exec dup_term.sh
 bindsym $mod+b exec ranger
