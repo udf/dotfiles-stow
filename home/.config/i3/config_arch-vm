@@ -16,3 +16,4 @@ for_window [class="Subl3" title=".+\(blag\) - Sublime Text.+"] focus; floating e
 
 # autostart programs
 exec --no-startup-id urxvt -name term_music -e sh -c 'htop; zsh'
+exec --no-startup-id subl3
