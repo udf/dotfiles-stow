@@ -2,7 +2,6 @@
 #define bg_trans 85
 ! special
 #define colour_ul #86a2b0
-#define colour_scr #35434d
 #define colour_cur #c5c8c6
 #define colour_bg #12171a
 #define colour_fg #dce0dd
@@ -79,7 +78,7 @@ Xft.lcdfilter: none
 ! URxvt options
 URxvt*background: [bg_trans]colour_bg
 URxvt*colorUL: colour_ul
-URxvt*scrollColor: colour_scr
+URxvt*scrollColor: colour_19
 
 URxvt*termName: xterm-256color
 URxvt*font: xft:Hack:pixelsize=12:antialias=true:hinting=true
