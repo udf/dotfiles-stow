@@ -1,43 +1,70 @@
 ! Colours
-URxvt*background: [85]#12171a
-URxvt*colorUL: #86a2b0
-URxvt*scrollColor: #35434d
+#define bg_trans 85
 ! special
-*.foreground:   #dce0dd
-*.background:   #12171a
-*.cursorColor:  #c5c8c6
+#define colour_ul #86a2b0
+#define colour_scr #35434d
+#define colour_cur #c5c8c6
+#define colour_bg #12171a
+#define colour_fg #dce0dd
 ! black
-*.color0:       #3e4147
-*.color8:       #626873
+#define colour_0  #3e4147
+#define colour_8  #626873
 ! red
-*.color1:       #a54242
-*.color9:       #cc6666
+#define colour_1  #a54242
+#define colour_9  #cc6666
 ! green
-*.color2:       #6c9440
-*.color10:      #92bd68
+#define colour_2  #6c9440
+#define colour_10 #92bd68
 ! yellow
-*.color3:       #decc5f
-*.color11:      #f0de74
+#define colour_3  #decc5f
+#define colour_11 #f0de74
 ! blue
-*.color4:       #5f819d
-*.color12:      #81a2be
+#define colour_4  #5f819d
+#define colour_12 #81a2be
 ! magenta
-*.color5:       #ba70aa
-*.color13:      #ba8baf
+#define colour_5  #ba70aa
+#define colour_13 #ba8baf
 ! cyan
-*.color6:       #5e8d87
-*.color14:      #8abeb7
+#define colour_6  #5e8d87
+#define colour_14 #8abeb7
 ! white
-*.color7:       #d4d7d9
-*.color15:      #faffff
-! base16 extra colors
-*color16: #ae81ff
-*color17: #ff8d5c
-! base16 extra gray shades
-*color18: [85]#1a2026
-*color19: #35434d
-*color20: #9faab3
-*color21: #dae0e6
+#define colour_7  #d4d7d9
+#define colour_15 #faffff
+! base16 extra
+#define colour_16 #ae81ff
+#define colour_17 #ff8d5c
+! base16 extra greys
+#define colour_18 [bg_trans]#1a2026
+#define colour_19 #35434d
+#define colour_20 #9faab3
+#define colour_21 #dae0e6
+
+
+*.foreground: colour_fg
+*.background: colour_bg
+*.cursorColor: colour_cur
+*.color0: colour_0
+*.color8: colour_8
+*.color1: colour_1
+*.color9: colour_9
+*.color2: colour_2
+*.color10: colour_10
+*.color3: colour_3
+*.color11: colour_11
+*.color4: colour_4
+*.color12: colour_12
+*.color5: colour_5
+*.color13: colour_13
+*.color6: colour_6
+*.color14: colour_14
+*.color7: colour_7
+*.color15: colour_15
+*color16: colour_16
+*color17: colour_17
+*color18: colour_18
+*color19: colour_19
+*color20: colour_20
+*color21: colour_21
 
 
 ! X settings
@@ -50,10 +77,14 @@ Xft.lcdfilter: none
 
 
 ! URxvt options
+URxvt*background: [bg_trans]colour_bg
+URxvt*colorUL: colour_ul
+URxvt*scrollColor: colour_scr
+
 URxvt*termName: xterm-256color
 URxvt*font: xft:Hack:pixelsize=12:antialias=true:hinting=true
 URxvt*boldFont: xft:Hack:bold:pixelsize=12:antialias=true:hinting=true
-URxvt.letterSpace: true 
+URxvt.letterSpace: true
 URxvt.depth: 32
 URxvt*cursorBlink: true
 
@@ -76,14 +107,14 @@ URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 URxvt.perl-ext: default,url-select,keyboard-select
 
 ! url-select
-URxvt.keysym.M-u:           perl:url-select:select_next
-URxvt.url-select.autocopy:  true
-URxvt.url-select.launcher:  xdg-open
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.autocopy: true
+URxvt.url-select.launcher: xdg-open
 URxvt.url-select.underline: true
 
 ! keyboard-select
-URxvt.keysym.M-Escape:      perl:keyboard-select:activate
-URxvt.keysym.M-s:           perl:keyboard-select:search
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
 
 ! escape codes
 URxvt.keysym.Control-Left: \033[1;5D
