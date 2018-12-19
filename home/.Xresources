@@ -1,7 +1,7 @@
 ! Colours
 URxvt*background: [85]#12171a
 URxvt*colorUL: #86a2b0
-URxvt*scrollColor: #dce0dd
+URxvt*scrollColor: #35434d
 ! special
 *.foreground:   #dce0dd
 *.background:   #12171a
