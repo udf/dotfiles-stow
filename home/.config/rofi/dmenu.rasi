@@ -1,0 +1,56 @@
+// vi: ft=css
+/**
+ * ROFI Color theme
+ * User: Qball
+ * Copyright: Dave Davenport
+ * Modified: udf AKA Kate AKA EyeZiS AKA tabhooked AKA Sam "too many nicknames" H.
+ */
+* {
+    foreground:           rgba ( 220, 224, 221, 100 % );
+    background:           rgba ( 18, 23, 26, 100 % );
+    alternate-background: rgba ( 27, 32, 38, 100 % );
+
+    background-color:     @background;
+    text-color:           @foreground;
+}
+
+#window {
+    anchor:   north;
+    location: north;
+    width:    100%;
+    padding:  0px;
+    children: [ horibox ];
+    font:     "Hack 12";
+}
+
+#horibox {
+    orientation: horizontal;
+    children:   [ prompt, textbox-prompt-colon, entry, listview ];
+}
+
+#listview {
+    layout:     horizontal;
+    spacing:    5px;
+    lines:      100;
+}
+
+#entry {
+    expand:     false;
+    width:      10em;
+}
+
+#element {
+    padding: 0px 2px;
+}
+#element selected {
+    background-color: @foreground;
+    text-color:       @background;
+}
+#element alternate {
+    background-color: @alternate-background;
+}
+
+#textbox-prompt-colon {
+    expand: false;
+    str:    ":";
+}

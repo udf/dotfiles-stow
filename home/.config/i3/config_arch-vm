@@ -1,6 +1,6 @@
 gaps inner 5
 
-bindsym $mod+d exec rofi -show run -modi run -location 1 -width 100 -lines 2 -line-margin 0 -line-padding 1 -columns 9 -bw 0 -hide-scrollbar -kb-row-select "Tab" -kb-row-tab ""
+bindsym $mod+d exec rofi -show run -modi run rofi -show run -modi run -kb-row-select "Tab" -kb-row-tab "" -theme $HOME/.config/rofi/dmenu.rasi
 
 # window workspaces
 for_window [class="TelegramDesktop"] move workspace $ws1
