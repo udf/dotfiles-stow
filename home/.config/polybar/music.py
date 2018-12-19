@@ -95,6 +95,7 @@ def print_status(player=None, metadata=None):
     percentage_progress = 0
 
     def append_output(data, fmt='{}'):
+        nonlocal output
         if data:
             output += fmt.format(data)
 
