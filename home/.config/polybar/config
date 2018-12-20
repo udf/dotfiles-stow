@@ -39,10 +39,10 @@ inherit = main_bar
 
 line-size = 1
 
-padding-left = 2
+padding-left = 1
 padding-right = 2
 
-modules-left = i3 musicinfo_samlap
+modules-left = battery i3 musicinfo_samlap
 modules-right = downspeed upspeed downspeed_wlan upspeed_wlan cpu memory volume date
 
 
@@ -115,7 +115,37 @@ tail = true
 
 [module/musicinfo_samlap]
 inherit = module/musicinfo
-exec = ~/.config/polybar/music.py 90
+exec = ~/.config/polybar/music.py 85
+
+
+[module/battery]
+type = internal/battery
+battery = BAT1
+adapter = ACAD
+poll-interval = 5
+
+label-full = 
+label-full-foreground = ${colors.bgreen}
+
+format-charging = <animation-charging> <label-charging>
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 500
+
+format-discharging = <ramp-capacity> <label-discharging>
+ramp-capacity-0 = %{u#ff0000}%{F#ff0000}%{F-}
+ramp-capacity-1 = %{u#ff0000}%{F#ff0000}%{F-}
+ramp-capacity-2 = %{u#ff0000}%{F#ff0000}%{F-}
+ramp-capacity-3 = %{u#ff4800}%{F#ff4800}%{F-}
+ramp-capacity-4 = %{u#ff9100}%{F#ff9100}%{F-}
+ramp-capacity-5 = %{u#ffda00}%{F#ffda00}%{F-}
+ramp-capacity-6 = %{u#daff00}%{F#daff00}%{F-}
+ramp-capacity-7 = %{u#91ff00}%{F#91ff00}%{F-}
+ramp-capacity-8 = %{u#48ff00}%{F#48ff00}%{F-}
+ramp-capacity-9 = %{u#00ff00}%{F#00ff00}%{F-}
 
 
 [module/i3]
