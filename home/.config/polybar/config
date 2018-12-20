@@ -158,7 +158,7 @@ pin-workspaces = true
 label-mode-foreground = ${colors.blue}
 label-mode-background = ${colors.background}
 
-label-focused = " %name% " 
+label-focused = " %name% "
 label-focused-background = ${colors.foreground}
 label-focused-foreground = ${colors.background}
 label-focused-padding = 0
