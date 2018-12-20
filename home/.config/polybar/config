@@ -116,7 +116,7 @@ tail = true
 
 [module/musicinfo_samlap]
 inherit = module/musicinfo
-exec = ~/.config/polybar/music.py 95
+exec = ~/.config/polybar/music.py 90
 
 
 [module/i3]
@@ -155,7 +155,7 @@ label-padding = 1
 type = internal/network
 interface = net0
 interval = 1
-label-connected =  %downspeed:4%
+label-connected =  %downspeed:8%
 format-connected-underline = ${colors.green}
 
 
@@ -163,7 +163,7 @@ format-connected-underline = ${colors.green}
 type = internal/network
 interface = net0
 interval = 1
-label-connected =  %upspeed:4%
+label-connected =  %upspeed:8%
 format-connected-underline = ${colors.green}
 
 
@@ -171,7 +171,7 @@ format-connected-underline = ${colors.green}
 type = internal/network
 interface = waifu2
 interval = 1
-label-connected =  %downspeed:4%
+label-connected =  %downspeed:8%
 format-connected-underline = ${colors.blue}
 
 
@@ -179,7 +179,7 @@ format-connected-underline = ${colors.blue}
 type = internal/network
 interface = waifu2
 interval = 1
-label-connected =  %upspeed:4%
+label-connected =  %upspeed:8%
 format-connected-underline = ${colors.blue}
 
 
