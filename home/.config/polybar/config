@@ -34,6 +34,19 @@ margin-top = 0
 margin-bottom = 0
 
 
+[bar/samlap]
+inherit = main_bar
+
+line-size = 1
+
+padding-left = 2
+padding-right = 2
+
+modules-left = i3 musicinfo_samlap
+modules-center = volume date
+modules-right = cpu memory downspeed upspeed
+
+
 [bar/arch-vm]
 inherit = main_bar
 
@@ -99,6 +112,11 @@ exec = ~/.config/polybar/music.py 105
 label = %output%
 format = <label>
 tail = true
+
+
+[module/musicinfo_samlap]
+inherit = module/musicinfo
+exec = ~/.config/polybar/music.py 75
 
 
 [module/i3]
