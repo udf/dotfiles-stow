@@ -43,7 +43,6 @@ padding-left = 2
 padding-right = 2
 
 modules-left = i3 musicinfo_samlap
-modules-center =
 modules-right = downspeed upspeed downspeed_wlan upspeed_wlan cpu memory volume date
 
 
