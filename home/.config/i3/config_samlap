@@ -2,6 +2,11 @@ gaps inner 2
 
 bindsym $mod+d exec rofi -show run -modi run rofi -show run -modi run -kb-row-select "Tab" -kb-row-tab "" -theme $HOME/.config/rofi/dmenu.rasi
 
+# brightness
+set $brightness_file /sys/class/backlight/intel_backlight/brightness
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 3" 
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 3" 
+
 # window workspaces
 for_window [class="TelegramDesktop"] move workspace $ws1
 for_window [instance="term_music"] move workspace $ws1
