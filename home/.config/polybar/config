@@ -115,7 +115,7 @@ tail = true
 
 [module/musicinfo_samlap]
 inherit = module/musicinfo
-exec = ~/.config/polybar/music.py 85
+exec = ~/.config/polybar/music.py 75
 
 
 [module/battery]
