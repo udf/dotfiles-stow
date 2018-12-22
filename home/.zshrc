@@ -30,6 +30,9 @@ bindkey "\e[1;5C" forward-word
 bindkey "\e[1;5D" backward-word
 bindkey "\e[1;5E" backward-kill-word
 
+# make time builtin look like bash
+TIMEFMT=$'\nreal\t%*Es\nuser\t%*Us\nsys\t%*Ss'
+
 # make *-word commands not match these characters
 WORDCHARS='*?_[]~!#$%^(){}<>'
 
