@@ -1,5 +1,7 @@
 call plug#begin()
 Plug 'chriskempson/base16-vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 call plug#end()
 
 syntax on
