@@ -34,6 +34,18 @@ margin-top = 0
 margin-bottom = 0
 
 
+[bar/samlap]
+inherit = main_bar
+
+line-size = 1
+
+padding-left = 1
+padding-right = 2
+
+modules-left = battery i3 musicinfo_samlap
+modules-right = downspeed upspeed downspeed_wlan upspeed_wlan cpu memory volume date
+
+
 [bar/arch-vm]
 inherit = main_bar
 
@@ -101,6 +113,42 @@ format = <label>
 tail = true
 
 
+[module/musicinfo_samlap]
+inherit = module/musicinfo
+exec = ~/.config/polybar/music.py 75
+
+
+[module/battery]
+type = internal/battery
+battery = BAT1
+adapter = ACAD
+poll-interval = 5
+
+label-full = 
+label-full-foreground = ${colors.bgreen}
+label-full-underline = ${colors.bgreen}
+
+format-charging = %{u#fff}<animation-charging> <label-charging>
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 500
+
+format-discharging = <ramp-capacity> <label-discharging>
+ramp-capacity-0 = %{u#ff0000}%{F#ff0000}%{F-}
+ramp-capacity-1 = %{u#ff0000}%{F#ff0000}%{F-}
+ramp-capacity-2 = %{u#ff0000}%{F#ff0000}%{F-}
+ramp-capacity-3 = %{u#ff4800}%{F#ff4800}%{F-}
+ramp-capacity-4 = %{u#ff9100}%{F#ff9100}%{F-}
+ramp-capacity-5 = %{u#ffda00}%{F#ffda00}%{F-}
+ramp-capacity-6 = %{u#daff00}%{F#daff00}%{F-}
+ramp-capacity-7 = %{u#91ff00}%{F#91ff00}%{F-}
+ramp-capacity-8 = %{u#48ff00}%{F#48ff00}%{F-}
+ramp-capacity-9 = %{u#00ff00}%{F#00ff00}%{F-}
+
+
 [module/i3]
 type = internal/i3
 format = <label-state><label-mode>
@@ -111,7 +159,7 @@ pin-workspaces = true
 label-mode-foreground = ${colors.blue}
 label-mode-background = ${colors.background}
 
-label-focused = " %name% " 
+label-focused = " %name% "
 label-focused-background = ${colors.foreground}
 label-focused-foreground = ${colors.background}
 label-focused-padding = 0
@@ -137,7 +185,7 @@ label-padding = 1
 type = internal/network
 interface = net0
 interval = 1
-label-connected =  %downspeed:4%
+label-connected =  %downspeed:8%
 format-connected-underline = ${colors.green}
 
 
@@ -145,8 +193,24 @@ format-connected-underline = ${colors.green}
 type = internal/network
 interface = net0
 interval = 1
-label-connected =  %upspeed:4%
+label-connected =  %upspeed:8%
 format-connected-underline = ${colors.green}
+
+
+[module/downspeed_wlan]
+type = internal/network
+interface = waifu2
+interval = 1
+label-connected =  %downspeed:8%
+format-connected-underline = ${colors.blue}
+
+
+[module/upspeed_wlan]
+type = internal/network
+interface = waifu2
+interval = 1
+label-connected =  %upspeed:8%
+format-connected-underline = ${colors.blue}
 
 
 [module/cpu]
