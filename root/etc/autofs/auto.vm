@@ -1,1 +1,1 @@
-/vm/drive	-fstype=hfsplus		:/dev/external_vm
+/vm/drive	-fstype=hfsplus,rw		:/dev/external_vm

@@ -3,6 +3,13 @@
 
 set -e
 
+# access path so autofs mounts the drive
+file "/vm/drive/btw i use arch/btw i use arch.vdi" 
+
+# check if we can write to the drive
+sudo touch /vm/drive/test
+sudo rm /vm/drive/test
+
 # mount vdi image
 echo "Mounting image..."
 sudo vdfuse -f "/vm/drive/btw i use arch/btw i use arch.vdi" /vm/img
