@@ -2,11 +2,8 @@ gaps inner 3
 
 bindsym $mod+d exec rofi -show run -modi run -width 20 -location 6 -yoffset -20 -lines 7 -columns 2
 
-# window workspaces
-for_window [class="Pulseeffects"] move workspace $ws8
-
 # autostart programs
-exec --no-startup-id pulseeffects
+exec --no-startup-id pulseaudio-equalizer enable
 exec --no-startup-id $HOME/proj/p/g710-pulse/g710_pulse
 exec_always --no-startup-id killall compton; sleep 3; compton
 
