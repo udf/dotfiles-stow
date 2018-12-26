@@ -3,6 +3,9 @@
 
 set -e
 
+# make sure drive is ok
+sudo fsck /dev/external_vm
+
 # access path so autofs mounts the drive
 file "/vm/drive/btw i use arch/btw i use arch.vdi" 
 
