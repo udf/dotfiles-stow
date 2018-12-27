@@ -122,7 +122,7 @@ URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 
 ! perl extensions
-URxvt.perl-ext: default,url-select,keyboard-select
+URxvt.perl-ext: default,selection-to-clipboard,url-select,keyboard-select
 
 ! url-select
 URxvt.keysym.M-u: perl:url-select:select_next
