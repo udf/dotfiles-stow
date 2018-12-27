@@ -128,7 +128,7 @@ label-full = 
 label-full-foreground = ${colors.bgreen}
 label-full-underline = ${colors.bgreen}
 
-format-charging = %{u#fff}<animation-charging> <label-charging>
+format-charging = %{u#fff}<animation-charging> <label-charging>
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
