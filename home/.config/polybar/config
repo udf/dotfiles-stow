@@ -260,6 +260,7 @@ label-muted = 婢 0%
 label-muted-underline = ${colors.bred}
 ramp-volume-0 = 
 ramp-volume-1 = 
+ramp-volume-2 = 
 ramp-volume-3 = 
 
 
