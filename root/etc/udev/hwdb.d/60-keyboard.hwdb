@@ -1,8 +1,9 @@
 # stole this from streetwalrus, if you're reading this, send a frog wearing a tophat
 evdev:atkbd:dmi:*
  KEYBOARD_KEY_3a=esc
-# KEYBOARD_KEY_1=capslock # because muscle memory makes me hit capslock a lot
+ KEYBOARD_KEY_1=capslock
 
 # mapping for Logitech G710(+)
 evdev:input:b0003v046DpC24D*
  KEYBOARD_KEY_70039=esc
+ KEYBOARD_KEY_70029=capslock
