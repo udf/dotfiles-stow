@@ -5,7 +5,7 @@
 #define colour_cur #c5c8c6
 #define colour_bg #12171a
 #define colour_bg_alt #171c21
-#define colour_fg #dce0dd
+#define colour_fg #cccccc
 ! black
 #define colour_0  #3e4147
 #define colour_8  #626873
