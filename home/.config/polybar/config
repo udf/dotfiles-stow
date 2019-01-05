@@ -198,7 +198,7 @@ format-connected-underline = ${colors.green}
 
 [module/downspeed_wlan]
 type = internal/network
-interface = waifu2
+interface = waifu1
 interval = 1
 label-connected =  %downspeed:8%
 format-connected-underline = ${colors.blue}
@@ -206,7 +206,7 @@ format-connected-underline = ${colors.blue}
 
 [module/upspeed_wlan]
 type = internal/network
-interface = waifu2
+interface = waifu1
 interval = 1
 label-connected =  %upspeed:8%
 format-connected-underline = ${colors.blue}
