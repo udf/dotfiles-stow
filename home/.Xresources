@@ -5,7 +5,7 @@
 #define colour_cur #c5c8c6
 #define colour_bg #12171a
 #define colour_bg_alt #171c21
-#define colour_fg #dce0dd
+#define colour_fg #cccccc
 ! black
 #define colour_0  #3e4147
 #define colour_8  #626873
@@ -100,7 +100,7 @@ URxvt*colorUL: colour_ul
 URxvt*scrollColor: colour_19
 
 URxvt*termName: xterm-256color
-URxvt*font: xft:Hack Nerd Font:pixelsize=12:antialias=true:hinting=true
+URxvt*font: xft:Hack Nerd Font:pixelsize=12:antialias=true:hinting=true,xft:DejaVu Sans
 URxvt*boldFont: xft:Hack Nerd Font:bold:pixelsize=12:antialias=true:hinting=true
 URxvt.letterSpace: true
 URxvt.depth: 32
