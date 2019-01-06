@@ -7,7 +7,7 @@
 #define colour_bg_alt #171c21
 #define colour_fg #cccccc
 ! black
-#define colour_0  #3e4147
+#define colour_0  #2d2f33
 #define colour_8  #626873
 ! red
 #define colour_1  #a54242
