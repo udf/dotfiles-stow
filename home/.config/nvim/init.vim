@@ -6,6 +6,7 @@ call plug#end()
 
 
 let mapleader=" "
+set notimeout
 
 
 " Visual settings
