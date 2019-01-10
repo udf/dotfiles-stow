@@ -4,3 +4,6 @@
 [submodule "home/scripts/unisearch"]
 	path = home/scripts/unisearch
 	url = https://github.com/udf/unisearch
+[submodule "home/.config/slop/slop-guides"]
+	path = home/.config/slop/slop-guides
+	url = git@github.com:udf/slop-guides.git

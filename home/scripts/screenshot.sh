@@ -4,9 +4,11 @@ set -e
 
 editor=""
 filename="/tmp/screenshot.png"
+slop=slop
+[ -e ~/.config/slop/guides.frag ] && slop="slop -r guides"
 while getopts ":o:e:s" flags; do
   case $flags in
-    s) sel=$(slop -f "-i %i -g %g") ;;
+    s) sel=$($slop -f "-i %i -g %g") ;;
     o) filename=${OPTARG} ;;
 	e) editor=${OPTARG} ;;
   esac
