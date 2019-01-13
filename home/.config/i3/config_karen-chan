@@ -1,4 +1,4 @@
-gaps inner 3
+gaps inner 0
 
 bindsym $mod+d exec rofi -show run -modi run -width 20 -location 6 -yoffset -20 -lines 7 -columns 2
 bindsym $mod+Ctrl+r exec "DISPLAY=:0 xrandr --output HDMI-1 --mode 800x600;sleep 3;DISPLAY=:0 xrandr --output HDMI-1 --mode 3840x2160;"
@@ -8,4 +8,4 @@ exec --no-startup-id pulseaudio-equalizer enable
 exec --no-startup-id $HOME/proj/p/g710-pulse/g710_pulse
 exec_always --no-startup-id killall compton; sleep 3; compton
 
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 3
