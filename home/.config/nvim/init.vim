@@ -1,8 +1,15 @@
 call plug#begin()
+
+" Visuals
 Plug 'chriskempson/base16-vim'
+
+" Editing
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+
+" Language support
 Plug 'tikhomirov/vim-glsl'
+
 call plug#end()
 
 
