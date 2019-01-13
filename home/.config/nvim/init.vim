@@ -75,6 +75,7 @@ set encoding=utf-8
 set autoindent
 set tabstop=4 shiftwidth=4 expandtab
 "set cino=:0 TODO: figure out what i like here
+setlocal textwidth=100
 au FileType text,markdown setlocal textwidth=80
 au FileType python setlocal textwidth=79
 " Trim trailing spaces
