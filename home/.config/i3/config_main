@@ -191,7 +191,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id telegram-desktop
 exec --no-startup-id firefox
 exec_always --no-startup-id feh --bg-scale $HOME/wallpaper.png
-exec --no-startup-id redshift-gtk -t 5500K:4500K
+exec --no-startup-id redshift-gtk -t 5500K:4500K -l 26.2:28.0
 
 # ----------------------------------------------------------------------------
 
