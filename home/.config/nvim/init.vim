@@ -109,3 +109,5 @@ nnoremap <C-[> <C-t>
 noremap ; :
 " Clear search highligting
 nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+" recursive vimgrep
+nnoremap <leader>s :vimgrep // **/*<left><left><left><left><left><left>
