@@ -46,6 +46,7 @@ set wildmenu
 set splitright splitbelow
 set ignorecase smartcase
 set gdefault
+inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
 
 
 " Editor look
