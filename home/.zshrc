@@ -46,8 +46,21 @@ setopt nomatch
 setopt notify
 
 # prompt
+function do_prompt() {
+    two_line=$(( `print -P '%~' | /usr/bin/wc -m` + 50 >= `/usr/bin/tput cols` ))
+    echo -n '%B%F{magenta}'
+    (( $two_line )) && echo -n '┌'
+    echo -n '['
+    echo -n '%b%F{red}%(?..%? )'
+    echo -n '%B%F{green}%m '
+    echo -n "%b%F{magenta}%~"
+    echo -n '%B]'
+    (( $two_line )) && echo -n "\n└"
+    echo -n '%# %f%b'
+}
+
 setopt promptsubst
-export PROMPT='%B%F{magenta}[%b%F{red}%(?..%? )%B%F{green}%m %b%F{magenta}%50<…<%~%<<%B]%# %f%b'
+export PROMPT='$(do_prompt)'
 export RPROMPT='$(gitprompt-rs zsh)'
 export EDITOR='nvim -p'
 
