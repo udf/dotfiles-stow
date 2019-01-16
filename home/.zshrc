@@ -50,11 +50,7 @@ function do_prompt() {
     two_line=$(( `print -P '%~' | /usr/bin/wc -m` + 50 >= `/usr/bin/tput cols` ))
     echo -n '%B%F{magenta}'
     (( $two_line )) && echo -n '┌'
-    echo -n '['
-    echo -n '%b%F{red}%(?..%? )'
-    echo -n '%B%F{green}%m '
-    echo -n "%b%F{magenta}%~"
-    echo -n '%B]'
+    echo -n '[%b%F{red}%(?..%? )%B%F{green}%m %b%F{magenta}%~%B]'
     (( $two_line )) && echo -n "\n└"
     echo -n '%# %f%b'
 }
