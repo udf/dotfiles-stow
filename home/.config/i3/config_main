@@ -119,6 +119,7 @@ for_window [class="Qtconfig-qt4"] floating enable sticky enable
 for_window [class="Pulseaudio-equalizer-gtk"] floating enable sticky enable
 
 for_window [class="Wine" title="* - Wine desktop"] floating enable
+for_window [class="Steam" title="Friends List"] floating enable move scratchpad
 
 for_window [window_role="gimp-toolbox-color-dialog"] move position mouse
 for_window [class="TelegramDesktop" title="Media viewer"] move absolute position center
