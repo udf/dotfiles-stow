@@ -45,6 +45,8 @@ setopt nomatch
 # report background job status immediately
 setopt notify
 
+WINDOW_TITLE="urxvt"
+
 # prompt
 function do_prompt() {
     two_line=$(( `print -P '%~' | /usr/bin/wc -m` + 50 >= `/usr/bin/tput cols` ))
@@ -53,12 +55,28 @@ function do_prompt() {
     echo -n '[%b%F{red}%(?..%? )%B%F{green}%m %b%F{magenta}%~%B]'
     (( $two_line )) && echo -n "\n└"
     echo -n '%# %f%b'
+
+    # reset window title
+    echo -ne "%{\033]0;$WINDOW_TITLE\007%}"
+}
+
+# set window title to running command
+function preexec() {
+    echo -ne "\033]0;$WINDOW_TITLE: $2\007"
 }
 
 setopt promptsubst
 export PROMPT='$(do_prompt)'
 export RPROMPT='$(gitprompt-rs zsh)'
 export EDITOR='nvim -p'
+
+# copy current command line to clipboard
+zmodload zsh/parameter
+function clip_cmd() {
+    echo -n "$BUFFER" | xclip -sel clip
+}
+zle -N clip_cmd
+bindkey "^X" clip_cmd
 
 # colour aliases
 alias ls='ls --color=auto'
@@ -99,14 +117,6 @@ alias gitc='git commit'
 alias gita='git add'
 alias gitd='git diff'
 alias gitds='git diff --stat'
-
-# copy current command line to clipboard
-zmodload zsh/parameter
-function clip_cmd() {
-    echo -n "$BUFFER" | xclip -sel clip
-}
-zle -N clip_cmd
-bindkey "^X" clip_cmd
 
 # Add Python package binaries to path
 export PATH="$HOME/.local/bin:$PATH"
