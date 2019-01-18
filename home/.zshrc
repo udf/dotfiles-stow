@@ -60,6 +60,14 @@ export PROMPT='$(do_prompt)'
 export RPROMPT='$(gitprompt-rs zsh)'
 export EDITOR='nvim -p'
 
+# copy current command line to clipboard
+zmodload zsh/parameter
+function clip_cmd() {
+    echo -n "$BUFFER" | xclip -sel clip
+}
+zle -N clip_cmd
+bindkey "^X" clip_cmd
+
 # colour aliases
 alias ls='ls --color=auto'
 alias grep='grep --colour=auto'
@@ -99,14 +107,6 @@ alias gitc='git commit'
 alias gita='git add'
 alias gitd='git diff'
 alias gitds='git diff --stat'
-
-# copy current command line to clipboard
-zmodload zsh/parameter
-function clip_cmd() {
-    echo -n "$BUFFER" | xclip -sel clip
-}
-zle -N clip_cmd
-bindkey "^X" clip_cmd
 
 # Add Python package binaries to path
 export PATH="$HOME/.local/bin:$PATH"
