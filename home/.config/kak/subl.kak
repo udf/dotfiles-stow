@@ -1,7 +1,7 @@
 ## Sublime-like stuff
 # select-all (Sublime's alt+f3) -> alt+3/alt+#
 map global normal <a-3> ': select-all *<ret>'
-map global normal <a-#> ': select-all a-*<ret>'
+map global normal <a-#> ': select-all <lt>a-*<gt><ret>'
 # Searches for the current main selection in the buffer, then applies the
 # new selections to the current main selection so that it's unchanged:
 # <space>Z  - clear all except main selection and store it
@@ -16,7 +16,7 @@ define-command -override -params 1 -docstring %{
     Selects everything in the buffer that matches the current
     main selection
 } select-all %{
-    execute-keys %sh{ echo "<space>Z<$1>%s<ret>\"sZz\"s<a-z>a" }
+    execute-keys %sh{ echo "<space>Z$1%s<ret>\"sZz\"s<a-z>a" }
     echo %sh{
         num_spaces=${kak_reg_s//[^ ]}
         num_spaces=${#num_spaces}
