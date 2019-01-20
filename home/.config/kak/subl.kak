@@ -9,7 +9,10 @@ map global normal <a-3> ': select-all<ret>'
 # "sZ - save current selections to s register
 # z - restore original selection, so that it stats as the main selection
 # "s alt+z a - append the selections we saved from the search
-define-command -override select-all %{
+define-command -override -docstring %{
+    Selects everything in the buffer that matches the current
+    main selection
+} select-all %{
     execute-keys '<space>Z*%s<ret>"sZz"s<a-z>a'
     echo %sh{
         num_spaces=${kak_reg_s//[^ ]}
