@@ -25,6 +25,23 @@ hook global BufCreate .* %{
 }
 hook global BufWritePost .* %{ git update-diff }
 
+# Force git gutter to always show by inserting a flag on line 0
+declare-option -hidden line-specs git_diff_flags
+hook global BufSetOption "git_diff_flags=(\d+) ('[^0].*)" %{
+    # Note that -no-hooks doesn't seem to work in this case, so the regex above has been adjusted to
+    # not match when our flag is present
+    # Additionally, it doesn't seem like there's a way to expand %val{...} into multiple args without %sh
+    eval -no-hooks %sh{
+        echo set-option buffer git_diff_flags $kak_hook_param_capture_1 '0|H' $kak_hook_param_capture_2
+    }
+}
+# Same as above, but for when there's no flags
+hook global BufSetOption "git_diff_flags=(\d+)\s?" %{
+    eval -no-hooks %sh{
+        echo set-option buffer git_diff_flags $kak_hook_param_capture_1 '0|H'
+    }
+}
+
 ## Misc bindings
 map global normal <C-w> %{ : new<ret> }
 map global normal <C-y> %{ $ xsel -ib<ret> }
