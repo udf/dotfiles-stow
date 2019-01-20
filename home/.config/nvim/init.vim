@@ -35,6 +35,8 @@ Plug 'tikhomirov/vim-glsl'
 "    \ 'do': 'bash install.sh',
 "    \ }
 
+Plug 'lilydjwg/colorizer'
+
 call plug#end()
 
 " General settings
