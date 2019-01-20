@@ -46,11 +46,22 @@ hook global BufSetOption "git_diff_flags=(\d+)\s?" %{
     }
 }
 
+## Misc commands
+define-command try-comment %{
+    try %{
+        comment-block
+    } catch %{
+        comment-line
+    }
+}
+
 ## Misc bindings
 map global normal <C-w> %{ : new<ret> }
 map global normal <C-y> %{ $ xsel -ib<ret> }
 map global normal <C-p> %{ ! xsel -ob<ret> }
 map global normal <C-v> %{ : set-register /<ret><C-l> }
+# ctrl+/ (https://github.com/mawww/kakoune/issues/2553)
+map global normal <> %{ : try-comment<ret> }
 
 ## Pager use
 def -hidden pager-mode %{
