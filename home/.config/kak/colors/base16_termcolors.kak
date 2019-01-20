@@ -1,84 +1,100 @@
 evaluate-commands %sh{
-    base00='black'
-    base01='bright-green'
-    base02='bright-yellow'
-    base03='bright-black'
-    base04='bright-blue'
-    base05='white'
-    base06='bright-magenta'
-    base07='bright-white'
-    base08='red'
-    base09='bright-red'
-    base0A='yellow'
-    base0B='green'
-    base0C='cyan'
-    base0D='blue'
-    base0E='magenta'
-    base0F='bright-cyan'
+    # black
+    colour_0='rgb:2d2f33'
+    colour_8='rgb:626873'
+    # red
+    colour_1='rgb:a54242'
+    colour_9='rgb:cc6666' #unused
+    # green
+    colour_2='rgb:6c9440'
+    colour_10='rgb:92bd68' #unused
+    # yellow
+    colour_3='rgb:decc5f'
+    colour_11='rgb:f0de74' #unused
+    # blue
+    colour_4='rgb:5f819d'
+    colour_12='rgb:81a2be' #unused
+    # magenta
+    colour_5='rgb:ba70aa'
+    colour_13='rgb:ba8baf' #unused
+    # cyan
+    colour_6='rgb:5e8d87'
+    colour_14='rgb:8abeb7' #unused
+    # white
+    colour_7='rgb:d4d7d9'
+    colour_15='rgb:faffff' #unused
+    # base16 extra
+    colour_16='rgb:ae81ff' #unused
+    colour_17='rgb:ff8d5c'
+    # base16 extra greys
+    colour_18='rgb:1a2026'
+    colour_19='rgb:35434d'
+    colour_20='rgb:9faab3'
+    colour_21='rgb:dae0e6' #unused
 
-    ## code
+## code
     echo "
-        face global value ${base09}
-        face global type ${base0A}
-        face global variable ${base08}
-        face global module ${base0D}
-        face global function ${base0D}
-        face global string ${base0B}
-        face global keyword ${base0E}
+        face global value ${colour_17}
+        face global type ${colour_3}
+        face global variable ${colour_1}
+        face global module ${colour_4}
+        face global function ${colour_4}
+        face global string ${colour_2}
+        face global keyword ${colour_5}
         face global operator default
-        face global attribute ${base0E}
-        face global comment ${base03}
-        face global meta ${base08}
+        face global attribute ${colour_5}
+        face global comment ${colour_8}
+        face global meta ${colour_1}
         face global builtin default
     "
 
     ## markup
     echo "
-        face global title ${base0D}
-        face global header ${base0D}
-        face global bold ${base0A}
-        face global italic ${base0E}
-        face global mono ${base0B}
-        face global block ${base0C}
-        face global link ${base09}
-        face global bullet ${base08}
+        face global title ${colour_4}
+        face global header ${colour_4}
+        face global bold ${colour_3}
+        face global italic ${colour_5}
+        face global mono ${colour_2}
+        face global block ${colour_6}
+        face global link ${colour_17}
+        face global bullet ${colour_1}
         face global list default
     "
 
     ## builtin
     echo "
-        face global Default ${base05}
-        face global PrimarySelection ${base05},${base02}+fg
-        face global SecondarySelection ${base04},${base01}+fg
-        face global PrimaryCursor ${base00},${base05}+fg
-        face global SecondaryCursor ${base00},${base04}+fg
-        face global PrimaryCursorEol ${base00},${base04}+fg
-        face global SecondaryCursorEol ${base00},${base03}+fg
-        face global MenuForeground ${base01},${base05}
-        face global MenuBackground ${base04},${base01}
+        face global Default ${colour_7}
+        face global PrimarySelection ${colour_7},${colour_19}+fg
+        face global SecondarySelection ${colour_20},${colour_18}+fg
+        face global PrimaryCursor ${colour_0},${colour_7}+fg
+        face global SecondaryCursor ${colour_0},${colour_20}+fg
+        face global PrimaryCursorEol ${colour_0},${colour_20}+fg
+        face global SecondaryCursorEol ${colour_0},${colour_8}+fg
+        face global MenuForeground ${colour_18},${colour_7}
+        face global MenuBackground ${colour_20},${colour_18}
         face global MenuInfo default
-        face global Information ${base04},${base01}
-        face global Error ${base01},${base08}
-        face global StatusLine ${base04},${base01}
-        face global StatusLineMode ${base0A}
+        face global Information ${colour_20},${colour_18}
+        face global Error ${colour_18},${colour_1}
+        face global StatusLine ${colour_20},${colour_18}
+        face global StatusLineMode ${colour_3}
         face global StatusLineInfo default
-        face global StatusLineValue ${base0D}
-        face global StatusCursor ${base01},${base04}
-        face global Prompt ${base01},${base04}
-        face global BufferPadding ${base03}
-        face global LineNumbers ${base03},${base01}
-        face global LineNumberCursor ${base04},${base01}
-        face global LineNumbersWrapped ${base01},${base01}
-        face global MatchingChar ${base00},${base04}+fg
-        face global Whitespace ${base03}+f
+        face global StatusLineValue ${colour_4}
+        face global StatusCursor ${colour_18},${colour_20}
+        face global Prompt ${colour_18},${colour_20}
+        face global BufferPadding ${colour_8}
+        face global LineNumbers ${colour_8},${colour_18}
+        face global LineNumberCursor ${colour_20},${colour_18}
+        face global LineNumbersWrapped ${colour_18},${colour_18}
+        face global MatchingChar ${colour_0},${colour_20}+fg
+        face global Whitespace ${colour_8}+f
     "
 
     ## extras
     echo "
-        face global GitDiffFlags default,${base01}
-        face global GitBlame ${base03},${base01}
-        face global LineFlagErrors ${base08},${base01}
-        face global CursorLine default,${base01}
-        face global SearchMatches ${base01},${base0A}+f
+        face global GitDiffFlags default,${colour_18}
+        face global GitBlame ${colour_8},${colour_18}
+        face global LineFlagErrors ${colour_1},${colour_18}
+        face global CursorLine default,${colour_18}
+        face global SearchMatches ${colour_18},${colour_3}+f
     "
 }
