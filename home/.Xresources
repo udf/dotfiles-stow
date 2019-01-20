@@ -1,5 +1,5 @@
 ! Colours
-#define bg_trans 80
+#define bg_trans 90
 ! special
 #define colour_ul #86a2b0
 #define colour_cur #c5c8c6

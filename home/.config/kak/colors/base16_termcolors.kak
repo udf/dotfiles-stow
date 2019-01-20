@@ -10,7 +10,7 @@ evaluate-commands %sh{
     colour_10='rgb:92bd68' #unused
     # yellow
     colour_3='rgb:decc5f'
-    colour_11='rgb:f0de74'
+    colour_11='rgb:f0e396'
     # blue
     colour_4='rgb:5f819d'
     colour_12='rgb:81a2be'
@@ -65,13 +65,13 @@ evaluate-commands %sh{
     echo "
         face global Default ${colour_7}
         face global PrimarySelection ${colour_7},${colour_19}+fg
-        face global SecondarySelection ${colour_20},${colour_18}+fg
+        face global SecondarySelection ${colour_20},${colour_0}+fg
         face global PrimaryCursor ${colour_0},${colour_15}+fg
         face global SecondaryCursor ${colour_0},${colour_20}+fg
         face global PrimaryCursorEol ${colour_0},${colour_20}+fg
         face global SecondaryCursorEol ${colour_0},${colour_8}+fg
-        face global MenuForeground ${colour_18},${colour_7}
-        face global MenuBackground ${colour_20},${colour_18}
+        face global MenuForeground ${colour_19},${colour_15}
+        face global MenuBackground ${colour_21},${colour_19}
         face global MenuInfo default
         face global Information ${colour_20},${colour_18}
         face global Error ${colour_18},${colour_1}
