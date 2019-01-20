@@ -6,6 +6,8 @@ eval %sh{
     "
 }
 
+source "%val{config}/subl.kak"
+
 ## General options
 set global scrolloff 3,3
 set global startup_info_version -1
