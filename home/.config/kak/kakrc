@@ -62,6 +62,7 @@ map global normal <C-p> %{ ! xsel -ob<ret> }
 map global normal <C-v> %{ : set-register /<ret><C-l> }
 # ctrl+/ (https://github.com/mawww/kakoune/issues/2553)
 map global normal <> %{ : try-comment<ret> }
+map global normal <C-d> %{ xyp }
 
 ## Pager use
 def -hidden pager-mode %{
