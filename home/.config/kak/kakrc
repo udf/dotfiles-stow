@@ -6,7 +6,7 @@ eval %sh{
     "
 }
 
-source '%val{config}/subl.kak'
+source "%val{config}/subl.kak"
 
 ## General options
 set global scrolloff 3,3
