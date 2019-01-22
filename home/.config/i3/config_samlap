@@ -9,7 +9,7 @@ bindsym XF86MonBrightnessUp exec "xbacklight -inc 3"
 
 # window workspaces
 for_window [class="TelegramDesktop"] move workspace $ws1
-for_window [instance="term_music"] move workspace $ws1
+for_window [instance="term_htop"] move workspace $ws1
 
 for_window [class="Subl3" title=".+"] move workspace $ws2
 for_window [class="Subl3" window_role="GtkFileChooserDialog"] move workspace current
@@ -22,5 +22,5 @@ for_window [title="GIMP Startup"] move workspace $ws4
 for_window [class="Subl3" title=".+\(blag\) - Sublime Text.+"] focus; floating enable; move scratchpad; scratchpad show; move position 964 24; resize set 952 1052; move scratchpad
 
 # autostart programs
-exec --no-startup-id urxvt -name term_music -e sh -c 'htop; zsh'
+exec --no-startup-id ZSH_RUN=htop urxvt -name term_htop
 exec --no-startup-id subl3
