@@ -85,3 +85,8 @@ command = "dart_language_server"
 filetypes = ["d", "di"]
 roots = [".git", "dub.sdl", "dub.json"]
 command = "dls"
+
+[language.php]
+filetypes = ["php"]
+roots = ["composer.json"]
+command = "php-language-server"
