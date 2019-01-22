@@ -97,4 +97,10 @@ evaluate-commands %sh{
         face global CursorLine default,${colour_18}
         face global SearchMatches ${colour_18},${colour_11}+f
     "
+
+    ## lsp
+    echo "
+        face global DiagnosticError ${colour_0},${colour_1}+bF
+        face global DiagnosticWarning ${colour_3}+bF
+    "
 }
