@@ -27,7 +27,7 @@ evaluate-commands %sh{
     colour_16='rgb:ae81ff' #unused
     colour_17='rgb:ff8d5c'
     # base16 extra greys
-    colour_18='rgb:1a2026'
+    colour_18='rgb:242d35'
     colour_19='rgb:35434d'
     colour_20='rgb:9faab3'
     colour_21='rgb:dae0e6'
