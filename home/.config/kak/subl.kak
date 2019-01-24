@@ -26,15 +26,25 @@ define-command -override -params 1 -docstring %{
 }
 
 # select-next/previous (Sublime's ctrl+d) -> alt+v/V
-map global normal <a-v> ': select-next<ret>'
-map global normal <a-V> ': select-previous<ret>'
+map global normal <a-v> ': select-next-word<ret>'
+map global normal <a-V> ': select-previous-word<ret>'
 define-command -override -docstring %{
     Selects the next match of the current main selection
 } select-next %{
-    execute-keys *N
+    execute-keys <a-*>N
 }
 define-command -override -docstring %{
     Selects the previous match of the current main selection
 } select-previous %{
+    execute-keys <a-*><a-N>
+}
+define-command -override -docstring %{
+    Selects the next word match of the current main selection
+} select-next-word %{
+    execute-keys *N
+}
+define-command -override -docstring %{
+    Selects the previous word match of the current main selection
+} select-previous-word %{
     execute-keys *<a-N>
 }
