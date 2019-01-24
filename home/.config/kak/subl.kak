@@ -24,3 +24,17 @@ define-command -override -params 1 -docstring %{
         [ $num_spaces != 1 ] && echo es
     }
 }
+
+# select-next/previous (Sublime's ctrl+d) -> alt+v/V
+map global normal <a-v> ': select-next<ret>'
+map global normal <a-V> ': select-previous<ret>'
+define-command -override -docstring %{
+    Selects the next match of the current main selection
+} select-next %{
+    execute-keys *N
+}
+define-command -override -docstring %{
+    Selects the previous match of the current main selection
+} select-previous %{
+    execute-keys *<a-N>
+}
