@@ -8,6 +8,11 @@ eval %sh{
 
 source "%val{config}/plugins/plug.kak/rc/plug.kak"
 
+plug "andreyorst/smarttab.kak" %{
+    set-option global tabstop 4
+    set-option global softtabstop 4
+}
+
 source "%val{config}/subl.kak"
 
 ## General options
@@ -27,6 +32,7 @@ hook global WinCreate .* %{
     add-highlighter window/number-lines number-lines -hlcursor -separator ' '
     try %{ lsp-diagnostic-lines-enable window }
     git show-diff
+    expandtab
 }
 hook global BufWritePost .* %{ git update-diff }
 
