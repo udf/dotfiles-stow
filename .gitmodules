@@ -7,3 +7,6 @@
 [submodule "home/.config/slop/slop-guides"]
 	path = home/.config/slop/slop-guides
 	url = git@github.com:udf/slop-guides.git
+[submodule "home/.config/kak/plugins/plug.kak"]
+	path = home/.config/kak/plugins/plug.kak
+	url = git@github.com:andreyorst/plug.kak.git
