@@ -12,6 +12,7 @@ plug "andreyorst/smarttab.kak" %{
     set-option global tabstop 4
     set-option global softtabstop 4
 }
+plug "alexherbo2/auto-pairs.kak"
 
 source "%val{config}/subl.kak"
 
@@ -33,6 +34,7 @@ hook global WinCreate .* %{
     try %{ lsp-diagnostic-lines-enable window }
     git show-diff
     expandtab
+    auto-pairs-enable
 }
 hook global BufWritePost .* %{ git update-diff }
 
@@ -70,6 +72,9 @@ map global normal <C-v> ': set-register /<ret><C-l>'
 # ctrl+/ (https://github.com/mawww/kakoune/issues/2553)
 map global normal <> ': try-comment<ret>'
 map global normal <C-d> 'xyp'
+
+## Plugin Bindings
+map global user s -docstring 'Surround' ': auto-pairs-surround<ret>'
 
 ## Pager use
 def -hidden pager-mode %{
