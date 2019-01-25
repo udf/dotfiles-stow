@@ -58,9 +58,9 @@ hook global BufSetOption 'git_diff_flags=(\d+)\s?' %{
 ## Misc commands
 define-command try-comment %{
     try %{
-        comment-block
-    } catch %{
         comment-line
+    } catch %{
+        comment-block
     }
 }
 
