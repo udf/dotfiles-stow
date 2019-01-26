@@ -110,12 +110,7 @@ alias gitac='git add -u && git commit'
 # shorthands
 alias subl='subl3'
 alias p='pacman'
-function k() {
-    if [[ -z $(kak -l | grep main) ]]; then
-        kak -d -s main
-    fi
-    kak -c main $@
-}
+alias k='kak'
 alias v='k'
 alias valgrindlc='valgrind --leak-check=full --show-leak-kinds=all'
 alias sv='sudo --preserve-env=HOME nvim'
