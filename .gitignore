@@ -1,1 +1,3 @@
 home/.config/i3/config
+home/.config/kak/plugins/*
+!home/.config/kak/plugins/plug.kak/**
