@@ -122,6 +122,9 @@ alias gitds='git diff --stat'
 # Add Python package binaries to path
 export PATH="$HOME/.local/bin:$PATH"
 
+# Add Cargo package binaries to path
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # history search plugin
 source ~/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=green,fg=white,bold'
