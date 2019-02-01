@@ -1,0 +1,15 @@
+gaps inner 5
+
+bindsym $mod+d exec rofi -show run -modi run rofi -show run -modi run -kb-row-select "Tab" -kb-row-tab "" -theme $HOME/.config/rofi/dmenu.rasi
+
+# window workspaces
+for_window [class="TelegramDesktop"] move workspace $ws1
+for_window [instance="term_htop"] move workspace $ws1
+
+for_window [class="Firefox"] move workspace $ws3
+
+for_window [class="Gimp" window_role="gimp-image-window-1"] move workspace $ws4
+for_window [title="GIMP Startup"] move workspace $ws4
+
+# autostart programs
+exec --no-startup-id ZSH_RUN=htop urxvt -name term_htop
