@@ -4,6 +4,11 @@ xset -b
 xset s off 
 xset -dpms
 
+export TERMINAL="urxvt"
+export PATH="$HOME/scripts:$PATH"
+export QT_QPA_PLATFORMTHEME="qt5ct"
+export GDK_SCALE=1
+
 xrdb ~/.Xresources
 $HOME/scripts/gen_config.sh
 
