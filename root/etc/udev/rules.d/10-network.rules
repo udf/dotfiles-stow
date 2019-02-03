@@ -1,2 +1,3 @@
 SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="d4:3d:7e:f3:82:1e", NAME="net0"
 SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="00:06:4f:7f:a0:9b", NAME="net0"
+SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="00:15:5d:0e:98:00", NAME="net0"

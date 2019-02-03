@@ -59,6 +59,10 @@ modules-center = volume date
 modules-right = cpu memory filesystem downspeed upspeed
 
 
+[bar/archbb]
+inherit = bar/arch-vm
+
+
 [bar/karen-chan]
 inherit = main_bar
 bottom = true
