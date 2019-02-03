@@ -11,5 +11,6 @@ while pgrep -x polybar >/dev/null; do sleep 1; done
 # (happens on hyper-v with xrdp)
 while :; do
     polybar "$(hostname)"
+    [[ $? != 1 ]] && break
     sleep 3
 done
