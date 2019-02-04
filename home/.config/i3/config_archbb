@@ -1,4 +1,5 @@
 gaps inner 5
+for_window [class="^.*"] border pixel 2
 
 bindsym $mod+d exec rofi -show run -modi run rofi -show run -modi run -kb-row-select "Tab" -kb-row-tab "" -theme $HOME/.config/rofi/dmenu.rasi
 
