@@ -23,10 +23,12 @@ case "$(hostname)" in
     # let other scripts check if we're at home
     DESKTOP_KEY="AAAAC3NzaC1lZDI1NTE5AAAAIF0496p9x/zRn/f2ePFOV5H7xjlBltqQmVsZ6kgbM6pc" 
     ssh-keyscan -t ed25519 192.168.2.2 | grep $DESKTOP_KEY && export VM_IS_HOME=1
+    ;;
 "archbb")
     export DOTNET_ROOT=/opt/dotnet
     export MSBuildSDKsPath=$DOTNET_ROOT/sdk/$(${DOTNET_ROOT}/dotnet --version)/Sdks
     export PATH=${PATH}:${DOTNET_ROOT}
+    ;;
 esac
 
 numlockx &
