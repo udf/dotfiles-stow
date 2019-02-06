@@ -61,7 +61,7 @@ modules-right = cpu memory filesystem downspeed upspeed
 
 [bar/archbb]
 inherit = bar/arch-vm
-modules-left = i3 xwindow
+modules-left = battery i3 xwindow
 
 
 [bar/karen-chan]
