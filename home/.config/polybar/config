@@ -61,7 +61,7 @@ modules-right = cpu memory filesystem downspeed upspeed
 
 [bar/archbb]
 inherit = bar/arch-vm
-modules-left = battery i3 xwindow
+modules-right = cpu memory filesystem downspeed upspeed battery battery_rem
 
 
 [bar/karen-chan]
@@ -120,6 +120,14 @@ tail = true
 [module/musicinfo_samlap]
 inherit = module/musicinfo
 exec = ~/.config/polybar/music.py 75
+
+
+[module/battery_rem]
+type = custom/script
+exec = ~/.config/polybar/acpi_remaining.sh 105
+label = %output%
+format = %{u#ffda00}<label>
+tail = true
 
 
 [module/battery]
