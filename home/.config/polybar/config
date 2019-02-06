@@ -127,7 +127,7 @@ exec = ~/.config/polybar/music.py 75
 type = custom/script
 exec = ~/.config/polybar/acpi_remaining.sh 105
 label = %output%
-format = %{u#ffda00}<label>
+format = <label>
 tail = true
 
 
