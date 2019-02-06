@@ -5,5 +5,5 @@ do
         s/.+ (.+) remaining/%{u#ffda00}\1/;
         s/.+ (.+) until charged/%{u#00ff00}\1/
     "
-    sleep 10
+    sleep 3
 done
