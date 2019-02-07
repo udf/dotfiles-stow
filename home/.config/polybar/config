@@ -62,7 +62,7 @@ modules-right = cpu memory filesystem downspeed upspeed
 [bar/archbb]
 inherit = bar/arch-vm
 modules-left = i3 xwindow
-modules-right = cpu memory filesystem downspeed upspeed battery battery_rem
+modules-right = cpu memory filesystem downspeed upspeed battery_0 battery_rem
 
 
 [bar/karen-chan]
@@ -160,6 +160,11 @@ ramp-capacity-6 = %{u#daff00}%{F#daff00}%{F-}
 ramp-capacity-7 = %{u#91ff00}%{F#91ff00}%{F-}
 ramp-capacity-8 = %{u#48ff00}%{F#48ff00}%{F-}
 ramp-capacity-9 = %{u#00ff00}%{F#00ff00}%{F-}
+
+
+[module/battery_0]
+inherit = module/battery
+battery = BAT0
 
 
 [module/i3]
