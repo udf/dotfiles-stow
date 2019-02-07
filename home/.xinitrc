@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+xrandr --auto
+
 xset -b
 xset s off 
 xset -dpms
