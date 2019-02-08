@@ -62,7 +62,7 @@ modules-right = cpu memory filesystem downspeed upspeed
 [bar/archbb]
 inherit = bar/arch-vm
 modules-left = i3 xwindow
-modules-right = cpu memory filesystem downspeed upspeed battery_0 battery_rem
+modules-right = downspeed upspeed downspeed_wlan upspeed_wlan cpu memory filesystem battery_0 battery_rem
 
 
 [bar/karen-chan]
