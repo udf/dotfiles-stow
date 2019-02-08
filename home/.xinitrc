@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+xrandr --auto
+
 xset -b
 xset s off 
 xset -dpms
@@ -7,6 +9,7 @@ xset -dpms
 export TERMINAL="urxvt"
 export PATH="$HOME/scripts:$PATH"
 export QT_QPA_PLATFORMTHEME="qt5ct"
+export QT_STYLE_OVERRIDE=qt5ct-style
 export GDK_SCALE=1
 
 xrdb ~/.Xresources
@@ -28,6 +31,7 @@ case "$(hostname)" in
     export DOTNET_ROOT=/opt/dotnet
     export MSBuildSDKsPath=$DOTNET_ROOT/sdk/$(${DOTNET_ROOT}/dotnet --version)/Sdks
     export PATH=${PATH}:${DOTNET_ROOT}
+    nm-applet &
     ;;
 esac
 

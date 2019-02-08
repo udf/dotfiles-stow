@@ -121,6 +121,8 @@ for_window [class="Qtconfig-qt4"] floating enable sticky enable
 for_window [class="Pulseaudio-equalizer-gtk"] floating enable sticky enable
 for_window [instance="VirtualBox Machine" title="btw i use arch*"] floating enable
 
+for_window [class="Nm-connection-editor"] floating enable
+
 for_window [class="Wine" title="* - Wine desktop"] floating enable
 
 # Steam
