@@ -40,3 +40,6 @@ user_pref("network.protocol-handler.expose.magnet", false);
 
 // sync more often (seconds)
 user_pref("services.sync.scheduler.activeInterval", 60);
+
+// disable shitty ctrl+tab carousel
+user_pref("browser.ctrlTab.recentlyUsedOrder", false);
