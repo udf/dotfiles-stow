@@ -32,6 +32,7 @@ case "$(hostname)" in
     export MSBuildSDKsPath=$DOTNET_ROOT/sdk/$(${DOTNET_ROOT}/dotnet --version)/Sdks
     export PATH=${PATH}:${DOTNET_ROOT}
     nm-applet &
+    xss-lock --transfer-sleep-lock -- transfer-sleep-lock.sh &
     ;;
 esac
 

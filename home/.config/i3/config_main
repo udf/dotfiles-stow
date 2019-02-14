@@ -73,6 +73,7 @@ bindsym $mod+Ctrl+h exec urxvt -e htop
 bindsym $mod+b exec urxvt -e ranger
 bindsym $mod+n exec firefox
 bindsym $mod+u exec $HOME/scripts/unisearch/unisearch.sh
+bindsym $mod+Escape exec $HOME/scripts/fancy_lock.sh
 
 
 # window management
