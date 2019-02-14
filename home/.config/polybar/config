@@ -125,7 +125,7 @@ exec = ~/.config/polybar/music.py 75
 
 [module/battery_rem]
 type = custom/script
-exec = ~/.config/polybar/acpi_remaining.sh 105
+exec = ~/.config/polybar/acpi_remaining.sh
 label = %output%
 format = <label>
 tail = true
