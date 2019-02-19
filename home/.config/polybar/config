@@ -102,7 +102,6 @@ font-4 = Noto Sans Mono CJK TC:pixelsize=9;0
 
 tray-position = right
 tray-padding = 5
-tray-transparent = false
 tray-maxsize = 18
 tray-detached = false
 tray-background = ${colors.background}
