@@ -100,8 +100,10 @@ URxvt*colorUL: colour_ul
 URxvt*scrollColor: colour_19
 
 URxvt*termName: xterm-256color
-URxvt*font: xft:Hack Nerd Font:pixelsize=12:antialias=true:hinting=true,xft:DejaVu Sans
-URxvt*boldFont: xft:Hack Nerd Font:bold:pixelsize=12:antialias=true:hinting=true
+URxvt*font: xft:Hack Nerd Font:pixelsize=12:antialias=true:hinting=true,\
+    xft:DejaVu Sans,\
+    xft:Kochi Gothic,\
+    xft:Baekmuk Gulim
 URxvt.letterSpace: true
 URxvt.depth: 32
 URxvt*cursorBlink: true
