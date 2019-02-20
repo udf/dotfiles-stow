@@ -116,6 +116,10 @@ URxvt*scrollTtyKeypress: true
 URxvt*saveLines: 10000
 URxvt*scrollTtyOutput: false
 
+! My shell outputs a bell character when commands finish
+! This is done so that I can see when long running commands finish
+URxvt*urgentOnBell: true
+
 ! Normal copy-paste keybindings without perls
 URxvt.iso14755: false
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard

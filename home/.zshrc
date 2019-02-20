@@ -65,6 +65,11 @@ function preexec() {
     echo -ne "\033]0;$WINDOW_TITLE: $2\007"
 }
 
+# Issue a BELL when a command is done
+function precmd() {
+    echo -ne '\a'
+}
+
 setopt promptsubst
 export PROMPT='$(do_prompt)'
 export RPROMPT='$(gitprompt-rs zsh)'
