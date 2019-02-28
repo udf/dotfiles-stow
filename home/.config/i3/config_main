@@ -47,13 +47,13 @@ bindsym $mod+Mod1+s exec --no-startup-id "playerctl play-pause"
 bindsym $mod+Mod1+x exec --no-startup-id "playerctl next"
 bindsym $mod+Mod1+z exec --no-startup-id "playerctl previous"
 
-bindsym $mod+XF86AudioRaiseVolume exec "playerctl position 2+"
-bindsym $mod+XF86AudioLowerVolume exec "playerctl position 2-"
-bindsym $mod+Ctrl+XF86AudioRaiseVolume exec "playerctl volume 0.01+"
-bindsym $mod+Ctrl+XF86AudioLowerVolume exec "playerctl volume 0.01-"
-bindsym XF86AudioPlay exec "playerctl play-pause"
-bindsym XF86AudioNext exec "playerctl next"
-bindsym XF86AudioPrev exec "playerctl previous"
+bindsym $mod+XF86AudioRaiseVolume exec --no-startup-id "playerctl position 2+"
+bindsym $mod+XF86AudioLowerVolume exec --no-startup-id "playerctl position 2-"
+bindsym $mod+Ctrl+XF86AudioRaiseVolume exec --no-startup-id "playerctl volume 0.01+"
+bindsym $mod+Ctrl+XF86AudioLowerVolume exec --no-startup-id "playerctl volume 0.01-"
+bindsym XF86AudioPlay exec --no-startup-id "playerctl play-pause"
+bindsym XF86AudioNext exec --no-startup-id "playerctl next"
+bindsym XF86AudioPrev exec --no-startup-id "playerctl previous"
 
 
 # screenshots
@@ -64,16 +64,16 @@ bindsym --release Ctrl+Print exec --no-startup-id screenshot.sh -s -e "gimp"
 
 
 # program keys
-bindsym $mod+c exec i3-sensible-terminal
-bindsym $mod+Ctrl+c exec dup_term.sh
-bindsym $mod+Ctrl+n --release exec "killall dunst; exec notify-send -a i3 'restarted dunst'"
+bindsym $mod+c exec --no-startup-id i3-sensible-terminal
+bindsym $mod+Ctrl+c exec --no-startup-id dup_term.sh
+bindsym $mod+Ctrl+n --release exec --no-startup-id "killall dunst; exec notify-send -a i3 'restarted dunst'"
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
-bindsym $mod+Ctrl+a exec "killall -q pavucontrol || pavucontrol"
-bindsym $mod+Ctrl+h exec urxvt -e htop
-bindsym $mod+b exec urxvt -e ranger
-bindsym $mod+n exec firefox
-bindsym $mod+u exec $HOME/scripts/unisearch/unisearch.sh
-bindsym $mod+Escape exec $HOME/scripts/fancy_lock.sh
+bindsym $mod+Ctrl+a exec --no-startup-id "killall -q pavucontrol || pavucontrol"
+bindsym $mod+Ctrl+h exec --no-startup-id urxvt -e htop
+bindsym $mod+b exec --no-startup-id urxvt -e ranger
+bindsym $mod+n exec --no-startup-id firefox
+bindsym $mod+u exec --no-startup-id $HOME/scripts/unisearch/unisearch.sh
+bindsym $mod+Escape exec --no-startup-id $HOME/scripts/fancy_lock.sh
 
 
 # window management
