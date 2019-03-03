@@ -10,7 +10,7 @@ from socket import socket, AF_UNIX, SOCK_STREAM
 import time
 
 import gi
-gi.require_version('Playerctl', '1.0')
+gi.require_version('Playerctl', '2.0')
 from gi.repository import Playerctl, GLib
 
 
