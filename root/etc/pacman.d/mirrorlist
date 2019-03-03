@@ -5,7 +5,7 @@
 ##
 
 # Delta repository
-Server = http://archlinux.za.mirror.allworldit.com/archlinux-deltarepo/$repo/os/$arch
+# Server = http://archlinux.za.mirror.allworldit.com/archlinux-deltarepo/$repo/os/$arch
 
 # South Africa
 Server = http://za.mirror.archlinux-br.org/$repo/os/$arch
