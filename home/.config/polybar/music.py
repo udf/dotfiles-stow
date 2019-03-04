@@ -70,11 +70,11 @@ def print_status(player=None, metadata=None):
 
     if player is None:
         player = Playerctl.Player()
-        player.on('play', on_change)
-        player.on('pause', on_change)
-        player.on('stop', on_change)
-        player.on('exit', on_change)
-        player.on('metadata', on_change)
+        player.connect('play', on_change)
+        player.connect('pause', on_change)
+        player.connect('stop', on_change)
+        player.connect('exit', on_change)
+        player.connect('metadata', on_change)
 
     try:
         if metadata is None:
