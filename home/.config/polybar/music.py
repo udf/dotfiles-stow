@@ -100,7 +100,7 @@ def print_status(player=None, metadata=None):
 
 
 def on_change(player, metadata=None):
-    print_status(player)
+    print_status(player, metadata)
 
 
 GLib.timeout_add(500, print_status)
