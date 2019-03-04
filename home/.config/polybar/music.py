@@ -4,10 +4,6 @@ Enhanced version of music.sh, showing a lot more information and with a
 continuous output, which avoids burning CPU with unnecessary script restarts.
 """
 import sys
-import os
-import re
-from socket import socket, AF_UNIX, SOCK_STREAM
-import time
 
 import gi
 gi.require_version('Playerctl', '2.0')
@@ -18,29 +14,6 @@ output_width = int(sys.argv[1]) if len(sys.argv) > 1 else 100
 
 current_player = None
 prev_output = None
-
-
-# Based on https://github.com/kiike/cmus-remote/blob/master/backend.py
-def cmus_get_filename():
-    s = socket(AF_UNIX, SOCK_STREAM)
-    s.connect(cmus_get_filename.socket_path)
-
-    if not s.send(b'status\n'):
-        return 'error getting filename'
-
-    recv = s.recv(4096)
-    s.close()
-
-    result = re.findall(r'file (.+)\n', recv.decode('utf-8'))
-    if not result:
-        return ''
-
-    return os.path.splitext(os.path.basename(result[0]))[0]
-
-
-cmus_get_filename.socket_path = os.path.join(
-    '/run', 'user', str(os.getuid()), 'cmus-socket'
-)
 
 
 def ljust_clip(string, n):
@@ -82,10 +55,7 @@ def get_trackname(player, metadata):
     artist = ', '.join(metadata.get('xesam:artist', ''))
 
     if not artist:
-        if not title and 'cmus' in player.get_property('player-name'):
-            return cmus_get_filename()
-        else:
-            return title
+        return title
 
     return '{} - {}'.format(artist, title)
 
