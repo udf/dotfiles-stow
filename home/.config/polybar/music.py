@@ -12,7 +12,6 @@ from gi.repository import Playerctl, GLib
 
 output_width = int(sys.argv[1]) if len(sys.argv) > 1 else 100
 
-current_player = None
 prev_output = None
 
 
@@ -69,18 +68,15 @@ def print_status(player=None, metadata=None):
         if data:
             output += fmt.format(data)
 
-    global current_player
     if player is None:
         player = Playerctl.Player()
-    current_player = player
-
-    try:
         player.on('play', on_change)
         player.on('pause', on_change)
         player.on('stop', on_change)
         player.on('exit', on_change)
         player.on('metadata', on_change)
 
+    try:
         if metadata is None:
             metadata = player.get_property('metadata').unpack()
 
@@ -104,7 +100,7 @@ def print_status(player=None, metadata=None):
 
 
 def on_change(player, metadata=None):
-    print_status()
+    print_status(player)
 
 
 GLib.timeout_add(500, print_status)
