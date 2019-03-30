@@ -51,9 +51,12 @@ bindsym $mod+XF86AudioRaiseVolume exec --no-startup-id "playerctlctlctl position
 bindsym $mod+XF86AudioLowerVolume exec --no-startup-id "playerctlctlctl position -2 0"
 bindsym $mod+Ctrl+XF86AudioRaiseVolume exec --no-startup-id "playerctlctlctl volume 0.01 0"
 bindsym $mod+Ctrl+XF86AudioLowerVolume exec --no-startup-id "playerctlctlctl volume -0.01 0"
-bindsym XF86AudioPlay exec --no-startup-id "playerctlctlctl play-pause"
+bindsym XF86AudioPlay exec --no-startup-id "playerctlctlctl play_pause"
 bindsym XF86AudioNext exec --no-startup-id "playerctlctlctl next"
 bindsym XF86AudioPrev exec --no-startup-id "playerctlctlctl previous"
+
+bindsym $mod+XF86AudioNext exec --no-startup-id "playerctlctlctl next_player"
+bindsym $mod+XF86AudioPrev exec --no-startup-id "playerctlctlctl previous_player"
 
 
 # screenshots
