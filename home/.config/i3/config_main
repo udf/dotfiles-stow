@@ -43,7 +43,7 @@ bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute @DEFAULT_SINK@ t
 # media player keys
 bindsym $mod+Mod1+f exec --no-startup-id "playerctlctlctl volume 0.01 0"
 bindsym $mod+Mod1+v exec --no-startup-id "playerctlctlctl volume -0.01 0"
-bindsym $mod+Mod1+s exec --no-startup-id "playerctlctlctl play-pause"
+bindsym $mod+Mod1+s exec --no-startup-id "playerctlctlctl play_pause"
 bindsym $mod+Mod1+x exec --no-startup-id "playerctlctlctl next"
 bindsym $mod+Mod1+z exec --no-startup-id "playerctlctlctl previous"
 
