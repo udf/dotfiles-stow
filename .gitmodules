@@ -10,3 +10,6 @@
 [submodule "home/.config/kak/plugins/plug.kak"]
 	path = home/.config/kak/plugins/plug.kak
 	url = git@github.com:andreyorst/plug.kak.git
+[submodule "home/.config/polybar/playerctlctl"]
+	path = home/.config/polybar/playerctlctl
+	url = git@github.com:udf/playerctlctl.git
