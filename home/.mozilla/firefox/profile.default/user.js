@@ -32,7 +32,7 @@ user_pref("full-screen-api.warning.timeout", 0);
 user_pref("security.ssl.disable_session_identifiers", true);
 
 // go fast
-user_pref("gfx.webrender.all", true);
+user_pref("gfx.webrender.all", false);
 user_pref("layers.acceleration.force-enabled", true);
 
 // enable magnet links
