@@ -71,7 +71,7 @@ bottom = true
 
 line-size = 2
 
-padding-left = 10
+padding-left = 5
 padding-right = 105
 
 modules-left = musicinfo i3 xwindow
@@ -111,7 +111,7 @@ wm-restack = i3
 
 [module/musicinfo]
 type = custom/script
-exec = ~/.config/polybar/playerctlctl/playerctlctl.py 105
+exec = ~/.config/polybar/playerctlctl/playerctlctl.py 120
 label = %output%
 format = <label>
 tail = true
