@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # usage: screenshot [-s] [-o filename] [-e /path/to/image_editor]
 set -e
 
@@ -15,5 +15,5 @@ while getopts ":o:e:s" flags; do
 done
 
 shotgun $sel $filename
-[[ ! -z $editor ]] && $editor "$filename"
+[[ -n $editor ]] && $editor "$filename"
 xclip -se c -t image/png "$filename"
