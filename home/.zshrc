@@ -137,6 +137,9 @@ HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='bg=red,fg=white,bold'
 bindkey "\e[A"  history-substring-search-up
 bindkey "\e[B"  history-substring-search-down
 
+# syntax highlighting plugin
+source ~/zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+
 # run program, so that when it quits we get dropped into a shell
 if [[ -v ZSH_RUN ]]; then
     $ZSH_RUN
