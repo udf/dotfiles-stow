@@ -17,5 +17,5 @@
 	path = home/zsh/fast-syntax-highlighting
 	url = git@github.com:zdharma/fast-syntax-highlighting.git
 [submodule "fast-syntax-highlighting"]
-	path = fast-syntax-highlighting
+	path = home/zsh/fast-syntax-highlighting
 	url = git@github.com:zdharma/fast-syntax-highlighting.git
