@@ -133,7 +133,7 @@ URxvt.perl-ext: default,selection-to-clipboard,url-select,keyboard-select,resize
 ! url-select
 URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.url-select.autocopy: true
-URxvt.url-select.launcher: xdg-open
+URxvt.url-select.launcher: firefox
 URxvt.url-select.underline: true
 
 ! keyboard-select
