@@ -111,7 +111,7 @@ wm-restack = i3
 
 [module/musicinfo]
 type = custom/script
-exec = ~/.config/polybar/playerctlctl/playerctlctl.py 120
+exec = ~/.config/polybar/playerctlctl.sh 120
 label = %output%
 format = <label>
 tail = true
@@ -119,7 +119,7 @@ tail = true
 
 [module/musicinfo_samlap]
 inherit = module/musicinfo
-exec = ~/.config/polybar/playerctlctl/playerctlctl.py 75
+exec = ~/.config/polybar/playerctlctl.sh 75
 
 
 [module/battery_rem]
