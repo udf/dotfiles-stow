@@ -37,6 +37,7 @@ case "$(hostname)" in
     ;;
 esac
 
+xbanish &
 numlockx &
 dunst &
 i3
