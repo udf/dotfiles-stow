@@ -34,7 +34,7 @@ bindkey "\e[1;5E" backward-kill-word
 TIMEFMT=$'\nreal\t%*Es\nuser\t%*Us\nsys\t%*Ss'
 
 # make *-word commands not match these characters
-WORDCHARS='*?_[]~!#$%^(){}<>'
+# WORDCHARS='*?_[]~!#$%^(){}<>'
 
 # automatically cd on dir name
 setopt autocd
