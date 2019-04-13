@@ -34,6 +34,8 @@ user_pref("security.ssl.disable_session_identifiers", true);
 // go fast
 user_pref("gfx.webrender.all", false);
 user_pref("layers.acceleration.force-enabled", true);
+user_pref("gfx.canvas.azure.accelerated", true);
+user_pref("gfx.xrender.enabled", true);
 
 // enable magnet links
 user_pref("network.protocol-handler.expose.magnet", false);
