@@ -78,7 +78,7 @@ export EDITOR='nvim -p'
 # copy current command line to clipboard
 zmodload zsh/parameter
 function clip_cmd() {
-    echo -n "$BUFFER" | xclip -sel clip
+    echo -nE "$BUFFER" | xclip -sel clip
 }
 zle -N clip_cmd
 bindkey "^X" clip_cmd
