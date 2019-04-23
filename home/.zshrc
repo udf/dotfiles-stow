@@ -62,7 +62,7 @@ function do_prompt() {
 
 # set window title to running command
 function preexec() {
-    echo -ne "\033]0;$WINDOW_TITLE: $2\007"
+    printf '%s' $'\033]0;' "$WINDOW_TITLE: $2" $'\007'
 }
 
 # Issue a BELL when a command is done
