@@ -127,6 +127,10 @@ URxvt.iso14755: false
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 
+! Paste but quoted for zsh
+! https://xkcd.com/1638
+URxvt.keysym.Shift-Control-F: eval:my$x=`xsel -ob`;$x=~s/\\\\\\\\/\\\\\\\\\\\\\\\\/g;$x=~s/'/\\\\\\\\'/g;$self->tt_paste("\\$'${x}'");
+
 ! perl extensions
 URxvt.perl-ext: default,selection-to-clipboard,url-select,keyboard-select,resize-font
 
