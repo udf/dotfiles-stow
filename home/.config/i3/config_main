@@ -114,6 +114,8 @@ bindsym $mod+Shift+space focus mode_toggle
 bindsym $mod+Shift+z move scratchpad
 bindsym $mod+z scratchpad show
 
+bindsym $mod+Shift+w exec xdotool getactivewindow windowunmap windowmap
+
 # specific window management
 # auto focus gimp when urgent
 for_window [urgent="latest" class="Gimp"] focus
