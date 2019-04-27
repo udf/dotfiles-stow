@@ -12,6 +12,10 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 export QT_STYLE_OVERRIDE=qt5ct-style
 export GDK_SCALE=1
 
+# gnome keyring
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
+
 xrdb ~/.Xresources
 $HOME/scripts/gen_config.sh
 
