@@ -33,8 +33,8 @@ bindkey "\e[1;5E" backward-kill-word
 # make time builtin look like bash
 TIMEFMT=$'\nreal\t%*Es\nuser\t%*Us\nsys\t%*Ss'
 
-# make *-word commands not match these characters
-# WORDCHARS='*?_[]~!#$%^(){}<>'
+# make *-word commands less retarded
+WORDCHARS=
 
 # automatically cd on dir name
 setopt autocd
@@ -139,6 +139,10 @@ bindkey "\e[B"  history-substring-search-down
 
 # syntax highlighting plugin
 source ~/zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+
+
+# nix on arch
+source /etc/profile.d/nix.sh
 
 # run program, so that when it quits we get dropped into a shell
 if [[ -v ZSH_RUN ]]; then
