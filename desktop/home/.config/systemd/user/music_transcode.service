@@ -1,0 +1,8 @@
+[Unit]
+Description=Music transcoder
+
+[Service]
+ExecStart=%h/scripts/music_transcode.py
+
+[Install]
+WantedBy=default.target
