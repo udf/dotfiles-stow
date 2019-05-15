@@ -132,13 +132,12 @@ URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 URxvt.keysym.Shift-Control-F: eval:my$x=`xsel -ob`;$x=~s/\\\\\\\\/\\\\\\\\\\\\\\\\/g;$x=~s/'/\\\\\\\\'/g;$self->tt_paste("\\$'${x}'");
 
 ! perl extensions
-URxvt.perl-ext: default,selection-to-clipboard,url-select,keyboard-select,resize-font
+URxvt.perl-ext: default,selection-to-clipboard,matcher,keyboard-select,resize-font
 
-! url-select
-URxvt.keysym.M-u: perl:url-select:select_next
-URxvt.url-select.autocopy: true
-URxvt.url-select.launcher: firefox
-URxvt.url-select.underline: true
+! url select with matcher
+URxvt.url-launcher: firefox
+URxvt.keysym.M-u: perl:matcher:list
+URxvt.keysym.Shift-M-u: perl:matcher:last
 
 ! keyboard-select
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
