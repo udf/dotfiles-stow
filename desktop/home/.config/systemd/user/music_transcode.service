@@ -2,6 +2,7 @@
 Description=Music transcoder
 
 [Service]
+Environment="PYTHONUNBUFFERED=1"
 ExecStart=%h/scripts/music_transcode.py
 
 [Install]

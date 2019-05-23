@@ -1,4 +1,4 @@
-#!/usr/bin/env python3 -u
+#!/usr/bin/env python3
 # heavily based on https://github.com/Streetwalrus/dotfiles/blob/master/scripts/mkogg
 
 import shutil
