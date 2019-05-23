@@ -140,9 +140,12 @@ bindkey "\e[B"  history-substring-search-down
 # syntax highlighting plugin
 source ~/zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
-
 # nix on arch
 source /etc/profile.d/nix.sh
+
+# fzf
+source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
 
 # run program, so that when it quits we get dropped into a shell
 if [[ -v ZSH_RUN ]]; then
