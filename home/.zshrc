@@ -45,7 +45,7 @@ setopt nomatch
 # report background job status immediately
 setopt notify
 
-WINDOW_TITLE="urxvt"
+WINDOW_TITLE="term"
 
 # prompt
 function do_prompt() {
