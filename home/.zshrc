@@ -141,7 +141,7 @@ bindkey "\e[B"  history-substring-search-down
 source ~/zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 # nix on arch
-source /etc/profile.d/nix.sh
+[ -f /etc/profile.d/nix.sh ] && source /etc/profile.d/nix.sh
 
 # fzf
 source /usr/share/fzf/completion.zsh
