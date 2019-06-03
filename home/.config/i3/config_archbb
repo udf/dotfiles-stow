@@ -1,0 +1,19 @@
+gaps inner 5
+for_window [class="^.*"] border pixel 3
+
+bindsym $mod+d exec rofi -show run -modi run rofi -show run -modi run -kb-row-select "Tab" -kb-row-tab "" -theme $HOME/.config/rofi/dmenu.rasi
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 5"
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 5"
+
+# window workspaces
+for_window [class="TelegramDesktop"] move workspace $ws1
+for_window [instance="term_htop"] move workspace $ws1
+
+for_window [class="Firefox"] move workspace $ws3
+
+for_window [class="Gimp" window_role="gimp-image-window-1"] move workspace $ws4
+for_window [title="GIMP Startup"] move workspace $ws4
+
+# autostart programs
+exec_always --no-startup-id killall compton; sleep 3; compton --config $HOME/.config/compton_no_blur.conf
+exec --no-startup-id ZSH_RUN=htop urxvt -name term_htop

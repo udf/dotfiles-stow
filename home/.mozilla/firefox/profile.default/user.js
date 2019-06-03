@@ -32,11 +32,16 @@ user_pref("full-screen-api.warning.timeout", 0);
 user_pref("security.ssl.disable_session_identifiers", true);
 
 // go fast
-user_pref("gfx.webrender.all", true);
+user_pref("gfx.webrender.all", false);
 user_pref("layers.acceleration.force-enabled", true);
+user_pref("gfx.canvas.azure.accelerated", true);
+user_pref("gfx.xrender.enabled", true);
 
 // enable magnet links
 user_pref("network.protocol-handler.expose.magnet", false);
 
 // sync more often (seconds)
 user_pref("services.sync.scheduler.activeInterval", 60);
+
+// disable shitty ctrl+tab carousel
+user_pref("browser.ctrlTab.recentlyUsedOrder", false);

@@ -33,8 +33,8 @@ bindkey "\e[1;5E" backward-kill-word
 # make time builtin look like bash
 TIMEFMT=$'\nreal\t%*Es\nuser\t%*Us\nsys\t%*Ss'
 
-# make *-word commands not match these characters
-WORDCHARS='*?_[]~!#$%^(){}<>'
+# make *-word commands less retarded
+WORDCHARS=
 
 # automatically cd on dir name
 setopt autocd
@@ -45,7 +45,7 @@ setopt nomatch
 # report background job status immediately
 setopt notify
 
-WINDOW_TITLE="urxvt"
+WINDOW_TITLE="term"
 
 # prompt
 function do_prompt() {
@@ -62,7 +62,12 @@ function do_prompt() {
 
 # set window title to running command
 function preexec() {
-    echo -ne "\033]0;$WINDOW_TITLE: $2\007"
+    printf '%s' $'\033]0;' "$WINDOW_TITLE: $2" $'\007'
+}
+
+# Issue a BELL when a command is done
+function precmd() {
+    echo -ne '\a'
 }
 
 setopt promptsubst
@@ -73,7 +78,7 @@ export EDITOR='nvim -p'
 # copy current command line to clipboard
 zmodload zsh/parameter
 function clip_cmd() {
-    echo -n "$BUFFER" | xclip -sel clip
+    echo -nE "$BUFFER" | xclip -sel clip
 }
 zle -N clip_cmd
 bindkey "^X" clip_cmd
@@ -110,12 +115,7 @@ alias gitac='git add -u && git commit'
 # shorthands
 alias subl='subl3'
 alias p='pacman'
-function k() {
-    if [[ -z $(kak -l | grep main) ]]; then
-        kak -d -s main
-    fi
-    kak -c main $@
-}
+alias k='kak'
 alias v='k'
 alias valgrindlc='valgrind --leak-check=full --show-leak-kinds=all'
 alias sv='sudo --preserve-env=HOME nvim'
@@ -127,12 +127,44 @@ alias gitds='git diff --stat'
 # Add Python package binaries to path
 export PATH="$HOME/.local/bin:$PATH"
 
+# Add Cargo package binaries to path
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # history search plugin
 source ~/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=green,fg=white,bold'
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='bg=red,fg=white,bold'
 bindkey "\e[A"  history-substring-search-up
 bindkey "\e[B"  history-substring-search-down
+
+# syntax highlighting plugin
+source ~/zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+
+# nix on arch
+[ -f /etc/profile.d/nix.sh ] && source /etc/profile.d/nix.sh
+
+# fzf
+source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
+
+# fzf's CTRL+R but with unique entries
+fzf-history-widget() {
+  local selected num
+  setopt localoptions noglobsubst noposixbuiltins pipefail 2> /dev/null
+  selected=( $(fc -l 1 | sort -rk 2 | uniq -f 1 | sort -rnk 1 | 
+    FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} $FZF_DEFAULT_OPTS -n2..,.. --tiebreak=index --bind=ctrl-r:toggle-sort $FZF_CTRL_R_OPTS --query=${(qqq)LBUFFER} +m" $(__fzfcmd)) )
+  local ret=$?
+  if [ -n "$selected" ]; then
+    num=$selected[1]
+    if [ -n "$num" ]; then
+      zle vi-fetch-history -n $num
+    fi
+  fi
+  zle reset-prompt
+  return $ret
+}
+zle     -N   fzf-history-widget
+bindkey '^R' fzf-history-widget
 
 # run program, so that when it quits we get dropped into a shell
 if [[ -v ZSH_RUN ]]; then

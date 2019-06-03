@@ -59,13 +59,19 @@ modules-center = volume date
 modules-right = cpu memory filesystem downspeed upspeed
 
 
+[bar/archbb]
+inherit = bar/arch-vm
+modules-left = i3 xwindow
+modules-right = downspeed upspeed downspeed_wlan upspeed_wlan cpu memory filesystem battery_0 battery_rem
+
+
 [bar/karen-chan]
 inherit = main_bar
 bottom = true
 
 line-size = 2
 
-padding-left = 10
+padding-left = 5
 padding-right = 105
 
 modules-left = musicinfo i3 xwindow
@@ -96,7 +102,6 @@ font-4 = Noto Sans Mono CJK TC:pixelsize=9;0
 
 tray-position = right
 tray-padding = 5
-tray-transparent = false
 tray-maxsize = 18
 tray-detached = false
 tray-background = ${colors.background}
@@ -106,7 +111,7 @@ wm-restack = i3
 
 [module/musicinfo]
 type = custom/script
-exec = ~/.config/polybar/music.py 105
+exec = ~/.config/polybar/playerctlctl.sh 120
 label = %output%
 format = <label>
 tail = true
@@ -114,7 +119,15 @@ tail = true
 
 [module/musicinfo_samlap]
 inherit = module/musicinfo
-exec = ~/.config/polybar/music.py 75
+exec = ~/.config/polybar/playerctlctl.sh 75
+
+
+[module/battery_rem]
+type = custom/script
+exec = ~/.config/polybar/acpi_remaining.sh
+label = %output%
+format = <label>
+tail = true
 
 
 [module/battery]
@@ -146,6 +159,11 @@ ramp-capacity-6 = %{u#daff00}%{F#daff00}%{F-}
 ramp-capacity-7 = %{u#91ff00}%{F#91ff00}%{F-}
 ramp-capacity-8 = %{u#48ff00}%{F#48ff00}%{F-}
 ramp-capacity-9 = %{u#00ff00}%{F#00ff00}%{F-}
+
+
+[module/battery_0]
+inherit = module/battery
+battery = BAT0
 
 
 [module/i3]

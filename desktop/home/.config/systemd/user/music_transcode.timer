@@ -1,0 +1,9 @@
+[Unit]
+Description=Runs music_transcode every 30 minutes
+
+[Timer]
+OnCalendar=*:0/30
+Unit=music_transcode.service
+
+[Install]
+WantedBy=default.target

@@ -13,17 +13,17 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # theme colors
 set_from_resource  $bgr_color  background
-set_from_resource  $fgr_color  foreground
+set_from_resource  $fgr_color  color10
 set_from_resource  $red_color  color9
 set_from_resource  $grd_color  color0
 set_from_resource  $grb_color  color8
-set_from_resource  $gre_color  color2
+set_from_resource  $ind_color  color12
 
 #                        border      background  text        split_indicator
-client.focused           $grb_color  $fgr_color  $bgr_color  $gre_color
-client.unfocused         $grd_color  $bgr_color  $grb_color  $gre_color
-client.focused_inactive  $grb_color  $grd_color  $fgr_color  $gre_color
-client.urgent            $red_color  $red_color  $bgr_color  $gre_color
+client.focused           $grb_color  $fgr_color  $bgr_color  $ind_color
+client.unfocused         $grd_color  $bgr_color  $grb_color  $ind_color
+client.focused_inactive  $grb_color  $grd_color  $fgr_color  $ind_color
+client.urgent            $red_color  $red_color  $bgr_color  $ind_color
 
 
 # program management
@@ -41,19 +41,22 @@ bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute @DEFAULT_SINK@ t
 
 
 # media player keys
-bindsym $mod+Mod1+f exec --no-startup-id "playerctl volume 0.01+"
-bindsym $mod+Mod1+v exec --no-startup-id "playerctl volume 0.01-"
-bindsym $mod+Mod1+s exec --no-startup-id "playerctl play-pause"
-bindsym $mod+Mod1+x exec --no-startup-id "playerctl next"
-bindsym $mod+Mod1+z exec --no-startup-id "playerctl previous"
+bindsym $mod+Mod1+f exec --no-startup-id "playerctlctlctl volume 0.01 0"
+bindsym $mod+Mod1+v exec --no-startup-id "playerctlctlctl volume -0.01 0"
+bindsym $mod+Mod1+s exec --no-startup-id "playerctlctlctl play_pause"
+bindsym $mod+Mod1+x exec --no-startup-id "playerctlctlctl next"
+bindsym $mod+Mod1+z exec --no-startup-id "playerctlctlctl previous"
 
-bindsym $mod+XF86AudioRaiseVolume exec "playerctl position 2+"
-bindsym $mod+XF86AudioLowerVolume exec "playerctl position 2-"
-bindsym $mod+Ctrl+XF86AudioRaiseVolume exec "playerctl volume 0.01+"
-bindsym $mod+Ctrl+XF86AudioLowerVolume exec "playerctl volume 0.01-"
-bindsym XF86AudioPlay exec "playerctl play-pause"
-bindsym XF86AudioNext exec "playerctl next"
-bindsym XF86AudioPrev exec "playerctl previous"
+bindsym $mod+XF86AudioRaiseVolume exec --no-startup-id "playerctlctlctl position 2 0"
+bindsym $mod+XF86AudioLowerVolume exec --no-startup-id "playerctlctlctl position -2 0"
+bindsym $mod+Ctrl+XF86AudioRaiseVolume exec --no-startup-id "playerctlctlctl volume 0.01 0"
+bindsym $mod+Ctrl+XF86AudioLowerVolume exec --no-startup-id "playerctlctlctl volume -0.01 0"
+bindsym XF86AudioPlay exec --no-startup-id "playerctlctlctl play_pause"
+bindsym XF86AudioNext exec --no-startup-id "playerctlctlctl next"
+bindsym XF86AudioPrev exec --no-startup-id "playerctlctlctl previous"
+
+bindsym $mod+XF86AudioNext exec --no-startup-id "playerctlctlctl next_player"
+bindsym $mod+XF86AudioPrev exec --no-startup-id "playerctlctlctl previous_player"
 
 
 # screenshots
@@ -64,13 +67,16 @@ bindsym --release Ctrl+Print exec --no-startup-id screenshot.sh -s -e "gimp"
 
 
 # program keys
-bindsym $mod+c exec i3-sensible-terminal
-bindsym $mod+Ctrl+c exec dup_term.sh
-bindsym $mod+b exec ranger
-bindsym $mod+Shift+n --release exec "killall dunst; exec notify-send -a i3 'restarted dunst'"
+bindsym $mod+c exec --no-startup-id i3-sensible-terminal
+bindsym $mod+Ctrl+c exec --no-startup-id dup_term.sh
+bindsym $mod+Ctrl+n --release exec --no-startup-id "killall dunst; exec notify-send -a i3 'restarted dunst'"
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
-bindsym $mod+Ctrl+a exec "killall -q pavucontrol || pavucontrol"
-bindsym $mod+u exec $HOME/scripts/unisearch/unisearch.sh
+bindsym $mod+Ctrl+a exec --no-startup-id "killall -q pavucontrol || pavucontrol"
+bindsym $mod+Ctrl+h exec --no-startup-id urxvt -e htop
+bindsym $mod+b exec --no-startup-id Thunar
+bindsym $mod+n exec --no-startup-id firefox
+bindsym $mod+u exec --no-startup-id $HOME/scripts/unisearch/unisearch.sh
+bindsym $mod+Escape exec --no-startup-id $HOME/scripts/fancy_lock.sh
 
 
 # window management
@@ -90,10 +96,10 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-bindsym $mod+Ctrl+Left resize shrink width 5 px
-bindsym $mod+Ctrl+Right resize grow width 5 px
-bindsym $mod+Ctrl+Down resize shrink height 5 px
-bindsym $mod+Ctrl+Up resize grow height 5 px
+bindsym $mod+Ctrl+Left resize shrink width 1 px or 1 ppt
+bindsym $mod+Ctrl+Right resize grow width 1 px or 1 ppt
+bindsym $mod+Ctrl+Down resize shrink height 1 px or 1 ppt
+bindsym $mod+Ctrl+Up resize grow height 1 px or 1 ppt
 
 bindsym $mod+h split h
 bindsym $mod+v split v
@@ -108,6 +114,8 @@ bindsym $mod+Shift+space focus mode_toggle
 bindsym $mod+Shift+z move scratchpad
 bindsym $mod+z scratchpad show
 
+bindsym $mod+Shift+w exec xdotool getactivewindow windowunmap windowmap
+
 # specific window management
 # auto focus gimp when urgent
 for_window [urgent="latest" class="Gimp"] focus
@@ -117,9 +125,18 @@ for_window [class="Pavucontrol"] floating enable sticky enable
 for_window [class="qt5ct"] floating enable sticky enable
 for_window [class="Qtconfig-qt4"] floating enable sticky enable
 for_window [class="Pulseaudio-equalizer-gtk"] floating enable sticky enable
+for_window [instance="VirtualBox Machine" title="btw i use arch*"] floating enable
+
+for_window [class="Nm-connection-editor"] floating enable
 
 for_window [class="Wine" title="* - Wine desktop"] floating enable
-for_window [class="Steam" title="Friends List"] floating enable move scratchpad
+
+# Steam
+for_window [class="Steam"] move workspace $ws8
+for_window [class="Steam" title="Friends List"] floating enable
+for_window [class="Steam" title="Select backup folder"] floating enable
+for_window [class="Steam" title="Locate your Backup Files"] floating enable
+# TODO: make the popup for updating float
 
 for_window [window_role="gimp-toolbox-color-dialog"] move position mouse
 for_window [class="TelegramDesktop" title="Media viewer"] move absolute position center

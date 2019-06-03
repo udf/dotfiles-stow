@@ -7,4 +7,10 @@ killall -q polybar
 # Wait until the processes have been shut down
 while pgrep -x polybar >/dev/null; do sleep 1; done
 
-polybar "$(hostname)"
+# Dumb hack to fix polybar not running when there's no monitor
+# (happens on hyper-v with xrdp)
+while :; do
+    polybar "$(hostname)"
+    [[ $? != 1 ]] && break
+    sleep 3
+done
