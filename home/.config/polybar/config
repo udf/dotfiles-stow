@@ -265,7 +265,7 @@ type = internal/fs
 interval = 10
 mount-0 = /
 fixed-values = true
-label-mounted =  %used%
+label-mounted =  %free%
 format-mounted-underline = ${colors.white}
 
 
