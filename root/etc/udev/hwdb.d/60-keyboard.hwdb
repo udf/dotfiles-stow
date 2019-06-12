@@ -11,3 +11,8 @@ evdev:input:b0003v046DpC24D*
 # mapping for cooler master ms120 (garbage)
 evdev:input:b0003v2516p005B*
  KEYBOARD_KEY_70039=esc
+
+# mapping for cooler master masterkeys lite (also garbage)
+evdev:input:b0003v2516p0042*
+ KEYBOARD_KEY_70039=esc
+
