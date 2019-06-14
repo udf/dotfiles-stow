@@ -7,3 +7,16 @@ evdev:atkbd:dmi:*
 evdev:input:b0003v046DpC24D*
  KEYBOARD_KEY_70039=esc
  #KEYBOARD_KEY_70029=capslock
+
+# mapping for cooler master ms120 (garbage)
+evdev:input:b0003v2516p005B*
+ KEYBOARD_KEY_70039=esc
+
+# mapping for cooler master masterkeys lite (also garbage)
+evdev:input:b0003v2516p0042*
+ KEYBOARD_KEY_70039=esc
+
+# mapping for cooler master masterkeys pro m
+evdev:input:b0003v2516p0048*
+ KEYBOARD_KEY_70039=esc
+

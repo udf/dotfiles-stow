@@ -58,6 +58,9 @@ bindsym XF86AudioPrev exec --no-startup-id "playerctlctlctl previous"
 bindsym $mod+XF86AudioNext exec --no-startup-id "playerctlctlctl next_player"
 bindsym $mod+XF86AudioPrev exec --no-startup-id "playerctlctlctl previous_player"
 
+bindsym $mod+Mod1+w exec --no-startup-id "playerctlctlctl next_player"
+bindsym $mod+Mod1+q exec --no-startup-id "playerctlctlctl previous_player"
+
 
 # screenshots
 bindsym --release Shift+Print exec --no-startup-id screenshot.sh
