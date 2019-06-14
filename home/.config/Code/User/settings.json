@@ -1,7 +1,7 @@
 {
     "window.zoomLevel": -1,
     "editor.fontFamily": "'Hack Nerd Font Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "editor.renderWhitespace": "boundary",
+    "editor.renderWhitespace": "all",
     "vim.handleKeys": {
         "<C-f>": false,
         "<C-d>": false
@@ -18,6 +18,16 @@
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "python.jediEnabled": false,
-    "vscode_custom_css.imports": ["file:///home/sam/.config/Code/vscode.css"],
+    "vscode_custom_css.imports": [
+        "file:///home/sam/.config/Code/vscode.css",
+        "file:///home/mhoosen/.config/Code/vscode.css"
+    ],
+    "workbench.iconTheme": "material-icon-theme",
     "vscode_custom_css.policy": true,
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "editor.formatOnSave": true,
+    "C_Cpp.clang_format_style": "{BasedOnStyle: LLVM, IndentWidth: 4, SpaceAfterTemplateKeyword: false, AlwaysBreakTemplateDeclarations: true, BinPackArguments: false, AllowAllParametersOfDeclarationOnNextLine: true, AllowShortFunctionsOnASingleLine: false, BreakBeforeBinaryOperators: \"NonAssignment\"}",
+    "workbench.editor.showTabs": true,
 }
