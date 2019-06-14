@@ -1,0 +1,23 @@
+{
+    "window.zoomLevel": -1,
+    "editor.fontFamily": "'Hack Nerd Font Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.renderWhitespace": "boundary",
+    "vim.handleKeys": {
+        "<C-f>": false,
+        "<C-d>": false
+    },
+    "explorer.confirmDelete": false,
+    "vim.useSystemClipboard": true,
+    "cSpell.userWords": [
+        "HMAC",
+        "botapi",
+        "mt",
+        "proto",
+        "struct"
+    ],
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "python.jediEnabled": false,
+    "vscode_custom_css.imports": ["file:///home/sam/.config/Code/vscode.css"],
+    "vscode_custom_css.policy": true,
+}
