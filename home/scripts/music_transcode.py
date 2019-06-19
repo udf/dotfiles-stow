@@ -22,7 +22,7 @@ def transcode(infile):
 
     encode_cmd = [
         'opusenc',
-        *'--bitrate 256'.split(),
+        *'--bitrate 192'.split(),
         '--vbr',
         infile,
         outfile,
