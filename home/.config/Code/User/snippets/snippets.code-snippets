@@ -1,0 +1,44 @@
+{
+	"Canonical C++ Class Header": {
+		"scope": "cpp",
+		"prefix": "42class",
+		"body": [
+			"#pragma once",
+			"",
+			"class $TM_FILENAME_BASE {",
+			"  private:",
+			"",
+			"  public:",
+			"    $TM_FILENAME_BASE();",
+			"    $TM_FILENAME_BASE(const $TM_FILENAME_BASE &other);",
+			"    $TM_FILENAME_BASE &operator=(const $TM_FILENAME_BASE &other);",
+			"    ~$TM_FILENAME_BASE();",
+			"};",
+		],
+		"description": "Canonical class"
+	},
+	"Canonical C++ Class Implementation": {
+		"scope": "cpp",
+		"prefix": "42class",
+		"body": [
+			"#include \"$TM_FILENAME_BASE.hpp\"",
+			"",
+			"$TM_FILENAME_BASE::$TM_FILENAME_BASE() {",
+			"}",
+			"",
+			"$TM_FILENAME_BASE::$TM_FILENAME_BASE(const $TM_FILENAME_BASE &other) {",
+			"    *this = other;",
+			"}",
+			"",
+			"$TM_FILENAME_BASE &$TM_FILENAME_BASE::operator=(const $TM_FILENAME_BASE &other) {",
+			"    $0",
+			"    (void)other;",
+			"    return *this;",
+			"}",
+			"",
+			"$TM_FILENAME_BASE::~$TM_FILENAME_BASE() {",
+			"}",
+		],
+		"description": "Canonical class"
+	}
+}
