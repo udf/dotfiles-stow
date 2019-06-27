@@ -1,1 +1,1 @@
-ATTRS{vendor}=="WDC WDS?", ATTRS{model}=="20G2G0A-00JH30  ", ATTR{partition}=="1", SYMLINK+="external_vm"
+ATTRS{vendor}=="WDC WDS?", ATTRS{model}=="20G2G0A-00JH30  ", ATTR{partition}=="2", SYMLINK+="external_vm"
