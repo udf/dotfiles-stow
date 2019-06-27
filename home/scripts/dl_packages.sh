@@ -10,5 +10,5 @@ if [[ -v VM_IS_HOME ]]; then
     mv /tmp/packs.txt $PACKAGE_LIST
     echo "collected $(wc -l < $PACKAGE_LIST) package names"
 else
-    sudo pacman -Syw $(cat $PACKAGE_LIST)
+    yay -Syw $(cat $PACKAGE_LIST)
 fi
