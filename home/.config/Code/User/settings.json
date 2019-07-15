@@ -27,7 +27,9 @@
     "[cpp]": {
         "editor.defaultFormatter": "ms-vscode.cpptools"
     },
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "C_Cpp.clang_format_style": "{BasedOnStyle: LLVM, IndentWidth: 4, SpaceAfterTemplateKeyword: false, AlwaysBreakTemplateDeclarations: true, BinPackArguments: false, BinPackParameters: false, AllowAllParametersOfDeclarationOnNextLine: false, AllowShortFunctionsOnASingleLine: false, BreakBeforeBinaryOperators: \"NonAssignment\", AlignAfterOpenBracket: \"AlwaysBreak\"}",
-    "workbench.editor.showTabs": true
+    "workbench.editor.showTabs": true,
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
 }
