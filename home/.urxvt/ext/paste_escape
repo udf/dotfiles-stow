@@ -34,7 +34,7 @@ sub run {
     my ($self) = @_;
     # Set our flag so the hook knows to run
     $self->{hook_enabled} = 1;
-    $self->selection_request(urxvt::CurrentTime, 1);
+    $self->selection_request(urxvt::CurrentTime, 3);
 }
 
 sub on_action {
