@@ -1,0 +1,46 @@
+#! perl -w
+
+# Lets you paste but escaped for zsh ($'as\'df' form)
+# By using a on_tt_paste hook to intercept the paste data
+# The hook is disabled with an internal flag unless it needs to run
+# (this is done to prevent recursion because the $self->disable call
+#  doesn't seem to work immediately)
+
+sub on_start {
+    my ($self) = @_;
+
+    $self->{hook_enabled} = 0;
+
+    return ();
+}
+
+sub on_tt_paste {
+    my ($self, $str) = @_;
+
+    # Don't do anything unless the flag is set
+    if (!$self->{hook_enabled}) {
+        return ();
+    }
+    $self->{hook_enabled} = 0;
+
+    $str =~ s/\\/\\\\/g;
+    $str =~ s/'/\\'/g;
+    $self->tt_paste("\$'$str'");
+
+    return 1;
+}
+
+sub run {
+    my ($self) = @_;
+    # Set our flag so the hook knows to run
+    $self->{hook_enabled} = 1;
+    $self->selection_request(urxvt::CurrentTime, 1);
+}
+
+sub on_action {
+    my ($self, $action) = @_;
+
+    if ($action eq "run") {
+        $self->run;
+    }
+}
