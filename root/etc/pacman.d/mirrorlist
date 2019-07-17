@@ -5,7 +5,6 @@
 ##
 
 # South Africa
-Server = http://archlinux.za.mirror.allworldit.com/archlinux/$repo/os/$arch
 Server = https://archlinux.za.mirror.allworldit.com/archlinux/$repo/os/$arch
 Server = http://za.mirror.archlinux-br.org/$repo/os/$arch
 Server = http://mirror.is.co.za/mirror/archlinux.org/$repo/os/$archServer
