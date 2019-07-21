@@ -1,0 +1,4 @@
+#!/usr/bin/zsh
+
+export DESKTOP_SESSION=gnome
+telegram-desktop &>~/tg.log
