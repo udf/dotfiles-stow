@@ -26,9 +26,9 @@ bindkey "\e[8~" end-of-line             # END
 bindkey "\e[3~" delete-char             # DELETE
 bindkey "\e[2~" quoted-insert           # INSERT
 
-bindkey "\e[1;5C" forward-word
-bindkey "\e[1;5D" backward-word
-bindkey "\e[1;5E" backward-kill-word
+bindkey "\e[1;5C" emacs-forward-word
+bindkey "\e[1;5D" emacs-backward-word
+bindkey "\e[1;5E" vi-backward-kill-word
 
 # make time builtin look like bash
 TIMEFMT=$'\nreal\t%*Es\nuser\t%*Us\nsys\t%*Ss'
@@ -76,7 +76,6 @@ export RPROMPT='$(gitprompt-rs zsh)'
 export EDITOR='nvim -p'
 
 # copy current command line to clipboard
-zmodload zsh/parameter
 function clip_cmd() {
     echo -nE "$BUFFER" | xclip -sel clip
 }
