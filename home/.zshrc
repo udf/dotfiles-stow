@@ -33,9 +33,6 @@ bindkey "\e[1;5E" vi-backward-kill-word
 # make time builtin look like bash
 TIMEFMT=$'\nreal\t%*Es\nuser\t%*Us\nsys\t%*Ss'
 
-# make *-word commands less retarded
-WORDCHARS=
-
 # automatically cd on dir name
 setopt autocd
 
