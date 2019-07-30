@@ -26,8 +26,8 @@ bindkey "\e[8~" end-of-line             # END
 bindkey "\e[3~" delete-char             # DELETE
 bindkey "\e[2~" quoted-insert           # INSERT
 
-bindkey "\e[1;5C" emacs-forward-word
-bindkey "\e[1;5D" emacs-backward-word
+bindkey "\e[1;5C" vi-forward-word
+bindkey "\e[1;5D" vi-backward-word
 bindkey "\e[1;5E" vi-backward-kill-word
 
 # make time builtin look like bash
