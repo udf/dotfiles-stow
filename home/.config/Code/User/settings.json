@@ -32,4 +32,5 @@
     "workbench.editor.showTabs": true,
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
+    "editor.rulers": [80, 100],
 }
