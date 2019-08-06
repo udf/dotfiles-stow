@@ -26,8 +26,12 @@ bindkey "\e[8~" end-of-line             # END
 bindkey "\e[3~" delete-char             # DELETE
 bindkey "\e[2~" quoted-insert           # INSERT
 
-# TODO: make forward-word move one more character to the right
-bindkey "\e[1;5C" vi-forward-word-end
+vi-forward-nonword() {
+    zle vi-forward-word-end
+    zle vi-forward-char
+}
+zle -N vi-forward-nonword
+bindkey "\e[1;5C" vi-forward-nonword
 bindkey "\e[1;5D" vi-backward-word
 bindkey "\e[1;5E" vi-backward-kill-word
 
