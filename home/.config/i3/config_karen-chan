@@ -9,3 +9,6 @@ exec --no-startup-id $HOME/proj/p/g710-pulse/g710_pulse
 exec_always --no-startup-id killall compton; sleep 3; compton
 
 for_window [class="^.*"] border pixel 3
+
+# layout
+exec --no-startup-id i3-msg "workspace 1; append_layout $HOME/dotfiles/i3_layouts/desktop.json"

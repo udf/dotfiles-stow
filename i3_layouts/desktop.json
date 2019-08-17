@@ -1,0 +1,101 @@
+{
+    "layout": "splitv",
+    "percent": 0.25,
+    "nodes": [
+        {
+            "name": "Telegram",
+            "swallows": [
+                {
+                    "class": "^TelegramDesktop$"
+                }
+            ]
+        },
+        {
+            "layout": "tabbed",
+            "percent": 0.5,
+            "nodes": [
+                {
+                    "swallows": [
+                        {
+                            "class": "^URxvt$"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+{
+    "layout": "splitv",
+    "percent": 0.5,
+    "nodes": [
+        {
+            "layout": "tabbed",
+            "nodes": [
+                {
+                    "name": "Browser",
+                    "swallows": [
+                        {
+                            "window_role": "^browser$"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "layout": "tabbed",
+            "nodes": [
+                {
+                    "name": "Browser",
+                    "swallows": [
+                        {
+                             "window_role": "^browser$"
+                        }
+                    ]
+                },
+                {
+                    "name": "VS Code",
+                    "swallows": [
+                        {
+                            "class": "^Code$"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+{
+    "layout": "splitv",
+    "percent": 0.25,
+    "nodes": [
+        {
+            "layout": "tabbed",
+            "percent": 0.5,
+            "nodes": [
+                {
+                    "swallows": [
+                        {
+                            "class": "^URxvt$"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "layout": "tabbed",
+            "percent": 0.5,
+            "nodes": [
+                {
+                    "swallows": [
+                        {
+                            "class": "^URxvt$"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
