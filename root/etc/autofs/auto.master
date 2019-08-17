@@ -1,5 +1,4 @@
 /-	/etc/autofs/auto.booty --timeout=0
-/samlap	/etc/autofs/auto.samlap --timeout=0 --ghost
 /-	/etc/autofs/auto.vm --timeout=0
 
 +auto.master

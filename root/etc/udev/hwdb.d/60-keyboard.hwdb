@@ -19,4 +19,5 @@ evdev:input:b0003v2516p0042*
 # mapping for cooler master masterkeys pro m
 evdev:input:b0003v2516p0048*
  KEYBOARD_KEY_70039=esc
+ KEYBOARD_KEY_700e4=f24
 
