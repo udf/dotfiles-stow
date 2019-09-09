@@ -1,0 +1,7 @@
+{
+    "swallows": [
+        {
+            "window_role": "^browser$"
+        }
+    ]
+}

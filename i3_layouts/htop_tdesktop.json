@@ -1,0 +1,20 @@
+{
+    "nodes": [
+        {
+            "name": "htop",
+            "swallows": [
+                {
+                    "instance": "^term_htop$"
+                }
+            ]
+        },
+        {
+            "name": "Telegram",
+            "swallows": [
+                {
+                    "class": "^TelegramDesktop$"
+                }
+            ]
+        }
+    ]
+}
