@@ -17,6 +17,24 @@
 		],
 		"description": "Canonical class"
 	},
+	"Canonical C++ Class Header Without Copy": {
+		"scope": "cpp",
+		"prefix": "42class",
+		"body": [
+			"#pragma once",
+			"",
+			"class $TM_FILENAME_BASE {",
+			"  private:",
+			"    $TM_FILENAME_BASE(const $TM_FILENAME_BASE &other) = delete;",
+			"    $TM_FILENAME_BASE &operator=(const $TM_FILENAME_BASE &other) = delete;",
+			"",
+			"  public:",
+			"    $TM_FILENAME_BASE();",
+			"    ~$TM_FILENAME_BASE();",
+			"};",
+		],
+		"description": "Canonical class"
+	},
 	"Canonical C++ Class Implementation": {
 		"scope": "cpp",
 		"prefix": "42class",
@@ -34,6 +52,20 @@
 			"    $0",
 			"    (void)other;",
 			"    return *this;",
+			"}",
+			"",
+			"$TM_FILENAME_BASE::~$TM_FILENAME_BASE() {",
+			"}",
+		],
+		"description": "Canonical class"
+	},
+	"Canonical C++ Class Implementation Without Copy": {
+		"scope": "cpp",
+		"prefix": "42class",
+		"body": [
+			"#include \"$TM_FILENAME_BASE.hpp\"",
+			"",
+			"$TM_FILENAME_BASE::$TM_FILENAME_BASE() {",
 			"}",
 			"",
 			"$TM_FILENAME_BASE::~$TM_FILENAME_BASE() {",
