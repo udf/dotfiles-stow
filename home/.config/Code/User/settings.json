@@ -37,4 +37,5 @@
         100
     ],
     "C_Cpp.updateChannel": "Insiders",
+    "editor.renderControlCharacters": true,
 }
