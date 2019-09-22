@@ -12,7 +12,11 @@ setopt INC_APPEND_HISTORY
 
 # completion
 autoload -Uz compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
 compinit
+# Include hidden files
+_comp_options+=(globdots)
 
 # dircolours
 eval $(dircolors ~/.dir_colors)
@@ -76,6 +80,10 @@ setopt promptsubst
 export PROMPT='$(do_prompt)'
 export RPROMPT='$(gitprompt-rs zsh)'
 export EDITOR='nvim -p'
+
+# Edit line in vim with alt-e:
+autoload edit-command-line; zle -N edit-command-line
+bindkey '^[e' edit-command-line
 
 # copy current command line to clipboard
 function clip_cmd() {
