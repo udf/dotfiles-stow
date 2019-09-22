@@ -45,3 +45,6 @@ user_pref("services.sync.scheduler.activeInterval", 60);
 
 // disable shitty ctrl+tab carousel
 user_pref("browser.ctrlTab.recentlyUsedOrder", false);
+
+// don't ask to save logins
+user_pref("signon.rememberSignons", false);
