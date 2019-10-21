@@ -32,6 +32,7 @@
     "nodes": [
         {
             "layout": "tabbed",
+            "percent": 0.487,
             "nodes": [
                 {
                     "name": "Browser",
