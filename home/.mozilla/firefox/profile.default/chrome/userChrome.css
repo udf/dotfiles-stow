@@ -5,19 +5,23 @@ menupopup {
     margin-top: 3px !important;
 }
 
+/* Fix the fucking touchscreen-esque bullshit padding on urlbar results */
 .urlbarView-row {
     padding-top: 3px !important;
     padding-bottom: 5px !important;
 }
 
+/* Same as above but for the search one-offs div */
 .search-one-offs {
     padding-block: 0px !important;
 }
 
+/* Fix padding left of search one-off icons */
 .search-panel-one-offs {
     padding-left: 7px !important;
 }
 
+/* Fix cancer margins around search one-off icons */
 .searchbar-engine-one-off-item {
     margin: 0px !important;
 }
