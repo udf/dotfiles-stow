@@ -12,4 +12,9 @@ menupopup {
 
 .search-one-offs {
     padding-block: 0px !important;
+    padding-inline-start: 4px !important;
+}
+
+.searchbar-engine-one-off-item {
+    margin: 0px !important;
 }
