@@ -48,3 +48,6 @@ user_pref("browser.ctrlTab.recentlyUsedOrder", false);
 
 // don't ask to save logins
 user_pref("signon.rememberSignons", false);
+
+// enable user css
+user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
