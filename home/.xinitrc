@@ -19,8 +19,11 @@ export SSH_AUTH_SOCK
 xrdb ~/.Xresources
 $HOME/scripts/gen_config.sh
 
+numlockx on
+
 case "$(hostname)" in
 "karen-chan")
+    numlockx off
     ;;
 "arch-vm")
     xrandr --newmode "1080p" 157.87  1912 2024 2232 2552  996 997 1000 1031  -HSync +Vsync
@@ -42,6 +45,5 @@ case "$(hostname)" in
 esac
 
 xbanish &
-numlockx &
 dunst &
 i3
