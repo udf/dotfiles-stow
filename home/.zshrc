@@ -1,5 +1,8 @@
 export GPG_TTY=$(tty)
 
+# Wait 50ms for key sequences (fixes ctrl+ bindings being slow)
+KEYTIMEOUT=5
+
 # History
 HISTFILE=~/.histfile
 HISTSIZE=10000000
