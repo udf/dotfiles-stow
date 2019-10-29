@@ -19,8 +19,8 @@
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "python.jediEnabled": false,
     "vscode_custom_css.imports": [
-        "file:///home/sam/.config/Code/vscode.css",
-        "file:///home/mhoosen/.config/Code/vscode.css"
+        "file:///home/sam/.config/Code - OSS/vscode.css",
+        "file:///home/mhoosen/.config/Code - OSS/vscode.css"
     ],
     "workbench.iconTheme": "material-icon-theme",
     "vscode_custom_css.policy": true,
