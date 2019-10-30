@@ -60,7 +60,7 @@
                     "name": "VS Code",
                     "swallows": [
                         {
-                            "class": "^Code$"
+                            "class": "^code-oss$"
                         }
                     ]
                 }
