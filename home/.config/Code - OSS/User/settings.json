@@ -38,4 +38,5 @@
     ],
     "C_Cpp.updateChannel": "Insiders",
     "editor.renderControlCharacters": true,
+    "C_Cpp.default.includePath": ["/usr/include/opencv4"],
 }
