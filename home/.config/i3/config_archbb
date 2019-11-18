@@ -15,5 +15,5 @@ for_window [class="Gimp" window_role="gimp-image-window-1"] move workspace $ws4
 for_window [title="GIMP Startup"] move workspace $ws4
 
 # autostart programs
-exec_always --no-startup-id killall compton; sleep 3; compton --config $HOME/.config/compton_no_blur.conf
+exec_always --no-startup-id killall picom; sleep 3; picom --config $HOME/.config/picom_no_blur.conf
 exec --no-startup-id ZSH_RUN=htop urxvt -name term_htop

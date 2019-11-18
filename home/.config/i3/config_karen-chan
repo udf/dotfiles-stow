@@ -5,8 +5,8 @@ bindsym $mod+Ctrl+r exec "DISPLAY=:0 xrandr --output HDMI-A-0 --mode 800x600;sle
 
 # autostart programs
 exec --no-startup-id pulseaudio-equalizer enable
-exec --no-startup-id $HOME/proj/p/g710-pulse/g710_pulse
-exec_always --no-startup-id killall compton; sleep 3; compton
+#exec --no-startup-id $HOME/proj/p/g710-pulse/g710_pulse
+exec_always --no-startup-id killall picom; sleep 3; picom
 
 for_window [class="^.*"] border pixel 3
 
