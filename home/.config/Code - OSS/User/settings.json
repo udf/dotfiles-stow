@@ -38,5 +38,10 @@
     ],
     "C_Cpp.updateChannel": "Insiders",
     "editor.renderControlCharacters": true,
-    "C_Cpp.default.includePath": ["/usr/include/opencv4"],
+    "C_Cpp.default.includePath": [
+        "/usr/include/opencv4"
+    ],
+    "[c]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
 }
