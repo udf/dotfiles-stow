@@ -20,12 +20,13 @@ def transcode(infile):
     print('Transcoding', infile)
     outfile.parent.mkdir(parents=True, exist_ok=True)
 
+    outtmp = outfile.with_suffix('.tmp')
     encode_cmd = [
         'opusenc',
         *'--bitrate 192'.split(),
         '--vbr',
         infile,
-        outfile,
+        outtmp,
     ]
 
     subprocess.run(
@@ -34,6 +35,8 @@ def transcode(infile):
         stdin=subprocess.DEVNULL,
         check=True
     )
+
+    os.rename(outtmp, outfile)
 
     return outfile
 
