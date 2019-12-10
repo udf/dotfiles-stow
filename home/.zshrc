@@ -103,6 +103,7 @@ alias fgrep='fgrep --colour=auto'
 
 # confirm before overwriting something
 alias cp="cp -i"
+alias mv="mv -i"
 # human-readable sizes
 alias df='df -h'
 # show sizes in MB
