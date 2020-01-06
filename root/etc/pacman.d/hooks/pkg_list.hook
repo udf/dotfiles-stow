@@ -1,0 +1,10 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Type = Package
+Target = *
+[Action]
+Depends = coreutils
+When = PostTransaction
+Exec = /usr/bin/sh -c 'pacman -Q > "/var/cache/pacman/pkg/pkgs_$(hostname).txt"'
