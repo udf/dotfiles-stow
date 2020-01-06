@@ -48,4 +48,5 @@
     // "python.autoUpdateLanguageServer": false,
     // "extensions.autoUpdate": false,
     // "extensions.autoCheckUpdates": false,
+    "workbench.colorTheme": "Arc Dark Theme",
 }
