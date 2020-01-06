@@ -35,6 +35,8 @@ case "$(hostname)" in
     ssh-keyscan -t ed25519 192.168.2.2 | grep $DESKTOP_KEY && export VM_IS_HOME=1
     ;;
 "archbb")
+    xset +dpms
+    xset s on
     export DOTNET_ROOT=/opt/dotnet
     export MSBuildSDKsPath=$DOTNET_ROOT/sdk/$(${DOTNET_ROOT}/dotnet --version)/Sdks
     export PATH=${PATH}:${DOTNET_ROOT}
