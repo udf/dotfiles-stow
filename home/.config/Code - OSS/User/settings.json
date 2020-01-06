@@ -44,4 +44,8 @@
     "[c]": {
         "editor.defaultFormatter": "xaver.clang-format"
     },
+    // "update.mode": "none",
+    // "python.autoUpdateLanguageServer": false,
+    // "extensions.autoUpdate": false,
+    // "extensions.autoCheckUpdates": false,
 }
