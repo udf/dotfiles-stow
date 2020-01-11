@@ -118,8 +118,8 @@ alias mpvas='mpv --no-video --shuffle'
 # youtube-dl
 alias ytadl='youtube-dl --no-post-overwrites -ciwx'
 alias ytvdl='youtube-dl -f bestvideo+bestaudio'
-alias ytpadl='youtube-dl -ciwx --no-post-overwrites -o "%(playlist)s/%(playlist_index)s. %(title)s-%(id)s.%(ext)s"'
-alias ytpvdl='youtube-dl -f bestvideo+bestaudio -o "%(playlist)s/%(playlist_index)s. %(title)s-%(id)s.%(ext)s"'
+alias ytpadl='youtube-dl -ix --no-post-overwrites -o "%(playlist)s/%(playlist_index)s. %(title)s-%(id)s.%(ext)s"'
+alias ytpvdl='youtube-dl -i -f bestvideo+bestaudio -o "%(playlist)s/%(playlist_index)s. %(title)s-%(id)s.%(ext)s"'
 
 # mounts a virtualbox share
 alias vboxmount='sudo mount -o uid=1000,gid=1000 -t vboxsf'
