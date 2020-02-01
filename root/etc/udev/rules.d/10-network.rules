@@ -1,5 +1,6 @@
 # karen-chan
 SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="d4:3d:7e:f3:82:1e", NAME="net0"
+SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="40:74:e0:8e:ac:29", NAME="waifu1"
 # arch-vm
 SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="00:06:4f:7f:a0:9b", NAME="net0"
 # samlap
