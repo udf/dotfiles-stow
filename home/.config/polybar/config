@@ -234,7 +234,7 @@ format-connected-underline = ${colors.blue}
 type = internal/cpu
 interval = 1
 format = <ramp-load><label>
-label =  %percentage:2%%
+label =   %percentage:2%%
 ramp-load-0 = %{u#00ff00}
 ramp-load-1 = %{u#48ff00}
 ramp-load-2 = %{u#91ff00}
@@ -249,7 +249,7 @@ ramp-load-7 = %{u#ff0000}
 type = internal/memory
 interval = 5
 format = <ramp-used><label>
-label =  %percentage_used:2%%
+label =   %percentage_used:2%%
 ramp-used-0 = %{u#00ff00}
 ramp-used-1 = %{u#48ff00}
 ramp-used-2 = %{u#91ff00}
@@ -265,7 +265,7 @@ type = internal/fs
 interval = 10
 mount-0 = /
 fixed-values = true
-label-mounted =  %free%
+label-mounted =   %free%
 format-mounted-underline = ${colors.white}
 
 
@@ -276,12 +276,12 @@ format-volume = <ramp-volume> <label-volume>
 format-volume-underline = ${colors.bwhite}
 label-muted = 婢 0%
 label-muted-underline = ${colors.bred}
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
-ramp-volume-3 = 
-ramp-volume-4 = 
-ramp-volume-5 = 
+ramp-volume-0 = " "
+ramp-volume-1 = " "
+ramp-volume-2 = " "
+ramp-volume-3 = " "
+ramp-volume-4 = " "
+ramp-volume-5 = " "
 
 
 [module/date]
