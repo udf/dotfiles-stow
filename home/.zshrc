@@ -33,14 +33,9 @@ bindkey "\e[8~" end-of-line             # END
 bindkey "\e[3~" delete-char             # DELETE
 bindkey "\e[2~" quoted-insert           # INSERT
 
-vi-forward-nonword() {
-    zle vi-forward-word-end
-    zle vi-forward-char
-}
-zle -N vi-forward-nonword
-bindkey "\e[1;5C" vi-forward-nonword
-bindkey "\e[1;5D" vi-backward-word
-bindkey "\e[1;5E" vi-backward-kill-word
+bindkey "\e[1;5C" emacs-forward-word
+bindkey "\e[1;5D" emacs-backward-word
+bindkey "\e[1;5E" backward-delete-word
 
 # make time builtin look like bash
 TIMEFMT=$'\nreal\t%*Es\nuser\t%*Us\nsys\t%*Ss'
