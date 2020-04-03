@@ -36,7 +36,7 @@ bindkey "\e[2~" quoted-insert           # INSERT
 export WORDCHARS=
 bindkey "\e[1;5C" emacs-forward-word
 bindkey "\e[1;5D" emacs-backward-word
-bindkey "\e[1;5E" backward-delete-word
+bindkey "\e[1;5E" vi-backward-kill-word
 
 # make time builtin look like bash
 TIMEFMT=$'\nreal\t%*Es\nuser\t%*Us\nsys\t%*Ss'
