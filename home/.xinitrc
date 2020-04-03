@@ -24,6 +24,7 @@ numlockx on
 case "$(hostname)" in
 "karen-chan")
     numlockx off
+    nm-applet &
     ;;
 "arch-vm")
     xrandr --newmode "1080p" 157.87  1912 2024 2232 2552  996 997 1000 1031  -HSync +Vsync
