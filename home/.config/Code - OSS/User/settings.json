@@ -50,5 +50,8 @@
     // "extensions.autoCheckUpdates": false,
     "workbench.colorTheme": "Arc Dark Theme",
     "java.configuration.checkProjectSettingsExclusions": false,
-    "diffEditor.maxComputationTime": 0
+    "diffEditor.maxComputationTime": 0,
+    "vscode-neovim.neovimPath": "/usr/bin/nvim",
+    "vscode-neovim.neovimInitPath": "~/.config/nvim/vscode.vim",
+    "vscode-neovim.useCtrlKeysForInsertMode": false
 }
