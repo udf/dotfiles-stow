@@ -49,5 +49,6 @@
     // "extensions.autoUpdate": false,
     // "extensions.autoCheckUpdates": false,
     "workbench.colorTheme": "Arc Dark Theme",
-    "java.configuration.checkProjectSettingsExclusions": false
+    "java.configuration.checkProjectSettingsExclusions": false,
+    "diffEditor.maxComputationTime": 0
 }
