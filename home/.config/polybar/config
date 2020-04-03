@@ -78,7 +78,7 @@ modules-left = musicinfo i3 xwindow
 modules-center = date volume
 modules-right = downspeed upspeed cpu memory filesystem
 
-tray-offset-x=-15
+#tray-offset-x=-15
 
 
 [main_bar]
