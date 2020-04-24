@@ -3,5 +3,9 @@
     {
         "command": "-vscode-neovim.escape",
         "key": "ctrl+c"
-    }
+    },
+    {
+        "key": "ctrl+f",
+        "command": "-vscode-neovim.ctrl-f"
+    },
 ]
