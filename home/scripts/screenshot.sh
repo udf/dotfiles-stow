@@ -14,6 +14,6 @@ while getopts ":o:e:s" flags; do
   esac
 done
 
-shotgun $sel $filename
+maim -u $sel $filename
 [[ -n $editor ]] && $editor "$filename"
 xclip -se c -t image/png "$filename"
