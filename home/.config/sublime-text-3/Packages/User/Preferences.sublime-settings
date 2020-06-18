@@ -1,10 +1,4 @@
 {
-	"update_check": false,
-	"ignored_packages":
-	[
-		"Vintage"
-	],
-    
 	"color_scheme": "Packages/Monokai - Spacegray/Monokai - Spacegray.tmTheme",
 	"detect_indentation": true,
 	"draw_minimap_border": true,
@@ -12,6 +6,10 @@
 	"ensure_newline_at_eof_on_save": true,
 	"font_face": "Hack",
 	"font_size": 9,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
 	"rulers":
 	[
 		80,
@@ -21,4 +19,5 @@
 	"theme": "Spacegray.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
+	"update_check": false
 }
