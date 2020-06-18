@@ -135,6 +135,9 @@ alias gita='git add'
 alias gitd='git diff'
 alias gitds='git diff --stat'
 
+# Add scripts directory to path
+export PATH="$HOME/scripts:$PATH"
+
 # Add Python package binaries to path
 export PATH="$HOME/.local/bin:$PATH"
 
