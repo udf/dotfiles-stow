@@ -56,9 +56,11 @@
     "vscode-neovim.useCtrlKeysForInsertMode": false,
     "workbench.colorCustomizations": {
         "[Arc Dark Theme]": {
-            "editorIndentGuide.activeBackground": "#eee",
+            "editorIndentGuide.activeBackground": "#666",
             "editor.lineHighlightBorder": "#232933",
-            "editor.lineHighlightBackground": "#1f242d"
+            "editor.lineHighlightBackground": "#1f242d",
+            "editor.findMatchHighlightBackground": "#2a434a"
         }
-    }
+    },
+    "java.semanticHighlighting.enabled": true
 }
