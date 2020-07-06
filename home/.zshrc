@@ -144,6 +144,9 @@ export PATH="$HOME/.local/bin:$PATH"
 # Add Cargo package binaries to path
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# Add npm package binaries to path
+export PATH="$HOME/.npm-packages/bin:$PATH"
+
 # syntax highlighting plugin
 source ~/zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
