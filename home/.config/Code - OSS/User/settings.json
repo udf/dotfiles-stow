@@ -59,7 +59,8 @@
             "editorIndentGuide.activeBackground": "#666",
             "editor.lineHighlightBorder": "#232933",
             "editor.lineHighlightBackground": "#1f242d",
-            "editor.findMatchHighlightBackground": "#2a434a"
+            "editor.findMatchHighlightBackground": "#70f8ff2a",
+            "editorBracketMatch.background": "#ffffff40"
         }
     },
     "java.semanticHighlighting.enabled": true
