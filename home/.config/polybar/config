@@ -99,6 +99,7 @@ font-1 = Noto Sans Mono CJK JP:pixelsize=9;0
 font-2 = Noto Sans Mono CJK KR:pixelsize=9;0
 font-3 = Noto Sans Mono CJK SC:pixelsize=9;0
 font-4 = Noto Sans Mono CJK TC:pixelsize=9;0
+font-5 = Hack Nerd Font:pixelsize=12;5
 
 tray-position = right
 tray-padding = 5
@@ -233,7 +234,7 @@ format-connected-underline = ${colors.blue}
 [module/cpu]
 type = internal/cpu
 interval = 1
-format = <ramp-load><label> <ramp-coreload>
+format = <ramp-load><label> %{-u}<ramp-coreload>
 
 label =   %percentage:2%%
 
@@ -247,6 +248,15 @@ ramp-load-6 = ${env:URAMP_6}
 ramp-load-7 = ${env:URAMP_7}
 
 ramp-coreload-spacing = 0
+
+ramp-coreload-0-font = 6
+ramp-coreload-1-font = 6
+ramp-coreload-2-font = 6
+ramp-coreload-3-font = 6
+ramp-coreload-4-font = 6
+ramp-coreload-5-font = 6
+ramp-coreload-6-font = 6
+ramp-coreload-7-font = 6
 
 ramp-coreload-0 = ▁
 ramp-coreload-1 = ▂
