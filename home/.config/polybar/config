@@ -149,16 +149,16 @@ animation-charging-4 = 
 animation-charging-framerate = 500
 
 format-discharging = <ramp-capacity> <label-discharging>
-ramp-capacity-0 = %{u#ff0000}%{F#ff0000}%{F-}
-ramp-capacity-1 = %{u#ff0000}%{F#ff0000}%{F-}
-ramp-capacity-2 = %{u#ff0000}%{F#ff0000}%{F-}
-ramp-capacity-3 = %{u#ff4800}%{F#ff4800}%{F-}
-ramp-capacity-4 = %{u#ff9100}%{F#ff9100}%{F-}
-ramp-capacity-5 = %{u#ffda00}%{F#ffda00}%{F-}
-ramp-capacity-6 = %{u#daff00}%{F#daff00}%{F-}
-ramp-capacity-7 = %{u#91ff00}%{F#91ff00}%{F-}
-ramp-capacity-8 = %{u#48ff00}%{F#48ff00}%{F-}
-ramp-capacity-9 = %{u#00ff00}%{F#00ff00}%{F-}
+ramp-capacity-0 = %{u#cc6666}%{F#cc6666}%{F-}
+ramp-capacity-1 = %{u#cc6666}%{F#cc6666}%{F-}
+ramp-capacity-2 = %{u#cc6666}%{F#cc6666}%{F-}
+ramp-capacity-3 = %{u#cc8366}%{F#cc8366}%{F-}
+ramp-capacity-4 = %{u#cca066}%{F#cca066}%{F-}
+ramp-capacity-5 = %{u#ccbd66}%{F#ccbd66}%{F-}
+ramp-capacity-6 = %{u#bdcc66}%{F#bdcc66}%{F-}
+ramp-capacity-7 = %{u#a0cc66}%{F#a0cc66}%{F-}
+ramp-capacity-8 = %{u#83cc66}%{F#83cc66}%{F-}
+ramp-capacity-9 = %{u#66cc66}%{F#66cc66}%{F-}
 
 
 [module/battery_0]
@@ -272,14 +272,14 @@ type = internal/memory
 interval = 5
 format = <ramp-used><label>
 label =   %percentage_used:2%%
-ramp-used-0 = %{u#00ff00}
-ramp-used-1 = %{u#48ff00}
-ramp-used-2 = %{u#91ff00}
-ramp-used-3 = %{u#daff00}
-ramp-used-4 = %{u#ffda00}
-ramp-used-5 = %{u#ff9100}
-ramp-used-6 = %{u#ff4800}
-ramp-used-7 = %{u#ff0000}
+ramp-used-0 = %{u#66cc66}
+ramp-used-1 = %{u#83cc66}
+ramp-used-2 = %{u#a0cc66}
+ramp-used-3 = %{u#bdcc66}
+ramp-used-4 = %{u#ccbd66}
+ramp-used-5 = %{u#cca066}
+ramp-used-6 = %{u#cc8366}
+ramp-used-7 = %{u#cc6666}
 
 
 [module/filesystem]
