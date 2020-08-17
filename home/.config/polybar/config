@@ -76,7 +76,7 @@ padding-right = 105
 
 modules-left = musicinfo i3 xwindow
 modules-center = date volume
-modules-right = downspeed upspeed cpu memory filesystem
+modules-right = downspeed upspeed filesystem memory cpu
 
 #tray-offset-x=-15
 
@@ -257,24 +257,27 @@ ramp-coreload-4-font = 6
 ramp-coreload-5-font = 6
 ramp-coreload-6-font = 6
 ramp-coreload-7-font = 6
+ramp-coreload-8-font = 6
 
 ramp-coreload-0 = ▁
-ramp-coreload-1 = ▂
-ramp-coreload-2 = ▃
-ramp-coreload-3 = ▄
-ramp-coreload-4 = ▅
-ramp-coreload-5 = ▆
-ramp-coreload-6 = ▇
-ramp-coreload-7 = █
+ramp-coreload-1 = ▁
+ramp-coreload-2 = ▂
+ramp-coreload-3 = ▃
+ramp-coreload-4 = ▄
+ramp-coreload-5 = ▅
+ramp-coreload-6 = ▆
+ramp-coreload-7 = ▇
+ramp-coreload-8 = █
 
-ramp-coreload-0-foreground = ${env:RAMP_0}
-ramp-coreload-1-foreground = ${env:RAMP_1}
-ramp-coreload-2-foreground = ${env:RAMP_2}
-ramp-coreload-3-foreground = ${env:RAMP_3}
-ramp-coreload-4-foreground = ${env:RAMP_4}
-ramp-coreload-5-foreground = ${env:RAMP_5}
-ramp-coreload-6-foreground = ${env:RAMP_6}
-ramp-coreload-7-foreground = ${env:RAMP_7}
+ramp-coreload-0-foreground = ${colors.background}
+ramp-coreload-1-foreground = ${env:RAMP_0}
+ramp-coreload-2-foreground = ${env:RAMP_1}
+ramp-coreload-3-foreground = ${env:RAMP_2}
+ramp-coreload-4-foreground = ${env:RAMP_3}
+ramp-coreload-5-foreground = ${env:RAMP_4}
+ramp-coreload-6-foreground = ${env:RAMP_5}
+ramp-coreload-7-foreground = ${env:RAMP_6}
+ramp-coreload-8-foreground = ${env:RAMP_7}
 
 
 [module/memory]
