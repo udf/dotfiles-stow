@@ -233,16 +233,38 @@ format-connected-underline = ${colors.blue}
 [module/cpu]
 type = internal/cpu
 interval = 1
-format = <ramp-load><label>
+format = <ramp-load><label> <ramp-coreload>
+
 label =   %percentage:2%%
-ramp-load-0 = %{u#00ff00}
-ramp-load-1 = %{u#48ff00}
-ramp-load-2 = %{u#91ff00}
-ramp-load-3 = %{u#daff00}
-ramp-load-4 = %{u#ffda00}
-ramp-load-5 = %{u#ff9100}
-ramp-load-6 = %{u#ff4800}
-ramp-load-7 = %{u#ff0000}
+
+ramp-load-0 = %{u#66cc66}
+ramp-load-1 = %{u#83cc66}
+ramp-load-2 = %{u#a0cc66}
+ramp-load-3 = %{u#bdcc66}
+ramp-load-4 = %{u#ccbd66}
+ramp-load-5 = %{u#cca066}
+ramp-load-6 = %{u#cc8366}
+ramp-load-7 = %{u#cc6666}
+
+ramp-coreload-spacing = 0
+
+ramp-coreload-0 = ▁
+ramp-coreload-1 = ▂
+ramp-coreload-2 = ▃
+ramp-coreload-3 = ▄
+ramp-coreload-4 = ▅
+ramp-coreload-5 = ▆
+ramp-coreload-6 = ▇
+ramp-coreload-7 = █
+
+ramp-coreload-0-foreground = #66cc66
+ramp-coreload-1-foreground = #83cc66
+ramp-coreload-2-foreground = #a0cc66
+ramp-coreload-3-foreground = #bdcc66
+ramp-coreload-4-foreground = #ccbd66
+ramp-coreload-5-foreground = #cca066
+ramp-coreload-6-foreground = #cc8366
+ramp-coreload-7-foreground = #cc6666
 
 
 [module/memory]
