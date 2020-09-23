@@ -1,2 +1,4 @@
 mouse:*:name:Logitech G300s Optical Gaming Mouse:
  MOUSE_DPI=900
+mouse:*:name:Logitech Gaming Mouse G502:
+ MOUSE_DPI=900
