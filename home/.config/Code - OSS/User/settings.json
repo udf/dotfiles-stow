@@ -51,8 +51,8 @@
     "workbench.colorTheme": "Arc Dark Theme",
     "java.configuration.checkProjectSettingsExclusions": false,
     "diffEditor.maxComputationTime": 0,
-    "vscode-neovim.neovimPath": "/usr/bin/nvim",
-    "vscode-neovim.neovimInitPath": "~/.config/nvim/vscode.vim",
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+    "vscode-neovim.neovimInitVimPaths.linux": "~/.config/nvim/vscode.vim",
     "vscode-neovim.useCtrlKeysForInsertMode": false,
     "workbench.colorCustomizations": {
         "[Arc Dark Theme]": {
@@ -63,5 +63,27 @@
             "editorBracketMatch.background": "#ffffff40"
         }
     },
-    "java.semanticHighlighting.enabled": true
+    "java.semanticHighlighting.enabled": true,
+    "python.languageServer": "Microsoft",
+    "editor.tabSize": 2,
+    "xml.java.home": "/usr/lib/jvm/default-runtime/",
+    "[csharp]": {
+        "editor.defaultFormatter": "Leopotam.csharpfixformat"
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "python.showStartPage": false,
+    "explorer.confirmDragAndDrop": false,
+    "java.configuration.runtimes": [
+        {
+          "name": "JavaSE-11",
+          "path": "/usr/lib/jvm/java-11-openjdk/",
+          "default": true
+        }
+    ],
+    "[xml]": {
+        "editor.defaultFormatter": "redhat.vscode-xml"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    }
 }
