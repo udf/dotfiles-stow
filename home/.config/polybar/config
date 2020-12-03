@@ -114,7 +114,7 @@ wm-restack = i3
 [module/musicinfo]
 type = custom/script
 exec = ~/.config/polybar/playerctlctl.sh 120
-label = %{+u}%output%
+label = %{u#00000000}%{+u}%output%
 format = <label>
 tail = true
 
