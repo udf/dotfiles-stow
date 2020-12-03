@@ -114,7 +114,7 @@ wm-restack = i3
 [module/musicinfo]
 type = custom/script
 exec = ~/.config/polybar/playerctlctl.sh 120
-label = %output%
+label = %{+u}%output%
 format = <label>
 tail = true
 
@@ -142,7 +142,7 @@ label-full = 
 label-full-foreground = ${colors.bgreen}
 label-full-underline = ${colors.bgreen}
 
-format-charging = %{u#fff}<animation-charging> <label-charging>
+format-charging = %{u#fff}%{+u}<animation-charging> <label-charging>
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
@@ -150,7 +150,7 @@ animation-charging-3 = 
 animation-charging-4 = 
 animation-charging-framerate = 500
 
-format-discharging = <ramp-capacity> <label-discharging>
+format-discharging = %{+u}<ramp-capacity> <label-discharging>
 ramp-capacity-0 = ${env:URAMP_0}${env:FRAMP_0}%{F-}
 ramp-capacity-1 = ${env:URAMP_0}${env:FRAMP_0}%{F-}
 ramp-capacity-2 = ${env:URAMP_0}${env:FRAMP_0}%{F-}
@@ -235,7 +235,7 @@ format-connected-underline = ${colors.blue}
 [module/cpu]
 type = internal/cpu
 interval = 1
-format = <ramp-load><label> %{-u}<ramp-coreload>
+format = %{+u}<ramp-load><label> %{-u}<ramp-coreload>
 
 label =   %percentage:2%%
 
@@ -284,7 +284,7 @@ ramp-coreload-8-foreground = ${env:RAMP_7}
 [module/memory]
 type = internal/memory
 interval = 5
-format = <ramp-used><label>
+format = %{+u}<ramp-used><label>
 label =   %percentage_used:2%%
 ramp-used-0 = ${env:URAMP_0}
 ramp-used-1 = ${env:URAMP_1}
