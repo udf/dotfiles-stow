@@ -85,5 +85,7 @@
     },
     "[javascript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
-    }
+    },
+    "http.proxySupport": "off",
+    "terminal.integrated.inheritEnv": false
 }
