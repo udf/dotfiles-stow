@@ -15,7 +15,7 @@ or other application using the libvirt API.
   </metadata>
   <memory unit='KiB'>16777216</memory>
   <currentMemory unit='KiB'>16777216</currentMemory>
-  <vcpu placement='static'>6</vcpu>
+  <vcpu placement='static'>12</vcpu>
   <cputune>
     <vcpupin vcpu='0' cpuset='0'/>
     <vcpupin vcpu='1' cpuset='12'/>
@@ -23,6 +23,12 @@ or other application using the libvirt API.
     <vcpupin vcpu='3' cpuset='13'/>
     <vcpupin vcpu='4' cpuset='2'/>
     <vcpupin vcpu='5' cpuset='14'/>
+    <vcpupin vcpu='6' cpuset='3'/>
+    <vcpupin vcpu='7' cpuset='15'/>
+    <vcpupin vcpu='8' cpuset='4'/>
+    <vcpupin vcpu='9' cpuset='16'/>
+    <vcpupin vcpu='10' cpuset='5'/>
+    <vcpupin vcpu='11' cpuset='17'/>
     <emulatorpin cpuset='10-11'/>
   </cputune>
   <os>
@@ -45,8 +51,8 @@ or other application using the libvirt API.
     </kvm>
     <vmport state='off'/>
   </features>
-  <cpu mode='host-model' check='partial'>
-    <topology sockets='1' dies='1' cores='6' threads='1'/>
+  <cpu mode='host-passthrough' check='none' migratable='on'>
+    <topology sockets='1' dies='1' cores='6' threads='2'/>
     <feature policy='require' name='topoext'/>
   </cpu>
   <clock offset='localtime'>
