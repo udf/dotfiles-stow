@@ -1,13 +1,13 @@
 <!--
 WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
 OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
-  virsh edit win10-2
+  virsh edit win10-hidden
 or other application using the libvirt API.
 -->
 
 <domain type='kvm' xmlns:qemu='http://libvirt.org/schemas/domain/qemu/1.0'>
-  <name>win10-2</name>
-  <uuid>0171e55f-ea52-432d-b204-34fc64226875</uuid>
+  <name>win10-hidden</name>
+  <uuid>8c4c2dff-8ffc-4b01-979b-402e256d59ec</uuid>
   <metadata>
     <libosinfo:libosinfo xmlns:libosinfo="http://libosinfo.org/xmlns/libvirt/domain/1.0">
       <libosinfo:os id="http://microsoft.com/win/10"/>
@@ -31,10 +31,13 @@ or other application using the libvirt API.
     <vcpupin vcpu='11' cpuset='17'/>
     <emulatorpin cpuset='10-11'/>
   </cputune>
+  <resource>
+    <partition>/machine</partition>
+  </resource>
   <os>
     <type arch='x86_64' machine='pc-q35-5.1'>hvm</type>
     <loader readonly='yes' type='pflash'>/usr/share/edk2-ovmf/x64/OVMF_CODE.fd</loader>
-    <nvram>/var/lib/libvirt/qemu/nvram/win10-2_VARS.fd</nvram>
+    <nvram>/var/lib/libvirt/qemu/nvram/win10-hidden_VARS.fd</nvram>
     <smbios mode='host'/>
   </os>
   <features>
@@ -120,10 +123,12 @@ or other application using the libvirt API.
       <source>
         <vendor id='0x046d'/>
         <product id='0xc24d'/>
+        <address bus='1' device='7'/>
       </source>
       <address type='usb' bus='0' port='2'/>
     </hostdev>
     <hostdev mode='subsystem' type='pci' managed='yes'>
+      <driver name='vfio'/>
       <source>
         <address domain='0x0000' bus='0x0e' slot='0x00' function='0x0'/>
       </source>
@@ -131,6 +136,7 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x03' slot='0x00' function='0x0'/>
     </hostdev>
     <hostdev mode='subsystem' type='pci' managed='yes'>
+      <driver name='vfio'/>
       <source>
         <address domain='0x0000' bus='0x0e' slot='0x00' function='0x1'/>
       </source>
@@ -140,6 +146,7 @@ or other application using the libvirt API.
       <source>
         <vendor id='0x046d'/>
         <product id='0xc332'/>
+        <address bus='1' device='5'/>
       </source>
       <address type='usb' bus='0' port='1'/>
     </hostdev>
@@ -147,10 +154,12 @@ or other application using the libvirt API.
       <source>
         <vendor id='0x8087'/>
         <product id='0x0025'/>
+        <address bus='3' device='2'/>
       </source>
       <address type='usb' bus='0' port='3'/>
     </hostdev>
     <hostdev mode='subsystem' type='pci' managed='yes'>
+      <driver name='vfio'/>
       <source>
         <address domain='0x0000' bus='0x03' slot='0x00' function='0x0'/>
       </source>
@@ -159,9 +168,10 @@ or other application using the libvirt API.
     </hostdev>
     <memballoon model='none'/>
   </devices>
+  <seclabel type='dynamic' model='dac' relabel='yes'/>
   <qemu:commandline>
     <qemu:arg value='-cpu'/>
-    <qemu:arg value='host,rdtscp=off,hv_time,hv_vendor_id=null'/>
+    <qemu:arg value='host,rdtscp=off,hv_time,kvm=off,hv_vendor_id=null,-hypervisor'/>
     <qemu:arg value='-device'/>
     <qemu:arg value='ich9-intel-hda,bus=pcie.0,addr=0x1b'/>
     <qemu:arg value='-device'/>
