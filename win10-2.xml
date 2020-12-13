@@ -160,8 +160,6 @@ or other application using the libvirt API.
     <memballoon model='none'/>
   </devices>
   <qemu:commandline>
-    <qemu:arg value='-cpu'/>
-    <qemu:arg value='host,rdtscp=off,hv_time,hv_vendor_id=null'/>
     <qemu:arg value='-device'/>
     <qemu:arg value='ich9-intel-hda,bus=pcie.0,addr=0x1b'/>
     <qemu:arg value='-device'/>
