@@ -123,7 +123,6 @@ or other application using the libvirt API.
       <source>
         <vendor id='0x046d'/>
         <product id='0xc24d'/>
-        <address bus='1' device='7'/>
       </source>
       <address type='usb' bus='0' port='2'/>
     </hostdev>
@@ -146,7 +145,6 @@ or other application using the libvirt API.
       <source>
         <vendor id='0x046d'/>
         <product id='0xc332'/>
-        <address bus='1' device='5'/>
       </source>
       <address type='usb' bus='0' port='1'/>
     </hostdev>
@@ -154,7 +152,6 @@ or other application using the libvirt API.
       <source>
         <vendor id='0x8087'/>
         <product id='0x0025'/>
-        <address bus='3' device='2'/>
       </source>
       <address type='usb' bus='0' port='3'/>
     </hostdev>
