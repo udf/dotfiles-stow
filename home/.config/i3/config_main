@@ -45,25 +45,25 @@ bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute @DEFAULT_SINK@ t
 
 
 # media player keys
-bindsym $mod+Mod1+f exec --no-startup-id "playerctlctlctl volume 0.01 0"
-bindsym $mod+Mod1+v exec --no-startup-id "playerctlctlctl volume -0.01 0"
-bindsym $mod+Mod1+s exec --no-startup-id "playerctlctlctl play_pause"
-bindsym $mod+Mod1+x exec --no-startup-id "playerctlctlctl next"
-bindsym $mod+Mod1+z exec --no-startup-id "playerctlctlctl previous"
+bindsym $mod+Mod1+f exec --no-startup-id "playerctlctlctl set_volume 0.01 false"
+bindsym $mod+Mod1+v exec --no-startup-id "playerctlctlctl set_volume -0.01 false"
+bindsym $mod+Mod1+s exec --no-startup-id "playerctlctlctl player.play_pause"
+bindsym $mod+Mod1+x exec --no-startup-id "playerctlctlctl player.next"
+bindsym $mod+Mod1+z exec --no-startup-id "playerctlctlctl player.previous"
 
-bindsym $mod+XF86AudioRaiseVolume exec --no-startup-id "playerctlctlctl position 2 0"
-bindsym $mod+XF86AudioLowerVolume exec --no-startup-id "playerctlctlctl position -2 0"
-bindsym $mod+Ctrl+XF86AudioRaiseVolume exec --no-startup-id "playerctlctlctl volume 0.01 0"
-bindsym $mod+Ctrl+XF86AudioLowerVolume exec --no-startup-id "playerctlctlctl volume -0.01 0"
-bindsym XF86AudioPlay exec --no-startup-id "playerctlctlctl play_pause"
-bindsym XF86AudioNext exec --no-startup-id "playerctlctlctl next"
-bindsym XF86AudioPrev exec --no-startup-id "playerctlctlctl previous"
+bindsym $mod+XF86AudioRaiseVolume exec --no-startup-id "playerctlctlctl set_position 2 false"
+bindsym $mod+XF86AudioLowerVolume exec --no-startup-id "playerctlctlctl set_position -2 false"
+bindsym $mod+Ctrl+XF86AudioRaiseVolume exec --no-startup-id "playerctlctlctl set_volume 0.01 false"
+bindsym $mod+Ctrl+XF86AudioLowerVolume exec --no-startup-id "playerctlctlctl set_volume -0.01 false"
+bindsym XF86AudioPlay exec --no-startup-id "playerctlctlctl player.play_pause"
+bindsym XF86AudioNext exec --no-startup-id "playerctlctlctl player.next"
+bindsym XF86AudioPrev exec --no-startup-id "playerctlctlctl player.previous"
 
-bindsym $mod+XF86AudioNext exec --no-startup-id "playerctlctlctl next_player"
-bindsym $mod+XF86AudioPrev exec --no-startup-id "playerctlctlctl previous_player"
+bindsym $mod+XF86AudioNext exec --no-startup-id "playerctlctlctl ctl_next"
+bindsym $mod+XF86AudioPrev exec --no-startup-id "playerctlctlctl ctl_previous"
 
-bindsym $mod+Mod1+w exec --no-startup-id "playerctlctlctl next_player"
-bindsym $mod+Mod1+q exec --no-startup-id "playerctlctlctl previous_player"
+bindsym $mod+Mod1+w exec --no-startup-id "playerctlctlctl ctl_next"
+bindsym $mod+Mod1+q exec --no-startup-id "playerctlctlctl ctl_previous"
 
 
 # screenshots
