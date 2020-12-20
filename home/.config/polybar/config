@@ -65,7 +65,7 @@ modules-left = i3 musicinfo_samlap
 modules-right = downspeed upspeed downspeed_wlan upspeed_wlan cpu memory filesystem battery_0 battery_rem
 
 
-[bar/karen-chan]
+[bar/karen-chan_1]
 inherit = main_bar
 bottom = true
 monitor = HDMI-A-0
@@ -79,7 +79,20 @@ modules-left = musicinfo i3 xwindow
 modules-center = date volume
 modules-right = downspeed upspeed filesystem memory cpu
 
-#tray-offset-x=-15
+
+[bar/karen-chan_2]
+inherit = main_bar
+bottom = false
+monitor = DisplayPort-1
+tray-position = none
+
+line-size = 2
+
+padding-left = 2
+padding-right = 2
+
+modules-left = musicinfo_samlap i3 xwindow
+modules-right = downspeed upspeed filesystem memory cpu volume date
 
 
 [main_bar]
@@ -173,7 +186,7 @@ type = internal/i3
 format = <label-state><label-mode>
 index-sort = true
 wrapping-scroll = true
-pin-workspaces = true
+pin-workspaces = false
 
 label-mode-foreground = ${colors.blue}
 label-mode-background = ${colors.background}
@@ -192,6 +205,11 @@ label-urgent = " %name% "
 label-urgent-background = ${colors.red}
 label-urgent-foreground = ${colors.foreground}
 label-urgent-padding = 0
+
+label-visible = " %name% "
+label-visible-background = ${colors.bblue}
+label-visible-foreground = ${colors.background}
+label-visible-padding = 0
 
 
 [module/xwindow]
