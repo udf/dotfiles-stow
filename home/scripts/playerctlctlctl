@@ -1,3 +1,15 @@
 #!/bin/sh
 
-printf '%s\0' "$@" | socat - UNIX-CONNECT:/tmp/playerctlctl1000
+SOCKET_PATH=$XDG_RUNTIME_DIR/playerctlctl
+
+function join_by {
+  local IFS="$1"
+  shift
+  echo "$*"
+}
+
+method=$1
+shift
+args=$(join_by , $@)
+
+printf '{"jsonrpc": "2.0", "method": "%s", "params": [%s]}\n' "$method" "$args" | socat -t0 - UNIX-CONNECT:$SOCKET_PATH
