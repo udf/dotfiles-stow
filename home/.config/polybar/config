@@ -84,6 +84,7 @@ modules-right = downspeed upspeed filesystem memory cpu
 inherit = main_bar
 bottom = false
 monitor = DisplayPort-1
+monitor-fallback = DisplayPort-0
 tray-position = none
 
 line-size = 2
@@ -91,8 +92,8 @@ line-size = 2
 padding-left = 2
 padding-right = 2
 
-modules-left = musicinfo_samlap i3 xwindow
-modules-right = downspeed upspeed filesystem memory cpu volume date
+modules-left = i3 xwindow
+modules-right = musicinfo_samlap downspeed upspeed filesystem memory cpu volume date
 
 
 [main_bar]
