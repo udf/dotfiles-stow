@@ -13,3 +13,8 @@ for_window [class="^.*"] border pixel 3
 # layout
 workspace 1 output HDMI-A-0
 exec --no-startup-id i3-msg "workspace 1; append_layout $HOME/dotfiles/i3_layouts/desktop.json"
+
+# monitor inputs
+# displayport
+bindsym $mod+F1 exec ddcutil -d 1 setvcp 60 0x10
+bindsym $mod+F2 exec ddcutil -d 1 setvcp 60 0x11
