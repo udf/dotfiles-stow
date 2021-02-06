@@ -1,4 +1,5 @@
 export GPG_TTY=$(tty)
+export TERM=xterm-color
 
 # Wait 50ms for key sequences (fixes ctrl+ bindings being slow)
 KEYTIMEOUT=5
@@ -26,17 +27,15 @@ eval $(dircolors ~/.dir_colors)
 
 # escape key codes
 bindkey -e
-bindkey "\e[5~" beginning-of-history    # PAGE UP
-bindkey "\e[6~" end-of-history          # PAGE DOWN
-bindkey "\e[7~" beginning-of-line       # HOME
-bindkey "\e[8~" end-of-line             # END
+bindkey "\e[H" beginning-of-line       # HOME
+bindkey "\e[F" end-of-line             # END
 bindkey "\e[3~" delete-char             # DELETE
 bindkey "\e[2~" quoted-insert           # INSERT
 
 export WORDCHARS=
 bindkey "\e[1;5C" emacs-forward-word
 bindkey "\e[1;5D" emacs-backward-word
-bindkey "\e[1;5E" vi-backward-kill-word
+bindkey "^H" vi-backward-kill-word
 
 # make time builtin look like bash
 TIMEFMT=$'\nreal\t%*Es\nuser\t%*Us\nsys\t%*Ss'
