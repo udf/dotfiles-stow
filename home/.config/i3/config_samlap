@@ -22,5 +22,5 @@ for_window [title="GIMP Startup"] move workspace $ws4
 for_window [class="Subl3" title=".+\(blag\) - Sublime Text.+"] focus; floating enable; move scratchpad; scratchpad show; move position 964 24; resize set 952 1052; move scratchpad
 
 # autostart programs
-exec --no-startup-id ZSH_RUN=htop urxvt -name term_htop
+exec --no-startup-id ZSH_RUN=htop termite -name term_htop
 exec --no-startup-id subl3

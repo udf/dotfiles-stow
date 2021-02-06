@@ -17,7 +17,7 @@
                 {
                     "swallows": [
                         {
-                            "class": "^URxvt$"
+                            "class": "^Termite$"
                         }
                     ]
                 }
@@ -80,7 +80,7 @@
                 {
                     "swallows": [
                         {
-                            "class": "^URxvt$"
+                            "class": "^Termite$"
                         }
                     ]
                 }
@@ -93,7 +93,7 @@
                 {
                     "swallows": [
                         {
-                            "class": "^URxvt$"
+                            "class": "^Termite$"
                         }
                     ]
                 }

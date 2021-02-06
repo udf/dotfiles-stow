@@ -6,7 +6,6 @@ xset -b
 xset s off 
 xset -dpms
 
-export TERMINAL="urxvt"
 export PATH="$HOME/scripts:$PATH"
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export QT_STYLE_OVERRIDE=qt5ct-style

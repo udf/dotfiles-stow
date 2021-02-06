@@ -1,0 +1,55 @@
+[options]
+font = DejaVu Sans 9
+font = Hack Nerd Font 9
+
+scrollback_lines = -1
+
+
+[colors]
+foreground          = #cccccc
+foreground_bold     = #cccccc
+cursor              = #c5c8c6
+cursor_foreground   = #17181a
+background          = rgba(18, 23, 26, 0.85)
+
+# Black
+color0  = #17181a
+color8  = #626873
+
+# Red
+color1  = #a54242
+color9  = #cc6666
+
+# Green
+color2  = #6c9440
+color10 = #92bd68
+
+# Yellow
+color3  = #decc5f
+color11 = #f0de74
+
+# Blue
+color4  = #5f819d
+color12 = #81a2be
+
+# Magenta
+color5  = #ba70aa
+color13 = #ba8baf
+
+# Cyan
+color6  = #5e8d87
+color14 = #8abeb7
+
+# White
+color7  = #d4d7d9
+color15 = #faffff
+
+# Extra colors
+color16 = #ae81ff
+color17 = #ff8d5c
+
+# Extra greys
+color18 = rgba(26, 32, 38, 0.85)
+color19 = #35434d
+color20 = #9faab3
+color21 = #dae0e6

@@ -15,6 +15,6 @@ exec --no-startup-id i3-msg "workspace 3; append_layout $HOME/dotfiles/i3_layout
 exec --no-startup-id i3-msg "workspace 1; append_layout $HOME/dotfiles/i3_layouts/htop_tdesktop.json"
 
 # autostart programs
-exec --no-startup-id ZSH_RUN=htop urxvt -name term_htop
+exec --no-startup-id ZSH_RUN=htop termite -name term_htop
 exec --no-startup-id subl3
 exec_always --no-startup-id $HOME/scripts/vm_res_fix.sh
