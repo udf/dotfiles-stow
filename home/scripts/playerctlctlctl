@@ -12,4 +12,4 @@ method=$1
 shift
 args=$(join_by , $@)
 
-printf '{"jsonrpc": "2.0", "method": "%s", "params": [%s]}\n' "$method" "$args" | socat -t0 - UNIX-CONNECT:$SOCKET_PATH
+printf '{"jsonrpc": "2.0", "method": "%s", "params": [%s], "id": 1}\n' "$method" "$args" | socat - UNIX-CONNECT:$SOCKET_PATH
