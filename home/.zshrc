@@ -163,24 +163,19 @@ source ~/zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
 
-# fzf's CTRL+R but with unique entries
-fzf-history-widget() {
-  local selected num
-  setopt localoptions noglobsubst noposixbuiltins pipefail 2> /dev/null
-  selected=( $(fc -lr 1 | awk '{c1=$1;$1="";if(!x[$0]++){$1 = c1;print($0);}}' |
-    FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} $FZF_DEFAULT_OPTS -n2..,.. --tiebreak=index --bind=ctrl-r:toggle-sort $FZF_CTRL_R_OPTS --query=${(qqq)LBUFFER} +m" $(__fzfcmd)) )
+# CTRL-Y - Paste the selected directory path(s) into the command line
+fzf-dir-widget() {
+  OLD_CMD="${FZF_CTRL_T_COMMAND}"
+  FZF_CTRL_T_COMMAND="find -L . -mindepth 1 \\( -path '*/\\.*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\) -prune \
+    -o -type d -print 2> /dev/null | cut -b3-"
+  LBUFFER="${LBUFFER}$(__fsel)"
+  FZF_CTRL_T_COMMAND="${OLD_CMD}"
   local ret=$?
-  if [ -n "$selected" ]; then
-    num=$selected[1]
-    if [ -n "$num" ]; then
-      zle vi-fetch-history -n $num
-    fi
-  fi
   zle reset-prompt
   return $ret
 }
-zle     -N   fzf-history-widget
-bindkey '^R' fzf-history-widget
+zle     -N   fzf-dir-widget
+bindkey '^Y' fzf-dir-widget
 
 # run program, so that when it quits we get dropped into a shell
 if [[ -v ZSH_RUN ]]; then
