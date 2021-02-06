@@ -67,8 +67,9 @@ set signcolumn=yes
 syntax on
 set synmaxcol=1024
 set background=dark
+set t_Co=16
 let base16colorspace=256
-colorscheme base16-default-dark
+colorscheme base16-3024
 hi Normal ctermbg=NONE
 hi LineNr ctermbg=NONE
 
