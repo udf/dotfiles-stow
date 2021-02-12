@@ -18,3 +18,7 @@ exec --no-startup-id i3-msg "workspace 1; append_layout $HOME/dotfiles/i3_layout
 # displayport
 bindsym $mod+F1 exec ddcutil -d 1 setvcp 60 0x10
 bindsym $mod+F2 exec ddcutil -d 1 setvcp 60 0x11
+
+# horizontal scroll as volume wheel
+bindsym --whole-window $mod+button7 exec --no-startup-id "pactl set-sink-volume @DEFAULT_SINK@ +1%"
+bindsym --whole-window $mod+button6 exec --no-startup-id "pactl set-sink-volume @DEFAULT_SINK@ -1%"
