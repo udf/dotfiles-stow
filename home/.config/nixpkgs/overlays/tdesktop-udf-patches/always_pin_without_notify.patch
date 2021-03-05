@@ -1,0 +1,21 @@
+diff --git a/Telegram/SourceFiles/boxes/confirm_box.cpp b/Telegram/SourceFiles/boxes/confirm_box.cpp
+index 9623410..dc8f52c 100644
+--- a/Telegram/SourceFiles/boxes/confirm_box.cpp
++++ b/Telegram/SourceFiles/boxes/confirm_box.cpp
+@@ -481,14 +481,14 @@ void PinMessageBox::prepare() {
+ 				tr::now,
+ 				lt_user,
+ 				_peer->shortName()),
+-			false,
++			true,
+ 			st::defaultBoxCheckbox);
+ 		_checkbox = _pinForPeer;
+ 	} else if (!_pinningOld && (_peer->isChat() || _peer->isMegagroup())) {
+ 		_notify.create(
+ 			this,
+ 			tr::lng_pinned_notify(tr::now),
+-			true,
++			false,
+ 			st::defaultBoxCheckbox);
+ 		_checkbox = _notify;
+ 	}

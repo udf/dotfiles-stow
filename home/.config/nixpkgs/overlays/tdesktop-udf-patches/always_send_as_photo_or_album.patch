@@ -1,0 +1,25 @@
+diff --git a/Telegram/SourceFiles/boxes/send_files_box.cpp b/Telegram/SourceFiles/boxes/send_files_box.cpp
+index e7d1f80..ffbb2ab 100644
+--- a/Telegram/SourceFiles/boxes/send_files_box.cpp
++++ b/Telegram/SourceFiles/boxes/send_files_box.cpp
+@@ -424,17 +424,9 @@ void SendFilesBox::openDialogToAddFileToAlbum() {
+ 
+ void SendFilesBox::initSendWay() {
+ 	_sendWay = [&] {
+-		auto result = Core::App().settings().sendFilesWay();
+-		if (_sendLimit == SendLimit::One) {
+-			result.setGroupFiles(true);
+-			return result;
+-		} else if (_list.overrideSendImagesAsPhotos == false) {
+-			result.setSendImagesAsPhotos(false);
+-			return result;
+-		} else if (_list.overrideSendImagesAsPhotos == true) {
+-			result.setSendImagesAsPhotos(true);
+-			return result;
+-		}
++		auto result = SendFilesWay();
++		result.setGroupFiles(true);
++		result.setSendImagesAsPhotos(true);
+ 		return result;
+ 	}();
+ 	_sendWay.changes(
