@@ -26,6 +26,7 @@ in
     ];
 
     postFixup = ''
+      # TODO: specify Arc-Dark GTK theme instead of assuming that it's set in system config
       wrapProgram $out/bin/telegram-desktop \
         "''${gappsWrapperArgs[@]}" \
         "''${qtWrapperArgs[@]}" \
