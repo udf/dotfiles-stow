@@ -77,7 +77,7 @@ padding-right = 105
 
 modules-left = musicinfo i3 xwindow
 modules-center = date volume
-modules-right = downspeed upspeed filesystem memory cpu
+modules-right = downspeed upspeed filesystem upsinfo memory cpu
 
 
 [bar/karen-chan_2]
@@ -85,7 +85,6 @@ inherit = main_bar
 bottom = false
 monitor = DisplayPort-1
 monitor-fallback = DisplayPort-0
-tray-position = none
 
 line-size = 2
 
@@ -115,6 +114,7 @@ font-2 = Noto Sans Mono CJK KR:pixelsize=9;0
 font-3 = Noto Sans Mono CJK SC:pixelsize=9;0
 font-4 = Noto Sans Mono CJK TC:pixelsize=9;0
 font-5 = Hack Nerd Font:pixelsize=12;5
+font-6 = DejaVu Mono:pixelsize=10;0
 
 tray-position = right
 tray-padding = 5
@@ -141,6 +141,14 @@ exec = ~/.config/polybar/playerctlctl_status.sh 100
 [module/battery_rem]
 type = custom/script
 exec = ~/.config/polybar/acpi_remaining.sh
+label = %output%
+format = <label>
+tail = true
+
+
+[module/upsinfo]
+type = custom/script
+exec = ~/.config/polybar/ups.py
 label = %output%
 format = <label>
 tail = true
