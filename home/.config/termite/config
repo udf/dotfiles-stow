@@ -1,5 +1,5 @@
 [options]
-font = DejaVu Sans 9
+font = DejaVu Mono 9
 font = Hack Nerd Font 9
 
 scrollback_lines = -1
