@@ -10,6 +10,7 @@
     "vim.useSystemClipboard": true,
     "cSpell.userWords": [
         "HMAC",
+        "Playerctl",
         "botapi",
         "mt",
         "proto",
