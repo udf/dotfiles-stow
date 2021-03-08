@@ -20,6 +20,7 @@ HOSTNAME=$(hostname)
 
 if [[ "$HOSTNAME" == "karen-chan" ]]; then
   polybar "${HOSTNAME}_1" &
+  sleep 3
   polybar "${HOSTNAME}_2" &
   wait
 else
