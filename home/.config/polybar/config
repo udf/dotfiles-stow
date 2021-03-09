@@ -92,7 +92,7 @@ padding-left = 2
 padding-right = 2
 
 modules-left = i3 xwindow
-modules-right = musicinfo_samlap downspeed upspeed filesystem memory cpu volume date
+modules-right = musicinfo_samlap downspeed upspeed filesystem upsinfo memory cpu volume date
 
 
 [main_bar]
