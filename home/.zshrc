@@ -135,10 +135,7 @@ alias gitd='git diff'
 alias gitds='git diff --stat'
 
 # ddc
-alias dell_dp='ddcutil -d 1 setvcp 60 0x10'
-alias dell_hdmi1='ddcutil -d 1 setvcp 60 0x11'
-alias dell_hdmi2='ddcutil -d 1 setvcp 60 0x12'
-alias dell_brightness='ddcutil -d 1 setvcp 10'
+alias dell_brightness='ddcutil --model "DELL S2721DGF" setvcp 10'
 
 # Add scripts directory to path
 export PATH="$HOME/scripts:$PATH"
