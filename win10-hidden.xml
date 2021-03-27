@@ -17,19 +17,19 @@ or other application using the libvirt API.
   <currentMemory unit='KiB'>16777216</currentMemory>
   <vcpu placement='static'>12</vcpu>
   <cputune>
-    <vcpupin vcpu='0' cpuset='0'/>
-    <vcpupin vcpu='1' cpuset='12'/>
-    <vcpupin vcpu='2' cpuset='1'/>
-    <vcpupin vcpu='3' cpuset='13'/>
-    <vcpupin vcpu='4' cpuset='2'/>
-    <vcpupin vcpu='5' cpuset='14'/>
-    <vcpupin vcpu='6' cpuset='3'/>
-    <vcpupin vcpu='7' cpuset='15'/>
-    <vcpupin vcpu='8' cpuset='4'/>
-    <vcpupin vcpu='9' cpuset='16'/>
-    <vcpupin vcpu='10' cpuset='5'/>
-    <vcpupin vcpu='11' cpuset='17'/>
-    <emulatorpin cpuset='10-11'/>
+    <vcpupin vcpu='0' cpuset='6'/>
+    <vcpupin vcpu='1' cpuset='18'/>
+    <vcpupin vcpu='2' cpuset='7'/>
+    <vcpupin vcpu='3' cpuset='19'/>
+    <vcpupin vcpu='4' cpuset='8'/>
+    <vcpupin vcpu='5' cpuset='20'/>
+    <vcpupin vcpu='6' cpuset='9'/>
+    <vcpupin vcpu='7' cpuset='21'/>
+    <vcpupin vcpu='8' cpuset='10'/>
+    <vcpupin vcpu='9' cpuset='22'/>
+    <vcpupin vcpu='10' cpuset='11'/>
+    <vcpupin vcpu='11' cpuset='23'/>
+    <emulatorpin cpuset='5,11'/>
   </cputune>
   <resource>
     <partition>/machine</partition>
@@ -48,6 +48,7 @@ or other application using the libvirt API.
       <vapic state='on'/>
       <spinlocks state='on' retries='8191'/>
       <vendor_id state='on' value='1234567890ab'/>
+      <evmcs state='off'/>
     </hyperv>
     <kvm>
       <hidden state='on'/>
@@ -64,6 +65,7 @@ or other application using the libvirt API.
     <timer name='pit' tickpolicy='delay'/>
     <timer name='hpet' present='no'/>
     <timer name='hypervclock' present='yes'/>
+    <timer name='tsc' present='yes' mode='native'/>
   </clock>
   <on_poweroff>destroy</on_poweroff>
   <on_reboot>restart</on_reboot>
@@ -110,6 +112,15 @@ or other application using the libvirt API.
       <model name='pcie-root-port'/>
       <target chassis='6' port='0xd'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x5'/>
+    </controller>
+    <controller type='pci' index='7' model='pcie-root-port'>
+      <model name='pcie-root-port'/>
+      <target chassis='7' port='0xe'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x6'/>
+    </controller>
+    <controller type='pci' index='8' model='pcie-to-pci-bridge'>
+      <model name='pcie-pci-bridge'/>
+      <address type='pci' domain='0x0000' bus='0x06' slot='0x00' function='0x0'/>
     </controller>
     <interface type='network'>
       <mac address='52:54:00:3c:8a:4b'/>
@@ -164,6 +175,11 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x05' slot='0x00' function='0x0'/>
     </hostdev>
     <memballoon model='none'/>
+    <shmem name='looking-glass'>
+      <model type='ivshmem-plain'/>
+      <size unit='M'>64</size>
+      <address type='pci' domain='0x0000' bus='0x08' slot='0x01' function='0x0'/>
+    </shmem>
   </devices>
   <seclabel type='dynamic' model='dac' relabel='yes'/>
   <qemu:commandline>
