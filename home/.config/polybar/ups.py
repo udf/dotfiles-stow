@@ -15,7 +15,8 @@ def get_input_status(props):
     'OL': UnderlineColours.Green + 'ﮣ',
     'OB': UnderlineColours.Red + 'ﮤ'
   }.get(props.get('ups.status', None), '')
-  return f"{icon} {props.get('input.voltage')}V"
+  voltage = round(float(props.get('input.voltage')))
+  return f"{icon} {voltage}V {props.get('input.frequency')}Hz"
 
 
 def get_battery_status(props):
