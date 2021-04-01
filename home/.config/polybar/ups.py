@@ -7,13 +7,15 @@ import subprocess
 class UnderlineColours:
   Green = '%{u#92bd68}'
   Red = '%{u#cc6666}'
+  Yellow = '%{u#f0de74}'
   White = '%{u#faffff}'
 
 
 def get_input_status(props):
   icon = {
     'OL': UnderlineColours.Green + 'ﮣ',
-    'OB': UnderlineColours.Red + 'ﮤ'
+    'OB': UnderlineColours.Red + 'ﮤ',
+    'OL BOOST': UnderlineColours.Yellow + 'ﮣ↑'
   }.get(props.get('ups.status', None), '')
   voltage = round(float(props.get('input.voltage')))
   return f"{icon} {voltage}V {props.get('input.frequency')}Hz"
