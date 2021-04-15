@@ -47,7 +47,9 @@ or other application using the libvirt API.
       <vpindex state='on'/>
       <runtime state='on'/>
       <synic state='on'/>
-      <stimer state='on'/>
+      <stimer state='on'>
+        <direct state='on'/>
+      </stimer>
       <reset state='on'/>
       <vendor_id state='on' value='1234567890ab'/>
       <frequencies state='on'/>
@@ -69,11 +71,11 @@ or other application using the libvirt API.
     <feature policy='require' name='invtsc'/>
   </cpu>
   <clock offset='localtime'>
-    <timer name='rtc' tickpolicy='catchup' track='guest'/>
-    <timer name='pit' tickpolicy='delay'/>
+    <timer name='rtc' present='no' tickpolicy='catchup'/>
+    <timer name='pit' present='no' tickpolicy='delay'/>
     <timer name='hpet' present='no'/>
-    <timer name='tsc' present='yes' mode='native'/>
     <timer name='hypervclock' present='yes'/>
+    <timer name='tsc' present='yes' mode='native'/>
   </clock>
   <on_poweroff>destroy</on_poweroff>
   <on_reboot>restart</on_reboot>
