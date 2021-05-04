@@ -32,6 +32,9 @@ bindkey "\e[F" end-of-line             # END
 bindkey "\e[3~" delete-char             # DELETE
 bindkey "\e[2~" quoted-insert           # INSERT
 
+# keypad enter
+bindkey -s "^[OM" "^M"
+
 export WORDCHARS=
 bindkey "\e[1;5C" emacs-forward-word
 bindkey "\e[1;5D" emacs-backward-word
