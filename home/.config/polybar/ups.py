@@ -30,7 +30,10 @@ def get_load_status(props):
 
 
 def get_status():
-  output = subprocess.check_output(['upsc', 'mecer-vesta-3k'])
+  try:
+    output = subprocess.check_output(['upsc', 'mecer-vesta-3k'])
+  except:
+    return '';
   props = {}
   for line in output.splitlines():
     m = re.match(r'^(.+?): (.+)$', line.decode('ascii'))
