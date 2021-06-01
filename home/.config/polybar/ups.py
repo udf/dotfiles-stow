@@ -31,7 +31,7 @@ def get_load_status(props):
 
 def get_status():
   try:
-    output = subprocess.check_output(['upsc', 'mecer-vesta-3k'])
+    output = subprocess.check_output(['upsc', 'mecer-vesta-3k@192.168.0.3'])
   except:
     return '';
   props = {}
@@ -54,4 +54,4 @@ while 1:
   if output != prev_output:
     print(output, flush=True)
     prev_output = output
-  time.sleep(1)
+  time.sleep(2)
