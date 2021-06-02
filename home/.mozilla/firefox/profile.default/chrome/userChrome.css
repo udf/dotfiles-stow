@@ -1,4 +1,4 @@
-@-moz-document url(chrome://browser/content/browser.xhtml);
+@import "Firefox-UI-Fix/userChrome.css";
 
 /* Fix the top (left) option of context menus spontaneously clicking itself */
 menupopup {
@@ -40,4 +40,9 @@ menupopup {
 /* Fix cancer margins around search one-off icons */
 .searchbar-engine-one-off-item {
     margin: 0px !important;
+}
+
+/* Make top of tab square (smooth corners = smooth brain) */
+.tab-background {
+    border-radius: 0px !important;
 }

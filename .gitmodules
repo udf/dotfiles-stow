@@ -13,3 +13,6 @@
 [submodule "fast-syntax-highlighting"]
 	path = home/zsh/fast-syntax-highlighting
 	url = git@github.com:zdharma/fast-syntax-highlighting.git
+[submodule "home/.mozilla/firefox/profile.default/chrome/Firefox-UI-Fix"]
+	path = home/.mozilla/firefox/profile.default/chrome/Firefox-UI-Fix
+	url = git@github.com:black7375/Firefox-UI-Fix.git
