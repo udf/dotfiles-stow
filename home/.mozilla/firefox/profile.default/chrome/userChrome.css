@@ -42,12 +42,24 @@ menupopup {
     margin: 0px !important;
 }
 
-/* Make top of tab square (smooth corners = smooth brain) */
 .tab-background {
+    /* Make top of tab square (smooth corners = smooth brain) */
     border-radius: 0px !important;
+    /* Fix small gap at the top */
+    margin: 0 !important;
+}
+
+/* Correct content position after removing top gap */
+.tab-content {
+    margin: 0 !important;
 }
 
 /* Reduce spacing in dialog boxes (like http login) */
 .dialogRow {
     margin-bottom: 8px !important;
+}
+
+/* Remove retarded last tab margin */
+#tabbrowser-arrowscrollbox:not([overflowing]) .tabbrowser-tab[last-visible-tab] {
+    margin-inline-end: 0 !important;
 }
