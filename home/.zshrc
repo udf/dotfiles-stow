@@ -22,6 +22,8 @@ compinit
 # Include hidden files
 _comp_options+=(globdots)
 
+bindkey -M menuselect '^[[Z' reverse-menu-complete
+
 # dircolours
 eval $(dircolors ~/.dir_colors)
 
