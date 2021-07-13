@@ -135,7 +135,7 @@ tail = true
 
 [module/musicinfo_samlap]
 inherit = module/musicinfo
-exec = ~/.config/polybar/playerctlctl_status.sh 100
+exec = ~/.config/polybar/playerctlctl_status.sh 90
 
 
 [module/battery_rem]
