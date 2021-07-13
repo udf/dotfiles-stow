@@ -14,7 +14,8 @@
         "botapi",
         "mt",
         "proto",
-        "struct"
+        "struct",
+        "upvote"
     ],
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
