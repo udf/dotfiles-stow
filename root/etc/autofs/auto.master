@@ -1,4 +1,0 @@
-/-	/etc/autofs/auto.booty --timeout=0
-/-	/etc/autofs/auto.vm --timeout=0
-
-+auto.master
