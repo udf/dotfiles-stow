@@ -82,14 +82,16 @@ function set_shot_dir() {
     if (replaced) break;
   }
 
-  // if no replacement occurred for a url, use domain name
-  if (is_url) {
-    filepath = filepath.replace(/\/.+$/, '');
-    // TODO: configurable domain aliases
-    if (filepath.indexOf('youtu') === 0) {
-      filepath = 'youtube';
-    }
+  // Only use first directory
+  filepath = filepath.replace(/\/.+$/, '');
+
+  // TODO: configurable domain aliases
+  if (is_url && filepath.indexOf('youtu') === 0) {
+    filepath = 'youtube';
   }
+
+  // If no directory, use filename
+  filepath = mp.get_property_native('filename/no-ext');
 
   var new_dir = screenshot_dir + '/' + filepath;
   print('Setting dir to "' + new_dir + '"');
