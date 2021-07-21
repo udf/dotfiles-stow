@@ -91,7 +91,9 @@ function set_shot_dir() {
   }
 
   // If no directory, use filename
-  filepath = mp.get_property_native('filename/no-ext');
+  if (filepath === '') {
+    filepath = mp.get_property_native('filename/no-ext');
+  }
 
   var new_dir = screenshot_dir + '/' + filepath;
   print('Setting dir to "' + new_dir + '"');
