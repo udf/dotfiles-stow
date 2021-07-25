@@ -7,6 +7,7 @@ xset s off
 xset -dpms
 
 export TERMINAL="termite"
+export PIPEWIRE_LATENCY=512/48000
 export PATH="$HOME/scripts:$PATH"
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export QT_STYLE_OVERRIDE=qt5ct-style

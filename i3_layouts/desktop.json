@@ -38,7 +38,15 @@
                     "name": "Browser",
                     "swallows": [
                         {
-                            "window_role": "^browser$"
+                            "class": "^firefox$"
+                        }
+                    ]
+                },
+                {
+                    "name": "Carla",
+                    "swallows": [
+                        {
+                            "class": "^Carla2$"
                         }
                     ]
                 }
@@ -52,7 +60,7 @@
                     "name": "Browser",
                     "swallows": [
                         {
-                             "window_role": "^browser$"
+                             "class": "^firefox$"
                         }
                     ]
                 },
