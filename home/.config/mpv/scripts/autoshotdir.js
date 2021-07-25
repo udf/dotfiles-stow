@@ -58,7 +58,7 @@ function set_shot_dir() {
   // Convert relative directories to absolute
   if (!is_absolute && !is_url) {
     var working_dir = mp.get_property_native('working-directory');
-    filepath = working_dir + '/' + filepath;
+    filepath = mp.utils.join_path(working_dir, filepath);
   }
 
   // Strip protocol and decode urls
@@ -67,10 +67,10 @@ function set_shot_dir() {
   }
 
   // Strip file name
-  filepath = filepath.replace(/^(.+\/).+$/, '$1');
+  filepath = mp.utils.split_path(filepath)[0]
 
-  // normalise path
-  filepath = normalise_path(filepath);
+  // normalise path, and add trailing slash
+  filepath = normalise_path(filepath) + '/';
 
   // Try to strip base dir, stopping after first replace succeeds
   for (var i = 0; i < base_dirs.length; i++) {
@@ -83,7 +83,7 @@ function set_shot_dir() {
   }
 
   // Only use first directory
-  filepath = filepath.replace(/\/.+$/, '');
+  filepath = filepath.replace(/\/.*$/, '');
 
   // TODO: configurable domain aliases
   if (is_url && filepath.indexOf('youtu') === 0) {
