@@ -82,8 +82,8 @@ function set_shot_dir() {
     if (replaced) break;
   }
 
-  // Only use first directory
-  filepath = filepath.replace(/\/.*$/, '');
+  // Use first directory if we removed some of the path, otherwise use last directory
+  filepath = filepath.replace(replaced ? /\b\/.*$/ : /^.*\/\b/, '');
 
   // TODO: configurable domain aliases
   if (is_url && filepath.indexOf('youtu') === 0) {
