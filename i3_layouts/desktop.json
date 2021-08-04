@@ -68,7 +68,7 @@
                     "name": "VS Code",
                     "swallows": [
                         {
-                            "class": "^code-oss$"
+                            "class": "^VSCodium$"
                         }
                     ]
                 }

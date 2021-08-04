@@ -128,7 +128,7 @@ alias vboxmount='sudo mount -o uid=1000,gid=1000 -t vboxsf'
 alias gitac='git add -u && git commit'
 
 # shorthands
-alias subl='subl3'
+alias code='vscodium'
 alias p='pacman'
 alias k='kak'
 alias v='nvim'
