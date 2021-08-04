@@ -27,7 +27,7 @@ set_from_resource  $ind_color  color12
 
 #                        border      background  text        split_indicator
 client.focused           $grb_color  $fgr_color  $bgr_color  $ind_color
-client.unfocused         $grd_color  $bgr_color  $grb_color  $ind_color
+client.unfocused         #2d2f33     $bgr_color  $grb_color  $ind_color
 client.focused_inactive  $grb_color  $grd_color  $fgr_color  $ind_color
 client.urgent            $red_color  $red_color  $bgr_color  $ind_color
 
