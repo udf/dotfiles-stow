@@ -18,6 +18,9 @@ function read_options() {
   };
   mp.options.read_options(opts);
   opts['base-dirs'].split(':').forEach(function (dir) {
+    if (dir === '') {
+      return;
+    }
     base_dirs.push(new RegExp('^' + dir));
   });
 }
@@ -83,7 +86,7 @@ function set_shot_dir() {
   }
 
   // Use first directory if we removed some of the path, otherwise use last directory
-  filepath = filepath.replace(replaced ? /\b\/.*$/ : /^.*\/\b/, '');
+  filepath = filepath.replace(replaced ? /(.)\/.*$/ : /^.*\/(.)/, '$1');
 
   // TODO: configurable domain aliases
   if (is_url && filepath.indexOf('youtu') === 0) {
