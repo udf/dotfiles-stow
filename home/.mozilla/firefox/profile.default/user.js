@@ -51,3 +51,6 @@ user_pref("signon.rememberSignons", false);
 
 // enable user css
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
+
+// why
+user_pref("browser.quitShortcut.disabled", true);
