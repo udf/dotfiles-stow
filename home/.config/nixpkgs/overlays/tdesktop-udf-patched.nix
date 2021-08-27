@@ -10,14 +10,12 @@ self: super:
     ];
 
     postFixup = ''
-      # TODO: specify Arc-Dark GTK theme instead of assuming that it's set in system config
       wrapProgram $out/bin/telegram-desktop \
         "''${gappsWrapperArgs[@]}" \
         "''${qtWrapperArgs[@]}" \
         --set XDG_CURRENT_DESKTOP Unity \
         --set QT_XCB_GL_INTEGRATION none \
-        --prefix XDG_DATA_DIRS : ${super.arc-theme}/share \
-        --prefix XDG_DATA_DIRS : ${super.arc-icon-theme}/share \
+        --prefix XDG_DATA_DIRS : /usr/share \
         --prefix XCURSOR_PATH : /usr/share/icons
     '';
   });
