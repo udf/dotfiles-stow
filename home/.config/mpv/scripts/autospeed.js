@@ -38,7 +38,7 @@ function sub_start_change(_, sub_start) {
   var sub_len = sub_end - sub_start;
   sub_len_hist.push(sub_len);
 
-  if (sub_len_hist.len > len_hist_count) {
+  if (sub_len_hist.length > len_hist_count) {
     sub_len_hist.shift();
   }
   var sub_len_avg = 0;
