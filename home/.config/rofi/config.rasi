@@ -1,0 +1,48 @@
+configuration {
+  font: "Hack Regular 12";
+
+  fixed-num-lines: true;
+}
+
+listview {
+  lines: 7;
+  columns: 2;
+}
+
+window {
+  width: 20%;
+  border: 0;
+}
+
+* {
+  selected-normal-foreground: @background;
+  selected-urgent-foreground: #cccccc;
+  selected-active-foreground: #cccccc;
+
+  foreground: #c4cbd4;
+  normal-foreground: @foreground;
+  urgent-foreground: #cc6666;
+  active-foreground: #81a2be;
+
+  background: #12171a;
+  alternate-normal-background: #171c21;
+  alternate-urgent-background: #626873;
+  alternate-active-background: #626873;
+  selected-urgent-background: #a54242;
+
+  separatorcolor: #1d1f21;
+  urgent-background: #1d1f21;
+
+  selected-normal-background: @foreground;
+  selected-active-background: #5f819d;
+  active-background: #1d1f21;
+
+  lightbg: #eee8d5;
+  lightfg: #586875;
+
+  alternate-normal-foreground: @foreground;
+  normal-background: @background;
+  alternate-urgent-foreground: @urgent-foreground;
+  alternate-active-foreground: @active-foreground;
+  background-color: rgba(0, 0, 0, 0%);
+}

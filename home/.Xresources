@@ -76,24 +76,6 @@ Xft.rgba: none
 Xft.lcdfilter: none
 
 
-! rofi
-! Colours
-rofi.color-enabled: true
-!                  bg       border   separator
-rofi.color-window: colour_bg, #A8A8A8, #A8A8A8
-!                  bg         fg         bg-alt       hl-bg      hl-fg
-rofi.color-normal: colour_bg, colour_fg, colour_bg_alt, colour_fg, colour_bg
-rofi.color-active: colour_bg, colour_fg, colour_bg_alt, colour_fg, colour_bg
-rofi.color-urgent: colour_bg, colour_fg, colour_bg_alt, colour_fg, colour_bg
-
-rofi.separator-style: solid
-rofi.sidebar-mode: false
-rofi.font: Hack Regular 12
-rofi.bw: 0
-rofi.padding: 5
-rofi.fixed-num-lines: true
-
-
 ! URxvt options
 URxvt*background: [bg_trans]colour_bg
 URxvt*colorUL: colour_ul
