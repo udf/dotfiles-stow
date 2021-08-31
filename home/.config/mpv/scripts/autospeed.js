@@ -1,4 +1,4 @@
-var len_hist_count = 6;
+var len_hist_count = 13;
 var len_target = 0.55;
 var speed_max = 6;
 var enabled = false;
