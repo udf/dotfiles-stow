@@ -184,19 +184,6 @@ or other application using the libvirt API.
       </source>
       <address type='usb' bus='0' port='2'/>
     </hostdev>
-    <hostdev mode='subsystem' type='pci' managed='yes'>
-      <source>
-        <address domain='0x0000' bus='0x0e' slot='0x00' function='0x0'/>
-      </source>
-      <rom bar='on' file='/usr/share/vgabios/s5700xt.rom'/>
-      <address type='pci' domain='0x0000' bus='0x03' slot='0x00' function='0x0'/>
-    </hostdev>
-    <hostdev mode='subsystem' type='pci' managed='yes'>
-      <source>
-        <address domain='0x0000' bus='0x0e' slot='0x00' function='0x1'/>
-      </source>
-      <address type='pci' domain='0x0000' bus='0x04' slot='0x00' function='0x0'/>
-    </hostdev>
     <hostdev mode='subsystem' type='usb' managed='yes'>
       <source>
         <vendor id='0x046d'/>
