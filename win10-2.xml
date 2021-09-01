@@ -13,8 +13,8 @@ or other application using the libvirt API.
       <libosinfo:os id="http://microsoft.com/win/10"/>
     </libosinfo:libosinfo>
   </metadata>
-  <memory unit='KiB'>16777216</memory>
-  <currentMemory unit='KiB'>16777216</currentMemory>
+  <memory unit='KiB'>33554432</memory>
+  <currentMemory unit='KiB'>33554432</currentMemory>
   <vcpu placement='static'>12</vcpu>
   <cputune>
     <vcpupin vcpu='0' cpuset='6'/>
