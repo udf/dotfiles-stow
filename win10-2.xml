@@ -159,6 +159,24 @@ or other application using the libvirt API.
     </interface>
     <input type='mouse' bus='ps2'/>
     <input type='keyboard' bus='ps2'/>
+    <sound model='ich9'>
+      <codec type='micro'/>
+      <audio id='1'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x1b' function='0x0'/>
+    </sound>
+    <sound model='ich9'>
+      <codec type='duplex'/>
+      <audio id='2'/>
+      <address type='pci' domain='0x0000' bus='0x08' slot='0x02' function='0x0'/>
+    </sound>
+    <audio id='1' type='jack'>
+      <input clientName='win-vm' connectPorts='null_input.+Monitor.+'/>
+      <output clientName='win-vm' connectPorts='.*playback.*'/>
+    </audio>
+    <audio id='2' type='jack'>
+      <input clientName='win-vm-line-in' connectPorts='Line-In Compressor.*'/>
+      <output clientName='win-vm-line-out'/>
+    </audio>
     <hostdev mode='subsystem' type='usb' managed='yes'>
       <source>
         <vendor id='0x046d'/>
@@ -200,6 +218,18 @@ or other application using the libvirt API.
       <boot order='2'/>
       <address type='pci' domain='0x0000' bus='0x05' slot='0x00' function='0x0'/>
     </hostdev>
+    <hostdev mode='subsystem' type='pci' managed='yes'>
+      <source>
+        <address domain='0x0000' bus='0x0d' slot='0x00' function='0x0'/>
+      </source>
+      <address type='pci' domain='0x0000' bus='0x03' slot='0x00' function='0x0'/>
+    </hostdev>
+    <hostdev mode='subsystem' type='pci' managed='yes'>
+      <source>
+        <address domain='0x0000' bus='0x0d' slot='0x00' function='0x1'/>
+      </source>
+      <address type='pci' domain='0x0000' bus='0x04' slot='0x00' function='0x0'/>
+    </hostdev>
     <memballoon model='none'/>
     <shmem name='looking-glass'>
       <model type='ivshmem-plain'/>
@@ -208,11 +238,7 @@ or other application using the libvirt API.
     </shmem>
   </devices>
   <qemu:commandline>
-    <qemu:arg value='-device'/>
-    <qemu:arg value='ich9-intel-hda,bus=pcie.0,addr=0x1b'/>
-    <qemu:arg value='-device'/>
-    <qemu:arg value='hda-micro,audiodev=hda'/>
-    <qemu:arg value='-audiodev'/>
-    <qemu:arg value='pa,id=hda,in.name=null,out.latency=20000,server=unix:/run/user/1000/pulse/native'/>
+    <qemu:env name='PIPEWIRE_LATENCY' value='512/48000'/>
+    <qemu:env name='PIPEWIRE_RUNTIME_DIR' value='/run/user/1000'/>
   </qemu:commandline>
 </domain>
