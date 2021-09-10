@@ -63,3 +63,34 @@ menupopup {
 #tabbrowser-arrowscrollbox:not([overflowing]) .tabbrowser-tab[last-visible-tab] {
     margin-inline-end: 0 !important;
 }
+
+/* Fix rounded bookmark popup and padding */
+hbox arrowscrollbox.menupopup-arrowscrollbox {
+    border-radius: 0 !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+
+/* Fix bookmark popup outer padding */
+.bookmark-item>menupopup {
+    padding: 0px !important;
+}
+
+/* Fix bookmark items padding */
+menupopup>.bookmark-item {
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+    border-radius: 0px !important;
+    padding: 5px !important;
+}
+.openintabs-menuitem {
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+    border-radius: 0px !important;
+    padding: 5px !important;
+}
+
+/* Fix bookmark item icon padding */
+.bookmark-item.menuitem-with-favicon label.menu-iconic-text {
+    padding-left: 3px !important;
+}
