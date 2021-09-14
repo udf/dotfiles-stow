@@ -13,6 +13,8 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 export QT_STYLE_OVERRIDE=qt5ct-style
 export GDK_SCALE=1
 
+dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
+
 # gnome keyring
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
