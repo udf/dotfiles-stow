@@ -15,21 +15,25 @@ or other application using the libvirt API.
   </metadata>
   <memory unit='KiB'>33554432</memory>
   <currentMemory unit='KiB'>33554432</currentMemory>
-  <vcpu placement='static'>12</vcpu>
+  <vcpu placement='static'>16</vcpu>
   <cputune>
-    <vcpupin vcpu='0' cpuset='6'/>
-    <vcpupin vcpu='1' cpuset='18'/>
-    <vcpupin vcpu='2' cpuset='7'/>
-    <vcpupin vcpu='3' cpuset='19'/>
-    <vcpupin vcpu='4' cpuset='8'/>
-    <vcpupin vcpu='5' cpuset='20'/>
-    <vcpupin vcpu='6' cpuset='9'/>
-    <vcpupin vcpu='7' cpuset='21'/>
-    <vcpupin vcpu='8' cpuset='10'/>
-    <vcpupin vcpu='9' cpuset='22'/>
-    <vcpupin vcpu='10' cpuset='11'/>
-    <vcpupin vcpu='11' cpuset='23'/>
-    <emulatorpin cpuset='0,5'/>
+    <vcpupin vcpu='0' cpuset='4'/>
+    <vcpupin vcpu='1' cpuset='16'/>
+    <vcpupin vcpu='2' cpuset='5'/>
+    <vcpupin vcpu='3' cpuset='17'/>
+    <vcpupin vcpu='4' cpuset='6'/>
+    <vcpupin vcpu='5' cpuset='18'/>
+    <vcpupin vcpu='6' cpuset='7'/>
+    <vcpupin vcpu='7' cpuset='19'/>
+    <vcpupin vcpu='8' cpuset='8'/>
+    <vcpupin vcpu='9' cpuset='20'/>
+    <vcpupin vcpu='10' cpuset='9'/>
+    <vcpupin vcpu='11' cpuset='21'/>
+    <vcpupin vcpu='12' cpuset='10'/>
+    <vcpupin vcpu='13' cpuset='22'/>
+    <vcpupin vcpu='14' cpuset='11'/>
+    <vcpupin vcpu='15' cpuset='23'/>
+    <emulatorpin cpuset='0-1'/>
     <vcpusched vcpus='0' scheduler='rr' priority='1'/>
     <vcpusched vcpus='1' scheduler='rr' priority='1'/>
     <vcpusched vcpus='2' scheduler='rr' priority='1'/>
@@ -42,6 +46,10 @@ or other application using the libvirt API.
     <vcpusched vcpus='9' scheduler='rr' priority='1'/>
     <vcpusched vcpus='10' scheduler='rr' priority='1'/>
     <vcpusched vcpus='11' scheduler='rr' priority='1'/>
+    <vcpusched vcpus='12' scheduler='rr' priority='1'/>
+    <vcpusched vcpus='13' scheduler='rr' priority='1'/>
+    <vcpusched vcpus='14' scheduler='rr' priority='1'/>
+    <vcpusched vcpus='15' scheduler='rr' priority='1'/>
   </cputune>
   <os>
     <type arch='x86_64' machine='pc-q35-5.1'>hvm</type>
@@ -77,7 +85,7 @@ or other application using the libvirt API.
     <ioapic driver='kvm'/>
   </features>
   <cpu mode='host-passthrough' check='none' migratable='on'>
-    <topology sockets='1' dies='1' cores='6' threads='2'/>
+    <topology sockets='1' dies='1' cores='8' threads='2'/>
     <cache mode='passthrough'/>
     <feature policy='require' name='topoext'/>
   </cpu>
