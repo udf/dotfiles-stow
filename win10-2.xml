@@ -143,10 +143,10 @@ or other application using the libvirt API.
       <model name='pcie-pci-bridge'/>
       <address type='pci' domain='0x0000' bus='0x06' slot='0x00' function='0x0'/>
     </controller>
-    <interface type='network'>
+    <interface type='bridge'>
       <mac address='52:54:00:3c:8a:4b'/>
-      <source network='default'/>
-      <model type='e1000e'/>
+      <source bridge='br0'/>
+      <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x01' slot='0x00' function='0x0'/>
     </interface>
     <input type='mouse' bus='ps2'/>
