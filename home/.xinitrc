@@ -54,4 +54,4 @@ esac
 
 xbanish &
 dunst &
-i3
+i3 2>&1 > /tmp/i3.log
