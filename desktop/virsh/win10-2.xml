@@ -149,18 +149,9 @@
       <audio id='1'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x1b' function='0x0'/>
     </sound>
-    <sound model='ich9'>
-      <codec type='duplex'/>
-      <audio id='2'/>
-      <address type='pci' domain='0x0000' bus='0x08' slot='0x02' function='0x0'/>
-    </sound>
-    <audio id='1' type='jack'>
-      <input clientName='win-vm' connectPorts='null_input.+Monitor.+'/>
-      <output clientName='win-vm' connectPorts='.*playback.*'/>
-    </audio>
-    <audio id='2' type='jack'>
-      <input clientName='win-vm-line-in' connectPorts='Line-In Compressor.*'/>
-      <output clientName='win-vm-line-out'/>
+    <audio id='1' type='pulseaudio' serverName='unix:/run/user/1000/pulse/native'>
+      <input streamName='win-vm' latency='20000'/>
+      <output streamName='win-vm' latency='20000'/>
     </audio>
     <hostdev mode='subsystem' type='usb' managed='yes'>
       <source>
@@ -204,8 +195,4 @@
     </hostdev>
     <memballoon model='none'/>
   </devices>
-  <qemu:commandline>
-    <qemu:env name='PIPEWIRE_LATENCY' value='512/48000'/>
-    <qemu:env name='PIPEWIRE_RUNTIME_DIR' value='/run/user/1000'/>
-  </qemu:commandline>
 </domain>
