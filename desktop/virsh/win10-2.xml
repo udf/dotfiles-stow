@@ -58,28 +58,28 @@
       </stimer>
       <reset state='on'/>
       <vendor_id state='on' value='1234567890ab'/>
-      <frequencies state='on'/>
-      <reenlightenment state='on'/>
       <tlbflush state='on'/>
       <ipi state='on'/>
       <evmcs state='off'/>
     </hyperv>
     <kvm>
       <hidden state='on'/>
+      <hint-dedicated state='on'/>
     </kvm>
     <ioapic driver='kvm'/>
+    <vmport state='off'/>
   </features>
-  <cpu mode='host-passthrough' check='none' migratable='on'>
+  <cpu mode='host-passthrough' check='none' migratable='off'>
     <topology sockets='1' dies='1' cores='6' threads='2'/>
     <cache mode='passthrough'/>
     <feature policy='require' name='topoext'/>
+    <feature policy='require' name='invtsc'/>
   </cpu>
   <clock offset='localtime'>
-    <timer name='rtc' present='no' tickpolicy='catchup'/>
-    <timer name='pit' present='no' tickpolicy='delay'/>
+    <timer name='rtc' tickpolicy='catchup'/>
+    <timer name='pit' tickpolicy='discard'/>
     <timer name='hpet' present='no'/>
     <timer name='hypervclock' present='yes'/>
-    <timer name='tsc' present='yes' mode='native'/>
   </clock>
   <on_poweroff>destroy</on_poweroff>
   <on_reboot>restart</on_reboot>
@@ -139,7 +139,7 @@
     <interface type='bridge'>
       <mac address='52:54:00:3c:8a:4b'/>
       <source bridge='br0'/>
-      <model type='virtio'/>
+      <model type='e1000e'/>
       <address type='pci' domain='0x0000' bus='0x01' slot='0x00' function='0x0'/>
     </interface>
     <input type='mouse' bus='ps2'/>
@@ -150,8 +150,8 @@
       <address type='pci' domain='0x0000' bus='0x00' slot='0x1b' function='0x0'/>
     </sound>
     <audio id='1' type='pulseaudio' serverName='unix:/run/user/1000/pulse/native'>
-      <input streamName='win-vm' latency='20000'/>
-      <output streamName='win-vm' latency='20000'/>
+      <input streamName='win-vm' latency='25000'/>
+      <output streamName='win-vm' latency='25000'/>
     </audio>
     <hostdev mode='subsystem' type='usb' managed='yes'>
       <source>
