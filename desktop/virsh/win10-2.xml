@@ -150,8 +150,12 @@
       <address type='pci' domain='0x0000' bus='0x00' slot='0x1b' function='0x0'/>
     </sound>
     <audio id='1' type='pulseaudio' serverName='unix:/run/user/1000/pulse/native'>
-      <input streamName='win-vm' latency='25000'/>
-      <output streamName='win-vm' latency='25000'/>
+      <input mixingEngine='yes' fixedSettings='yes' streamName='win-vm' latency='25000'>
+        <settings frequency='48000'/>
+      </input>
+      <output mixingEngine='yes' fixedSettings='yes' streamName='win-vm' latency='25000'>
+        <settings frequency='48000'/>
+      </output>
     </audio>
     <hostdev mode='subsystem' type='usb' managed='yes'>
       <source>
