@@ -1,8 +1,7 @@
+var speed_min = 2;
 var speed_max = 6;
-var target_wps = 40;
+var target_wps = 35;
 var enabled = false;
-
-var speed_max_diff = speed_max - 1;
 
 var text_check_timeout = null;
 
@@ -29,6 +28,7 @@ function toggle_enable() {
     text_check_timeout = null;
   }
   mp.osd_message('autospeed ' + (enabled ? 'on' : 'off'));
+  mp.set_property('speed', speed_min);
 }
 
 function adjust_speed(sub_text) {
@@ -36,7 +36,7 @@ function adjust_speed(sub_text) {
   var num_words = words.length;
 
   var target_speed = target_wps / (num_words || 1);
-  target_speed = clamp(target_speed, 1, speed_max);
+  target_speed = clamp(target_speed, speed_min, speed_max);
   var speed = mp.get_property_native('speed');
   var step = Math.abs(target_speed - speed) * 0.5;
 
