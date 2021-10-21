@@ -60,7 +60,6 @@
         }
     },
     "java.semanticHighlighting.enabled": true,
-    "python.languageServer": "Pylance",
     "editor.tabSize": 2,
     "xml.java.home": "/usr/lib/jvm/default-runtime/",
     "[csharp]": {
@@ -83,5 +82,12 @@
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "http.proxySupport": "off",
-    "terminal.integrated.inheritEnv": false
+    "terminal.integrated.inheritEnv": false,
+    "[python]": {
+        "gitlens.codeLens.symbolScopes": [
+            "!Module"
+        ],
+        "editor.wordBasedSuggestions": false
+    },
+    "redhat.telemetry.enabled": false,
 }
