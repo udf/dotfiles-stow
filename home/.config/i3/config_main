@@ -81,7 +81,7 @@ bindsym $mod+Ctrl+c exec --no-startup-id dup_term.sh
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 bindsym $mod+Ctrl+a exec --no-startup-id "killall -q pavucontrol || pavucontrol"
 bindsym $mod+Ctrl+h exec --no-startup-id termite -e htop
-bindsym $mod+b exec --no-startup-id Thunar
+bindsym $mod+b exec --no-startup-id LC_TIME=en_SE.UTF-8 pcmanfm-qt
 bindsym $mod+n exec --no-startup-id firefox
 bindsym $mod+u exec --no-startup-id $HOME/scripts/unisearch/unisearch.sh
 bindsym $mod+Escape exec --no-startup-id $HOME/scripts/fancy_lock.sh
