@@ -1,4 +1,5 @@
 export GPG_TTY=$(tty)
+export LIBVIRT_DEFAULT_URI="qemu:///system"
 export TERM=xterm-color
 
 # Wait 50ms for key sequences (fixes ctrl+ bindings being slow)
