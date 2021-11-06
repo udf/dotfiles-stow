@@ -21,14 +21,27 @@ function clamp(v, min, max) {
   return Math.max(Math.min(v, max), min);
 }
 
+function change_wps(amount) {
+  target_wps = clamp(target_wps + amount, 1, 100);
+  mp.osd_message('wps: ' + target_wps);
+}
+
 function toggle_enable() {
   enabled = !enabled;
-  if (!enabled && text_check_timeout) {
-    clearTimeout(text_check_timeout);
-    text_check_timeout = null;
+  if (!enabled) {
+    if (text_check_timeout) {
+      clearTimeout(text_check_timeout);
+      text_check_timeout = null;
+    }
+    mp.remove_key_binding('autospeed-wps-down');
+    mp.remove_key_binding('autospeed-wps-up');
+    mp.osd_message('autospeed off');
+    return;
   }
-  mp.osd_message('autospeed ' + (enabled ? 'on' : 'off'));
   mp.set_property('speed', speed_min);
+  mp.add_key_binding('[', 'autospeed-wps-down', function () { change_wps(-1); });
+  mp.add_key_binding(']', 'autospeed-wps-up', function () { change_wps(1); })
+  mp.osd_message('autospeed on');
 }
 
 function adjust_speed(sub_text) {
