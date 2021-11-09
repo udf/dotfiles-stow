@@ -1,8 +1,8 @@
 diff --git a/Telegram/SourceFiles/boxes/send_files_box.cpp b/Telegram/SourceFiles/boxes/send_files_box.cpp
-index e7d1f80..ffbb2ab 100644
+index d59f9559..9eaf927e 100644
 --- a/Telegram/SourceFiles/boxes/send_files_box.cpp
 +++ b/Telegram/SourceFiles/boxes/send_files_box.cpp
-@@ -424,17 +424,9 @@ void SendFilesBox::openDialogToAddFileToAlbum() {
+@@ -440,17 +440,9 @@ void SendFilesBox::openDialogToAddFileToAlbum() {
  
  void SendFilesBox::initSendWay() {
  	_sendWay = [&] {
@@ -19,7 +19,7 @@ index e7d1f80..ffbb2ab 100644
 -		}
 +		auto result = SendFilesWay();
 +		result.setGroupFiles(true);
-+		result.setSendImagesAsPhotos(true);
++		result.setSendImagesAsPhotos(_list.overrideSendImagesAsPhotos == true);
  		return result;
  	}();
  	_sendWay.changes(

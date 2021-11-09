@@ -1,0 +1,13 @@
+diff --git a/Telegram/SourceFiles/chat_helpers/gifs_list_widget.cpp b/Telegram/SourceFiles/chat_helpers/gifs_list_widget.cpp
+index dfe99608..674b36dd 100644
+--- a/Telegram/SourceFiles/chat_helpers/gifs_list_widget.cpp
++++ b/Telegram/SourceFiles/chat_helpers/gifs_list_widget.cpp
+@@ -43,7 +43,7 @@ namespace {
+ 
+ constexpr auto kSearchRequestDelay = 400;
+ constexpr auto kInlineItemsMaxPerRow = 5;
+-constexpr auto kSearchBotUsername = "gif"_cs;
++constexpr auto kSearchBotUsername = "TheTagBot"_cs;
+ 
+ } // namespace
+ 
