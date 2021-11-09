@@ -19,7 +19,7 @@ index d59f9559..9eaf927e 100644
 -		}
 +		auto result = SendFilesWay();
 +		result.setGroupFiles(true);
-+		result.setSendImagesAsPhotos(_list.overrideSendImagesAsPhotos == true);
++		result.setSendImagesAsPhotos(_list.overrideSendImagesAsPhotos != false);
  		return result;
  	}();
  	_sendWay.changes(
