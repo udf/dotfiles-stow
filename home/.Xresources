@@ -74,6 +74,7 @@ Xft.hinting: 0
 Xft.hintstyle: hintslight
 Xft.rgba: none
 Xft.lcdfilter: none
+Xft.dpi: 96
 
 
 ! URxvt options
