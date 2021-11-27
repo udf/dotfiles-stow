@@ -115,7 +115,7 @@ alias mpva='mpv --no-video'
 alias mpvas='mpv --no-video --shuffle'
 
 # youtube-dl
-alias yt-dlpm="yt-dlp --add-metadata --add-metadata --replace-in-metadata 'album' '.' '' --parse-metadata 'title:%(track)s' --parse-metadata 'uploader:%(artist)s'"
+alias yt-dlpm="yt-dlp --add-metadata --replace-in-metadata 'album' '.' '' --parse-metadata 'title:%(track)s' --parse-metadata 'uploader:%(artist)s'"
 alias ytadl='yt-dlpm -f bestaudio --no-post-overwrites -ciwx'
 alias ytvdl='yt-dlpm -f bestvideo+bestaudio'
 alias ytpadl='yt-dlpm -ix -f bestaudio --no-post-overwrites -o "%(playlist)s/%(playlist_index)s. %(title)s-%(id)s.%(ext)s"'
