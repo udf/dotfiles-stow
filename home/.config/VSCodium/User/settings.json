@@ -1,13 +1,13 @@
 {
-    "window.zoomLevel": -1,
     "editor.fontFamily": "'Hack Nerd Font Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.renderWhitespace": "all",
     "explorer.confirmDelete": false,
     "cSpell.userWords": [
-        "HMAC",
-        "Playerctl",
+        "asyncio",
         "botapi",
+        "HMAC",
         "mt",
+        "Playerctl",
         "proto",
         "struct",
         "upvote"
@@ -90,4 +90,5 @@
         "editor.wordBasedSuggestions": false
     },
     "redhat.telemetry.enabled": false,
+    "window.zoomLevel": -1,
 }
