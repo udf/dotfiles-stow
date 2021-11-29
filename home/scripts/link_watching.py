@@ -5,17 +5,43 @@ import json
 import hashlib
 
 
+CACHE_FILE = Path('~/.cache/py_partial_hash.json').expanduser()
+partial_hash_cache = {}
+try:
+  with open(CACHE_FILE) as f:
+    partial_hash_cache = json.load(f)
+except FileNotFoundError:
+  pass
+
+
 def walk_files(path):
   for root, dirs, files in os.walk(path):
+    root = Path(root)
     for file in files:
-      yield os.path.join(root, file)
+      yield root / file
 
 
-def partial_hash(fp):
+def partial_hash_from_file(fp):
   h = hashlib.sha512()
   with open(fp, 'rb') as f:
     h.update(f.read(1024 * 64))
   return h.hexdigest()
+
+
+def partial_hash(fp):
+  path = str(fp)
+  stat = fp.stat()
+  cached = partial_hash_cache.get(path, None)
+  if cached and cached['size'] == stat.st_size and cached['mtime'] == stat.st_mtime:
+    return cached['hash']
+  cached = {
+    'size': stat.st_size,
+    'mtime': stat.st_mtime,
+    'hash': partial_hash_from_file(fp)
+  }
+  partial_hash_cache[path] = cached
+  return cached['hash']
+
 
 
 def delete_empty_dirs(path):
@@ -46,33 +72,36 @@ def link_watching(src_dir, dst_dir):
     if os.path.exists(old_path):
       continue
     if old_path not in path_to_hash:
-      print(f'warning: can\'t find hash for broken link "{link_path}" -> "{old_path}"')
+      print(f'warning: can\'t find hash for dead link "{link_path}" -> "{old_path}", please remove it manually')
       continue
-    print(f'deleting "{link_path}"')
-    os.unlink(link_path)
     hash = path_to_hash[old_path]
-    print(link_path, path_to_hash[old_path])
+    print(f'removing dead link "{link_path}" (had hash {path_to_hash[old_path]})')
+    os.unlink(link_path)
     del linked[hash]
 
   delete_empty_dirs(dst_dir)
 
   for src_path in walk_files(src_dir):
-    dst_path = dst_dir / Path(src_path).relative_to(src_dir)
+    dst_path = dst_dir / src_path.relative_to(src_dir)
     if dst_path.exists():
       continue
     hash = partial_hash(src_path)
     if hash in linked:
       continue
     dst_path.parent.mkdir(parents=True, exist_ok=True)
-    print(src_path)
+    print('making link for', src_path)
     try:
       os.symlink(src_path, dst_path)
     except FileExistsError:
       pass
-    linked[hash] = src_path
+    linked[hash] = str(src_path)
 
   with open(dst_dir / 'linked.json', 'w') as f:
     json.dump(linked, f)
 
 for p in ['anime', 'movies', 'series']:
   link_watching(f'/booty/media/{p}', f'/booty/media/watching/{p}')
+
+
+with open(CACHE_FILE, 'w') as f:
+  json.dump(partial_hash_cache, f)
