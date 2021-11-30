@@ -83,17 +83,13 @@ def link_watching(src_dir, dst_dir):
 
   for src_path in walk_files(src_dir):
     dst_path = dst_dir / src_path.relative_to(src_dir)
-    if dst_path.exists():
-      continue
     hash = partial_hash(src_path)
     if hash in linked:
       continue
     dst_path.parent.mkdir(parents=True, exist_ok=True)
-    print('making link for', src_path)
-    try:
+    if not dst_path.exists():
+      print('making link to', src_path)
       os.symlink(src_path, dst_path)
-    except FileExistsError:
-      pass
     linked[hash] = str(src_path)
 
   with open(dst_dir / 'linked.json', 'w') as f:
