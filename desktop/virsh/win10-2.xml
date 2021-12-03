@@ -10,19 +10,19 @@
   <currentMemory unit='KiB'>33554432</currentMemory>
   <vcpu placement='static'>12</vcpu>
   <cputune>
-    <vcpupin vcpu='0' cpuset='6'/>
-    <vcpupin vcpu='1' cpuset='18'/>
-    <vcpupin vcpu='2' cpuset='7'/>
-    <vcpupin vcpu='3' cpuset='19'/>
-    <vcpupin vcpu='4' cpuset='8'/>
-    <vcpupin vcpu='5' cpuset='20'/>
-    <vcpupin vcpu='6' cpuset='9'/>
-    <vcpupin vcpu='7' cpuset='21'/>
-    <vcpupin vcpu='8' cpuset='10'/>
-    <vcpupin vcpu='9' cpuset='22'/>
-    <vcpupin vcpu='10' cpuset='11'/>
-    <vcpupin vcpu='11' cpuset='23'/>
-    <emulatorpin cpuset='0,5'/>
+    <vcpupin vcpu='0' cpuset='0'/>
+    <vcpupin vcpu='1' cpuset='12'/>
+    <vcpupin vcpu='2' cpuset='1'/>
+    <vcpupin vcpu='3' cpuset='13'/>
+    <vcpupin vcpu='4' cpuset='2'/>
+    <vcpupin vcpu='5' cpuset='14'/>
+    <vcpupin vcpu='6' cpuset='3'/>
+    <vcpupin vcpu='7' cpuset='15'/>
+    <vcpupin vcpu='8' cpuset='4'/>
+    <vcpupin vcpu='9' cpuset='16'/>
+    <vcpupin vcpu='10' cpuset='5'/>
+    <vcpupin vcpu='11' cpuset='17'/>
+    <emulatorpin cpuset='6,18'/>
     <vcpusched vcpus='0' scheduler='rr' priority='1'/>
     <vcpusched vcpus='1' scheduler='rr' priority='1'/>
     <vcpusched vcpus='2' scheduler='rr' priority='1'/>
