@@ -25,7 +25,5 @@ bindsym $mod+F3 exec --no-startup-id ddcutil --model 'DELL S2721DGF' setvcp 60 0
 bindsym --whole-window $mod+button7 exec --no-startup-id "pactl set-sink-volume @DEFAULT_SINK@ +1%"
 bindsym --whole-window $mod+button6 exec --no-startup-id "pactl set-sink-volume @DEFAULT_SINK@ -1%"
 
-bindsym $mod+Mod1+1 exec --no-startup-id carla_toggle.sh 1
-bindsym $mod+Mod1+2 exec --no-startup-id carla_toggle.sh 2
-bindsym --release $mod+Mod1+1 exec --no-startup-id carla_toggle.sh 0
-bindsym --release $mod+Mod1+2 exec --no-startup-id carla_toggle.sh 0
+bindsym $mod+Mod1+1 exec --no-startup-id sendmidi dev "Midi Through Port-0" ch 1 cc 7 20
+bindsym $mod+Mod1+2 exec --no-startup-id sendmidi dev "Midi Through Port-0" ch 1 cc 7 40
