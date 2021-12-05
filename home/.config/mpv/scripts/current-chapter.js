@@ -1,6 +1,7 @@
 function chapter_change(_, meta) {
-  if (meta && !!meta.TITLE) {
-    print(meta.TITLE)
+  if (meta) {
+    var title = meta.TITLE || meta.title;
+    print(title)
   }
 }
 
