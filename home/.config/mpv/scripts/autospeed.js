@@ -35,6 +35,7 @@ function toggle_enable() {
     }
     mp.remove_key_binding('autospeed-wps-down');
     mp.remove_key_binding('autospeed-wps-up');
+    mp.set_property('speed', 1);
     mp.osd_message('autospeed off');
     return;
   }
