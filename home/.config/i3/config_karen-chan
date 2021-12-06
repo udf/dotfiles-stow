@@ -26,5 +26,6 @@ bindsym --whole-window $mod+button7 exec --no-startup-id "pactl set-sink-volume 
 bindsym --whole-window $mod+button6 exec --no-startup-id "pactl set-sink-volume @DEFAULT_SINK@ -1%"
 
 bindsym $mod+Mod1+1 exec --no-startup-id sendmidi dev "Midi Through Port-0" ch 1 cc 7 0
-bindsym $mod+Mod1+2 exec --no-startup-id sendmidi dev "Midi Through Port-0" ch 1 cc 7 50
-bindsym $mod+Mod1+3 exec --no-startup-id sendmidi dev "Midi Through Port-0" ch 1 cc 7 100
+bindsym $mod+Mod1+2 exec --no-startup-id sendmidi dev "Midi Through Port-0" ch 1 cc 7 30
+bindsym $mod+Mod1+3 exec --no-startup-id sendmidi dev "Midi Through Port-0" ch 1 cc 7 50
+bindsym $mod+Mod1+4 exec --no-startup-id sendmidi dev "Midi Through Port-0" ch 1 cc 7 100
