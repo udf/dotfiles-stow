@@ -26,6 +26,8 @@ zfs list backup/root
 
 echo 'Syncing root...'
 rsync -aAXHxx --delete --info=progress2 --exclude={/dev,/proc,/sys,/tmp,/run,/lost+found,/nix,/home/sam/Downloads/seedbox,/home/sam/.cache/{fontconfig,mozilla}} / /backup/root/
+echo 'Syncing boot...'
+rsync -aAXHxx --delete --info=progress2 /boot/ /backup/root/boot/
 
 echo 'Snapshotting...'
 zfs snapshot "backup/root@$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
