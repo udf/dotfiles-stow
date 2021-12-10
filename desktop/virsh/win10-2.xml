@@ -23,18 +23,6 @@
     <vcpupin vcpu='10' cpuset='5'/>
     <vcpupin vcpu='11' cpuset='17'/>
     <emulatorpin cpuset='6,18'/>
-    <vcpusched vcpus='0' scheduler='rr' priority='1'/>
-    <vcpusched vcpus='1' scheduler='rr' priority='1'/>
-    <vcpusched vcpus='2' scheduler='rr' priority='1'/>
-    <vcpusched vcpus='3' scheduler='rr' priority='1'/>
-    <vcpusched vcpus='4' scheduler='rr' priority='1'/>
-    <vcpusched vcpus='5' scheduler='rr' priority='1'/>
-    <vcpusched vcpus='6' scheduler='rr' priority='1'/>
-    <vcpusched vcpus='7' scheduler='rr' priority='1'/>
-    <vcpusched vcpus='8' scheduler='rr' priority='1'/>
-    <vcpusched vcpus='9' scheduler='rr' priority='1'/>
-    <vcpusched vcpus='10' scheduler='rr' priority='1'/>
-    <vcpusched vcpus='11' scheduler='rr' priority='1'/>
   </cputune>
   <os>
     <type arch='x86_64' machine='pc-q35-5.1'>hvm</type>
