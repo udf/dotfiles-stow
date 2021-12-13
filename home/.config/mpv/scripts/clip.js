@@ -22,9 +22,10 @@ function read_options() {
   dump('Directory set to', clip_dir);
 }
 
-function ffmpeg_filter_quote_escape(str) {
+function ffmpeg_filter_escape(str) {
   // https://xkcd.com/1638/
-  return "'" + str.replace(/'/g, "'\\\\\\''") + "'";
+  // https://www.youtube.com/watch?v=NNn1L3gKZMc
+  return str.replace(/([\\'=:])/g, '\\$1').replace(/([\\'\[\],;])/g, '\\$1')
 }
 
 function on_clip() {
@@ -70,7 +71,7 @@ function on_clip() {
 
   if (sub_track && vid_track) {
     cmd.push('-vf');
-    cmd.push('subtitles=' + ffmpeg_filter_quote_escape(path) + ':si=' + (sub_track.id - 1));
+    cmd.push('subtitles=f=' + ffmpeg_filter_escape(path) + ':si=' + (sub_track.id - 1));
   }
 
   cmd = cmd.concat(['-ss', clip_start, '-to', clip_end]);
