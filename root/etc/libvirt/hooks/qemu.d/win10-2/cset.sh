@@ -4,10 +4,10 @@
 # Original author: Rokas Kupstys <rokups@zoho.com>
 # Heavily modified by: Danny Lin <danny@kdrag0n.dev>
 #
-# This hook uses the `cset` tool to dynamically isolate and unisolate CPUs using
-# the kernel's cgroup cpusets feature. While it's not as effective as
-# full kernel-level scheduler and timekeeping isolation, it still does wonders
-# for VM latency as compared to not isolating CPUs at all. Note that vCPU thread
+# This hook uses systemd's AllowedCPUs property to dynamically isolate and
+# unisolate CPUs using cgroup v2. While it's not as effective as full
+# kernel-level scheduler and timekeeping isolation, it still does wonders for
+# VM latency as compared to not isolating CPUs at all. Note that vCPU thread
 # affinity is a must for this to work properly.
 #
 # Original source: https://rokups.github.io/#!pages/gaming-vm-performance.md
@@ -20,20 +20,33 @@
 
 TOTAL_CORES='0-23'
 TOTAL_CORES_MASK="$(printf '%x' "$((2#111111111111111111111111))")"
-HOST_CORES='6-11,18-23'
-HOST_CORES_MASK="$(printf '%x' "$((2#000000111111000000111111))")"
-VIRT_CORES='0-5,12-17'
+HOST_CORES='0-5,12-17'
+HOST_CORES_MASK="$(printf '%x' "$((2#111111000000111111000000))")"
+VIRT_CORES='6-11,18-23'
 
 VM_NAME="$1"
 VM_ACTION="$2/$3"
 
 function shield_vm() {
-    cset -m set -c $TOTAL_CORES -s machine.slice
-    cset -m shield --kthread on --cpu $VIRT_CORES
+    sync
+    echo 3 > /proc/sys/vm/drop_caches
+    echo 1 > /proc/sys/vm/compact_memory
+
+    systemctl set-property --runtime -- user.slice AllowedCPUs=$HOST_CORES
+    systemctl set-property --runtime -- system.slice AllowedCPUs=$HOST_CORES
+    systemctl set-property --runtime -- init.scope AllowedCPUs=$HOST_CORES
+
+    sysctl vm.stat_interval=30
+    sysctl kernel.watchdog=0
 }
 
 function unshield_vm() {
-    cset -m shield --reset
+    systemctl set-property --runtime -- user.slice AllowedCPUs=$TOTAL_CORES
+    systemctl set-property --runtime -- system.slice AllowedCPUs=$TOTAL_CORES
+    systemctl set-property --runtime -- init.scope AllowedCPUs=$TOTAL_CORES
+
+    sysctl vm.stat_interval=1
+    sysctl kernel.watchdog=1
 }
 
 # For convenient manual invocation
