@@ -61,7 +61,7 @@
   <cpu mode='host-passthrough' check='none' migratable='off'>
     <topology sockets='1' dies='1' cores='12' threads='1'/>
     <cache mode='passthrough'/>
-    <!-- <feature policy='require' name='topoext'/> -->
+    <feature policy='require' name='topoext'/>
     <feature policy='require' name='invtsc'/>
   </cpu>
   <clock offset='localtime'>
