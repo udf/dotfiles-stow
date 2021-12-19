@@ -10,22 +10,22 @@
   <currentMemory unit='KiB'>25165824</currentMemory>
   <vcpu placement='static'>12</vcpu>
   <cputune>
-    <vcpupin vcpu='0' cpuset='6'/>
-    <vcpupin vcpu='1' cpuset='18'/>
-    <vcpupin vcpu='2' cpuset='7'/>
-    <vcpupin vcpu='3' cpuset='19'/>
-    <vcpupin vcpu='4' cpuset='8'/>
-    <vcpupin vcpu='5' cpuset='20'/>
-    <vcpupin vcpu='6' cpuset='9'/>
-    <vcpupin vcpu='7' cpuset='21'/>
-    <vcpupin vcpu='8' cpuset='10'/>
-    <vcpupin vcpu='9' cpuset='22'/>
-    <vcpupin vcpu='10' cpuset='11'/>
+    <vcpupin vcpu='0' cpuset='12'/>
+    <vcpupin vcpu='1' cpuset='13'/>
+    <vcpupin vcpu='2' cpuset='14'/>
+    <vcpupin vcpu='3' cpuset='15'/>
+    <vcpupin vcpu='4' cpuset='16'/>
+    <vcpupin vcpu='5' cpuset='17'/>
+    <vcpupin vcpu='6' cpuset='18'/>
+    <vcpupin vcpu='7' cpuset='19'/>
+    <vcpupin vcpu='8' cpuset='20'/>
+    <vcpupin vcpu='9' cpuset='21'/>
+    <vcpupin vcpu='10' cpuset='22'/>
     <vcpupin vcpu='11' cpuset='23'/>
-    <emulatorpin cpuset='0,12'/>
+    <emulatorpin cpuset='0-1'/>
   </cputune>
   <os>
-    <type arch='x86_64' machine='pc-q35-5.1'>hvm</type>
+    <type arch='x86_64' machine='q35'>hvm</type>
     <loader readonly='yes' type='pflash'>/usr/share/edk2-ovmf/x64/OVMF_CODE.fd</loader>
     <nvram>/var/lib/libvirt/qemu/nvram/win10-2_VARS.fd</nvram>
     <bootmenu enable='no'/>
@@ -59,9 +59,9 @@
     <vmport state='off'/>
   </features>
   <cpu mode='host-passthrough' check='none' migratable='off'>
-    <topology sockets='1' dies='1' cores='6' threads='2'/>
+    <topology sockets='1' dies='1' cores='12' threads='1'/>
     <cache mode='passthrough'/>
-    <feature policy='require' name='topoext'/>
+    <!-- <feature policy='require' name='topoext'/> -->
     <feature policy='require' name='invtsc'/>
   </cpu>
   <clock offset='localtime'>
@@ -129,7 +129,7 @@
     <interface type='bridge'>
       <mac address='52:54:00:3c:8a:4b'/>
       <source bridge='br0'/>
-      <model type='virtio'/>
+      <model type='e1000e'/>
       <address type='pci' domain='0x0000' bus='0x01' slot='0x00' function='0x0'/>
     </interface>
     <input type='mouse' bus='ps2'/>
