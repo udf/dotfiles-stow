@@ -24,8 +24,13 @@ fi
 
 zfs list backup/root
 
+if [ "$1" = 'mount' ]; then
+    echo 'Not syncing because mount was passed'
+    exit
+fi
+
 echo 'Syncing root...'
-rsync -aAXHxx --delete --info=progress2 --exclude={/dev,/proc,/sys,/tmp,/run,/lost+found,/nix,/home/sam/Downloads/,/home/sam/.cache/{fontconfig,mozilla}} / /backup/root/
+rsync -aAXHxx --delete --info=progress2 --exclude={/dev,/proc,/sys,/tmp,/run,/lost+found,/nix/store,/home/sam/Downloads,/home/sam/.cache} / /backup/root/
 echo 'Syncing boot...'
 rsync -aAXHxx --delete --info=progress2 /boot/ /backup/root/boot/
 
