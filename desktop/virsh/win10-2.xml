@@ -129,7 +129,7 @@
     <interface type='bridge'>
       <mac address='52:54:00:3c:8a:4b'/>
       <source bridge='br0'/>
-      <model type='e1000e'/>
+      <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x01' slot='0x00' function='0x0'/>
     </interface>
     <input type='mouse' bus='ps2'/>
