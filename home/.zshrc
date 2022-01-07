@@ -154,6 +154,9 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # Add npm package binaries to path
 export PATH="$HOME/.npm-packages/bin:$PATH"
 
+# Add ruby gem binaries to path
+export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
+
 # syntax highlighting plugin
 source ~/zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
