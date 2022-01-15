@@ -94,3 +94,14 @@ menupopup>.bookmark-item {
 .bookmark-item.menuitem-with-favicon label.menu-iconic-text {
     padding-left: 3px !important;
 }
+
+/* Fix retarded border around context menu */
+arrowscrollbox.menupopup-arrowscrollbox {
+    margin: 0px !important;
+    padding: 4px !important;
+}
+
+/* Someone is retarded and forgot about these items */
+.menu-iconic {
+    padding: 4px 6px;
+}
