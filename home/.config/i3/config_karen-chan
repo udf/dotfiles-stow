@@ -28,3 +28,6 @@ bindsym $mod+Mod1+1 exec --no-startup-id sendmidi dev "Midi Through Port-0" ch 1
 bindsym $mod+Mod1+2 exec --no-startup-id sendmidi dev "Midi Through Port-0" ch 1 cc 7 30
 bindsym $mod+Mod1+3 exec --no-startup-id sendmidi dev "Midi Through Port-0" ch 1 cc 7 50
 bindsym $mod+Mod1+4 exec --no-startup-id sendmidi dev "Midi Through Port-0" ch 1 cc 7 100
+
+bindsym $mod+Mod1+a exec --no-startup-id "mpd-fav.py"
+bindsym $mod+Mod1+space exec --no-startup-id "mpd-dislike.py"
