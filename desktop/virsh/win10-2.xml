@@ -167,6 +167,10 @@
       <codec type='duplex'/>
       <audio id='2'/>
     </sound>
+    <sound model='ich9'>
+      <codec type='duplex'/>
+      <audio id='3'/>
+    </sound>
     <audio id='1' type='jack'>
       <input clientName='win-vm' connectPorts='mic-effects.+Monitor'>
       </input>
@@ -175,6 +179,12 @@
     </audio>
     <audio id='2' type='jack'>
       <input clientName='win-vm-line-in-1' connectPorts='voice-channel.+Monitor'>
+      </input>
+      <output clientName='win-vm-line-out-1'>
+      </output>
+    </audio>
+    <audio id='3' type='jack'>
+      <input clientName='win-vm-line-in-1' connectPorts='line-sink.+Monitor'>
       </input>
       <output clientName='win-vm-line-out-1'>
       </output>
