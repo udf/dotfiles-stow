@@ -14,7 +14,7 @@ self: super:
       wrapProgram $out/bin/telegram-desktop \
         "''${gappsWrapperArgs[@]}" \
         "''${qtWrapperArgs[@]}" \
-        --set XDG_CURRENT_DESKTOP Unity \
+        --set XDG_CURRENT_DESKTOP KDE \
         --set QT_XCB_GL_INTEGRATION none \
         --prefix XDG_DATA_DIRS : /usr/share \
         --prefix XCURSOR_PATH : /usr/share/icons
