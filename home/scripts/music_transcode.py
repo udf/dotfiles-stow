@@ -52,10 +52,12 @@ def copy_file(infile):
 
 
 def delete_empty_dirs(path):
+    if path.name in {'.stfolder'}:
+        return
     if not os.path.isdir(path):
         return
     for dir in os.listdir(path):
-        delete_empty_dirs(os.path.join(path, dir))
+        delete_empty_dirs(path / dir)
     if not os.listdir(path):
         print('Removing', path)
         os.rmdir(path)
