@@ -8,8 +8,8 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 import subprocess
 
-music_path = Path('~/music').expanduser()
-ogg_path = Path('~/music_trans').expanduser()
+music_path = Path('/booty/media/music')
+ogg_path = Path('/booty/media/music_trans')
 
 
 def transcode(infile):
@@ -61,34 +61,32 @@ def delete_empty_dirs(path):
         os.rmdir(path)
 
 
+def walk_files(path):
+  for root, dirs, files in os.walk(path):
+    root = Path(root)
+    for file in files:
+      yield root / file
+
+
 def main():
     os.nice(16)
-
-    # Load ignored paths
-    ignored_paths = []
-    try:
-        with open(music_path / '.trignore') as f:
-            ignored_paths = [
-                str(music_path / p)
-                for p in f.read().strip().split()
-            ]
-    except FileNotFoundError:
-        pass
 
     # Gather jobs
     jobs = []
     expected_files = set()
-    for root, dirs, files in os.walk(music_path):
-        if any(root.startswith(p) for p in ignored_paths):
-            print(f'Ignoring {root}')
+
+    files = set()
+    for playlist in walk_files(music_path / 'playlists'):
+        jobs.append(partial(copy_file, playlist))
+        with open(playlist) as pl:
+            for f in pl:
+                files.add(music_path / f.strip('\n'))
+
+    for f in files:
+        if f.suffix.lower() in ('.flac', '.wav', '.aiff'):
+            jobs.append(partial(transcode, f))
             continue
-        root = Path(root)
-        for f in files:
-            f = root / f
-            if f.suffix.lower() in ('.flac', '.wav', '.aiff'):
-                jobs.append(partial(transcode, f))
-                continue
-            jobs.append(partial(copy_file, f))
+        jobs.append(partial(copy_file, f))
 
     # Run jobs
     with ThreadPoolExecutor() as pool:
@@ -96,13 +94,10 @@ def main():
             expected_files.add(outfile.relative_to(ogg_path))
 
     # Delete files that we don't expect to exist in output dir
-    for root, dirs, files in os.walk(ogg_path):
-        root = Path(root)
-        for f in files:
-            f = root / f
-            if f.relative_to(ogg_path) not in expected_files:
-                print('Deleting', f)
-                os.remove(f)
+    for f in walk_files(ogg_path):
+        if f.relative_to(ogg_path) not in expected_files:
+            print('Deleting', f)
+            os.remove(f)
 
     # Remove empty directories in the output dir
     delete_empty_dirs(ogg_path)
