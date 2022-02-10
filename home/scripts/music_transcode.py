@@ -9,6 +9,7 @@ from pathlib import Path
 import subprocess
 
 music_path = Path('/booty/media/music')
+playlist_dir = music_path / 'playlists'
 out_path = Path('/booty/media/music_trans')
 
 
@@ -48,8 +49,8 @@ def transcode(infile):
     return outfile
 
 
-def copy_file(infile):
-    outfile = out_path / infile.relative_to(music_path)
+def copy_file(infile, old_root=music_path):
+    outfile = out_path / infile.relative_to(old_root)
     if outfile.is_file():
         return outfile
     print('Copying', infile)
@@ -85,8 +86,8 @@ def main():
     expected_files = set()
 
     files = set()
-    for playlist in walk_files(music_path / 'playlists'):
-        jobs.append(partial(copy_file, playlist))
+    for playlist in walk_files(playlist_dir):
+        jobs.append(partial(copy_file, playlist, playlist_dir))
         with open(playlist) as pl:
             for f in pl:
                 files.add(music_path / f.strip('\n'))
