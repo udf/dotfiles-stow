@@ -91,6 +91,15 @@ def main():
             for f in pl:
                 files.add(music_path / f.strip('\n'))
 
+    # copy art from all parent directories
+    directories = set()
+    for f in files:
+        directories.add(f.parent)
+    for d in directories:
+        for f in d.iterdir():
+            if f.suffix in {'.jpg', '.jpeg', '.jp2', '.png'}:
+                files.add(f)
+
     for f in files:
         if f.suffix.lower() in ('.flac', '.wav', '.aiff'):
             jobs.append(partial(transcode, f))
