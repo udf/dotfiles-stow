@@ -9,12 +9,12 @@ from pathlib import Path
 import subprocess
 
 music_path = Path('/booty/media/music')
-ogg_path = Path('/booty/media/music_trans')
+out_path = Path('/booty/media/music_trans')
 
 
 def transcode(infile):
-    outfile = infile.with_suffix('.ogg')
-    outfile = ogg_path / outfile.relative_to(music_path)
+    outfile = infile.with_suffix('.opus')
+    outfile = out_path / outfile.relative_to(music_path)
     if outfile.is_file():
         return outfile
     print('Transcoding', infile)
@@ -36,13 +36,20 @@ def transcode(infile):
         check=True
     )
 
+    subprocess.run(
+        ['r128gain', outtmp],
+        stderr=subprocess.DEVNULL,
+        stdin=subprocess.DEVNULL,
+        check=True
+    )
+
     os.rename(outtmp, outfile)
 
     return outfile
 
 
 def copy_file(infile):
-    outfile = ogg_path / infile.relative_to(music_path)
+    outfile = out_path / infile.relative_to(music_path)
     if outfile.is_file():
         return outfile
     print('Copying', infile)
@@ -91,18 +98,18 @@ def main():
         jobs.append(partial(copy_file, f))
 
     # Run jobs
-    with ThreadPoolExecutor() as pool:
+    with ThreadPoolExecutor(max_workers=32) as pool:
         for outfile in pool.map(lambda f: f(), jobs):
-            expected_files.add(outfile.relative_to(ogg_path))
+            expected_files.add(outfile.relative_to(out_path))
 
     # Delete files that we don't expect to exist in output dir
-    for f in walk_files(ogg_path):
-        if f.relative_to(ogg_path) not in expected_files:
+    for f in walk_files(out_path):
+        if f.relative_to(out_path) not in expected_files:
             print('Deleting', f)
             os.remove(f)
 
     # Remove empty directories in the output dir
-    delete_empty_dirs(ogg_path)
+    delete_empty_dirs(out_path)
 
 
 if __name__ == '__main__':
