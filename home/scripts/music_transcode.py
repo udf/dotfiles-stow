@@ -112,6 +112,7 @@ def main():
         for outfile in pool.map(lambda f: f(), jobs):
             expected_files.add(outfile.relative_to(out_path))
 
+    expected_files.add(Path('.nomedia'))
     # Delete files that we don't expect to exist in output dir
     for f in walk_files(out_path):
         if f.relative_to(out_path) not in expected_files:
