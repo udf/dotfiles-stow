@@ -21,7 +21,7 @@ for track in client.sticker_find('song', 'favourites', 'rating', '=', 2):
 client.update('favourites')
 client.idle('update')
 
-for track in client.sticker_find('song', '', 'rating', '=', 10):
+for track in client.sticker_find('song', 'albums', 'rating', '=', 10):
   client.playlistadd(PLAYLIST_NAME, track['file'])
 
-client.searchaddpl(PLAYLIST_NAME, "(file contains 'favourites/')",)
+client.playlistadd(PLAYLIST_NAME, 'favourites')
