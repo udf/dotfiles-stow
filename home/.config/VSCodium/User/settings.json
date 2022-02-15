@@ -90,7 +90,8 @@
         "editor.wordBasedSuggestions": false
     },
     "redhat.telemetry.enabled": false,
-    "window.zoomLevel": -1,
     "autoDocstring.docstringFormat": "sphinx",
     "editor.largeFileOptimizations": false,
+    "window.zoomLevel": -1,
+    "nix.enableLanguageServer": true
 }
