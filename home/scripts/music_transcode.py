@@ -87,6 +87,8 @@ def main():
 
     files = set()
     for playlist in walk_files(playlist_dir):
+        if playlist.name.startswith('_'):
+            continue
         jobs.append(partial(copy_file, playlist, playlist_dir))
         with open(playlist) as pl:
             for f in pl:
