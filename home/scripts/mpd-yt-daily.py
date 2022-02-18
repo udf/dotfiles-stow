@@ -41,6 +41,9 @@ for track in client.sticker_find('song', subdir, 'rating', '=', 2):
   print('deleting', p)
   p.unlink()
 
+if sys.argv[-1] not in {'--new', '--move'}:
+  exit()
+
 print('moving liked')
 for track in client.sticker_find('song', subdir, 'rating', '=', 10):
   p = (music_dir / track['file'])
