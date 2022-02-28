@@ -1,12 +1,53 @@
 {
     "layout": "splitv",
-    "percent": 0.25,
+    "percent": 0.5,
     "nodes": [
         {
-            "name": "Telegram",
-            "swallows": [
+            "layout": "tabbed",
+            "percent": 0.5,
+            "nodes": [
                 {
-                    "class": "^TelegramDesktop$"
+                    "swallows": [
+                        {
+                            "class": "^Termite$"
+                        }
+                    ]
+                },
+                {
+                    "layout": "splith",
+                    "percent": 0.25,
+                    "nodes": [
+                        {
+                            "percent": 0.5,
+                            "swallows": [
+                                {
+                                    "class": "^TelegramDesktop$"
+                                }
+                            ]
+                        },
+                        {
+                            "swallows": [
+                                {
+                                    "class": "^Termite$"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "percent": 0.25,
+                    "swallows": [
+                        {
+                            "class": "^discord$"
+                        }
+                    ]
+                },
+                {
+                    "swallows": [
+                        {
+                            "class": "^firefox$"
+                        }
+                    ]
                 }
             ]
         },
@@ -18,6 +59,14 @@
                     "swallows": [
                         {
                             "class": "^Termite$"
+                        }
+                    ]
+                },
+                {
+                    "percent": 0.25,
+                    "swallows": [
+                        {
+                            "class": "^cantata$"
                         }
                     ]
                 }
@@ -32,21 +81,29 @@
     "nodes": [
         {
             "layout": "tabbed",
-            "percent": 0.487,
+            "percent": 0.5,
             "nodes": [
                 {
-                    "name": "Browser",
+                    "percent": 0.25,
                     "swallows": [
                         {
-                            "class": "^firefox$"
+                            "class": "^Termite$"
                         }
                     ]
                 },
                 {
-                    "name": "Carla",
+                    "percent": 0.25,
                     "swallows": [
                         {
                             "class": "^Carla2$"
+                        }
+                    ]
+                },
+                {
+                    "percent": 0.25,
+                    "swallows": [
+                        {
+                            "class": "^firefox$"
                         }
                     ]
                 }
@@ -54,18 +111,18 @@
         },
         {
             "layout": "tabbed",
-            "percent": 0.513,
+            "percent": 0.5,
             "nodes": [
                 {
-                    "name": "Browser",
+                    "percent": 0.25,
                     "swallows": [
                         {
-                             "class": "^firefox$"
+                            "class": "^Termite$"
                         }
                     ]
                 },
                 {
-                    "name": "VS Code",
+                    "percent": 0.25,
                     "swallows": [
                         {
                             "class": "^VSCodium$"
@@ -75,37 +132,4 @@
             ]
         }
     ]
-}
-
-{
-    "layout": "splitv",
-    "percent": 0.25,
-    "nodes": [
-        {
-            "layout": "tabbed",
-            "percent": 0.5,
-            "nodes": [
-                {
-                    "swallows": [
-                        {
-                            "class": "^Termite$"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "layout": "tabbed",
-            "percent": 0.5,
-            "nodes": [
-                {
-                    "swallows": [
-                        {
-                            "class": "^Termite$"
-                        }
-                    ]
-                }
-            ]
-        }
-    ]
-}
+  }
