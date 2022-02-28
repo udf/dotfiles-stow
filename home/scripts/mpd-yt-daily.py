@@ -39,7 +39,7 @@ print('deleting disliked')
 for track in client.sticker_find('song', subdir, 'rating', '=', 2):
   p = (music_dir / track['file'])
   print('deleting', p)
-  p.unlink()
+  p.unlink(missing_ok=True)
 
 if sys.argv[-1] not in {'--new', '--move'}:
   exit()
