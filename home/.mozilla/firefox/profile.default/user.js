@@ -18,7 +18,6 @@ user_pref("general.warnOnAboutConfig", false);
 
 // use light gtk theme for content (fixes broken websites)
 user_pref("widget.content.gtk-theme-override", "Arc");
-user_pref("widget.chrome.allow-gtk-dark-theme", true);
 user_pref("ui.systemUsesDarkTheme", 1);
 
 // don't lazy-load tabs on startup
