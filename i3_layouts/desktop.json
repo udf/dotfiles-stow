@@ -88,14 +88,6 @@
                     "percent": 0.25,
                     "swallows": [
                         {
-                            "class": "^Termite$"
-                        }
-                    ]
-                },
-                {
-                    "percent": 0.25,
-                    "swallows": [
-                        {
                             "class": "^Carla2$"
                         }
                     ]
