@@ -12,6 +12,7 @@ export PATH="$HOME/scripts:$PATH"
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export GDK_SCALE=1
 export MOZ_USE_XINPUT2=1
+export GTK_THEME=Arc-Dark
 
 dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
 
