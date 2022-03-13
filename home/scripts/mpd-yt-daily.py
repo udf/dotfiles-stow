@@ -66,11 +66,11 @@ except CommandError:
 
 dirs = [p for p in map_key(client.lsinfo(subdir), 'directory')]
 
-dirs = sorted(dirs)
-last = dirs.pop()
-print('last day', last)
+dirs = sorted(dirs, reverse=True)
+dirs, last = dirs[5:], dirs[:5]
+print('last days', last)
 random.shuffle(dirs)
-dirs = dirs[:9] + [last]
+dirs = dirs[:5] + last
 
 print('adding', dirs)
 files = []
