@@ -1,21 +1,22 @@
 diff --git a/Telegram/SourceFiles/boxes/pin_messages_box.cpp b/Telegram/SourceFiles/boxes/pin_messages_box.cpp
-index 3b9718ce..502da59f 100644
+index a2fdf4cbd..ac7f8c10a 100644
 --- a/Telegram/SourceFiles/boxes/pin_messages_box.cpp
 +++ b/Telegram/SourceFiles/boxes/pin_messages_box.cpp
-@@ -65,14 +65,14 @@ void PinMessageBox::prepare() {
- 				tr::now,
- 				lt_user,
- 				_peer->shortName()),
--			false,
-+			true,
- 			st::defaultBoxCheckbox);
- 		_checkbox = _pinForPeer;
- 	} else if (!_pinningOld && (_peer->isChat() || _peer->isMegagroup())) {
- 		_notify.create(
- 			this,
- 			tr::lng_pinned_notify(tr::now),
--			true,
-+			false,
- 			st::defaultBoxCheckbox);
- 		_checkbox = _notify;
- 	}
+@@ -59,7 +59,7 @@ void PinMessageBox(
+ 					tr::now,
+ 					lt_user,
+ 					peer->shortName()),
+-				false,
++				true,
+ 				st::urlAuthCheckbox);
+ 			object->setAllowTextLines();
+ 			state->pinForPeer = Ui::MakeWeak(object.data());
+@@ -68,7 +68,7 @@ void PinMessageBox(
+ 			auto object = object_ptr<Ui::Checkbox>(
+ 				box,
+ 				tr::lng_pinned_notify(tr::now),
+-				true,
++				false,
+ 				st::urlAuthCheckbox);
+ 			object->setAllowTextLines();
+ 			state->notify = Ui::MakeWeak(object.data());
