@@ -47,7 +47,25 @@
                     "swallows": [
                         {
                             "class": "^firefox$"
-                        }
+                        },
+                        {
+                            "percent": 0.25,
+                            "swallows": [
+                                {
+                                    "class": "^Carla2$",
+                                    "title": "Carla - voice.carxp"
+                                }
+                            ]
+                        },
+                        {
+                            "percent": 0.25,
+                            "swallows": [
+                                {
+                                    "class": "^Carla2$",
+                                    "title": "Carla - fx.carxp"
+                                }
+                            ]
+                        },
                     ]
                 }
             ]
@@ -88,14 +106,6 @@
                     "percent": 0.25,
                     "swallows": [
                         {
-                            "class": "^Carla2$"
-                        }
-                    ]
-                },
-                {
-                    "percent": 0.25,
-                    "swallows": [
-                        {
                             "class": "^firefox$"
                         }
                     ]
@@ -125,4 +135,4 @@
             ]
         }
     ]
-  }
+}
