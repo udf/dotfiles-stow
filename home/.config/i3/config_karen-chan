@@ -8,9 +8,9 @@ workspace 1 output HDMI-A-0
 exec --no-startup-id i3-msg "workspace 1; append_layout $HOME/dotfiles/i3_layouts/desktop.json"
 
 # autostart programs
-exec --no-startup-id pactl set-default-source null_input.monitor
-exec --no-startup-id PIPEWIRE_LATENCY=512/48000 pw-jack carla $HOME/Documents/voice.carxp
-exec --no-startup-id PIPEWIRE_LATENCY=512/48000 pw-jack carla $HOME/Documents/fx.carxp
+exec --no-startup-id pactl set-default-source mic-effects.monitor
+exec --no-startup-id "sleep 10; PIPEWIRE_LATENCY=512/48000 pw-jack carla $HOME/Documents/voice.carxp"
+exec --no-startup-id "sleep 10; PIPEWIRE_LATENCY=512/48000 pw-jack carla $HOME/Documents/fx.carxp"
 #exec --no-startup-id $HOME/proj/p/g710-pulse/g710_pulse
 exec_always --no-startup-id killall picom; sleep 3; picom
 
