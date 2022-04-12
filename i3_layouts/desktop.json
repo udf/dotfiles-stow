@@ -35,7 +35,6 @@
                     ]
                 },
                 {
-                    "percent": 0.25,
                     "swallows": [
                         {
                             "class": "^discord$",
@@ -47,25 +46,23 @@
                     "swallows": [
                         {
                             "class": "^firefox$"
-                        },
+                        }
+                    ]
+                },
+                {
+                    "swallows": [
                         {
-                            "percent": 0.25,
-                            "swallows": [
-                                {
-                                    "class": "^Carla2$",
-                                    "title": "Carla - voice.carxp"
-                                }
-                            ]
-                        },
+                            "class": "^Carla2$",
+                            "title": "Carla - voice.carxp"
+                        }
+                    ]
+                },
+                {
+                    "swallows": [
                         {
-                            "percent": 0.25,
-                            "swallows": [
-                                {
-                                    "class": "^Carla2$",
-                                    "title": "Carla - fx.carxp"
-                                }
-                            ]
-                        },
+                            "class": "^Carla2$",
+                            "title": "Carla - fx.carxp"
+                        }
                     ]
                 }
             ]
