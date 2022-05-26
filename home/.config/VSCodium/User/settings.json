@@ -44,6 +44,7 @@
     // "python.autoUpdateLanguageServer": false,
     // "extensions.autoUpdate": false,
     // "extensions.autoCheckUpdates": false,
+    "python.languageServer": "Jedi",
     "workbench.colorTheme": "Arc Dark Theme",
     "java.configuration.checkProjectSettingsExclusions": false,
     "diffEditor.maxComputationTime": 0,
