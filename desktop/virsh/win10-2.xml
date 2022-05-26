@@ -167,10 +167,6 @@
       <codec type='duplex'/>
       <audio id='2'/>
     </sound>
-    <sound model='ich9'>
-      <codec type='duplex'/>
-      <audio id='3'/>
-    </sound>
     <audio id='1' type='jack'>
       <input clientName='win-vm' connectPorts='mic-effects.+Monitor'>
       </input>
@@ -180,15 +176,25 @@
     <audio id='2' type='jack'>
       <input clientName='win-vm-line-in-1' connectPorts='voice-channel.+Monitor'>
       </input>
-      <output clientName='win-vm-line-out-1'>
+      <output clientName='win-vm-line-out-1' connectPorts='audio-effects.+sink'>
       </output>
     </audio>
-    <audio id='3' type='jack'>
-      <input clientName='win-vm-line-in-1' connectPorts='line-sink.+Monitor'>
+    <!-- <audio id='1' type='pulseaudio' serverName='unix:/run/user/1000/pulse/native'>
+      <input mixingEngine='yes' fixedSettings='yes' streamName='win-vm' latency='25000'>
+        <settings frequency='48000'/>
       </input>
-      <output clientName='win-vm-line-out-1'>
+      <output mixingEngine='yes' fixedSettings='yes' streamName='win-vm' latency='25000'>
+        <settings frequency='48000'/>
       </output>
     </audio>
+    <audio id='2' type='pulseaudio' serverName='unix:/run/user/1000/pulse/native'>
+      <input mixingEngine='yes' fixedSettings='yes' streamName='win-vm-line-in-1' latency='25000'>
+        <settings frequency='48000'/>
+      </input>
+      <output mixingEngine='yes' fixedSettings='yes' streamName='win-vm-line-out-1' latency='25000'>
+        <settings frequency='48000'/>
+      </output>
+    </audio> -->
     <hostdev mode='subsystem' type='usb' managed='yes'>
       <source>
         <vendor id='0x046d'/>
