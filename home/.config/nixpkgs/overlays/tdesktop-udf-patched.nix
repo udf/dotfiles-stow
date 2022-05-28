@@ -17,7 +17,8 @@ self: super:
         --set XDG_CURRENT_DESKTOP KDE \
         --set QT_XCB_GL_INTEGRATION none \
         --prefix XDG_DATA_DIRS : /usr/share \
-        --prefix XCURSOR_PATH : /usr/share/icons
+        --prefix XCURSOR_PATH : /usr/share/icons \
+        --prefix LD_LIBRARY_PATH : ${self.xorg.libXcursor}/lib
     '';
   });
 }
