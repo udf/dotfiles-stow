@@ -29,7 +29,7 @@ case "$(hostname)" in
 "karen-chan")
     numlockx off
     nm-applet &
-    xrandr --output DisplayPort-0 --mode 2560x1440 -r 144 --pos 0x538 --rotate normal --output HDMI-A-0 --primary --mode 3840x2160 --pos 2560x0 --rotate normal
+    xrandr --output DisplayPort-1 --mode 2560x1440 -r 144 --pos 0x538 --rotate normal --output HDMI-A-0 --primary --mode 3840x2160 --pos 2560x0 --rotate normal
     ;;
 "arch-vm")
     xrandr --newmode "1080p" 157.87  1912 2024 2232 2552  996 997 1000 1031  -HSync +Vsync
