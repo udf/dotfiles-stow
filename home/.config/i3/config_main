@@ -189,14 +189,16 @@ bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
-bindsym $mod+Mod1+Left workspace prev
-bindsym $mod+Mod1+Right workspace next
+bindsym $mod+Mod1+Left workspace prev_on_output
+bindsym $mod+Mod1+Right workspace next_on_output
 
-bindsym $mod+Mod1+Ctrl+Left move container to workspace prev
-bindsym $mod+Mod1+Ctrl+Right move container to workspace next
+bindsym $mod+Mod1+Ctrl+Left move container to workspace prev_on_output
+bindsym $mod+Mod1+Ctrl+Right move container to workspace next_on_output
 
-bindsym $mod+Mod1+Shift+Left move container to workspace prev; workspace prev
-bindsym $mod+Mod1+Shift+Right move container to workspace next; workspace next
+bindsym $mod+Mod1+Shift+Left move container to workspace prev_on_output; workspace prev_on_output
+bindsym $mod+Mod1+Shift+Right move container to workspace next_on_output; workspace next_on_output
+
+bindsym $mod+grave exec --no-startup-id i3-next-visible-ws
 
 
 # System management

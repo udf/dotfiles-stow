@@ -1,0 +1,11 @@
+#!/usr/bin/env python3
+
+import i3ipc
+
+i3 = i3ipc.Connection()
+
+visible_ws = [ws for ws in i3.get_workspaces() if ws.visible]
+focused_i = next(i for i,ws in enumerate(visible_ws) if ws.focused)
+next_ws = visible_ws[(focused_i + 1) % len(visible_ws)]
+
+i3.command(f'workspace {next_ws.name}')
