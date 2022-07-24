@@ -199,6 +199,9 @@ bindsym $mod+Mod1+Shift+Left move container to workspace prev_on_output; workspa
 bindsym $mod+Mod1+Shift+Right move container to workspace next_on_output; workspace next_on_output
 
 bindsym $mod+grave exec --no-startup-id i3-next-visible-ws
+bindsym $mod+Shift+grave move container to output next; exec --no-startup-id i3-next-visible-ws
+bindsym $mod+Ctrl+grave move container to output next
+bindsym $mod+Mod1+grave move workspace to output next
 
 
 # System management
