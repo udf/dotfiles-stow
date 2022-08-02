@@ -33,5 +33,7 @@ kernel="
 
 imlib2_grab "$tmp_img"
 ~/proj/p/swooce/swooce "$kernel" "$tmp_img" "$tmp_pre.png"
+rm "$tmp_img"
 
 i3lock -e -f -i "$tmp_pre.png" "$@"
+rm "$tmp_pre.png"
