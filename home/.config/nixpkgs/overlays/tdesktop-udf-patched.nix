@@ -2,6 +2,9 @@
 self: super:
 let
   nixgl = import <nixgl> {};
+  nixgl-wrapper = self.writeShellScriptBin "nixgl-wrapper" ''
+    ${nixgl.auto.nixGLDefault}/bin/nixGL @PATH@
+  '';
 in
 {
   tdesktop = super.tdesktop.overrideAttrs (oldAttrs: rec {
@@ -15,7 +18,7 @@ in
 
     postFixup = ''
       wrapProgram $out/bin/telegram-desktop \
-        --add-flags @FLAGS@ \
+        --argv0 'telegram-desktop' \
         "''${gappsWrapperArgs[@]}" \
         "''${qtWrapperArgs[@]}" \
         --set XDG_CURRENT_DESKTOP Unity \
@@ -23,9 +26,10 @@ in
         --prefix XCURSOR_PATH : /usr/share/icons \
         --prefix LD_LIBRARY_PATH : ${self.xorg.libXcursor}/lib
 
+      mv $out/bin/telegram-desktop $out/bin/.telegram-desktop
+      cp ${nixgl-wrapper}/bin/nixgl-wrapper $out/bin/telegram-desktop
       substituteInPlace $out/bin/telegram-desktop \
-        --replace "$out/bin/.telegram-desktop-wrapped" '${nixgl.auto.nixGLDefault}/bin/nixGL' \
-        --replace '@FLAGS@' "$out/bin/.telegram-desktop-wrapped"
+        --replace '@PATH@' "$out/bin/.telegram-desktop"
     '';
   });
 }
