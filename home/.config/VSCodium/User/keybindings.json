@@ -1,11 +1,18 @@
 // Place your key bindings in this file to override the defaults
 [
     {
-        "command": "-vscode-neovim.escape",
-        "key": "ctrl+c"
+        "key": "ctrl+v",
+        "command": "-dance.modes.set.temporarily.normal",
+        "when": "editorTextFocus && dance.mode == 'insert'"
     },
     {
         "key": "ctrl+f",
-        "command": "-vscode-neovim.ctrl-f"
+        "command": "-dance.select.vertically",
+        "when": "editorTextFocus && dance.mode == 'normal'"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "-dance.select.vertically",
+        "when": "editorTextFocus && dance.mode == 'insert'"
     },
 ]

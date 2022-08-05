@@ -94,5 +94,12 @@
     "autoDocstring.docstringFormat": "sphinx",
     "editor.largeFileOptimizations": false,
     "window.zoomLevel": -1,
-    "nix.enableLanguageServer": true
+    "nix.enableLanguageServer": true,
+    "dance.modes": {
+        "normal": {
+            "cursorStyle": "block",
+            "selectionBehavior": "character"
+        }
+    },
+    "cSpell.language": "en-GB"
 }
