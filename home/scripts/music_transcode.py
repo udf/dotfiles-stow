@@ -51,7 +51,7 @@ def transcode(infile):
 
 def copy_file(infile, old_root=music_path):
     outfile = out_path / infile.relative_to(old_root)
-    if outfile.is_file():
+    if outfile.is_file() and outfile.stat().st_mtime > infile.stat().st_mtime:
         return outfile
     print('Copying', infile)
     os.makedirs(outfile.parent, exist_ok=True)
