@@ -24,7 +24,7 @@ def transcode(infile):
     outtmp = outfile.with_suffix('.tmp')
     encode_cmd = [
         'opusenc',
-        *'--bitrate 192'.split(),
+        *'--bitrate 256'.split(),
         '--vbr',
         infile,
         outtmp,
