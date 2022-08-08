@@ -15,8 +15,8 @@ out_path = Path('/booty/media/music_trans')
 
 def transcode(infile):
     outfile = infile.with_suffix('.opus')
-    outfile = out_path / outfile.relative_to(music_path)
-    if outfile.is_file():
+    outfile: Path = out_path / outfile.relative_to(music_path)
+    if outfile.is_file() and outfile.stat().st_mtime > infile.stat().st_mtime:
         return outfile
     print('Transcoding', infile)
     outfile.parent.mkdir(parents=True, exist_ok=True)
