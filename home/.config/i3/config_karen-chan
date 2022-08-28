@@ -38,5 +38,6 @@ bindsym $mod+Mod1+4 exec --no-startup-id sendmidi dev "Midi Through Port-0" ch 1
 
 bindsym $mod+Mod1+a exec --no-startup-id "mpd-fav.py"
 bindsym XF86AudioStop exec --no-startup-id "mpd-fav.py"
-bindsym $mod+Mod1+space exec --no-startup-id "mpd-dislike.py"
-bindsym Shift+XF86AudioNext exec --no-startup-id "mpd-dislike.py"
+bindsym --release $mod+Mod1+space exec --no-startup-id "mpd-dislike.py"
+bindsym --release Shift+XF86AudioNext exec --no-startup-id "mpd-dislike.py"
+bindsym --release $mod+Delete exec --no-startup-id "mpd-q-pop.py"
