@@ -1,6 +1,14 @@
 // Place your key bindings in this file to override the defaults
 [
     {
+        "key": "ctrl+tab",
+        "command": "workbench.action.nextEditorInGroup"
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "workbench.action.previousEditorInGroup"
+    },
+    {
         "key": "ctrl+v",
         "command": "-dance.modes.set.temporarily.normal",
         "when": "editorTextFocus && dance.mode == 'insert'"
@@ -12,6 +20,11 @@
     },
     {
         "key": "ctrl+f",
+        "command": "-dance.select.vertically",
+        "when": "editorTextFocus && dance.mode == 'insert'"
+    },
+    {
+        "key": "ctrl+d",
         "command": "-dance.select.vertically",
         "when": "editorTextFocus && dance.mode == 'insert'"
     },
