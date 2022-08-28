@@ -14,7 +14,7 @@ def walk_files(path):
 def probe_media_length(path):
   try:
     d = ffmpeg.probe(path)
-    if 'duration' not in d['format']:
+    if 'format' not in d or 'duration' not in d['format']:
       return 0
     return float(d['format']['duration'])
   except ffmpeg.Error as e:
