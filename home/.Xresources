@@ -13,7 +13,7 @@
 #define colour_1  #a54242
 #define colour_9  #cc6666
 ! green
-#define colour_2  #6c9440
+#define colour_2  #5e8037
 #define colour_10 #92bd68
 ! yellow
 #define colour_3  #decc5f
