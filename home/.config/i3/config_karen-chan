@@ -13,6 +13,8 @@ exec --no-startup-id "sleep 10; PIPEWIRE_LATENCY=512/48000 pw-jack carla $HOME/D
 exec --no-startup-id "sleep 10; PIPEWIRE_LATENCY=512/48000 pw-jack carla $HOME/Documents/fx.carxp"
 #exec --no-startup-id $HOME/proj/p/g710-pulse/g710_pulse
 exec_always --no-startup-id killall picom; sleep 3; picom
+exec --no-startup-id cantata
+exec --no-startup-id discord-ptb
 
 for_window [class="^.*"] border pixel 3
 
