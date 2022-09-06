@@ -1,6 +1,13 @@
 #!/usr/bin/env python
+import argparse
 from pathlib import Path
 from mpd import CommandError
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--clean', action='store_true')
+args = parser.parse_args()
+
+
 from _mpd import client
 client.timeout = 10
 client.idletimeout = 10
@@ -13,10 +20,11 @@ try:
 except CommandError:
   pass
 
-for track in client.sticker_find('song', 'favourites', 'rating', '=', 2):
-  p = (music_dir / track['file'])
-  print('deleting', p)
-  p.unlink()
+if args.clean:
+  for track in client.sticker_find('song', 'favourites', 'rating', '=', 2):
+    p = (music_dir / track['file'])
+    print('deleting', p)
+    p.unlink()
 
 client.update('favourites')
 client.idle('update')
