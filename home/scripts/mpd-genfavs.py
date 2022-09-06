@@ -20,9 +20,10 @@ try:
 except CommandError:
   pass
 
+exclude_favourites = [t['file'] for t in client.sticker_find('song', 'favourites', 'rating', '=', 2)]
 if args.clean:
-  for track in client.sticker_find('song', 'favourites', 'rating', '=', 2):
-    p = (music_dir / track['file'])
+  for f in exclude_favourites:
+    p = (music_dir / f)
     print('deleting', p)
     p.unlink()
 
@@ -32,4 +33,6 @@ client.idle('update')
 for track in client.sticker_find('song', 'albums', 'rating', '=', 10):
   client.playlistadd(PLAYLIST_NAME, track['file'])
 
-client.playlistadd(PLAYLIST_NAME, 'favourites')
+all_favourites = {t['file'] for t in client.find("(base 'favourites')")}
+for f in all_favourites - set(exclude_favourites):
+  client.playlistadd(PLAYLIST_NAME, f)
