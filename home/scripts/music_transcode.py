@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-# heavily based on https://github.com/Streetwalrus/dotfiles/blob/master/scripts/mkogg
+# heavily based
 
-import shutil
 import os
-from functools import partial
+import shutil
+import subprocess
+from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
-import subprocess
 
 music_path = Path('/booty/media/music')
 playlist_dir = music_path / 'playlists'
@@ -72,27 +72,30 @@ def delete_empty_dirs(path):
 
 
 def walk_files(path):
-  for root, dirs, files in os.walk(path):
-    root = Path(root)
-    for file in files:
-      yield root / file
+    for root, dirs, files in os.walk(path):
+        root = Path(root)
+        for file in files:
+            yield root / file
+
+
+def process_file(f: Path):
+    if f.suffix.lower() in ('.flac', '.wav', '.aiff'):
+        return f, transcode(f)
+    return f, copy_file(f)
 
 
 def main():
     os.nice(16)
 
-    # Gather jobs
-    jobs = []
-    expected_files = set()
-
-    files = set()
+    # load playlists
+    playlists = defaultdict(list)
     for playlist in walk_files(playlist_dir):
         if playlist.name.startswith('_'):
             continue
-        jobs.append(partial(copy_file, playlist, playlist_dir))
         with open(playlist) as pl:
             for f in pl:
-                files.add(music_path / f.strip('\n'))
+                playlists[playlist.name].append(f.strip('\n'))
+    files = {music_path / f for fs in playlists.values() for f in fs}
 
     # copy art from all parent directories
     directories = set()
@@ -100,19 +103,19 @@ def main():
         directories.add(f.parent)
     for d in directories:
         for f in d.iterdir():
-            if f.suffix in {'.jpg', '.jpeg', '.jp2', '.png'}:
+            if f.stem.lower() in {'cover', 'albumart', 'folder'}:
                 files.add(f)
 
-    for f in files:
-        if f.suffix.lower() in ('.flac', '.wav', '.aiff'):
-            jobs.append(partial(transcode, f))
-            continue
-        jobs.append(partial(copy_file, f))
-
-    # Run jobs
+    # Process files
+    file_map = {}
+    expected_files = set()
     with ThreadPoolExecutor(max_workers=32) as pool:
-        for outfile in pool.map(lambda f: f(), jobs):
-            expected_files.add(outfile.relative_to(out_path))
+        for infile, outfile in pool.map(process_file, files):
+            infile = infile.relative_to(music_path)
+            outfile = outfile.relative_to(out_path)
+            if infile != outfile:
+                file_map[str(infile)] = str(outfile)
+            expected_files.add(outfile)
 
     expected_files.add(Path('.nomedia'))
     # Delete files that we don't expect to exist in output dir
@@ -120,6 +123,12 @@ def main():
         if f.relative_to(out_path) not in expected_files:
             print('Deleting', f)
             os.remove(f)
+
+    # write playlists
+    for name, files in playlists.items():
+        print('Generating', name)
+        with open(out_path / name, 'w') as f:
+            f.write('\n'.join(str(file_map.get(f, f)) for f in files))
 
     # Remove empty directories in the output dir
     delete_empty_dirs(out_path)
