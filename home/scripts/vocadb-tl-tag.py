@@ -7,6 +7,7 @@ import re
 
 import requests
 import mutagen
+import cutlet
 
 
 # tag: vocadb entry type
@@ -22,6 +23,19 @@ tl_cache = {}
 if TL_CACHE_FILE.exists():
   with open(TL_CACHE_FILE) as f:
     tl_cache = json.load(f)
+
+katsu = cutlet.Cutlet()
+katsu.use_foreign_spelling = False
+
+
+def trim_matching_ends(s1, s2):
+  start = next((i for i, (a, b) in enumerate(zip(s1, s2)) if a != b), 0)
+  end = next((i for i, (a, b) in enumerate(zip(reversed(s1), reversed(s2))) if a != b), None)
+  if end is None:
+    return ''
+  if end == 0:
+    return s1[start:]
+  return s1[start:-end]
 
 
 def walk_files_sorted(path):
@@ -70,7 +84,7 @@ def get_english_name(tag, entryType):
 
 
 def tl_tag(tag, entryType):
-  fmt_tl = lambda tl: f'{tag} {TL_SEPARATOR}({tl})' if tl != tag else tag
+  fmt_tl = lambda tl: f'{tag}{TL_SEPARATOR} / {tl}' if (tl := trim_matching_ends(tl, tag)) else tag
 
   non_ascii = re.findall('([^ -~‐]+)', tag)
   if not non_ascii:
@@ -79,29 +93,23 @@ def tl_tag(tag, entryType):
   if TL_SEPARATOR in tag:
     tag = tag.split(TL_SEPARATOR)[0].strip()
 
-  # translate entire tag
-  if 'feat' not in tag and (tl := get_english_name(tag, entryType)):
+  # translate entire tag, unless it includes multiple artists
+  if 'feat.' not in tag and (tl := get_english_name(tag, entryType)):
     return fmt_tl(tl)
 
   # try subbing non ascii parts
-  first_sub = -1
   def sub_part(m):
     if len(m[0]) < 2:
       return m[0]
-    nonlocal first_sub
     if tl := get_english_name(m[0], entryType):
-      # remember first replacement so we can trim
-      if first_sub < 0:
-        first_sub = m.start()
       return tl
-    print(f'  failed to tl "{m[0]}" from "{tag}"')
-    return m[0]
+    return katsu.romaji(m[0], capitalize=False)
 
   # exclude some full width chars
   e = re.escape('（）・、＆‐×＠')
   tl, num = re.subn(fr'[^\W{e}\-_]*[^ -~{e}]+[^\W{e}\-]*[!\?]*', sub_part, tag)
   if num:
-    return fmt_tl(tl[max(0, first_sub):])
+    return fmt_tl(tl)
 
   return tag
 
