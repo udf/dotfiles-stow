@@ -67,7 +67,8 @@ def get_english_name(tag, entryType):
       'lang': 'English',
       'query': tag,
       'entryTypes': entryType,
-      'maxResults': 1
+      'maxResults': 1,
+      'sort': 'None'
     }
   ).json()
 
@@ -78,6 +79,9 @@ def get_english_name(tag, entryType):
   except:
     print(f'Error parsing response for "{tag}":', r)
     raise
+
+  if tag == translated:
+    translated = katsu.romaji(tag, capitalize=(entryType == 'Artist'))
 
   cache_value(tag, translated)
   return translated
@@ -103,7 +107,7 @@ def tl_tag(tag, entryType):
       return m[0]
     if tl := get_english_name(m[0], entryType):
       return tl
-    return katsu.romaji(m[0], capitalize=False)
+    return katsu.romaji(m[0], capitalize=(entryType == 'Artist'))
 
   # exclude some full width chars
   e = re.escape('（）・、＆‐×＠')
@@ -114,24 +118,29 @@ def tl_tag(tag, entryType):
   return tag
 
 
-for f in walk_files_sorted('.'):
-  if f.suffix.lower() != '.flac':
-    continue
-  print('Checking', f)
-  m = mutagen.File(f)
+parser = argparse.ArgumentParser()
+parser.add_argument('dirs', action='extend', nargs='+')
+args = parser.parse_args()
 
-  modified = False
-  for key, entryType in TAG_NAMES.items():
-    if key not in m:
+for dir in args.dirs:
+  for f in walk_files_sorted(dir):
+    if f.suffix.lower() != '.flac':
       continue
-    tags = m[key]
-    new_tags = [tl_tag(tag, entryType) for tag in tags]
-    if new_tags == tags:
-      continue
-    modified = True
-    for old, new in zip(tags, new_tags):
-      print('', f'{key}:', old, '->', new)
-    m[key] = new_tags
+    print('Checking', f)
+    m = mutagen.File(f)
 
-  if modified:
-    m.save()
+    modified = False
+    for key, entryType in TAG_NAMES.items():
+      if key not in m:
+        continue
+      tags = m[key]
+      new_tags = [tl_tag(tag, entryType) for tag in tags]
+      if new_tags == tags:
+        continue
+      modified = True
+      for old, new in zip(tags, new_tags):
+        print('', f'{key}:', old, '->', new)
+      m[key] = new_tags
+
+    if modified:
+      m.save()
