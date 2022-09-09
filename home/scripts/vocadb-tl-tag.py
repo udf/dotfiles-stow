@@ -28,14 +28,26 @@ katsu = cutlet.Cutlet()
 katsu.use_foreign_spelling = False
 
 
-def trim_matching_ends(s1, s2):
-  start = next((i for i, (a, b) in enumerate(zip(s1, s2)) if a != b), 0)
-  end = next((i for i, (a, b) in enumerate(zip(reversed(s1), reversed(s2))) if a != b), None)
-  if end is None:
-    return ''
-  if end == 0:
-    return s1[start:]
-  return s1[start:-end]
+def trim_matching_ends(s1, s2, space_chars=' .'):
+  start = 0
+  end = max(0, len(s1) - 1)
+  shortest_len = min(len(s1), len(s2))
+
+  while start < shortest_len and s1[start] == s2[start]:
+    start += 1
+
+  end2 = max(0, len(s2) - 1)
+  while end > 0 and s1[end] == s2[end2]:
+    end -= 1
+    end2 -= 1
+
+  while start > 0 and s1[start - 1] not in space_chars:
+    start -= 1
+  s1_len = len(s1)
+  while end < s1_len - 1 and s1[end + 1] not in space_chars:
+    end += 1
+
+  return s1[start:end + 1]
 
 
 def walk_files_sorted(path):
@@ -88,7 +100,11 @@ def get_english_name(tag, entryType):
 
 
 def tl_tag(tag, entryType):
-  fmt_tl = lambda tl: f'{tag}{TL_SEPARATOR} / {tl}' if (tl := trim_matching_ends(tl, tag)) else tag
+  fmt_tl = lambda tl: (
+    f'{tag}{TL_SEPARATOR} / {tl}'
+    if ((tl := trim_matching_ends(tl, tag)) and tl != tag)
+    else tag
+  )
 
   non_ascii = re.findall('([^ -~‐]+)', tag)
   if not non_ascii:
@@ -103,9 +119,7 @@ def tl_tag(tag, entryType):
 
   # try subbing non ascii parts
   def sub_part(m):
-    if len(m[0]) < 2:
-      return m[0]
-    if tl := get_english_name(m[0], entryType):
+    if len(m[0]) >= 2 and (tl := get_english_name(m[0], entryType)):
       return tl
     return katsu.romaji(m[0], capitalize=(entryType == 'Artist'))
 
