@@ -28,4 +28,61 @@
         "command": "-dance.select.vertically",
         "when": "editorTextFocus && dance.mode == 'insert'"
     },
+    {
+        "key": "ctrl+[",
+        "command": "-editor.action.outdentLines",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+]",
+        "command": "-editor.action.indentLines",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+[",
+        "command": "-editor.fold",
+        "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+        "key": "ctrl+shift+]",
+        "command": "-editor.unfold",
+        "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+        "key": "ctrl+[",
+        "command": "dance.seek.object",
+        "args": {
+            "input": "(?#predefined=paragraph)",
+            "where": "start"
+        },
+        "when": "editorTextFocus && dance.mode == 'normal'"
+    },
+    {
+        "key": "ctrl+]",
+        "command": "dance.seek.object",
+        "args": {
+            "input": "(?#predefined=paragraph)"
+        },
+        "when": "editorTextFocus && dance.mode == 'normal'"
+    },
+    {
+        "key": "ctrl+shift+[",
+        "command": "dance.seek.object",
+        "args": {
+            "input": "(?#predefined=paragraph)",
+            "where": "start",
+            "shift": "extend"
+        },
+        "when": "editorTextFocus && dance.mode == 'normal'"
+    },
+    {
+        "key": "ctrl+shift+]",
+        "command": "dance.seek.object",
+        "args": {
+            "input": "(?#predefined=paragraph)",
+            "where": "end",
+            "shift": "extend"
+        },
+        "when": "editorTextFocus && dance.mode == 'normal'"
+    },
 ]
