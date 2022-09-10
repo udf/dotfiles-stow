@@ -94,7 +94,9 @@ def main():
             continue
         with open(playlist) as pl:
             for f in pl:
-                playlists[playlist.name].append(f.strip('\n'))
+                f = f.strip('\n')
+                if (music_path / f).exists():
+                    playlists[playlist.name].append(f)
     files = {music_path / f for fs in playlists.values() for f in fs}
 
     # copy art from all parent directories
