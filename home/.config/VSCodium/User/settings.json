@@ -9,6 +9,7 @@
         "mt",
         "Playerctl",
         "proto",
+        "romaji",
         "struct",
         "upvote"
     ],
@@ -101,5 +102,6 @@
             "selectionBehavior": "character"
         }
     },
-    "cSpell.language": "en-GB"
+    "cSpell.language": "en-GB",
+    "editor.unicodeHighlight.ambiguousCharacters": false
 }
