@@ -30,7 +30,7 @@ if [ "$1" = 'mount' ]; then
 fi
 
 echo 'Syncing root...'
-rsync -aAXHxx --delete --info=progress2 --exclude={/dev,/proc,/sys,/tmp,/run,/lost+found,/nix/store,/home/sam/Downloads,/home/sam/.cache,/home/sam/.local/share/nicotine} / /backup/root/
+rsync -aAXHxx --delete --info=progress2 --exclude={/dev,/proc,/sys,/tmp,/run,/lost+found,/nix/store,/home/sam/Downloads,/home/sam/.cache,/home/sam/.local/share/nicotine,/var/lib/libvirt/images} / /backup/root/
 echo 'Syncing boot...'
 rsync -aAXHxx --delete --info=progress2 /boot/ /backup/root/boot/
 
