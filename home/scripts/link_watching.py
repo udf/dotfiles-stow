@@ -7,11 +7,20 @@ import hashlib
 
 CACHE_FILE = Path('~/.cache/py_partial_hash.json').expanduser()
 partial_hash_cache = {}
-try:
-  with open(CACHE_FILE) as f:
-    partial_hash_cache = json.load(f)
-except FileNotFoundError:
-  pass
+
+
+def load_hash_cache():
+  global partial_hash_cache
+  try:
+    with open(CACHE_FILE) as f:
+      partial_hash_cache = json.load(f)
+  except FileNotFoundError:
+    pass
+
+
+def save_hash_cache():
+  with open(CACHE_FILE, 'w') as f:
+    json.dump(partial_hash_cache, f)
 
 
 def walk_files(path):
@@ -59,8 +68,11 @@ def link_watching(src_dir, dst_dir):
   dst_dir = Path(dst_dir)
 
   linked = {}
-  with open(dst_dir / 'linked.json') as f:
-    linked = json.load(f)
+  try:
+    with open(dst_dir / 'linked.json') as f:
+      linked = json.load(f)
+  except FileNotFoundError:
+    pass
 
   path_to_hash = {p: h for h, p in linked.items()}
 
@@ -95,9 +107,11 @@ def link_watching(src_dir, dst_dir):
   with open(dst_dir / 'linked.json', 'w') as f:
     json.dump(linked, f)
 
-for p in ['anime', 'movies', 'series']:
-  link_watching(f'/booty/media/{p}', f'/booty/media/watching/{p}')
 
+if __name__ == '__main__':
+  load_hash_cache()
 
-with open(CACHE_FILE, 'w') as f:
-  json.dump(partial_hash_cache, f)
+  for p in ['anime', 'movies', 'series']:
+    link_watching(f'/booty/media/{p}', f'/booty/media/watching/{p}')
+
+  save_hash_cache()
