@@ -2,8 +2,14 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+set $PULSE_SINK @DEFAULT_SINK@
 set $mod Mod4
 font pango:Hack Nerd Font 8
+
+# host specific config
+include config_$HOST
+
+# ----------------------------------------------------------------------------
 
 # Temporarily turn on numlock when right control is held
 #bindcode 202 exec --no-startup-id numlockx on
@@ -12,8 +18,8 @@ font pango:Hack Nerd Font 8
 hide_edge_borders smart_no_gaps
 
 # window manager management
-bindsym $mod+Shift+c exec "gen_config.sh && i3-msg reload"
-bindsym $mod+Shift+r exec "gen_config.sh && i3-msg restart"
+bindsym $mod+Shift+c exec "i3-msg reload"
+bindsym $mod+Shift+r exec "i3-msg restart"
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 
@@ -34,16 +40,6 @@ client.urgent            $red_color  $red_color  $bgr_color  $ind_color
 
 # program management
 bindsym $mod+x kill
-
-
-# media keys
-bindsym $mod+Mod1+d exec --no-startup-id "pactl set-sink-volume @DEFAULT_SINK@ +2%"
-bindsym $mod+Mod1+c exec --no-startup-id "pactl set-sink-volume @DEFAULT_SINK@ -2%"
-bindsym $mod+Mod1+e exec --no-startup-id "pactl set-sink-mute @DEFAULT_SINK@ toggle"
-
-bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl set-sink-volume @DEFAULT_SINK@ +1%"
-bindsym XF86AudioLowerVolume exec --no-startup-id "pactl set-sink-volume @DEFAULT_SINK@ -1%"
-bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute @DEFAULT_SINK@ toggle"
 
 
 # media player keys
@@ -226,6 +222,3 @@ exec --no-startup-id telegram-desktop
 exec --no-startup-id firefox
 exec_always --no-startup-id feh --bg-scale $HOME/wallpaper.png
 exec --no-startup-id redshift-gtk -t 5500K:4500K -l 26.2:28.0
-
-# ----------------------------------------------------------------------------
-

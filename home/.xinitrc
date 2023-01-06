@@ -6,8 +6,9 @@ xset -b
 xset s off 
 xset -dpms
 
+export HOST="$(hostname)"
 export TERMINAL="termite"
-export PIPEWIRE_LATENCY=256/48000
+export PIPEWIRE_LATENCY=1024/48000
 export PATH="$HOME/scripts:$PATH"
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export GDK_SCALE=1
@@ -21,7 +22,6 @@ eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 
 xrdb ~/.Xresources
-$HOME/scripts/gen_config.sh
 
 numlockx on
 
