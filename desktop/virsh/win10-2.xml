@@ -168,15 +168,15 @@
       <audio id='2'/>
     </sound>
     <audio id='1' type='jack'>
-      <input clientName='win-vm' connectPorts='mic-effects.+Monitor'>
+      <input clientName='win-vm' connectPorts='mic-effects.+sink'>
       </input>
       <output clientName='win-vm' connectPorts='vm-sink.+sink'>
       </output>
     </audio>
     <audio id='2' type='jack'>
-      <input clientName='win-vm-line-in-1' connectPorts='voice-channel.+Monitor'>
+      <input clientName='win-vm-line-in-1' connectPorts='voice-channel.+sink'>
       </input>
-      <output clientName='win-vm-line-out-1' connectPorts='audio-effects.+sink'>
+      <output clientName='win-vm-line-out-1' connectPorts='voice-channel.+sink'>
       </output>
     </audio>
     <!-- <audio id='1' type='pulseaudio' serverName='unix:/run/user/1000/pulse/native'>
@@ -238,7 +238,7 @@
     <memballoon model='none'/>
   </devices>
   <qemu:commandline>
-    <qemu:env name='PIPEWIRE_LATENCY' value='512/48000'/>
+    <qemu:env name='PIPEWIRE_LATENCY' value='1024/48000'/>
     <qemu:env name='PIPEWIRE_RUNTIME_DIR' value='/run/user/1000'/>
   </qemu:commandline>
 </domain>
