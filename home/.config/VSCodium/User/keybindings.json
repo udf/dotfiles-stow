@@ -85,4 +85,12 @@
         },
         "when": "editorTextFocus && dance.mode == 'normal'"
     },
+    {
+        "key": "ctrl+o",
+        "command": "workbench.action.navigateBack"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "workbench.action.navigateForward"
+    }
 ]

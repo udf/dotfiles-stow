@@ -103,5 +103,7 @@
         }
     },
     "cSpell.language": "en-GB",
-    "editor.unicodeHighlight.ambiguousCharacters": false
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "security.workspace.trust.enabled": false,
+    "workbench.editor.navigationScope": "editorGroup"
 }
