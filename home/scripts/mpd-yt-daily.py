@@ -32,7 +32,7 @@ def delete_empty_dirs(path):
 
 
 music_dir = Path('/booty/media/music')
-subdir = 'pending/yt'
+subdir = 'lossy-downloads/yt'
 PLAYLIST_NAME = '_yt_pending'
 
 print('deleting disliked')
