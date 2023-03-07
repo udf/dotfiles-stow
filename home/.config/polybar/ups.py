@@ -26,7 +26,8 @@ def get_battery_status(props):
 
 
 def get_load_status(props):
-  return f"{UnderlineColours.White} {props.get('ups.load'):>2}%"
+  load_perc = int(props.get('ups.load'))
+  return f"{UnderlineColours.White} {load_perc:>2}% / {load_perc * 18} W"
 
 
 def get_status():
