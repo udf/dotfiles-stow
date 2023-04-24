@@ -81,6 +81,7 @@ bindsym $mod+b exec --no-startup-id LC_TIME=en_SE.UTF-8 pcmanfm-qt
 bindsym $mod+n exec --no-startup-id firefox
 bindsym $mod+u exec --no-startup-id $HOME/scripts/unisearch/unisearch.sh
 bindsym $mod+Escape exec --no-startup-id $HOME/scripts/fancy_lock.sh
+bindsym $mod+Shift+t exec --no-startup-id $HOME/.config/polybar/launch.sh
 
 
 # window management
