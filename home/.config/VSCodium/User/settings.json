@@ -105,5 +105,8 @@
     "cSpell.language": "en-GB",
     "editor.unicodeHighlight.ambiguousCharacters": false,
     "security.workspace.trust.enabled": false,
-    "workbench.editor.navigationScope": "editorGroup"
+    "workbench.editor.navigationScope": "editorGroup",
+    "workbench.editorAssociations": {
+        "*.bin": "hexEditor.hexedit"
+    }
 }
