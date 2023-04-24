@@ -17,14 +17,15 @@ exec --no-startup-id "sleep 10; PIPEWIRE_LATENCY=512/48000 pw-jack carla $HOME/D
 #exec --no-startup-id $HOME/proj/p/g710-pulse/g710_pulse
 exec_always --no-startup-id killall picom; sleep 3; picom
 exec --no-startup-id "sleep 10; cantata"
+exec --no-startup-id "sleep 30; qbittorrent"
 exec --no-startup-id "sleep 15; discord-ptb"
 
 for_window [class="^.*"] border pixel 3
 
 # monitor inputs
 bindsym $mod+F1 exec --no-startup-id ddcutil --model 'DELL S2721DGF' setvcp 60 0x10
-bindsym $mod+F2 exec --no-startup-id ddcutil --model 'DELL S2721DGF' setvcp 60 0x11
-bindsym $mod+F3 exec --no-startup-id ddcutil --model 'DELL S2721DGF' setvcp 60 0x12
+bindsym $mod+F2 exec --no-startup-id ddcutil --model 'DELL S2721DGF' setvcp 60 0x12
+bindsym $mod+F3 exec --no-startup-id ddcutil --model 'DELL S2721DGF' setvcp 60 0x11
 
 # vm keyboard
 bindsym $mod+F5 exec --no-startup-id virsh --connect qemu:///system detach-device win10-2 $HOME/.vfio_input/g710.xml
