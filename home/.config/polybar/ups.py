@@ -13,16 +13,16 @@ class UnderlineColours:
 
 def get_input_status(props):
   icon = {
-    'OL': UnderlineColours.Green + 'ﮣ',
-    'OB': UnderlineColours.Red + 'ﮤ',
-    'OL BOOST': UnderlineColours.Yellow + 'ﮣ↑'
+    'OL': UnderlineColours.Green + '󰚥',
+    'OB': UnderlineColours.Red + '󰚦',
+    'OL BOOST': UnderlineColours.Yellow + '󰚥↑'
   }.get(props.get('ups.status', None), '')
   voltage = round(float(props.get('input.voltage'))) - 4
   return f"{icon} {voltage}V {props.get('input.frequency')}Hz"
 
 
 def get_battery_status(props):
-  return f"{UnderlineColours.White} {props.get('battery.voltage')}V"
+  return f"{UnderlineColours.White}󰁹 {props.get('battery.voltage')}V"
 
 
 def get_load_status(props):
