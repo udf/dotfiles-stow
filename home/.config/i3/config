@@ -19,10 +19,9 @@ hide_edge_borders smart_no_gaps
 bindsym $mod+BackSpace border toggle
 
 # window manager management
-bindsym $mod+Shift+c exec "i3-msg reload"
-bindsym $mod+Shift+r exec "i3-msg restart"
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec ~/.config/i3/eos-scripts/powermenu
 
 # theme colors
 set_from_resource  $bgr_color  background
