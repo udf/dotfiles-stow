@@ -5,7 +5,7 @@
 
 # Run before starting the locker
 pre_lock() {
-    playerctl pause
+    playerctlctlctl player.pause
 }
 
 # Run after the locker exits
