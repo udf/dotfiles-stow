@@ -201,22 +201,6 @@ bindsym $mod+Ctrl+grave move container to output next
 bindsym $mod+Mod1+grave move workspace to output next
 
 
-# System management
-set $mode_system (l)ock, (s)uspend, (h)ibernate, (r)eboot, (shift+s)hutdown
-bindsym $mod+0 mode "$mode_system"
-mode "$mode_system" {
-    bindsym l exec --no-startup-id i3exit lock, mode "default"
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
-
-    # exit system mode: "Enter" or "Escape"
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-
 # autostart applications
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id telegram-desktop
