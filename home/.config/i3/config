@@ -204,5 +204,5 @@ bindsym $mod+Mod1+grave move workspace to output next
 # autostart applications
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id telegram-desktop
-exec --no-startup-id firefox
+exec --no-startup-id "sleep 5; firefox"
 exec --no-startup-id redshift-gtk -t 5500K:4500K -l 26.2:28.0
