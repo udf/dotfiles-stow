@@ -34,19 +34,7 @@ margin-top = 0
 margin-bottom = 0
 
 
-[bar/samlap]
-inherit = main_bar
-
-line-size = 1
-
-padding-left = 1
-padding-right = 2
-
-modules-left = battery i3 musicinfo_samlap
-modules-right = downspeed upspeed downspeed_wlan upspeed_wlan cpu memory volume date
-
-
-[bar/arch-vm]
+[bar/alice]
 inherit = main_bar
 
 line-size = 1
@@ -56,13 +44,7 @@ padding-right = 2
 
 modules-left = i3 musicinfo_samlap
 modules-center = volume date
-modules-right = cpu memory filesystem downspeed upspeed
-
-
-[bar/archbb]
-inherit = bar/arch-vm
-modules-left = i3 musicinfo_samlap
-modules-right = downspeed upspeed downspeed_wlan upspeed_wlan cpu memory filesystem battery_0 battery_rem
+modules-right = downspeed upspeed downspeed_wlan upspeed_wlan cpu memory filesystem battery
 
 
 [bar/karen-chan_1]
@@ -156,7 +138,7 @@ tail = true
 
 [module/battery]
 type = internal/battery
-battery = BAT1
+battery = BAT0
 adapter = ACAD
 poll-interval = 5
 
@@ -164,30 +146,28 @@ label-full = 
 label-full-foreground = ${colors.bgreen}
 label-full-underline = ${colors.bgreen}
 
-format-charging = %{u#fff}%{+u}<animation-charging> <label-charging>
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-animation-charging-framerate = 500
+format-charging = %{+u}<ramp-capacity>%{F-}<animation-charging>  <label-charging>
+label-charging = %percentage%% +%consumption%W %time%
+animation-charging-0 =  
+animation-charging-1 =  
+animation-charging-2 =  
+animation-charging-3 =  
+animation-charging-4 =  
+animation-charging-5 = 
+animation-charging-framerate = 1000
 
-format-discharging = %{+u}<ramp-capacity> <label-discharging>
-ramp-capacity-0 = ${env:URAMP_0}${env:FRAMP_0}%{F-}
-ramp-capacity-1 = ${env:URAMP_0}${env:FRAMP_0}%{F-}
-ramp-capacity-2 = ${env:URAMP_0}${env:FRAMP_0}%{F-}
-ramp-capacity-3 = ${env:URAMP_1}${env:FRAMP_1}%{F-}
-ramp-capacity-4 = ${env:URAMP_2}${env:FRAMP_2}%{F-}
-ramp-capacity-5 = ${env:URAMP_3}${env:FRAMP_3}%{F-}
-ramp-capacity-6 = ${env:URAMP_4}${env:FRAMP_4}%{F-}
-ramp-capacity-7 = ${env:URAMP_5}${env:FRAMP_5}%{F-}
-ramp-capacity-8 = ${env:URAMP_6}${env:FRAMP_6}%{F-}
-ramp-capacity-9 = ${env:URAMP_7}${env:FRAMP_7}%{F-}
-
-
-[module/battery_0]
-inherit = module/battery
-battery = BAT0
+format-discharging = %{+u}<ramp-capacity>%{F-}  <label-discharging>
+label-discharging = %percentage%% %consumption%W %time%
+ramp-capacity-0 = ${env:FURAMP_7}
+ramp-capacity-1 = ${env:FURAMP_7}
+ramp-capacity-2 = ${env:FURAMP_7}
+ramp-capacity-3 = ${env:FURAMP_6}
+ramp-capacity-4 = ${env:FURAMP_5}
+ramp-capacity-5 = ${env:FURAMP_4}
+ramp-capacity-6 = ${env:FURAMP_3}
+ramp-capacity-7 = ${env:FURAMP_2}
+ramp-capacity-8 = ${env:FURAMP_1}
+ramp-capacity-9 = ${env:FURAMP_0}
 
 
 [module/i3]
@@ -337,7 +317,7 @@ type = internal/pulseaudio
 label-volume = %percentage%%
 format-volume = <ramp-volume> <label-volume>
 format-volume-underline = ${colors.bwhite}
-label-muted = 婢 0%
+label-muted = 󰝟  0%
 label-muted-underline = ${colors.bred}
 ramp-volume-0 = " "
 ramp-volume-1 = " "
