@@ -27,6 +27,7 @@ numlockx on
 
 case "$(hostname)" in
 "karen-chan")
+    export MPD_PASSWORD=B7WtKLYaAw7wVf4p
     numlockx off
     nm-applet &
     xrandr --output DisplayPort-1 --mode 2560x1440 -r 144 --pos 0x360 --output HDMI-A-0 --mode 3840x2160 --pos 2560x0
