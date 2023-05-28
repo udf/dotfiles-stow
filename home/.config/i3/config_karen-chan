@@ -6,6 +6,8 @@ include media_keys.conf
 bindsym $mod+d exec rofi -show run -modi run -location 6 -yoffset -20
 bindsym $mod+Ctrl+r exec "DISPLAY=:0 xrandr --output HDMI-A-0 --mode 800x600;sleep 3;DISPLAY=:0 xrandr --output HDMI-A-0 --mode 3840x2160;"
 
+exec_always --no-startup-id feh --bg-scale $HOME/wallpaper.png
+
 # layout
 workspace 1 output HDMI-A-0
 exec --no-startup-id i3-msg "workspace 1; append_layout $HOME/dotfiles/i3_layouts/desktop.json"
