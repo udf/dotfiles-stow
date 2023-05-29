@@ -77,7 +77,9 @@ padding-right = 105
 
 modules-left = musicinfo i3 xwindow
 modules-center = date volume-karen-chan
-modules-right = downspeed upspeed filesystem upsinfo memory cpu
+modules-right = downspeed upspeed filesystem upsinfo memory cpu deadline
+
+tray-detached = true
 
 
 [bar/karen-chan_2]
@@ -151,6 +153,14 @@ type = custom/script
 exec = ~/.config/polybar/ups.py
 label = %output%
 format = <label>
+tail = true
+
+
+[module/deadline]
+type = custom/script
+exec = ~/scripts/deadline.py
+label = %output%
+format = %{+u}%{u#f0de74}<label>
 tail = true
 
 
