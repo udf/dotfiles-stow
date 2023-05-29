@@ -38,7 +38,7 @@ rm "$tmp_img"
 if pkill picom; then
     PICOM=1
 fi
-i3lock -e -f -i "$tmp_pre.png" "$@"
+i3lock -n -e -f -i "$tmp_pre.png" "$@"
 if [ -n "$PICOM" ]; then
     picom &
 fi
