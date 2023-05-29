@@ -152,7 +152,7 @@ battery = BAT0
 adapter = ACAD
 poll-interval = 5
 
-label-full = 
+label-full =  %{-u}
 label-full-foreground = ${colors.bgreen}
 label-full-underline = ${colors.bgreen}
 
