@@ -1,0 +1,26 @@
+include media_keys.conf
+
+workspace_auto_back_and_forth yes
+
+exec --no-startup-id $HOME/proj/p/wp/anim.sh
+
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 5 -fps 60"
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 5 -fps 60"
+
+bindsym $mod+d exec rofi -modi drun -show drun -config ~/.config/rofi/rofidmenu.rasi
+bindsym $mod+t exec rofi -show window -config ~/.config/rofi/rofidmenu.rasi
+
+exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id "sleep 40; cantata"
+
+for_window [class="cantata"] move workspace $ws8
+for_window [class="firefox"] border none
+
+bindsym --release $mod+XF86AudioPlay workspace $ws8
+
+bindsym --release $mod+Mod1+a exec --no-startup-id "mpd-fav.py"
+bindsym --release Shift+XF86AudioPlay exec --no-startup-id "mpd-fav.py"
+bindsym --release $mod+Mod1+space exec --no-startup-id "mpd-dislike.py"
+bindsym --release Shift+XF86AudioNext exec --no-startup-id "mpd-dislike.py"
+
+exec --no-startup-id i3-msg "workspace $ws1; append_layout $HOME/dotfiles/i3_layouts/ff.json"

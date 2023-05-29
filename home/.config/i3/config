@@ -16,12 +16,12 @@ include config_$HOST
 #bindcode --release 202 exec --no-startup-id numlockx off
 
 hide_edge_borders smart_no_gaps
+bindsym $mod+BackSpace border toggle
 
 # window manager management
-bindsym $mod+Shift+c exec "i3-msg reload"
-bindsym $mod+Shift+r exec "i3-msg restart"
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec ~/.config/i3/eos-scripts/powermenu
 
 # theme colors
 set_from_resource  $bgr_color  background
@@ -201,25 +201,8 @@ bindsym $mod+Ctrl+grave move container to output next
 bindsym $mod+Mod1+grave move workspace to output next
 
 
-# System management
-set $mode_system (l)ock, (s)uspend, (h)ibernate, (r)eboot, (shift+s)hutdown
-bindsym $mod+0 mode "$mode_system"
-mode "$mode_system" {
-    bindsym l exec --no-startup-id i3exit lock, mode "default"
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
-
-    # exit system mode: "Enter" or "Escape"
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-
 # autostart applications
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id telegram-desktop
-exec --no-startup-id firefox
-exec_always --no-startup-id feh --bg-scale $HOME/wallpaper.png
+exec --no-startup-id "sleep 5; firefox"
 exec --no-startup-id redshift-gtk -t 5500K:4500K -l 26.2:28.0

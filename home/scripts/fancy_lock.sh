@@ -35,5 +35,11 @@ imlib2_grab "$tmp_img"
 ~/proj/p/swooce/swooce "$kernel" "$tmp_img" "$tmp_pre.png"
 rm "$tmp_img"
 
+if pkill picom; then
+    PICOM=1
+fi
 i3lock -e -f -i "$tmp_pre.png" "$@"
+if [ -n "$PICOM" ]; then
+    picom &
+fi
 rm "$tmp_pre.png"

@@ -8,6 +8,7 @@ for i in ${!ramp[@]}; do
   export RAMP_$i="${ramp[$i]}"
   export URAMP_$i="%{u${ramp[$i]}}"
   export FRAMP_$i="%{F${ramp[$i]}}"
+  export FURAMP_$i="%{u${ramp[$i]}}%{F${ramp[$i]}}"
 done
 
 # Terminate already running bad instances
