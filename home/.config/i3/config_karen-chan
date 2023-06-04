@@ -37,11 +37,11 @@ bindsym $mod+F6 exec --no-startup-id virsh --connect qemu:///system attach-devic
 bindsym --whole-window $mod+button7 exec --no-startup-id "pactl set-sink-volume $PULSE_SINK +1%"
 bindsym --whole-window $mod+button6 exec --no-startup-id "pactl set-sink-volume $PULSE_SINK -1%"
 # horizontal scroll is vast and mighty
-bindsym --whole-window $mod+Mod1+button7 exec --no-startup-id "playerctlctlctl set_position 2 false"
-bindsym --whole-window $mod+Mod1+button6 exec --no-startup-id "playerctlctlctl set_position -2 false"
+bindsym --whole-window $mod+Mod1+button7 exec --no-startup-id "playerctl position 2+"
+bindsym --whole-window $mod+Mod1+button6 exec --no-startup-id "playerctl position 2-"
 # horizontal scroll is the only thing that understands me
-bindsym --whole-window $mod+Ctrl+button7 exec --no-startup-id "playerctlctlctl set_volume 0.01 false"
-bindsym --whole-window $mod+Ctrl+button6 exec --no-startup-id "playerctlctlctl set_volume -0.01 false"
+bindsym --whole-window $mod+Ctrl+button7 exec --no-startup-id "playerctl volume 0.01+"
+bindsym --whole-window $mod+Ctrl+button6 exec --no-startup-id "playerctl volume 0.01-"
 
 bindsym $mod+Mod1+1 exec --no-startup-id sendmidi dev "Midi Through Port-0" ch 1 cc 7 0
 bindsym $mod+Mod1+2 exec --no-startup-id sendmidi dev "Midi Through Port-0" ch 1 cc 7 30
