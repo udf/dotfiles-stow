@@ -97,7 +97,7 @@ def get_status_line():
 
     output = ''
     metadata = current_player.get_property('metadata').unpack()
-    position = current_player.get_property('position') / 1000000
+    position = current_player.get_position() / 1000000
     position_str, percent = get_position_info(position, metadata)
 
     # Status icon
