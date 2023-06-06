@@ -12,14 +12,14 @@ bindsym $mod+d exec rofi -modi drun -show drun -config ~/.config/rofi/rofidmenu.
 bindsym $mod+t exec rofi -show window -config ~/.config/rofi/rofidmenu.rasi
 
 exec --no-startup-id dex --autostart --environment i3
-exec --no-startup-id "sleep 40; cantata"
+exec --no-startup-id "systemctl start --user mpd && cantata"
 
-for_window [class="TelegramDesktop"] move workspace $ws7
-for_window [class="discord"] move workspace $ws7
-for_window [class="cantata"] move workspace $ws8
 for_window [class="firefox"] border none
+assign [class="TelegramDesktop"] $ws7
+assign [class="discord"] $ws7
 
 set $wsMusic "9: 󰎈"
+assign [class="cantata"] $wsMusic
 bindsym --release $mod+XF86AudioPlay workspace $wsMusic
 bindsym $mod+Ctrl+XF86AudioPlay move container to workspace $wsMusic
 bindsym $mod+Shift+XF86AudioPlay move container to workspace $wsMusic; workspace $wsMusic
