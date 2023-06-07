@@ -97,7 +97,10 @@ def get_status_line():
 
     output = ''
     metadata = current_player.get_property('metadata').unpack()
-    position = current_player.get_position() / 1000000
+    try:
+        position = current_player.get_position() / 1000000
+    except gi.repository.GLib.GError:
+        position = None
     position_str, percent = get_position_info(position, metadata)
 
     # Status icon
