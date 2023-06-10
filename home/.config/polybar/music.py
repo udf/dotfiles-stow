@@ -68,7 +68,7 @@ def get_position_info(position, metadata):
     duration = metadata.get('mpris:length', 0) / 1000000
 
     if duration:
-        return f'{position_str}/{fmt(duration)}', max(position, 0) / duration
+        return f'{position_str}/{fmt(duration)}', max(position or 0, 0) / duration
 
     return f'{position_str}', 0
 
