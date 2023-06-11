@@ -182,6 +182,16 @@ fzf-dir-widget() {
 zle     -N   fzf-dir-widget
 bindkey '^Y' fzf-dir-widget
 
+reload-fzf-history-widget() {
+  fc -R
+  zle fzf-history-widget
+}
+zle     -N            reload-fzf-history-widget
+bindkey -M emacs '^R' reload-fzf-history-widget
+bindkey -M vicmd '^R' reload-fzf-history-widget
+bindkey -M viins '^R' reload-fzf-history-widget
+
+
 # run program, so that when it quits we get dropped into a shell
 if [[ -v ZSH_RUN ]]; then
     $ZSH_RUN
