@@ -43,7 +43,7 @@ padding-left = 2
 padding-right = 2
 
 modules-left = i3 musicinfo_samlap
-modules-center = volume date
+modules-center = volume date powerprofile
 modules-right = downspeed upspeed downspeed_wlan upspeed_wlan cpu memory filesystem battery
 
 
@@ -349,3 +349,9 @@ time = "%T "
 format-prefix-foreground = ${colors.foreground}
 format-underline = ${colors.bwhite}
 label = %date% %time%
+
+[module/powerprofile]
+type = custom/script
+exec = ~/.config/polybar/powerprofile.sh
+tail = true
+click-left = kill -USR1 %pid%
