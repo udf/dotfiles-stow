@@ -43,7 +43,7 @@ padding-left = 2
 padding-right = 2
 
 modules-left = i3 musicinfo_samlap
-modules-center = volume date
+modules-center = volume backlight date powerprofile
 modules-right = downspeed upspeed downspeed_wlan upspeed_wlan cpu memory filesystem battery
 
 
@@ -341,6 +341,26 @@ ramp-volume-5 = " "
 inherit = module/volume
 sink = alsa_output.pci-0000_0f_00.4.pro-output-0
 
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+use-actual-brightness = true
+enable-scroll = true
+label = %percentage%%
+format = <ramp> <label>
+format-underline = ${colors.bwhite}
+ramp-0 = 󰛩
+ramp-1 = 󱩎
+ramp-2 = 󱩏
+ramp-3 = 󱩐
+ramp-4 = 󱩑
+ramp-5 = 󱩒
+ramp-6 = 󱩓
+ramp-7 = 󱩔
+ramp-8 = 󱩕
+ramp-9 = 󱩖
+ramp-10 = 󰛨
+
 [module/date]
 type = internal/date
 interval = 1
@@ -349,3 +369,9 @@ time = "%T "
 format-prefix-foreground = ${colors.foreground}
 format-underline = ${colors.bwhite}
 label = %date% %time%
+
+[module/powerprofile]
+type = custom/script
+exec = ~/.config/polybar/powerprofile.sh
+tail = true
+click-left = kill -USR1 %pid%

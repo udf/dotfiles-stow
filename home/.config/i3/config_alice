@@ -30,3 +30,6 @@ bindsym --release $mod+Mod1+space exec --no-startup-id "mpd-dislike.py"
 bindsym --release Shift+XF86AudioNext exec --no-startup-id "mpd-dislike.py"
 
 exec --no-startup-id i3-msg "workspace $ws1; append_layout $HOME/dotfiles/i3_layouts/ff.json"
+
+bindsym --whole-window $mod+Mod1+button6 exec --no-startup-id "playerctl position 2+"
+bindsym --whole-window $mod+Mod1+button7 exec --no-startup-id "playerctl position 2-"
