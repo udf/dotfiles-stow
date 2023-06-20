@@ -34,7 +34,7 @@ function quit_delete() {
 
 function file_loaded() {
   var k = mp.get_property_native('path');
-  if (!files[k]) {
+  if (!files.hasOwnProperty(k)) {
     mp.osd_message('Marked for delete');
     files[k] = true;
   }
