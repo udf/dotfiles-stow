@@ -14,7 +14,6 @@ bindsym $mod+t exec rofi -show window -config ~/.config/rofi/rofidmenu.rasi
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id "systemctl start --user mpd && cantata"
 
-for_window [class="firefox"] border none
 assign [class="TelegramDesktop"] $ws7
 assign [class="discord"] $ws7
 
