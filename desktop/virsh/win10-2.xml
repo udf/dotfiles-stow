@@ -213,13 +213,6 @@
       </source>
       <address type='usb' bus='0' port='2'/>
     </hostdev>
-    <hostdev mode='subsystem' type='usb' managed='yes'>
-      <source>
-        <vendor id='0x046d'/>
-        <product id='0xc332'/>
-      </source>
-      <address type='usb' bus='0' port='1'/>
-    </hostdev>
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <source>
         <address domain='0x0000' bus='0x0d' slot='0x00' function='0x0'/>
