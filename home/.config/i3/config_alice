@@ -6,7 +6,6 @@ exec --no-startup-id $HOME/proj/p/wp/anim.sh
 
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 5 -fps 60"
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 5 -fps 60"
-bindsym $mod+Ctrl+z exec "echo 1 > /sys/class/backlight/intel_backlight/brightness"
 
 bindsym $mod+d exec rofi -modi drun -show drun -config ~/.config/rofi/rofidmenu.rasi
 bindsym $mod+t exec rofi -show window -config ~/.config/rofi/rofidmenu.rasi
