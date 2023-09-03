@@ -11,6 +11,8 @@ export GTK_THEME=Arc-Dark
 xrdb ~/.Xresources
 xbanish &
 
+dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
+
 case "$(hostname)" in
 "karen-chan")
     export PIPEWIRE_LATENCY=1024/48000
@@ -23,8 +25,6 @@ case "$(hostname)" in
 
     xrandr --auto
 
-    # portals
-    dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
     # gnome keyring
     eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
     export SSH_AUTH_SOCK
