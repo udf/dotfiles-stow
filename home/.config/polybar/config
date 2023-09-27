@@ -297,13 +297,25 @@ interval = 5
 format = %{+u}<ramp-used><label>
 label =   %percentage_used:2%%
 ramp-used-0 = ${env:URAMP_0}
-ramp-used-1 = ${env:URAMP_1}
-ramp-used-2 = ${env:URAMP_2}
-ramp-used-3 = ${env:URAMP_3}
-ramp-used-4 = ${env:URAMP_4}
-ramp-used-5 = ${env:URAMP_5}
-ramp-used-6 = ${env:URAMP_6}
-ramp-used-7 = ${env:URAMP_7}
+ramp-used-1 = ${env:URAMP_0}
+ramp-used-2 = ${env:URAMP_0}
+ramp-used-3 = ${env:URAMP_0}
+ramp-used-4 = ${env:URAMP_0}
+ramp-used-5 = ${env:URAMP_0}
+ramp-used-6 = ${env:URAMP_0}
+ramp-used-7 = ${env:URAMP_0}
+ramp-used-8 = ${env:URAMP_0}
+ramp-used-9 = ${env:URAMP_1}
+ramp-used-10 = ${env:URAMP_1}
+ramp-used-11 = ${env:URAMP_2}
+ramp-used-12 = ${env:URAMP_2}
+ramp-used-13 = ${env:URAMP_3}
+ramp-used-14 = ${env:URAMP_3}
+ramp-used-15 = ${env:URAMP_4}
+ramp-used-16 = ${env:URAMP_4}
+ramp-used-17 = ${env:URAMP_5}
+ramp-used-18 = ${env:URAMP_6}
+ramp-used-19 = ${env:URAMP_7}
 
 
 [module/filesystem]
