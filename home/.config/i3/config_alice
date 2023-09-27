@@ -22,11 +22,6 @@ bindsym --release $mod+XF86AudioPlay workspace $wsMusic
 bindsym $mod+Ctrl+XF86AudioPlay move container to workspace $wsMusic
 bindsym $mod+Shift+XF86AudioPlay move container to workspace $wsMusic; workspace $wsMusic
 
-bindsym --release $mod+Mod1+a exec --no-startup-id "mpd-fav.py"
-bindsym --release Shift+XF86AudioPlay exec --no-startup-id "mpd-fav.py"
-bindsym --release $mod+Mod1+space exec --no-startup-id "mpd-dislike.py"
-bindsym --release Shift+XF86AudioNext exec --no-startup-id "mpd-dislike.py"
-
 exec --no-startup-id i3-msg "workspace $ws1; append_layout $HOME/dotfiles/i3_layouts/ff.json"
 
 bindsym --whole-window $mod+Mod1+button6 exec --no-startup-id "playerctl -p playerctld position 2+"
