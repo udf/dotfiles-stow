@@ -162,15 +162,24 @@ format-discharging = %{+u}<ramp-capacity>%{F-}  <label-discharging>
 label-discharging = %percentage%% %consumption%W %time%
 ramp-capacity-0 = ${env:FURAMP_7}
 ramp-capacity-1 = ${env:FURAMP_7}
-ramp-capacity-2 = ${env:FURAMP_7}
-ramp-capacity-3 = ${env:FURAMP_6}
-ramp-capacity-4 = ${env:FURAMP_5}
+ramp-capacity-2 = ${env:FURAMP_6}
+ramp-capacity-3 = ${env:FURAMP_5}
+ramp-capacity-4 = ${env:FURAMP_4}
 ramp-capacity-5 = ${env:FURAMP_4}
 ramp-capacity-6 = ${env:FURAMP_3}
-ramp-capacity-7 = ${env:FURAMP_2}
-ramp-capacity-8 = ${env:FURAMP_1}
-ramp-capacity-9 = ${env:FURAMP_0}
-
+ramp-capacity-7 = ${env:FURAMP_3}
+ramp-capacity-8 = ${env:FURAMP_2}
+ramp-capacity-9 = ${env:FURAMP_2}
+ramp-capacity-10 = ${env:FURAMP_1}
+ramp-capacity-11 = ${env:FURAMP_0}
+ramp-capacity-12 = ${env:FURAMP_0}
+ramp-capacity-13 = ${env:FURAMP_0}
+ramp-capacity-14 = ${env:FURAMP_0}
+ramp-capacity-15 = ${env:FURAMP_0}
+ramp-capacity-16 = ${env:FURAMP_0}
+ramp-capacity-17 = ${env:FURAMP_0}
+ramp-capacity-18 = ${env:FURAMP_0}
+ramp-capacity-19 = ${env:FURAMP_0}
 
 [module/i3]
 type = internal/i3
