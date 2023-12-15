@@ -3,6 +3,7 @@ include media_keys.conf
 workspace_auto_back_and_forth yes
 
 exec --no-startup-id $HOME/proj/p/wp/anim.sh
+bindsym $mod+Escape exec --no-startup-id light-locker-command -l
 
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 5 -fps 60"
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 5 -fps 60"

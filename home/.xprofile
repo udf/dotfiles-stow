@@ -37,7 +37,7 @@ case "$(hostname)" in
     xset +dpms
     xset s on
     numlockx on
-    xss-lock --transfer-sleep-lock -- transfer-sleep-lock.sh &
+    random-lockscreen.sh &
     ;;
 esac
 
