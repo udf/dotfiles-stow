@@ -5,7 +5,7 @@ from _mpd import client
 
 to_file_set = lambda l: {t['file'] for t in l}
 
-favourites = to_file_set(client.sticker_find('song', 'albums', 'rating', '>', 10))
+favourites = to_file_set(client.sticker_find('song', 'albums', 'rating', '>', 8))
 fav_dupes = to_file_set(client.sticker_find('song', 'albums', 'rating', '>', 4))
 liked = favourites | fav_dupes
 rated = to_file_set(client.sticker_find('song', 'albums', 'rating', '>', 0))

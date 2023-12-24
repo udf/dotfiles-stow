@@ -45,7 +45,7 @@ if sys.argv[-1] not in {'--new', '--move'}:
   exit()
 
 print('moving liked')
-for track in client.sticker_find('song', subdir, 'rating', '=', 10):
+for track in client.sticker_find('song', subdir, 'rating', '>', 8):
   p = (music_dir / track['file'])
   print('moving', p)
   shutil.move(p, music_dir / 'favourites/pending')
