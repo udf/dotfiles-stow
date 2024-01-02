@@ -26,7 +26,7 @@
     },
     "editor.formatOnSave": false,
     "C_Cpp.clang_format_style": "{BasedOnStyle: LLVM, IndentWidth: 4, SpaceAfterTemplateKeyword: false, AlwaysBreakTemplateDeclarations: true, BinPackArguments: false, BinPackParameters: false, AllowAllParametersOfDeclarationOnNextLine: false, AllowShortFunctionsOnASingleLine: false, BreakBeforeBinaryOperators: \"NonAssignment\", AlignAfterOpenBracket: \"AlwaysBreak\"}",
-    "workbench.editor.showTabs": true,
+    "workbench.editor.showTabs": "multiple",
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "editor.rulers": [
@@ -45,7 +45,7 @@
     // "python.autoUpdateLanguageServer": false,
     // "extensions.autoUpdate": false,
     // "extensions.autoCheckUpdates": false,
-    // "python.languageServer": "Jedi",
+    // "python.languageServer": "Pylance",
     "workbench.colorTheme": "Arc Dark Theme",
     "java.configuration.checkProjectSettingsExclusions": false,
     "diffEditor.maxComputationTime": 0,
@@ -89,12 +89,11 @@
         "gitlens.codeLens.symbolScopes": [
             "!Module"
         ],
-        "editor.wordBasedSuggestions": false
+        "editor.wordBasedSuggestions": "off"
     },
     "redhat.telemetry.enabled": false,
     "autoDocstring.docstringFormat": "sphinx",
     "editor.largeFileOptimizations": false,
-    "window.zoomLevel": -1,
     "nix.enableLanguageServer": true,
     "dance.modes": {
         "normal": {
@@ -108,5 +107,17 @@
     "workbench.editor.navigationScope": "editorGroup",
     "workbench.editorAssociations": {
         "*.bin": "hexEditor.hexedit"
-    }
+    },
+    "diffEditor.ignoreTrimWhitespace": false,
+    "isort.args": [
+        "--profile",
+        "black",
+        "--indent",
+        "2",
+        "--lai",
+        "2",
+        "--multi-line",
+        "VERTICAL_GRID_GROUPED"
+    ],
+    "window.zoomLevel": -1
 }
