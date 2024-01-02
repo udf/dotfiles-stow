@@ -12,6 +12,7 @@ in
     patches = (oldAttrs.patches or []) ++ [
       ./tdesktop-udf-patches/always_clear_history_for_everyone.patch
       ./tdesktop-udf-patches/always_pin_without_notify.patch
+      ./tdesktop-udf-patches/always_send_sticker_as_file.patch
       ./tdesktop-udf-patches/use_tagbot_for_gifs_search.patch
     ];
 

@@ -1,0 +1,14 @@
+diff --git a/Telegram/SourceFiles/boxes/send_files_box.cpp b/Telegram/SourceFiles/boxes/send_files_box.cpp
+index 18f02439c..dcf93970d 100644
+--- a/Telegram/SourceFiles/boxes/send_files_box.cpp
++++ b/Telegram/SourceFiles/boxes/send_files_box.cpp
+@@ -646,6 +646,9 @@ void SendFilesBox::initSendWay() {
+ 			}
+ 			return result;
+ 		}
++		if (_list.hasSticker()) {
++			result.setSendImagesAsPhotos(false);
++		}
+ 		const auto silent = true;
+ 		if (!checkWithWay(result, silent)) {
+ 			result.setSendImagesAsPhotos(!result.sendImagesAsPhotos());
