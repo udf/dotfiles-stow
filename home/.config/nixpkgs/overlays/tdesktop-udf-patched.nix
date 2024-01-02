@@ -5,10 +5,10 @@ let
   nixgl-wrapper = self.writeShellScriptBin "nixgl-wrapper" ''
     ${nixgl.auto.nixGLDefault}/bin/nixGL @PATH@
   '';
+  tdesktopPkg = super.tdesktop.override { stdenv = super.ccacheStdenv; };
 in
 {
-  # tdesktop-custom = {...}; ????????
-  tdesktop = super.tdesktop.overrideAttrs (oldAttrs: rec {
+  tdesktop = tdesktopPkg.overrideAttrs (oldAttrs: rec {
     patches = (oldAttrs.patches or []) ++ [
       ./tdesktop-udf-patches/always_clear_history_for_everyone.patch
       ./tdesktop-udf-patches/always_pin_without_notify.patch
