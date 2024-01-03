@@ -183,7 +183,7 @@ zle     -N   fzf-dir-widget
 bindkey '^Y' fzf-dir-widget
 
 reload-fzf-history-widget() {
-  fc -R
+  fc -RI
   zle fzf-history-widget
 }
 zle     -N            reload-fzf-history-widget
