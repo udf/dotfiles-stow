@@ -5,13 +5,26 @@
     "cSpell.userWords": [
         "asyncio",
         "botapi",
+        "centered",
+        "centering",
+        "craftable",
+        "deepcopy",
+        "desync",
+        "Dialog",
+        "elem",
+        "flib",
+        "fluidbox",
+        "fluidboxes",
         "HMAC",
         "mt",
+        "mult",
         "Playerctl",
         "proto",
+        "redux",
         "romaji",
         "struct",
-        "upvote"
+        "upvote",
+        "vals"
     ],
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
@@ -98,8 +111,8 @@
     "dance.modes": {
         "normal": {
             "cursorStyle": "block",
-            "selectionBehavior": "character"
-        }
+            "selectionBehavior": "character",
+        },
     },
     "cSpell.language": "en-GB",
     "editor.unicodeHighlight.ambiguousCharacters": false,
@@ -121,6 +134,10 @@
     ],
     "gitlens.codeLens.authors.enabled": false,
     "gitlens.codeLens.recentChange.enabled": false,
-    "window.zoomLevel": -1,
     "editor.inlineSuggest.enabled": false,
+    "cSpell.enabled": true,
+    "cSpell.enableFiletypes": [
+        "lua"
+    ],
+    "window.zoomLevel": -1,
 }
