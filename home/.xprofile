@@ -10,6 +10,7 @@ export GTK_THEME=Arc-Dark
 
 xrdb ~/.Xresources
 xbanish &
+dunst &
 
 dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
 
