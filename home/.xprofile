@@ -32,7 +32,7 @@ case "$(hostname)" in
 
     numlockx off
     nm-applet &
-    xrandr --output DisplayPort-1 --mode 2560x1440 --pos 3840x300 --output HDMI-A-0 --mode 3840x2160 --pos 0x0
+    xrandr --output DisplayPort-1 --mode 2560x1440 --pos 3840x250 --output HDMI-A-0 --mode 3840x2160 --pos 0x0
     ;;
 "alice")
     xset +dpms
