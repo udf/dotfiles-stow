@@ -10,7 +10,6 @@ export GTK_THEME=Arc-Dark
 
 xrdb ~/.Xresources
 xbanish &
-dunst &
 
 dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
 
@@ -32,6 +31,7 @@ case "$(hostname)" in
 
     numlockx off
     nm-applet &
+    dunst &
     xrandr --output DisplayPort-1 --mode 2560x1440 --pos 3840x250 --output HDMI-A-0 --mode 3840x2160 --pos 0x0
     ;;
 "alice")
