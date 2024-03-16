@@ -29,7 +29,7 @@ case "$(hostname)" in
     eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
     export SSH_AUTH_SOCK
 
-    numlockx off
+    numlockx on
     nm-applet &
     dunst &
     xrandr --output DisplayPort-1 --mode 2560x1440 --pos 3840x250 --output HDMI-A-0 --mode 3840x2160 --pos 0x0
