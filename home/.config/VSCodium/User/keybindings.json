@@ -119,5 +119,9 @@
         "key": ",",
         "command": "-dance.selections.clear.secondary",
         "when": "editorTextFocus && dance.mode == 'normal'"
+    },
+    {
+        "key": "ctrl+alt+s",
+        "command": "dance.selections.splitLines"
     }
 ]
