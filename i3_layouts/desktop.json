@@ -37,8 +37,8 @@
                 {
                     "swallows": [
                         {
-                            "class": "^discord$",
-                            "title": "^Friends - Discord$"
+                            "class": "^vesktop$",
+                            "title": "Discord \\| Friends$"
                         }
                     ]
                 },

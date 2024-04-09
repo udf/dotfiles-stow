@@ -9,7 +9,7 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 export GTK_THEME=Arc-Dark
 
 xrdb ~/.Xresources
-xbanish &
+# xbanish &
 
 dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
 
