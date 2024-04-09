@@ -46,23 +46,23 @@ bindsym $mod+x kill
 # media player keys
 bindsym $mod+Mod1+f exec --no-startup-id "playerctl -p playerctld volume 0.01+"
 bindsym $mod+Mod1+v exec --no-startup-id "playerctl -p playerctld volume 0.01-"
-bindsym $mod+Mod1+s exec --no-startup-id "playerctl -p playerctld play-pause"
-bindsym $mod+Mod1+x exec --no-startup-id "playerctl -p playerctld next"
-bindsym $mod+Mod1+z exec --no-startup-id "playerctl -p playerctld previous"
+bindsym --release $mod+Mod1+s exec --no-startup-id "playerctl -p playerctld play-pause"
+bindsym --release $mod+Mod1+x exec --no-startup-id "playerctl -p playerctld next"
+bindsym --release $mod+Mod1+z exec --no-startup-id "playerctl -p playerctld previous"
 
 bindsym $mod+XF86AudioRaiseVolume exec --no-startup-id "playerctl -p playerctld position 2+"
 bindsym $mod+XF86AudioLowerVolume exec --no-startup-id "playerctl -p playerctld position 2-"
 bindsym $mod+Ctrl+XF86AudioRaiseVolume exec --no-startup-id "playerctl -p playerctld volume 0.01+"
 bindsym $mod+Ctrl+XF86AudioLowerVolume exec --no-startup-id "playerctl -p playerctld volume 0.01-"
-bindsym XF86AudioPlay exec --no-startup-id "playerctl -p playerctld play-pause"
-bindsym XF86AudioNext exec --no-startup-id "playerctl -p playerctld next"
-bindsym XF86AudioPrev exec --no-startup-id "playerctl -p playerctld previous"
+bindsym --release XF86AudioPlay exec --no-startup-id "playerctl -p playerctld play-pause"
+bindsym --release XF86AudioNext exec --no-startup-id "playerctl -p playerctld next"
+bindsym --release XF86AudioPrev exec --no-startup-id "playerctl -p playerctld previous"
 
-bindsym $mod+XF86AudioNext exec --no-startup-id "playerctld shift"
-bindsym $mod+XF86AudioPrev exec --no-startup-id "playerctld unshift"
+bindsym --release $mod+XF86AudioNext exec --no-startup-id "playerctld shift"
+bindsym --release $mod+XF86AudioPrev exec --no-startup-id "playerctld unshift"
 
-bindsym $mod+Mod1+w exec --no-startup-id "playerctld shift"
-bindsym $mod+Mod1+q exec --no-startup-id "playerctld unshift"
+bindsym --release $mod+Mod1+w exec --no-startup-id "playerctld shift"
+bindsym --release $mod+Mod1+q exec --no-startup-id "playerctld unshift"
 
 # mpd script keys
 bindsym --release $mod+Mod1+a exec --no-startup-id "mpd-fav.py"
