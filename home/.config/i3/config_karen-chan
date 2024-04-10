@@ -1,6 +1,9 @@
 set $PULSE_SINK alsa_output.pci-0000_0f_00.4.pro-output-0
 include media_keys.conf
 
+# no mouse resize
+bindsym --border button1 nop
+
 bindsym $mod+d exec rofi -show run -modi run -location 6 -yoffset -20
 bindsym $mod+Ctrl+r exec "DISPLAY=:0 xrandr --output HDMI-A-0 --mode 800x600;sleep 3;DISPLAY=:0 xrandr --output HDMI-A-0 --mode 3840x2160;"
 
