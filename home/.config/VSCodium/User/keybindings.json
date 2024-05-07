@@ -123,5 +123,9 @@
     {
         "key": "ctrl+alt+s",
         "command": "dance.selections.splitLines"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "-workbench.action.quickOpen"
     }
 ]
