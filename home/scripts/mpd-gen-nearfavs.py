@@ -36,6 +36,5 @@ def gen_near_playlists(name, src_set):
     f.write('\n'.join(sorted(tracks)))
 
 
-print(f'{len(favourites)} all likes')
 gen_near_playlists('_near_favs', all_liked)
 gen_near_playlists('_near_loved', loved)
