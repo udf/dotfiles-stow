@@ -108,6 +108,11 @@
     "autoDocstring.docstringFormat": "sphinx",
     "editor.largeFileOptimizations": false,
     "nix.enableLanguageServer": true,
+    "nix.serverSettings": {
+        "nil": {
+            "formatting": { "command": ["nixpkgs-fmt"] }
+        }
+    },
     "dance.modes": {
         "normal": {
             "cursorStyle": "block",
