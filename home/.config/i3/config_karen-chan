@@ -23,7 +23,7 @@ exec_always --no-startup-id killall picom; sleep 3; picom
 exec --no-startup-id "sleep 10; cantata"
 exec --no-startup-id "sleep 30; qbittorrent"
 exec --no-startup-id "sleep 30; nicotine"
-exec --no-startup-id "sleep 15; $HOME/Downloads/Vesktop.AppImage"
+exec --no-startup-id "sleep 15; start_vencord.sh"
 
 # monitor inputs
 bindsym $mod+F1 exec --no-startup-id ddcutil --model 'DELL S2721DGF' setvcp 60 0x10
