@@ -63,10 +63,7 @@ function on_clip() {
   }
 
   if (aud_track) {
-    cmd = cmd.concat(['-map', '0:a:' + (aud_track.id - 1)]);
-    if (!vid_track) {
-      cmd = cmd.concat(['-f', 'opus', '-b:a', '128k', '-vbr', 'on']);
-    }
+    cmd = cmd.concat(['-map', '0:a:' + (aud_track.id - 1), '-ac', '2', '-c:a', 'libopus', '-b:a', '128k', '-vbr', 'on']);
   }
 
   if (sub_track && vid_track) {
