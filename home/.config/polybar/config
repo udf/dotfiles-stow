@@ -359,6 +359,7 @@ type = internal/backlight
 card = intel_backlight
 use-actual-brightness = true
 enable-scroll = true
+scroll-interval = 1
 label = %percentage%%
 format = %{A1:~/.config/polybar/set_min_brightness.sh:}<ramp>  <label>%{A}
 format-underline = ${colors.bwhite}
