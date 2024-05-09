@@ -20,8 +20,8 @@ user_pref("general.warnOnAboutConfig", false);
 user_pref("widget.content.gtk-theme-override", "Arc");
 user_pref("ui.systemUsesDarkTheme", 1);
 
-// don't lazy-load tabs on startup
-user_pref("browser.sessionstore.restore_on_demand", false);
+// lazy-load tabs on startup
+user_pref("browser.sessionstore.restore_on_demand", true);
 
 // kill Pocket
 user_pref("extensions.pocket.enabled", false);
