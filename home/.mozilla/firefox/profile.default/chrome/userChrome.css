@@ -110,3 +110,8 @@ arrowscrollbox.menupopup-arrowscrollbox {
 #nav-bar {
     border-top: 0px !important;
 }
+
+/* Fix urlbar collapsing when it's empty */
+.urlbar-input-box {
+    height: 32px;
+}
