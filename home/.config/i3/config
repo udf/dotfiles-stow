@@ -134,7 +134,7 @@ bindsym --release $mod+m exec --no-startup-id xdotool key --clearmodifiers Menu
 for_window [urgent="latest" class="Gimp"] focus
 
 for_window [class="Lxappearance"] floating enable sticky enable
-for_window [class="Pavucontrol"] floating enable sticky enable
+for_window [class="(?i)pavucontrol"] floating enable sticky enable
 for_window [class="qt5ct"] floating enable sticky enable
 for_window [class="Qtconfig-qt4"] floating enable sticky enable
 for_window [class="Pulseaudio-equalizer-gtk"] floating enable sticky enable
