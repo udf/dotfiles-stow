@@ -115,3 +115,8 @@ arrowscrollbox.menupopup-arrowscrollbox {
 .urlbar-input-box {
     height: 32px;
 }
+
+menuitem {
+    min-width: fit-content;
+    padding: 2px 4px !important;
+}
