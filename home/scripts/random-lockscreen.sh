@@ -1,14 +1,18 @@
 #!/usr/bin/env bash
 
+randomise_lockscreen() {
+  WALLPAPER="$(find "$WALLPAPER_DIR" -type f | shuf -n 1)"
+  echo "Changing lockscreen to $WALLPAPER"
+  cp "$WALLPAPER" /usr/share/backgrounds/lockscreen.png
+}
+
 WALLPAPER_DIR="$HOME/Documents/$(hostname)-lock"
 PICOM=0
+randomise_lockscreen
 
 while read line 
 do
   if [[ $line =~ "Session.Lock" ]]; then
-    WALLPAPER="$(find "$WALLPAPER_DIR" -type f | shuf -n 1)"
-    echo "Changing lockscreen to $WALLPAPER"
-    cp "$WALLPAPER" /usr/share/backgrounds/lockscreen.png
     if pkill picom; then
       PICOM=1
     fi
@@ -17,5 +21,6 @@ do
     if [ -n "$PICOM" ]; then
       picom &!
     fi
+    randomise_lockscreen
   fi
 done < <(gdbus monitor --system --dest org.freedesktop.login1)
