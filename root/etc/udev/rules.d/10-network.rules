@@ -1,6 +1,3 @@
 # karen-chan
 SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="04:d9:f5:d7:68:20", NAME="net0"
 SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="40:74:e0:8e:ac:29", NAME="waifu1"
-# alice
-SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="10:65:30:75:51:23", NAME="net0"
-SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="20:16:b9:e9:3d:fb", NAME="waifu1"
