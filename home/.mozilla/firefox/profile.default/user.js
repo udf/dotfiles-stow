@@ -55,3 +55,6 @@ user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
 // why
 user_pref("browser.quitShortcut.disabled", true);
+
+// im already deaf
+user_pref("media.default_volume", 0.07);
