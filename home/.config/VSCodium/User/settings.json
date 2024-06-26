@@ -150,4 +150,7 @@
     "Lua.format.defaultConfig": {
         "max_line_length": "160"
     },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
 }
