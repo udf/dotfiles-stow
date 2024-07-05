@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 set -e
 cd ~/Downloads/durga_qbit/yt
-rm -f wl.tmp
-~/.local/bin/yt-dlp --cookies-from-browser firefox --flat-playlist --print-to-file id wl.tmp 'https://www.youtube.com/playlist?list=WL'
-mv wl.tmp wl.txt
+new_wl="$(~/.local/bin/yt-dlp --cookies-from-browser firefox --flat-playlist --print id 'https://www.youtube.com/playlist?list=WL')"
+if [ "$(<wl.txt md5sum)" = "$(echo -n "$new_wl" | md5sum)" ]; then
+  echo "no new video IDs"
+  exit
+fi
+echo -n "$new_wl" > wl.txt
 echo grabbed $(wc -l < wl.txt) video IDs
