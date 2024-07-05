@@ -58,3 +58,6 @@ user_pref("browser.quitShortcut.disabled", true);
 
 // im already deaf
 user_pref("media.default_volume", 0.07);
+
+// increase history retention
+user_pref("places.history.expiration.max_pages", 999999999);
