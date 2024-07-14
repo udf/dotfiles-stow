@@ -15,7 +15,7 @@ bindsym $mod+t exec rofi -show window -config ~/.config/rofi/rofidmenu.rasi
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id "systemctl start --user mpd && cantata"
 
-assign [class="TelegramDesktop"] $ws7
+assign [class="TelegramDesktop"] $ws6
 assign [class="vesktop"] $ws7
 
 set $wsMusic "9: 󰎈"
