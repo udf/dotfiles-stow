@@ -13,6 +13,7 @@ exec --no-startup-id inpulse-wrapper 183 --pressed=false --released=true -- pact
 # layout
 workspace 1 output HDMI-A-0
 exec --no-startup-id i3-msg "workspace 1; append_layout $HOME/dotfiles/i3_layouts/desktop.json"
+for_window [class="(?i)gsimplecal"] floating enable, move up 24 px
 
 # autostart programs
 exec --no-startup-id pactl set-default-source mic-effects.monitor

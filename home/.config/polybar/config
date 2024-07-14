@@ -378,8 +378,7 @@ ramp-10 = 󰛨
 [module/date]
 type = internal/date
 interval = 1
-date = " %a %b %d"
-time = "%T "
+date = %{A1:gsimplecal:} %a %b %d %T%{A1}
 format-prefix-foreground = ${colors.foreground}
 format-underline = ${colors.bwhite}
 label = %date% %time%
