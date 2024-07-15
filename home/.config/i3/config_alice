@@ -14,7 +14,7 @@ bindsym $mod+t exec rofi -show window -config ~/.config/rofi/rofidmenu.rasi
 
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id "systemctl start --user mpd && cantata"
-exec --no-startup-id "sleep 15; start_vencord.sh"
+exec --no-startup-id "sleep 15; start_vencord.sh --disable-gpu-sandbox"
 
 assign [class="TelegramDesktop"] $ws6
 assign [class="vesktop"] $ws7
