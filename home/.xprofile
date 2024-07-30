@@ -36,8 +36,8 @@ case "$(hostname)" in
     xrandr --output DisplayPort-1 --mode 2560x1440 --pos 3840x250 --output HDMI-A-0 --mode 3840x2160 --pos 0x0
     ;;
 "alice")
-    xset +dpms
-    xset s on
+    xset dpms 300 300 300
+    xset s 300
     numlockx on
     random-lockscreen.sh &
     ;;
