@@ -69,9 +69,13 @@ function do_prompt() {
     echo -ne "%{\033]0;$WINDOW_TITLE\007%}"
 }
 
+function setwindowtitle() {
+    printf '%s' $'\033]0;' "$WINDOW_TITLE: $1" $'\007'
+}
+
 # set window title to running command
 function preexec() {
-    printf '%s' $'\033]0;' "$WINDOW_TITLE: $2" $'\007'
+    setwindowtitle "$2"
 }
 
 # Issue a BELL when a command is done
@@ -145,6 +149,16 @@ alias gitc='git commit'
 alias gita='git add'
 alias gitd='git diff'
 alias gitds='git diff --stat'
+
+deemixf() {
+    i=0
+    for url in "$@"; do
+        i=$((i+1))
+        setwindowtitle "($i/$#) deemix $url"
+        echo "($i/$#) $ deemix -b flac $url"
+        deemix -b flac "$url"
+    done
+}
 
 # ddc
 alias dell_brightness='ddcutil --model "DELL S2721DGF" setvcp 10'
