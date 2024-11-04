@@ -153,4 +153,7 @@
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
 }
