@@ -156,6 +156,7 @@ for_window [window_role="gimp-toolbox-color-dialog"] move position mouse
 for_window [class="TelegramDesktop" title="Media viewer"] move absolute position center
 
 for_window [title="Microsoft Teams Notification"] floating enable
+for_window [class="projectMSDL"] floating enable
 
 # Workspaces
 set $ws1 "1"
