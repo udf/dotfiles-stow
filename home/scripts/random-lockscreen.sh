@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 randomise_lockscreen() {
-  WALLPAPER="$(find "$WALLPAPER_DIR" -type f | shuf -n 1)"
+  WALLPAPER="$(find "$WALLPAPER_DIR" -type f -iname '*.png' | shuf -n 1)"
   echo "Changing lockscreen to $WALLPAPER"
   cp "$WALLPAPER" /usr/share/backgrounds/lockscreen.png
 }
