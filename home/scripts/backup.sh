@@ -43,6 +43,9 @@ syncoid --sendoptions="Rw" booty/enc backup/enc
 echo 'Syncing backups dataset...'
 syncoid --sendoptions="Rw" booty/misc/backups backup/backups
 
+echo 'Syncing cached dataset...'
+syncoid --sendoptions="Rw" booty/cached backup/cached
+
 echo 'Syncing music dataset...'
 systemctl --user -M sam@ start music_tasks.service
 syncoid --sendoptions="Rw" booty/music backup/music
