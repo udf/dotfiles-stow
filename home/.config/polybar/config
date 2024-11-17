@@ -67,8 +67,7 @@ tray-detached = true
 [bar/karen-chan_2]
 inherit = main_bar
 bottom = false
-monitor = DisplayPort-1
-monitor-fallback = DisplayPort-0
+monitor = DisplayPort-2
 
 line-size = 2
 
