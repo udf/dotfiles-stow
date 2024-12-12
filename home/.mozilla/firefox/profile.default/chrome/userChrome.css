@@ -6,9 +6,8 @@ menupopup {
 }
 
 /* Fix the fucking touchscreen-esque bullshit padding on urlbar results */
-.urlbarView-row {
-    padding-top: 0px !important;
-    padding-bottom: 0px !important;
+.urlbarView-row-inner {
+    padding-block: 0px !important;
 }
 
 /* Fix the fucking touchscreen-esque bullshit padding on urlbar */
@@ -22,14 +21,9 @@ menupopup {
     height: calc(var(--urlbar-toolbar-height) - 4px) !important;
 }
 
-/* Fix breakout positioning being too high after we lower the height */
-#urlbar[breakout][breakout-extend] {
-    top: 2px !important;
-}
-
-/* Same as above but for the search one-offs div */
+/* Fix search one-offs height */
 .search-one-offs {
-    padding-block: 0px !important;
+    padding-block: 4px !important;
 }
 
 /* Fix padding left of search one-off icons */
