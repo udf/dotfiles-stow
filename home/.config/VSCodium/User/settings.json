@@ -33,7 +33,6 @@
         "file:///home/sam/.config/VScodium/vscode.css",
         "file:///home/mhoosen/.config/VScodium/vscode.css"
     ],
-    "workbench.iconTheme": "material-icon-theme",
     "vscode_custom_css.policy": true,
     "[cpp]": {
         "editor.defaultFormatter": "ms-vscode.cpptools"
@@ -156,4 +155,6 @@
     "[html]": {
         "editor.defaultFormatter": "vscode.html-language-features"
     },
+    "thunder-client.followRedirects": false,
+    "workbench.iconTheme": "material-icon-theme",
 }
