@@ -26,13 +26,13 @@ def gen_near_playlists(name, src_set):
 
   tracks = {p for p in unrated if str(Path(p).parent) in dirs_with_liked}
   print(f'{name}: {len(tracks)} unrated files in dirs')
-  with open(f'/booty/media/music/playlists/{name}.m3u', 'w') as f:
+  with open(f'/booty/music/music/playlists/{name}.m3u', 'w') as f:
     f.write('\n'.join(sorted(tracks)))
 
   dirs_with_unrated = {str(Path(p).parent) for p in tracks}
   tracks = {p for p in not_disliked if str(Path(p).parent) in dirs_with_unrated}
   print(f'{name}_all: {len(tracks)} not disliked files in dirs')
-  with open(f'/booty/media/music/playlists/{name}_all.m3u', 'w') as f:
+  with open(f'/booty/music/music/playlists/{name}_all.m3u', 'w') as f:
     f.write('\n'.join(sorted(tracks)))
 
 
