@@ -95,6 +95,9 @@ bindsym $mod+Shift+t exec --no-startup-id $HOME/.config/polybar/launch.sh
 focus_follows_mouse yes
 floating_modifier $mod
 
+focus_on_window_activation urgent
+bindsym $mod+z [urgent=latest] focus
+
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
@@ -123,15 +126,15 @@ bindsym $mod+e layout toggle split
 bindsym $mod+space floating toggle
 bindsym $mod+Shift+space focus mode_toggle
 
-bindsym $mod+Shift+z move scratchpad
-bindsym $mod+z scratchpad show
+#bindsym $mod+Shift+z move scratchpad
+#bindsym $mod+z scratchpad show
 
 bindsym $mod+Shift+w exec xdotool --no-startup-id getactivewindow windowunmap windowmap
 bindsym --release $mod+m exec --no-startup-id xdotool key --clearmodifiers Menu
 
 # specific window management
 # auto focus gimp when urgent
-for_window [urgent="latest" class="Gimp"] focus
+# for_window [urgent="latest" class="Gimp"] focus
 
 for_window [class="Lxappearance"] floating enable sticky enable
 for_window [class="(?i)pavucontrol"] floating enable sticky enable
