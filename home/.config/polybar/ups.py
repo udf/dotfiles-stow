@@ -19,7 +19,7 @@ def get_input_status(props):
     'OL TRIM': UnderlineColours.Yellow + '󰚥↓'
   }.get(props.get('ups.status', None), '')
   voltage = round(float(props.get('input.voltage'))) - 4
-  return f"{icon} {voltage}V {props.get('input.frequency')}Hz"
+  return f"{icon} {voltage}V {props.get('output.frequency')}Hz"
 
 
 def get_battery_status(props):
