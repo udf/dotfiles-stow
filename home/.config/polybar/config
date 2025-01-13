@@ -351,7 +351,7 @@ ramp-volume-5 = " "
 
 [module/volume-karen-chan]
 inherit = module/volume
-sink = alsa_output.pci-0000_0f_00.4.pro-output-0
+sink = alsa_output.pci-0000_0e_00.4.pro-output-0
 
 [module/backlight]
 type = internal/backlight
