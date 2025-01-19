@@ -41,6 +41,8 @@ menupopup {
     border-radius: 0px !important;
     /* Fix small gap at the top */
     margin: 0 !important;
+    /* Fix height */
+    height: 44px;
 }
 
 /* Correct content position after removing top gap */
