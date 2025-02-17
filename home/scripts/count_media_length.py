@@ -20,7 +20,7 @@ def probe_media_length(path):
   except ffmpeg.Error as e:
     # this is fine
     pass
-  return 0
+  return None
 
 
 print('Gathering files...')
@@ -29,10 +29,13 @@ num_files = len(files)
 
 print('Probing...')
 total_len = 0
+num_media_files = 0
 with ThreadPoolExecutor() as pool:
   for i, length in enumerate(pool.map(probe_media_length, files)):
     print(f'\r{round((i + 1) / num_files * 100, 2):.2f}% ({i + 1}/{num_files})', end='')
-    total_len += length
+    if length:
+      num_media_files += 1
+      total_len += length
 
 print('\r', end='')
-print(f'{round(total_len / 3600, 2)} hours ({round(total_len / 3600 / 24, 2)} days)')
+print(f'{round(total_len / 3600, 2)} hours ({round(total_len / 3600 / 24, 2)} days) ({num_media_files} files)')
