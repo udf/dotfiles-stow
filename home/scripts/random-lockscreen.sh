@@ -9,6 +9,8 @@ randomise_lockscreen() {
 WALLPAPER_DIR="$HOME/Documents/$(hostname)-lock"
 PICOM=0
 randomise_lockscreen
+xset s 300
+xset dpms 300 300 300
 
 while read line 
 do
@@ -21,6 +23,8 @@ do
     if [ -n "$PICOM" ]; then
       picom &!
     fi
+    xset s 300
+    xset dpms 300 300 300
     randomise_lockscreen
   fi
 done < <(gdbus monitor --system --dest org.freedesktop.login1)
