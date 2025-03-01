@@ -59,7 +59,7 @@ padding-right = 105
 
 modules-left = musicinfo i3 xwindow
 modules-center = date volume-karen-chan
-modules-right = downspeed upspeed filesystem upsinfo memory cpu
+modules-right = downspeed upspeed downspeed_wlan upspeed_wlan filesystem upsinfo memory cpu
 
 tray-detached = true
 
