@@ -182,7 +182,7 @@ export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
 source ~/zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 # nix on arch
-[ -f /etc/profile.d/nix.sh ] && source /etc/profile.d/nix.sh
+[ -f /usr/etc/profile.d/nix.sh ] && source /usr/etc/profile.d/nix.sh
 
 # fzf
 source /usr/share/fzf/completion.zsh
