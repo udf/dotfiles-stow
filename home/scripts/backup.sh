@@ -6,8 +6,10 @@ if [[ $EUID -ne 0 ]]; then
   exit 1
 fi
 
-BACKUP_HOST=sam@192.168.0.5
-SYNCOID_CMD="syncoid --sshkey=/home/sam/.ssh/id_ed25519 --no-privilege-elevation --sendoptions=w"
+BACKUP_HOST=192.168.0.5
+BACKUP_TARGET=sam@192.168.0.5
+SSH_KEY=/home/sam/.ssh/id_ed25519
+SYNCOID_CMD="syncoid --sshkey=$SSH_KEY --no-privilege-elevation --sendoptions=w"
 
 BACKUP_DATASET=booty/misc/backups/root
 echo 'Syncing root...'
@@ -42,13 +44,13 @@ zfs list -t snapshot -o name -S creation $BACKUP_DATASET | grep -v '@syncoid' | 
 zfs list -t snapshot $BACKUP_DATASET
 
 echo 'Syncing backups dataset...'
-$SYNCOID_CMD --recursive booty/misc/backups "$BACKUP_HOST:backup/backups"
+$SYNCOID_CMD --recursive booty/misc/backups "$BACKUP_TARGET:backup/backups"
 
 echo 'Syncing enc dataset...'
-$SYNCOID_CMD --recursive booty/enc "$BACKUP_HOST:backup/enc"
+$SYNCOID_CMD --recursive booty/enc "$BACKUP_TARGET:backup/enc"
 
 echo 'Syncing music dataset...'
 systemctl --user -M sam@ start music_tasks.service
-$SYNCOID_CMD booty/music "$BACKUP_HOST:backup/music"
+$SYNCOID_CMD booty/music "$BACKUP_TARGET:backup/music"
 # trigger a share rescan (via custom plugin)
-ssh nicotine@phanes 'pkill --oldest -USR1 nicotine'
+ssh -i "$SSH_KEY" "nicotine@$BACKUP_HOST" 'pkill --oldest -USR1 nicotine'
