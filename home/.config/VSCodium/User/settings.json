@@ -110,7 +110,11 @@
     "nix.enableLanguageServer": true,
     "nix.serverSettings": {
         "nil": {
-            "formatting": { "command": ["nixpkgs-fmt"] }
+            "formatting": {
+                "command": [
+                    "nixpkgs-fmt"
+                ]
+            }
         }
     },
     "dance.modes": {
@@ -126,7 +130,7 @@
     "workbench.editorAssociations": {
         "*.bin": "hexEditor.hexedit"
     },
-    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.ignoreTrimWhitespace": true,
     "isort.args": [
         "--profile",
         "black",
@@ -157,4 +161,17 @@
     },
     "thunder-client.followRedirects": false,
     "workbench.iconTheme": "material-icon-theme",
+    "spellright.language": [
+        "en_GB"
+    ],
+    "spellright.configurationScope": "user",
+    "spellright.documentTypes": [
+        "markdown",
+        "latex",
+        "git-commit",
+        "plaintext",
+        "shellscript",
+        "jsonc"
+    ],
+    "python.createEnvironment.trigger": "off"
 }
