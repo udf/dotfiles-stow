@@ -49,4 +49,4 @@ $SYNCOID_CMD --recursive booty/enc "$BACKUP_HOST:backup/enc"
 
 echo 'Syncing music dataset...'
 systemctl --user -M sam@ start music_tasks.service
-$SYNCOID_CMD --recursive booty/music "$BACKUP_HOST:backup/music"
+$SYNCOID_CMD booty/music "$BACKUP_HOST:backup/music"
