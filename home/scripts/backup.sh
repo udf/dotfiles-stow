@@ -50,3 +50,5 @@ $SYNCOID_CMD --recursive booty/enc "$BACKUP_HOST:backup/enc"
 echo 'Syncing music dataset...'
 systemctl --user -M sam@ start music_tasks.service
 $SYNCOID_CMD booty/music "$BACKUP_HOST:backup/music"
+# trigger a share rescan (via custom plugin)
+ssh nicotine@phanes 'pkill --oldest -USR1 nicotine'
