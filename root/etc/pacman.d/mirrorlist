@@ -1,7 +1,5 @@
 # South Africa
-Server = http://archlinux.za.mirror.allworldit.com/archlinux/$repo/os/$arch
 Server = https://archlinux.za.mirror.allworldit.com/archlinux/$repo/os/$arch
-Server = http://za.mirror.archlinux-br.org/$repo/os/$arch
-Server = http://mirror.is.co.za/mirror/archlinux.org/$repo/os/$arch
-Server = http://mirrors.urbanwave.co.za/archlinux/$repo/os/$arch
+Server = https://za.mirrors.cicku.me/archlinux/$repo/os/$arch
+Server = https://johannesburg.mirror.pkgbuild.com/$repo/os/$arch
 Server = https://mirrors.urbanwave.co.za/archlinux/$repo/os/$arch
