@@ -65,10 +65,12 @@ bindsym --release $mod+Mod1+w exec --no-startup-id "playerctld shift"
 bindsym --release $mod+Mod1+q exec --no-startup-id "playerctld unshift"
 
 # mpd script keys
-bindsym --release $mod+Mod1+a exec --no-startup-id "mpd-fav.py"
-bindsym --release XF86AudioStop exec --no-startup-id "mpd-fav.py"
-bindsym --release $mod+Mod1+space exec --no-startup-id "mpd-dislike.py"
-bindsym --release Shift+XF86AudioNext exec --no-startup-id "mpd-dislike.py"
+bindsym --release $mod+Mod1+a exec --no-startup-id "mpd-set-current-rating.py 8"
+bindsym --release $mod+Mod1+Shift+a exec --no-startup-id "mpd-set-current-rating.py 10"
+bindsym --release $mod+Mod1+space exec --no-startup-id "mpd-set-current-rating.py 2 --go-next"
+bindsym --release XF86AudioStop exec --no-startup-id "mpd-set-current-rating.py 8"
+bindsym --release Shift+XF86AudioStop exec --no-startup-id "mpd-set-current-rating.py 10"
+bindsym --release Shift+XF86AudioNext exec --no-startup-id "mpd-set-current-rating.py 2 --go-next"
 bindsym --release $mod+Delete exec --no-startup-id "mpd-q-pop.py"
 
 
