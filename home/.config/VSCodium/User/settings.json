@@ -54,11 +54,6 @@
     "[c]": {
         "editor.defaultFormatter": "xaver.clang-format"
     },
-    // "update.mode": "none",
-    // "python.autoUpdateLanguageServer": false,
-    // "extensions.autoUpdate": false,
-    // "extensions.autoCheckUpdates": false,
-    // "python.languageServer": "Pylance",
     "workbench.colorTheme": "Arc Dark Theme",
     "java.configuration.checkProjectSettingsExclusions": false,
     "diffEditor.maxComputationTime": 0,
@@ -173,5 +168,10 @@
         "shellscript",
         "jsonc"
     ],
-    "python.createEnvironment.trigger": "off"
+    "basedpyright.analysis.diagnosticSeverityOverrides": {
+        "reportUnknownArgumentType": "none",
+        "reportUnknownMemberType": "none",
+        "reportUnknownVariableType": "none",
+        "reportUnknownLambdaType": "none",
+    }
 }
