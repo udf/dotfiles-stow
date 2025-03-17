@@ -105,6 +105,12 @@
     "nix.enableLanguageServer": true,
     "nix.serverSettings": {
         "nil": {
+            "diagnostics": {
+                "ignored": [
+                    "unused_binding",
+                    "unused_with"
+                ],
+            },
             "formatting": {
                 "command": [
                     "nixpkgs-fmt"
@@ -169,6 +175,7 @@
         "jsonc"
     ],
     "python.createEnvironment.trigger": "off",
+    "nix.serverPath": "/home/sam/.nix-profile/bin/nil",
     "basedpyright.analysis.diagnosticSeverityOverrides": {
         "reportUnknownArgumentType": "none",
         "reportUnknownMemberType": "none",
