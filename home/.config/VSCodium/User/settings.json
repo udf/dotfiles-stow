@@ -176,6 +176,12 @@
     ],
     "python.createEnvironment.trigger": "off",
     "nix.serverPath": "/home/sam/.nix-profile/bin/nil",
+    "github.copilot.advanced": {
+        "authProvider": "github"
+    },
+    "github.copilot.editor.enableAutoCompletions": false,
+    "inlineChat.lineNaturalLanguageHint": false,
+    "workbench.editor.empty.hint": "hidden",
     "basedpyright.analysis.diagnosticSeverityOverrides": {
         "reportUnknownArgumentType": "none",
         "reportUnknownMemberType": "none",
