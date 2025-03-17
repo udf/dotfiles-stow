@@ -18,7 +18,7 @@ case "$(hostname)" in
     export PIPEWIRE_LATENCY=1024/48000
     export GDK_SCALE=1
     export MOZ_USE_XINPUT2=1
-    export MPD_PASSWORD=B7WtKLYaAw7wVf4p
+    export MPD_HOST=B7WtKLYaAw7wVf4p@$HOME/.config/mpd/socket
 
     xset s off 
     xset -dpms

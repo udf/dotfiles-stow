@@ -1,7 +1,15 @@
 import os
-from mpd import MPDClient, CommandError
+import re
+from mpd import MPDClient
 
 client = MPDClient()
-client.connect('localhost', 6600)
-if 'MPD_PASSWORD' in os.environ:
-  client.password(os.environ['MPD_PASSWORD'])
+host, port = 'localhost', 6600
+password = ''
+m = re.match(r'^(?P<pw>.*)@(?P<host>.+?):?(?P<port>\d+)?$', os.environ.get('MPD_HOST', ''))
+if m:
+  host = m['host']
+  port = int(m['port']) if m['port'] else None
+  password = m['pw']
+client.connect(host, port)
+if password:
+  client.password(password)
