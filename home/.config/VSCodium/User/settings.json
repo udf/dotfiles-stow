@@ -168,6 +168,7 @@
         "shellscript",
         "jsonc"
     ],
+    "python.createEnvironment.trigger": "off",
     "basedpyright.analysis.diagnosticSeverityOverrides": {
         "reportUnknownArgumentType": "none",
         "reportUnknownMemberType": "none",
