@@ -129,7 +129,8 @@
     "security.workspace.trust.enabled": false,
     "workbench.editor.navigationScope": "editorGroup",
     "workbench.editorAssociations": {
-        "*.bin": "hexEditor.hexedit"
+        "*.bin": "hexEditor.hexedit",
+        "git-rebase-todo": "default"
     },
     "diffEditor.ignoreTrimWhitespace": true,
     "isort.args": [
