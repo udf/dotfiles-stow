@@ -46,7 +46,7 @@ if [ -z ${SKIP_ROOT_BACKUP+x} ]; then
 fi
 
 echo 'Syncing backups dataset...'
-$SYNCOID_CMD --recursive booty/misc/backups "$BACKUP_TARGET:backup/backups"
+$SYNCOID_CMD --delete-target-snapshots --recursive booty/misc/backups "$BACKUP_TARGET:backup/backups"
 
 echo 'Syncing enc dataset...'
 $SYNCOID_CMD --recursive booty/enc "$BACKUP_TARGET:backup/enc"
