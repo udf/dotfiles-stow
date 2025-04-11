@@ -60,6 +60,20 @@ menupopup {
     margin-inline-end: 0 !important;
 }
 
+/* remove tab (outer) padding */
+.tabbrowser-tab {
+    padding: 0 !important;
+}
+
+/* center mute button vertically */
+.tab-audio-button {
+    #tabbrowser-tabs:is([orient="vertical"][expanded], [orient="horizontal"]) &:not([pinned]):not([crashed]) {
+        &:is([soundplaying], [muted], [activemedia-blocked]) {
+            display: flex !important;
+        }
+    }
+}
+
 /* Fix rounded bookmark popup and padding */
 hbox arrowscrollbox.menupopup-arrowscrollbox {
     border-radius: 0 !important;
