@@ -25,6 +25,7 @@ if [ -z ${SKIP_ROOT_BACKUP+x} ]; then
     --exclude=/nix/store \
     --exclude=/home/sam/.config/syncthing \
     --exclude=/home/sam/.cache \
+    --exclude=/home/sam/.local/share/Trash \
     --exclude=/home/sam/.local/share/Steam/steamapps/common \
     --exclude=/home/sam/.local/share/nicotine \
     --exclude=/home/sam/Downloads/phanes \
