@@ -1,8 +1,4 @@
 # generated with rate-mirrors arch
-Server = http://es.mirrors.cicku.me/archlinux/$repo/os/$arch
-Server = https://it.mirrors.cicku.me/archlinux/$repo/os/$arch
-Server = http://it.mirrors.cicku.me/archlinux/$repo/os/$arch
-Server = https://london.mirror.pkgbuild.com/$repo/os/$arch
 Server = https://mirror.sahil.world/archlinux/$repo/os/$arch
 Server = https://europe.mirror.pkgbuild.com/$repo/os/$arch
 Server = https://mirror.neuf.no/archlinux/$repo/os/$arch
