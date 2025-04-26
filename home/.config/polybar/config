@@ -50,7 +50,7 @@ modules-right = downspeed upspeed downspeed_wlan upspeed_wlan cpu memory filesys
 [bar/karen-chan_1]
 inherit = main_bar
 bottom = true
-monitor = HDMI-A-0
+monitor = HDMI-A-2
 
 line-size = 2
 
