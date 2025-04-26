@@ -6,6 +6,10 @@ if [[ $EUID -ne 0 ]]; then
   exit 1
 fi
 
+if [ -n "$SLEEP" ]; then
+  sleep "$SLEEP"
+fi
+
 BACKUP_HOST=192.168.0.5
 BACKUP_TARGET=sam@192.168.0.5
 SSH_KEY=/home/sam/.ssh/id_ed25519
@@ -57,3 +61,7 @@ systemctl --user -M sam@ start music_tasks.service
 $SYNCOID_CMD booty/music "$BACKUP_TARGET:backup/music"
 # trigger a share rescan (via custom plugin)
 ssh -i "$SSH_KEY" "nicotine@$BACKUP_HOST" 'pkill --oldest -USR1 nicotine'
+
+if [ -n "$POWEROFF" ]; then
+  poweroff
+fi
