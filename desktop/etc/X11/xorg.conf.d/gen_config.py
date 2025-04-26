@@ -39,6 +39,7 @@ Section "Device"
     Option "SWCursor" "False"
     Option "TearFree" "True"
     Option "VariableRefresh" "True"
+    Option "AsyncFlipSecondaries" "true"
     BusID "{bus_id}"
 EndSection
 '''
