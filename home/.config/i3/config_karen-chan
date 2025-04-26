@@ -2,7 +2,7 @@ set $PULSE_SINK alsa_output.pci-0000_0e_00.4.pro-output-0
 include media_keys.conf
 
 bindsym $mod+d exec rofi -show run -modi run -location 6 -yoffset -20
-bindsym $mod+Ctrl+r exec "DISPLAY=:0 xrandr --output HDMI-A-2 --mode 800x600;sleep 3;DISPLAY=:0 xrandr --output HDMI-A-2 --mode 3840x2160;"
+bindsym $mod+Ctrl+r exec "DISPLAY=:0 xrandr --output HDMI-A-0 --mode 800x600;sleep 3;DISPLAY=:0 xrandr --output HDMI-A-0 --mode 3840x2160;"
 
 exec_always --no-startup-id feh --bg-scale $HOME/wallpaper.png
 bindsym $mod+Escape exec --no-startup-id $HOME/scripts/fancy_lock.sh
@@ -11,7 +11,7 @@ bindsym $mod+Escape exec --no-startup-id $HOME/scripts/fancy_lock.sh
 exec --no-startup-id inpulse-wrapper 183 --pressed=false --released=true -- pactl set-source-mute alsa_input.usb-0c76_USB_PnP_Audio_Device-00.mono-fallback
 
 # layout
-workspace 1 output HDMI-A-2
+workspace 1 output HDMI-A-0
 exec --no-startup-id i3-msg "workspace 1; append_layout $HOME/dotfiles/i3_layouts/desktop.json"
 for_window [class="(?i)gsimplecal"] floating enable, move up 24 px
 
