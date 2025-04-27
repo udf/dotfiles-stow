@@ -20,6 +20,10 @@ case "$(hostname)" in
     export MOZ_USE_XINPUT2=1
     export MPD_HOST=B7WtKLYaAw7wVf4p@$HOME/.config/mpd/socket
 
+    export DXVK_FILTER_DEVICE_NAME=AMD
+    export VKD3D_FILTER_DEVICE_NAME=AMD
+    export VK_LOADER_DRIVERS_SELECT="*amd*"
+
     xset s off 
     xset -dpms
 
