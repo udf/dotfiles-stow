@@ -7,6 +7,7 @@ import re
 
 import requests
 import mutagen
+from mutagen.mp3 import EasyMP3
 import cutlet
 
 
@@ -138,10 +139,16 @@ args = parser.parse_args()
 
 for dir in args.dirs:
   for f in walk_files_sorted(dir):
-    if f.suffix.lower() != '.flac':
+    if f.suffix.lower() not in {'.flac', '.mp3'}:
       continue
     print('Checking', f)
-    m = mutagen.File(f)
+    match f.suffix.lower():
+      case '.flac':
+        m = mutagen.File(f)
+      case '.mp3':
+        m = EasyMP3(f)
+      case _:
+        continue
 
     modified = False
     for key, entryType in TAG_NAMES.items():
