@@ -86,3 +86,9 @@ user_pref("media.default_volume", 0.07);
 
 // increase history retention
 user_pref("places.history.expiration.max_pages", 999999999);
+
+// change ctrl+f colours to the best ones
+user_pref("ui.textHighlightBackground", "#F5A9B8");
+user_pref("ui.textHighlightForeground", "#000000");
+user_pref("ui.textSelectAttentionBackground", "#5BCEFA");
+user_pref("ui.textSelectAttentionForeground", "#000000");
