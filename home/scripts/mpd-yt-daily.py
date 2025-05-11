@@ -31,7 +31,7 @@ def delete_empty_dirs(path):
     os.rmdir(path)
 
 
-music_dir = Path('/booty/media/music')
+music_dir = Path('/booty/music/music')
 subdir = 'lossy-downloads/yt'
 PLAYLIST_NAME = '_yt_pending'
 
