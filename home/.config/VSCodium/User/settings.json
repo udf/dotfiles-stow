@@ -188,5 +188,6 @@
         "reportUnknownMemberType": "none",
         "reportUnknownVariableType": "none",
         "reportUnknownLambdaType": "none",
-    }
+    },
+    "git.confirmSync": false
 }
