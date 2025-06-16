@@ -46,7 +46,7 @@ if [ -z ${SKIP_ROOT_BACKUP+x} ]; then
   echo 'Snapshotting root backup...'
   zfs snapshot "$BACKUP_DATASET@$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
   echo 'Deleting old snapshots...'
-  zfs list -t snapshot -o name -S creation $BACKUP_DATASET | grep -v '@syncoid' | tail -n +5 | xargs -rn 1 zfs destroy -vr
+  zfs list -t snapshot -o name -S creation $BACKUP_DATASET | grep -v '@syncoid' | tail -n +30 | xargs -rn 1 zfs destroy -vr
   zfs list -t snapshot $BACKUP_DATASET
 fi
 
