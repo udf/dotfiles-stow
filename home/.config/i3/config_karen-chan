@@ -27,6 +27,7 @@ exec --no-startup-id "sleep 10; cantata"
 exec --no-startup-id "sleep 15; start_vencord.sh"
 exec --no-startup-id $HOME/.nix-profile/bin/telegram-desktop
 exec --no-startup-id corectrl --minimize-systray -m perf
+exec --no-startup-id deskflow
 
 # monitor inputs
 bindsym $mod+F1 exec --no-startup-id ddcutil --model 'DELL S2721DGF' setvcp 60 0x10
