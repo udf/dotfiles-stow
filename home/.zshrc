@@ -87,11 +87,11 @@ setopt promptsubst
 export PROMPT='$(do_prompt)'
 export RPROMPT='$(gitprompt-rs zsh)'
 export EDITOR='nvim -p'
-if [[ -v DISPLAY ]] && which vscodium &> /dev/null; then
-  export EDITOR='vscodium --wait'
-fi
 if [[ -v DISPLAY ]] && which code &> /dev/null; then
   export EDITOR='code --wait'
+fi
+if [[ -v DISPLAY ]] && which vscodium &> /dev/null; then
+  export EDITOR='vscodium --wait'
 fi
 
 # Edit line in vim with alt-e:
