@@ -33,13 +33,12 @@ if [ -z ${SKIP_ROOT_BACKUP+x} ]; then
     --exclude=/home/sam/.local/share/Steam/steamapps/common \
     --exclude=/home/sam/.local/share/nicotine \
     --exclude=/home/sam/Downloads/phanes \
-    --exclude=/home/sam/Downloads/phanes_qbit \
-    --exclude=/home/sam/Downloads/phanes_ext \
     --exclude=/home/sam/Downloads/durga_qbit \
     --exclude=/home/sam/Downloads/qbit \
     --exclude=/home/sam/Downloads/claire \
     --exclude=/var/lib/libvirt/images \
     --exclude=/var/lib/docker \
+    --exclude=/var/cache/jellyfin \
     / "/$BACKUP_DATASET/"
   echo 'Syncing boot...'
   rsync -vaAXHx --delete --info=progress2 /boot/ "/$BACKUP_DATASET/boot/"
