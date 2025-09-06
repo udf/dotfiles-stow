@@ -20,7 +20,7 @@ assign [class="TelegramDesktop"] $ws6
 assign [class="vesktop"] $ws7
 
 set $wsMusic "9: 󰎈"
-assign [class="cantata"] $wsMusic
+assign [class="Cantata"] $wsMusic
 bindsym --release $mod+XF86AudioPlay workspace $wsMusic
 bindsym $mod+Ctrl+XF86AudioPlay move container to workspace $wsMusic
 bindsym $mod+Shift+XF86AudioPlay move container to workspace $wsMusic; workspace $wsMusic
