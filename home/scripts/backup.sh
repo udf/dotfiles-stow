@@ -36,6 +36,7 @@ if [ -z ${SKIP_ROOT_BACKUP+x} ]; then
     --exclude=/home/sam/Downloads/durga_qbit \
     --exclude=/home/sam/Downloads/qbit \
     --exclude=/home/sam/Downloads/claire \
+    --exclude=/home/sam/Downloads/deezer \
     --exclude=/var/lib/libvirt/images \
     --exclude=/var/lib/docker \
     --exclude=/var/cache/jellyfin \
