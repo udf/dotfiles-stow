@@ -37,7 +37,7 @@ case "$(hostname)" in
     nm-applet &
     dunst &
     xmousepasteblock &
-    xrandr --output DisplayPort-2 --mode 2560x1440 -r 165 --pos 3840x250 --output HDMI-A-0 --mode 3840x2160 --pos 0x0
+    xrandr --output DisplayPort-2 --primary --mode 2560x1440 -r 165 --pos 3840x250 --output HDMI-A-0 --mode 3840x2160 --pos 0x0
     ;;
 "alice")
     xset dpms 300 300 300
