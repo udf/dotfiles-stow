@@ -16,7 +16,8 @@ def get_input_status(props):
     'OL': UnderlineColours.Green + '󰚥',
     'OB': UnderlineColours.Red + '󰚦',
     'OL BOOST': UnderlineColours.Yellow + '󰚥↑',
-    'OL TRIM': UnderlineColours.Yellow + '󰚥↓'
+    'OL TRIM': UnderlineColours.Yellow + '󰚥↓',
+    'OL BYPASS': UnderlineColours.Yellow + '󰚥'
   }.get(props.get('ups.status', None), '')
   voltage = round(float(props.get('input.voltage'))) - 4
   return f"{icon} {voltage}V {props.get('output.frequency')}Hz"
