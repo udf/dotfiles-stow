@@ -187,6 +187,7 @@ source ~/zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 # fzf
 source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
+export FZF_DEFAULT_OPTS="--color=dark"
 
 # CTRL-Y - Paste the selected directory path(s) into the command line
 __fzf_select_dir() {
