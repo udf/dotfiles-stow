@@ -4,10 +4,10 @@ let
   # nixgl-wrapper = self.writeShellScriptBin "nixgl-wrapper" ''
   #   ${nixgl.auto.nixGLDefault}/bin/nixGL @PATH@
   # '';
-  tdesktopPkg = super.tdesktop.override { stdenv = super.ccacheStdenv; };
+  tdesktopPkg = super.telegram-desktop.override { stdenv = super.ccacheStdenv; };
 in
 {
-  tdesktop = tdesktopPkg.overrideAttrs (oldAttrs: {
+  telegram-desktop = tdesktopPkg.overrideAttrs (oldAttrs: {
     unwrapped = oldAttrs.unwrapped.overrideAttrs (oldAttrs: {
       patches = (oldAttrs.patches or [ ]) ++ [
         ./tdesktop-udf-patches/always_clear_history_for_everyone.patch
