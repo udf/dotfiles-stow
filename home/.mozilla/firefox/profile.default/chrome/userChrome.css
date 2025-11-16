@@ -1,5 +1,3 @@
-@import "Firefox-UI-Fix/userChrome.css";
-
 /* Fix the top (left) option of context menus spontaneously clicking itself */
 menupopup {
     margin-top: 3px !important;
