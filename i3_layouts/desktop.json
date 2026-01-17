@@ -53,14 +53,6 @@
                     "swallows": [
                         {
                             "class": "^Carla2$",
-                            "title": "Carla - voice.carxp"
-                        }
-                    ]
-                },
-                {
-                    "swallows": [
-                        {
-                            "class": "^Carla2$",
                             "title": "Carla - fx.carxp"
                         }
                     ]
