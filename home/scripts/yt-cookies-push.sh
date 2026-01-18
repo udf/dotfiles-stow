@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-cookies="$(python ~/proj/p/nix_hanzo/phanes/scripts/yt-cookies-dump.py)"
-ssh yt-wl-dl@phanes 'nc -UN /var/run/yt-store-cookies.socket' <<< "$cookies"
+[ -z "$1" ] && echo "mising cookies filename" && exit 1
+ssh sam@phanes 'nc -UN /var/run/yt-wl/yt-store-cookies.socket' < "$1"
