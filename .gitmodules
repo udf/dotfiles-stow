@@ -13,3 +13,6 @@
 [submodule "fast-syntax-highlighting"]
 	path = home/zsh/fast-syntax-highlighting
 	url = git@github.com:zdharma-continuum/fast-syntax-highlighting.git
+[submodule "home-manager/_nixos_conf"]
+	path = home-manager/_nixos_conf
+	url = git@github.com:udf/nix-hanzo.git

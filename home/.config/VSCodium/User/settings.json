@@ -113,7 +113,7 @@
             },
             "formatting": {
                 "command": [
-                    "nixpkgs-fmt"
+                    "nixfmt"
                 ]
             }
         }
@@ -189,5 +189,7 @@
         "reportUnknownVariableType": "none",
         "reportUnknownLambdaType": "none",
     },
-    "git.confirmSync": false
+    "git.confirmSync": false,
+    "terminal.integrated.stickyScroll.enabled": false,
+    "chat.disableAIFeatures": false
 }
