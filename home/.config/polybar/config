@@ -67,7 +67,7 @@ tray-detached = true
 [bar/karen-chan_2]
 inherit = main_bar
 bottom = false
-monitor = DisplayPort-2
+monitor = DisplayPort-0
 
 line-size = 2
 
@@ -351,7 +351,7 @@ ramp-volume-5 = " "
 
 [module/volume-karen-chan]
 inherit = module/volume
-sink = alsa_output.pci-0000_0e_00.4.pro-output-0
+sink = alsa_output.pci-0000_0d_00.4.pro-output-0
 
 [module/backlight]
 type = internal/backlight
