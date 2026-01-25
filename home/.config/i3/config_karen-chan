@@ -1,4 +1,4 @@
-set $PULSE_SINK alsa_output.pci-0000_0e_00.4.pro-output-0
+set $PULSE_SINK alsa_output.pci-0000_0d_00.4.pro-output-0
 include media_keys.conf
 
 bindsym $mod+d exec rofi -show run -modi run -location 6 -yoffset -20
@@ -26,8 +26,9 @@ exec --no-startup-id "sleep 10; cantata"
 #exec --no-startup-id "sleep 30; nicotine"
 exec --no-startup-id "sleep 15; start_vencord.sh"
 exec --no-startup-id $HOME/.nix-profile/bin/telegram-desktop
-exec --no-startup-id corectrl --minimize-systray -m perf
+exec --no-startup-id openrgb --startminimized --server --server-host 127.0.0.1 -p artemis
 exec --no-startup-id deskflow
+exec --no-startup-id "sleep 60; $HOME/Downloads/Artemis/Artemis.UI.Linux"
 
 # monitor inputs
 bindsym $mod+F1 exec --no-startup-id ddcutil --model 'DELL S2721DGF' setvcp 60 0x10
