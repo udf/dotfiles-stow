@@ -164,6 +164,9 @@ for_window [class="TelegramDesktop" title="Media viewer"] move absolute position
 for_window [title="Microsoft Teams Notification"] floating enable
 for_window [class="projectMSDL"] floating enable
 
+for_window [class="lact"] floating enable
+for_window [class="openrgb"] floating enable
+
 # Workspaces
 set $ws1 "1"
 set $ws2 "2"
