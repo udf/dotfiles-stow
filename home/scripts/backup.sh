@@ -31,6 +31,7 @@ if [ -z ${SKIP_ROOT_BACKUP+x} ]; then
     --exclude=/home/sam/.cache \
     --exclude=/home/sam/.local/share/Trash \
     --exclude=/home/sam/.local/share/Steam/steamapps/common \
+    --exclude=/home/sam/.local/share/Steam/steamapps/shadercache \
     --exclude=/home/sam/.local/share/nicotine \
     --exclude=/home/sam/Downloads/phanes \
     --exclude=/home/sam/Downloads/durga_qbit \
