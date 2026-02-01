@@ -191,5 +191,6 @@
     },
     "git.confirmSync": false,
     "terminal.integrated.stickyScroll.enabled": false,
-    "chat.disableAIFeatures": false
+    "chat.disableAIFeatures": false,
+    "chat.viewSessions.orientation": "stacked"
 }
