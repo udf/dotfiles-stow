@@ -23,6 +23,8 @@ in
         "''${gappsWrapperArgs[@]}" \
         "''${qtWrapperArgs[@]}" \
         --set XDG_CURRENT_DESKTOP Unity \
+        --set LC_TIME C \
+        --set LC_ALL "" \
         --prefix XDG_DATA_DIRS : /usr/share \
         --prefix XCURSOR_PATH : /usr/share/icons \
         --prefix LD_LIBRARY_PATH : ${self.xorg.libXcursor}/lib
