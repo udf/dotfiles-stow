@@ -192,5 +192,19 @@
     "git.confirmSync": false,
     "terminal.integrated.stickyScroll.enabled": false,
     "chat.disableAIFeatures": false,
-    "chat.viewSessions.orientation": "stacked"
+    "chat.viewSessions.orientation": "stacked",
+    "gitlens.views.scm.grouped.views": {
+        "commits": true,
+        "branches": true,
+        "remotes": true,
+        "stashes": true,
+        "tags": true,
+        "worktrees": true,
+        "contributors": true,
+        "fileHistory": true,
+        "repositories": true,
+        "searchAndCompare": false,
+        "launchpad": false
+    },
+    "workbench.secondarySideBar.defaultVisibility": "hidden"
 }
