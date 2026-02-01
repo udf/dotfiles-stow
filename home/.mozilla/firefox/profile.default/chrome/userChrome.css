@@ -1,22 +1,7 @@
-/* Fix the top (left) option of context menus spontaneously clicking itself */
-menupopup {
-    margin-top: 3px !important;
-}
-
 /* Fix the fucking touchscreen-esque bullshit padding on urlbar results */
 .urlbarView-row-inner {
     padding-block: 0px !important;
-}
-
-/* Fix the fucking touchscreen-esque bullshit padding on urlbar */
-#urlbar-input-container {
-    padding-top: 0px !important;
-    padding-bottom: 0px !important;
-}
-
-/* Fix the fucking touchscreen-esque bullshit breakout height */
-#urlbar[breakout][breakout-extend] > #urlbar-input-container {
-    height: calc(var(--urlbar-toolbar-height) - 4px) !important;
+    padding-inline: 4px !important;
 }
 
 /* Fix search one-offs height */
@@ -34,97 +19,17 @@ menupopup {
     margin: 0px !important;
 }
 
-.tab-background {
-    /* Make top of tab square (smooth corners = smooth brain) */
-    border-radius: 0px !important;
-    /* Fix small gap at the top */
-    margin: 0 !important;
-    /* Fix height */
-    height: 44px;
-}
-
-/* Correct content position after removing top gap */
-.tab-content {
-    margin: 0 !important;
-}
-
 /* Reduce spacing in dialog boxes (like http login) */
 .dialogRow {
     margin-bottom: 8px !important;
 }
 
-/* Remove retarded last tab margin */
-#tabbrowser-arrowscrollbox:not([overflowing]) .tabbrowser-tab[last-visible-tab] {
-    margin-inline-end: 0 !important;
-}
-
-/* remove tab (outer) padding */
-.tabbrowser-tab {
-    padding: 0 !important;
-}
-
-/* center mute button vertically */
-.tab-audio-button {
-    #tabbrowser-tabs:is([orient="vertical"][expanded], [orient="horizontal"]) &:not([pinned]):not([crashed]) {
-        &:is([soundplaying], [muted], [activemedia-blocked]) {
-            display: flex !important;
-        }
-    }
-}
-
-/* Fix rounded bookmark popup and padding */
-hbox arrowscrollbox.menupopup-arrowscrollbox {
-    border-radius: 0 !important;
-    padding-top: 5px !important;
-    padding-bottom: 5px !important;
-}
-
-/* Fix bookmark popup outer padding */
-.bookmark-item>menupopup {
-    padding: 0px !important;
-}
-
 /* Fix bookmark items padding */
 menupopup>.bookmark-item {
-    margin-left: 5px !important;
-    margin-right: 5px !important;
-    border-radius: 0px !important;
+    margin-inline: 4px !important;
     padding: 5px !important;
 }
 .openintabs-menuitem {
-    margin-left: 5px !important;
-    margin-right: 5px !important;
-    border-radius: 0px !important;
+    margin-inline: 4px !important;
     padding: 5px !important;
-}
-
-/* Fix bookmark item icon padding */
-.bookmark-item.menuitem-with-favicon label.menu-iconic-text {
-    padding-left: 3px !important;
-}
-
-/* Fix retarded border around context menu */
-arrowscrollbox.menupopup-arrowscrollbox {
-    margin: 0px !important;
-    padding: 4px !important;
-}
-
-/* Someone is retarded and forgot about these items */
-.menu-iconic {
-    padding: 4px 6px;
-}
-
-/* Fucking mozilla */
-#nav-bar {
-    border-top: 0px !important;
-}
-
-/* Fix urlbar collapsing when it's empty */
-.urlbar-input-box {
-    height: 32px;
-}
-
-menuitem {
-    min-width: fit-content;
-    padding: 3px 4px !important;
 }
