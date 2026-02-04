@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 import sys
 from _mpd import client
 

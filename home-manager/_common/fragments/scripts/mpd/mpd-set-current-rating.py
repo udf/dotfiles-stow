@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 import argparse
 
 from _mpd import client

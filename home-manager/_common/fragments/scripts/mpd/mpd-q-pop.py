@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 from _mpd import client
 
 t = client.currentsong()
