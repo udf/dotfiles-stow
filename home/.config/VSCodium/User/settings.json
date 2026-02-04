@@ -206,5 +206,6 @@
         "searchAndCompare": false,
         "launchpad": false
     },
-    "workbench.secondarySideBar.defaultVisibility": "hidden"
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "terminal.integrated.initialHint": false
 }
