@@ -10,6 +10,3 @@
 [submodule "home/.config/polybar/playerctlctl"]
 	path = home/.config/polybar/playerctlctl
 	url = git@github.com:udf/playerctlctl.git
-[submodule "home-manager/_nixos_conf"]
-	path = home-manager/_nixos_conf
-	url = git@github.com:udf/nix-hanzo.git

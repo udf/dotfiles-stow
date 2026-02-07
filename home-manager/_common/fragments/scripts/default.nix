@@ -1,4 +1,0 @@
-{ lib, pkgs, ... }:
-{
-  imports = [ ./mpd ];
-}
