@@ -143,4 +143,22 @@
         "command": "-workbench.action.terminal.openNativeConsole",
         "when": "!terminalFocus"
     },
+    {
+        "key": "alt+t",
+        "command": "dance.seek.extend",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+t",
+        "command": "dance.seek.extend.backward",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+0",
+        "command": "workbench.panel.chat.view.copilot.focus"
+    },
+    {
+        "key": "ctrl+shift+q",
+        "command": "notifications.clearAll"
+    },
 ]
