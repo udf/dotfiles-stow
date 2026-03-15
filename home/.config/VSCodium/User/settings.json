@@ -1,7 +1,51 @@
 {
-    "editor.fontFamily": "'Hack Nerd Font Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "editor.renderWhitespace": "all",
-    "explorer.confirmDelete": false,
+    "C_Cpp.clang_format_style": "{BasedOnStyle: LLVM, IndentWidth: 4, SpaceAfterTemplateKeyword: false, AlwaysBreakTemplateDeclarations: true, BinPackArguments: false, BinPackParameters: false, AllowAllParametersOfDeclarationOnNextLine: false, AllowShortFunctionsOnASingleLine: false, BreakBeforeBinaryOperators: \"NonAssignment\", AlignAfterOpenBracket: \"AlwaysBreak\"}",
+    "C_Cpp.default.includePath": [
+        "/usr/include/opencv4"
+    ],
+    "C_Cpp.updateChannel": "Insiders",
+    "Lua.format.defaultConfig": {
+        "max_line_length": "160"
+    },
+    "[c]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "[csharp]": {
+        "editor.defaultFormatter": "Leopotam.csharpfixformat"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[python]": {
+        "editor.wordBasedSuggestions": "off",
+        "gitlens.codeLens.symbolScopes": [
+            "!Module"
+        ]
+    },
+    "[xml]": {
+        "editor.defaultFormatter": "redhat.vscode-xml"
+    },
+    "autoDocstring.docstringFormat": "sphinx",
+    "basedpyright.analysis.diagnosticSeverityOverrides": {
+        "reportUnknownArgumentType": "none",
+        "reportUnknownLambdaType": "none",
+        "reportUnknownMemberType": "none",
+        "reportUnknownVariableType": "none"
+    },
+    "cSpell.enableFiletypes": [
+        "lua"
+    ],
+    "cSpell.enabled": true,
+    "cSpell.language": "en-GB",
     "cSpell.userWords": [
         "asyncio",
         "botapi",
@@ -27,106 +71,61 @@
         "upvote",
         "vals"
     ],
-    "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "[cpp]": {
-        "editor.defaultFormatter": "ms-vscode.cpptools"
+    "chat.disableAIFeatures": false,
+    "chat.tools.terminal.terminalProfile.linux": {
+        "args": [
+            "zsh"
+        ],
+        "color": "terminal.ansiBlue",
+        "path": "wrap-rw-cwd"
     },
+    "chat.viewSessions.orientation": "stacked",
+    "dance.modes": {
+        "normal": {
+            "cursorStyle": "block",
+            "selectionBehavior": "character"
+        }
+    },
+    "diffEditor.ignoreTrimWhitespace": true,
+    "diffEditor.maxComputationTime": 0,
+    "editor.fontFamily": "'Hack Nerd Font Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.formatOnSave": false,
-    "C_Cpp.clang_format_style": "{BasedOnStyle: LLVM, IndentWidth: 4, SpaceAfterTemplateKeyword: false, AlwaysBreakTemplateDeclarations: true, BinPackArguments: false, BinPackParameters: false, AllowAllParametersOfDeclarationOnNextLine: false, AllowShortFunctionsOnASingleLine: false, BreakBeforeBinaryOperators: \"NonAssignment\", AlignAfterOpenBracket: \"AlwaysBreak\"}",
-    "workbench.editor.showTabs": "multiple",
-    "workbench.editor.enablePreview": false,
-    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "editor.inlineSuggest.enabled": false,
+    "editor.largeFileOptimizations": false,
+    "editor.renderControlCharacters": true,
+    "editor.renderWhitespace": "all",
     "editor.rulers": [
         80,
         100
     ],
-    "C_Cpp.updateChannel": "Insiders",
-    "editor.renderControlCharacters": true,
-    "C_Cpp.default.includePath": [
-        "/usr/include/opencv4"
-    ],
-    "[c]": {
-        "editor.defaultFormatter": "xaver.clang-format"
-    },
-    "java.configuration.checkProjectSettingsExclusions": false,
-    "diffEditor.maxComputationTime": 0,
-    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
-    "vscode-neovim.neovimInitVimPaths.linux": "~/.config/nvim/vscode.vim",
-    "vscode-neovim.useCtrlKeysForInsertMode": false,
-    "workbench.colorCustomizations": {
-        "[Arc Dark Theme]": {
-            "editorIndentGuide.activeBackground": "#666",
-            "editor.lineHighlightBorder": "#232933",
-            "editor.lineHighlightBackground": "#1f242d",
-            "editor.findMatchHighlightBackground": "#70f8ff2a",
-            "editorBracketMatch.background": "#ffffff40"
-        }
-    },
-    "java.semanticHighlighting.enabled": true,
+    "editor.stickyScroll.enabled": false,
+    "editor.suggestSelection": "first",
     "editor.tabSize": 2,
-    "xml.java.home": "/usr/lib/jvm/default-runtime/",
-    "[csharp]": {
-        "editor.defaultFormatter": "Leopotam.csharpfixformat"
-    },
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "python.showStartPage": false,
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
-    "java.configuration.runtimes": [
-        {
-            "name": "JavaSE-11",
-            "path": "/usr/lib/jvm/java-11-openjdk/",
-            "default": true
-        }
-    ],
-    "[xml]": {
-        "editor.defaultFormatter": "redhat.vscode-xml"
+    "git.confirmSync": false,
+    "github.copilot.advanced": {
+        "authProvider": "github"
     },
-    "[javascript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
+    "github.copilot.editor.enableAutoCompletions": false,
+    "gitlens.codeLens.authors.enabled": false,
+    "gitlens.codeLens.recentChange.enabled": false,
+    "gitlens.views.scm.grouped.views": {
+        "branches": true,
+        "commits": true,
+        "contributors": true,
+        "fileHistory": true,
+        "launchpad": false,
+        "remotes": true,
+        "repositories": true,
+        "searchAndCompare": false,
+        "stashes": true,
+        "tags": true,
+        "worktrees": true
     },
     "http.proxySupport": "off",
-    "terminal.integrated.inheritEnv": false,
-    "[python]": {
-        "gitlens.codeLens.symbolScopes": [
-            "!Module"
-        ],
-        "editor.wordBasedSuggestions": "off"
-    },
-    "redhat.telemetry.enabled": false,
-    "autoDocstring.docstringFormat": "sphinx",
-    "editor.largeFileOptimizations": false,
-    "nix.enableLanguageServer": true,
-    "nix.serverSettings": {
-        "nil": {
-            "diagnostics": {
-                "ignored": [
-                    "unused_binding",
-                    "unused_with"
-                ],
-            },
-            "formatting": {
-                "command": [
-                    "nixfmt"
-                ]
-            }
-        }
-    },
-    "dance.modes": {
-        "normal": {
-            "cursorStyle": "block",
-            "selectionBehavior": "character",
-        },
-    },
-    "cSpell.language": "en-GB",
-    "editor.unicodeHighlight.ambiguousCharacters": false,
-    "security.workspace.trust.enabled": false,
-    "workbench.editor.navigationScope": "editorGroup",
-    "workbench.editorAssociations": {
-        "*.bin": "hexEditor.hexedit",
-        "git-rebase-todo": "default"
-    },
-    "diffEditor.ignoreTrimWhitespace": true,
+    "inlineChat.lineNaturalLanguageHint": false,
     "isort.args": [
         "--profile",
         "black",
@@ -137,29 +136,37 @@
         "--multi-line",
         "VERTICAL_GRID_GROUPED"
     ],
-    "gitlens.codeLens.authors.enabled": false,
-    "gitlens.codeLens.recentChange.enabled": false,
-    "editor.inlineSuggest.enabled": false,
-    "cSpell.enabled": true,
-    "cSpell.enableFiletypes": [
-        "lua"
+    "java.configuration.checkProjectSettingsExclusions": false,
+    "java.configuration.runtimes": [
+        {
+            "default": true,
+            "name": "JavaSE-11",
+            "path": "/usr/lib/jvm/java-11-openjdk/"
+        }
     ],
-    "window.zoomLevel": -1,
-    "editor.stickyScroll.enabled": false,
-    "Lua.format.defaultConfig": {
-        "max_line_length": "160"
+    "java.semanticHighlighting.enabled": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "nix.enableLanguageServer": true,
+    "nix.serverPath": "/home/sam/.nix-profile/bin/nil",
+    "nix.serverSettings": {
+        "nil": {
+            "diagnostics": {
+                "ignored": [
+                    "unused_binding",
+                    "unused_with"
+                ]
+            },
+            "formatting": {
+                "command": [
+                    "nixfmt"
+                ]
+            }
+        }
     },
-    "[json]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
-    "[html]": {
-        "editor.defaultFormatter": "vscode.html-language-features"
-    },
-    "thunder-client.followRedirects": false,
-    "workbench.iconTheme": "material-icon-theme",
-    "spellright.language": [
-        "en_GB"
-    ],
+    "python.createEnvironment.trigger": "off",
+    "python.showStartPage": false,
+    "redhat.telemetry.enabled": false,
+    "security.workspace.trust.enabled": false,
     "spellright.configurationScope": "user",
     "spellright.documentTypes": [
         "markdown",
@@ -169,53 +176,46 @@
         "shellscript",
         "jsonc"
     ],
-    "python.createEnvironment.trigger": "off",
-    "nix.serverPath": "/home/sam/.nix-profile/bin/nil",
-    "github.copilot.advanced": {
-        "authProvider": "github"
-    },
-    "github.copilot.editor.enableAutoCompletions": false,
-    "inlineChat.lineNaturalLanguageHint": false,
-    "workbench.editor.empty.hint": "hidden",
-    "basedpyright.analysis.diagnosticSeverityOverrides": {
-        "reportUnknownArgumentType": "none",
-        "reportUnknownMemberType": "none",
-        "reportUnknownVariableType": "none",
-        "reportUnknownLambdaType": "none",
-    },
-    "git.confirmSync": false,
-    "terminal.integrated.stickyScroll.enabled": false,
-    "chat.disableAIFeatures": false,
-    "chat.viewSessions.orientation": "stacked",
-    "gitlens.views.scm.grouped.views": {
-        "commits": true,
-        "branches": true,
-        "remotes": true,
-        "stashes": true,
-        "tags": true,
-        "worktrees": true,
-        "contributors": true,
-        "fileHistory": true,
-        "repositories": true,
-        "searchAndCompare": false,
-        "launchpad": false
-    },
-    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "spellright.language": [
+        "en_GB"
+    ],
+    "terminal.integrated.inheritEnv": false,
     "terminal.integrated.initialHint": false,
     "terminal.integrated.profiles.linux": {
         "zsh-rw-cwd": {
-            "path": "wrap-rw-cwd",
             "args": [
-                "zsh",
+                "zsh"
             ],
-            "color": "terminal.ansiBlue"
+            "color": "terminal.ansiBlue",
+            "path": "wrap-rw-cwd"
         }
     },
-    "chat.tools.terminal.terminalProfile.linux": {
-        "path": "wrap-rw-cwd",
-        "args": [
-            "zsh",
-        ],
-        "color": "terminal.ansiBlue"
-    }
+    "terminal.integrated.stickyScroll.enabled": false,
+    "thunder-client.followRedirects": false,
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+    "vscode-neovim.neovimInitVimPaths.linux": "~/.config/nvim/vscode.vim",
+    "vscode-neovim.useCtrlKeysForInsertMode": false,
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "window.zoomLevel": -1,
+    "workbench.colorCustomizations": {
+        "[Arc Dark Theme]": {
+            "editor.findMatchHighlightBackground": "#70f8ff2a",
+            "editor.lineHighlightBackground": "#1f242d",
+            "editor.lineHighlightBorder": "#232933",
+            "editorBracketMatch.background": "#ffffff40",
+            "editorIndentGuide.activeBackground": "#666"
+        }
+    },
+    "workbench.editor.empty.hint": "hidden",
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.editor.navigationScope": "editorGroup",
+    "workbench.editor.showTabs": "multiple",
+    "workbench.editorAssociations": {
+        "*.bin": "hexEditor.hexedit",
+        "git-rebase-todo": "default"
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "xml.java.home": "/usr/lib/jvm/default-runtime/"
 }
