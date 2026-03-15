@@ -38,6 +38,7 @@ if [ -z ${SKIP_ROOT_BACKUP+x} ]; then
     --exclude=/home/sam/Downloads/qbit \
     --exclude=/home/sam/Downloads/claire \
     --exclude=/home/sam/Downloads/deezer \
+    --exclude=/home/sam/Downloads/mashiro_sync \
     --exclude=/home/sam/Games \
     --exclude=/var/lib/libvirt/images \
     --exclude=/var/lib/docker \
@@ -54,9 +55,6 @@ fi
 
 echo 'Syncing backups dataset...'
 $SYNCOID_CMD --delete-target-snapshots --recursive booty/misc/backups "$BACKUP_TARGET:backup/backups"
-
-# echo 'Syncing enc dataset...'
-# $SYNCOID_CMD --recursive booty/enc "$BACKUP_TARGET:backup/enc"
 
 echo 'Syncing music dataset...'
 systemctl --user -M sam@ start music_tasks.service
