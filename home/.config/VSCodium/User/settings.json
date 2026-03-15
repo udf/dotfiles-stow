@@ -49,7 +49,6 @@
     "[c]": {
         "editor.defaultFormatter": "xaver.clang-format"
     },
-    "workbench.colorTheme": "Arc Dark Theme",
     "java.configuration.checkProjectSettingsExclusions": false,
     "diffEditor.maxComputationTime": 0,
     "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
