@@ -150,13 +150,7 @@ for_window [class="Nm-connection-editor"] floating enable
 
 for_window [class="Wine" title="* - Wine desktop"] floating enable
 
-# Steam
-for_window [class="Steam"] move workspace $ws8
-for_window [class="Steam" title="Friends List"] floating enable
-for_window [class="Steam" title="Select backup folder"] floating enable
-for_window [class="Steam" title="Locate your Backup Files"] floating enable
-for_window [class="Steam" title="Add a Game"] floating enable
-# TODO: make the popup for updating float
+for_window [class="Artemis.UI.Linux"] move workspace $ws8
 
 for_window [window_role="gimp-toolbox-color-dialog"] move position mouse
 for_window [class="TelegramDesktop" title="Media viewer"] move absolute position center
