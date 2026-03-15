@@ -201,5 +201,21 @@
         "launchpad": false
     },
     "workbench.secondarySideBar.defaultVisibility": "hidden",
-    "terminal.integrated.initialHint": false
+    "terminal.integrated.initialHint": false,
+    "terminal.integrated.profiles.linux": {
+        "zsh-rw-cwd": {
+            "path": "wrap-rw-cwd",
+            "args": [
+                "zsh",
+            ],
+            "color": "terminal.ansiBlue"
+        }
+    },
+    "chat.tools.terminal.terminalProfile.linux": {
+        "path": "wrap-rw-cwd",
+        "args": [
+            "zsh",
+        ],
+        "color": "terminal.ansiBlue"
+    }
 }
