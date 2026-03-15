@@ -29,11 +29,6 @@
     ],
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "vscode_custom_css.imports": [
-        "file:///home/sam/.config/VScodium/vscode.css",
-        "file:///home/mhoosen/.config/VScodium/vscode.css"
-    ],
-    "vscode_custom_css.policy": true,
     "[cpp]": {
         "editor.defaultFormatter": "ms-vscode.cpptools"
     },
