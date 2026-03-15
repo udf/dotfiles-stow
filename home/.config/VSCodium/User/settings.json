@@ -1,9 +1,4 @@
 {
-    "C_Cpp.clang_format_style": "{BasedOnStyle: LLVM, IndentWidth: 4, SpaceAfterTemplateKeyword: false, AlwaysBreakTemplateDeclarations: true, BinPackArguments: false, BinPackParameters: false, AllowAllParametersOfDeclarationOnNextLine: false, AllowShortFunctionsOnASingleLine: false, BreakBeforeBinaryOperators: \"NonAssignment\", AlignAfterOpenBracket: \"AlwaysBreak\"}",
-    "C_Cpp.default.includePath": [
-        "/usr/include/opencv4"
-    ],
-    "C_Cpp.updateChannel": "Insiders",
     "Lua.format.defaultConfig": {
         "max_line_length": "160"
     },
@@ -41,10 +36,9 @@
         "reportUnknownMemberType": "none",
         "reportUnknownVariableType": "none"
     },
-    "cSpell.enableFiletypes": [
-        "lua"
-    ],
-    "cSpell.enabled": true,
+    "cSpell.enabledFileTypes": {
+        "nix": false
+    },
     "cSpell.language": "en-GB",
     "cSpell.userWords": [
         "asyncio",
@@ -89,7 +83,7 @@
     "diffEditor.ignoreTrimWhitespace": true,
     "diffEditor.maxComputationTime": 0,
     "editor.fontFamily": "'Hack Nerd Font Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": true,
     "editor.inlineSuggest.enabled": false,
     "editor.largeFileOptimizations": false,
     "editor.renderControlCharacters": true,
@@ -105,12 +99,9 @@
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "git.confirmSync": false,
-    "github.copilot.advanced": {
-        "authProvider": "github"
-    },
-    "github.copilot.editor.enableAutoCompletions": false,
     "gitlens.codeLens.authors.enabled": false,
     "gitlens.codeLens.recentChange.enabled": false,
+    "gitlens.launchpad.indicator.enabled": false,
     "gitlens.views.scm.grouped.views": {
         "branches": true,
         "commits": true,
@@ -125,7 +116,6 @@
         "worktrees": true
     },
     "http.proxySupport": "off",
-    "inlineChat.lineNaturalLanguageHint": false,
     "isort.args": [
         "--profile",
         "black",
@@ -136,49 +126,24 @@
         "--multi-line",
         "VERTICAL_GRID_GROUPED"
     ],
-    "java.configuration.checkProjectSettingsExclusions": false,
-    "java.configuration.runtimes": [
-        {
-            "default": true,
-            "name": "JavaSE-11",
-            "path": "/usr/lib/jvm/java-11-openjdk/"
-        }
-    ],
-    "java.semanticHighlighting.enabled": true,
-    "javascript.updateImportsOnFileMove.enabled": "always",
     "nix.enableLanguageServer": true,
-    "nix.serverPath": "/home/sam/.nix-profile/bin/nil",
+    "nix.serverPath": "nixd",
     "nix.serverSettings": {
-        "nil": {
-            "diagnostics": {
-                "ignored": [
-                    "unused_binding",
-                    "unused_with"
-                ]
-            },
+        "nixd": {
             "formatting": {
                 "command": [
                     "nixfmt"
                 ]
+            },
+            "options": {
+                "home-manager": {
+                    "expr": "(builtins.getFlake \"/home/sam/proj/p/nix-configs\").nixosConfigurations.riko.options.home-manager.users.type.getSubOptions []"
+                }
             }
         }
     },
-    "python.createEnvironment.trigger": "off",
-    "python.showStartPage": false,
     "redhat.telemetry.enabled": false,
     "security.workspace.trust.enabled": false,
-    "spellright.configurationScope": "user",
-    "spellright.documentTypes": [
-        "markdown",
-        "latex",
-        "git-commit",
-        "plaintext",
-        "shellscript",
-        "jsonc"
-    ],
-    "spellright.language": [
-        "en_GB"
-    ],
     "terminal.integrated.inheritEnv": false,
     "terminal.integrated.initialHint": false,
     "terminal.integrated.profiles.linux": {
@@ -191,21 +156,6 @@
         }
     },
     "terminal.integrated.stickyScroll.enabled": false,
-    "thunder-client.followRedirects": false,
-    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
-    "vscode-neovim.neovimInitVimPaths.linux": "~/.config/nvim/vscode.vim",
-    "vscode-neovim.useCtrlKeysForInsertMode": false,
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "window.zoomLevel": -1,
-    "workbench.colorCustomizations": {
-        "[Arc Dark Theme]": {
-            "editor.findMatchHighlightBackground": "#70f8ff2a",
-            "editor.lineHighlightBackground": "#1f242d",
-            "editor.lineHighlightBorder": "#232933",
-            "editorBracketMatch.background": "#ffffff40",
-            "editorIndentGuide.activeBackground": "#666"
-        }
-    },
     "workbench.editor.empty.hint": "hidden",
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
@@ -216,6 +166,5 @@
         "git-rebase-todo": "default"
     },
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.secondarySideBar.defaultVisibility": "hidden",
-    "xml.java.home": "/usr/lib/jvm/default-runtime/"
+    "workbench.secondarySideBar.defaultVisibility": "hidden"
 }
