@@ -11,20 +11,33 @@
     "[csharp]": {
         "editor.defaultFormatter": "Leopotam.csharpfixformat"
     },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
     "[html]": {
-        "editor.defaultFormatter": "vscode.html-language-features"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[javascript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
     "[python]": {
-        "editor.wordBasedSuggestions": "off",
-        "gitlens.codeLens.symbolScopes": [
-            "!Module"
-        ]
+        "editor.defaultFormatter": "eeyore.yapf",
+        "editor.formatOnType": false
+    },
+    "[scss]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[xml]": {
         "editor.defaultFormatter": "redhat.vscode-xml"
@@ -45,6 +58,7 @@
         "botapi",
         "centered",
         "centering",
+        "cooldown",
         "craftable",
         "deepcopy",
         "desync",
@@ -74,6 +88,10 @@
         "path": "wrap-rw-cwd"
     },
     "chat.viewSessions.orientation": "stacked",
+    "cucumber.glue": [
+        "packages/e2e/src/step-definitions/**/*.ts",
+        "apps/*/cypress/**/*.ts"
+    ],
     "dance.modes": {
         "normal": {
             "cursorStyle": "block",
@@ -93,12 +111,22 @@
         100
     ],
     "editor.stickyScroll.enabled": false,
+    "editor.showDeprecated": false,
     "editor.suggestSelection": "first",
     "editor.tabSize": 2,
     "editor.unicodeHighlight.ambiguousCharacters": false,
-    "explorer.confirmDelete": false,
+    "editor.wordWrap": "on",
     "explorer.confirmDragAndDrop": false,
+    "files.insertFinalNewline": true,
+    "git.blame.editorDecoration.enabled": false,
+    "git.blame.statusBarItem.enabled": true,
     "git.confirmSync": false,
+    "github.copilot.chat.alternateGeminiModelFPrompt.enabled": true,
+    "github.copilot.chat.alternateGptPrompt.enabled": true,
+    "github.copilot.enable": {
+        "*": false
+    },
+    "github.copilot.nextEditSuggestions.enabled": true,
     "gitlens.codeLens.authors.enabled": false,
     "gitlens.codeLens.recentChange.enabled": false,
     "gitlens.launchpad.indicator.enabled": false,
@@ -115,7 +143,7 @@
         "tags": true,
         "worktrees": true
     },
-    "http.proxySupport": "off",
+    "inlineChat.lineNaturalLanguageHint": false,
     "isort.args": [
         "--profile",
         "black",
@@ -126,6 +154,7 @@
         "--multi-line",
         "VERTICAL_GRID_GROUPED"
     ],
+    "js.updateImportsOnFileMove.enabled": "always",
     "nix.enableLanguageServer": true,
     "nix.serverPath": "nixd",
     "nix.serverSettings": {
@@ -135,16 +164,36 @@
                     "nixfmt"
                 ]
             },
+            "nixpkgs": {
+                "expr": "import (builtins.getFlake \"/home/sam/proj/p/nix-configs\").inputs.nixpkgs-unstable { }"
+            },
             "options": {
                 "home-manager": {
                     "expr": "(builtins.getFlake \"/home/sam/proj/p/nix-configs\").nixosConfigurations.riko.options.home-manager.users.type.getSubOptions []"
+                },
+                "nixos": {
+                    "expr": "(builtins.getFlake \"/home/sam/proj/p/nix-configs\").nixosConfigurations.riko.options"
                 }
             }
         }
     },
     "redhat.telemetry.enabled": false,
     "security.workspace.trust.enabled": false,
-    "terminal.integrated.inheritEnv": false,
+    "tailwindCSS.classAttributes": [
+        "class",
+        "className",
+        "ngClass",
+        "class:list",
+        ".*ClassName"
+    ],
+    "tailwindCSS.experimental.classRegex": [
+        [
+            "cn\\(([^)]*)\\)",
+            "[\"'`]([^\"'`]*)[\"'`]"
+        ]
+    ],
+    "terminal.integrated.confirmOnKill": "always",
+    "terminal.integrated.enableVisualBell": true,
     "terminal.integrated.initialHint": false,
     "terminal.integrated.profiles.linux": {
         "zsh-rw-cwd": {
@@ -156,15 +205,33 @@
         }
     },
     "terminal.integrated.stickyScroll.enabled": false,
+    "terminal.integrated.suggest.cdPath": "off",
+    "terminal.integrated.suggest.enabled": false,
+    "terminal.integrated.suggest.inlineSuggestion": "off",
+    "ts.updateImportsOnFileMove.enabled": "always",
+    "window.zoomLevel": -0.5,
     "workbench.editor.empty.hint": "hidden",
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.editor.navigationScope": "editorGroup",
+    "workbench.editor.pinnedTabsOnSeparateRow": true,
     "workbench.editor.showTabs": "multiple",
     "workbench.editorAssociations": {
-        "*.bin": "hexEditor.hexedit",
-        "git-rebase-todo": "default"
+        "*.bin": "hexEditor.hexedit"
     },
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.secondarySideBar.defaultVisibility": "hidden"
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "yapf.args": [
+        "--style",
+        "{based_on_style: pep8, column_limit: 100, INDENT_WIDTH: 2, CONTINUATION_INDENT_WIDTH: 2, DEDENT_CLOSING_BRACKETS: true, COALESCE_BRACKETS: true, ALLOW_SPLIT_BEFORE_DICT_VALUE: false, BLANK_LINES_BEFORE_NESTED_CLASS_OR_DEF: false}"
+    ],
+    "chat.tips.enabled": false,
+    "continue.showInlineTip": false,
+    "workbench.colorTheme": "Dark Modern",
+    "js/ts.preferGoToSourceDefinition": true,
+    "js/ts.tsserver.maxMemory": 4096,
+    "js/ts.updateImportsOnFileMove.enabled": "always",
+    "[markdown]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
 }

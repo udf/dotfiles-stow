@@ -161,4 +161,13 @@
         "key": "ctrl+shift+q",
         "command": "notifications.clearAll"
     },
+    {
+        "key": "ctrl+e",
+        "command": "openInExternalApp.open",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "-continue.focusContinueInputWithoutClear"
+    },
 ]
