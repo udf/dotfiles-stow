@@ -42,6 +42,7 @@ if [ -z ${SKIP_ROOT_BACKUP+x} ]; then
     --exclude=/home/sam/Games \
     --exclude=/var/lib/libvirt/images \
     --exclude=/var/lib/docker \
+    --exclude=/var/lib/ollama \
     --exclude=/var/cache/jellyfin \
     / "/$BACKUP_DATASET/"
   echo 'Syncing boot...'
