@@ -234,4 +234,9 @@
     "[markdown]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "go.toolsManagement.autoUpdate": true,
+    "xml.server.binary.trustedHashes": [
+        "637a908b82398d8d99f3fc966098825e5357751222d6582323be9aff94555ec8"
+    ],
+    "js/ts.preferences.importModuleSpecifier": "non-relative"
 }
