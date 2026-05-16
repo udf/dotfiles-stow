@@ -24,7 +24,7 @@ exec_always --no-startup-id killall picom; sleep 3; picom
 exec --no-startup-id "sleep 10; cantata"
 #exec --no-startup-id "sleep 30; qbittorrent"
 #exec --no-startup-id "sleep 30; nicotine"
-exec --no-startup-id "sleep 15; start_vencord.sh"
+exec --no-startup-id "sleep 15; vesktop"
 exec --no-startup-id $HOME/.nix-profile/bin/telegram-desktop
 exec --no-startup-id openrgb --startminimized --server --server-host 127.0.0.1 -p artemis
 exec --no-startup-id deskflow
