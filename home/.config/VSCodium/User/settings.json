@@ -231,4 +231,18 @@
   "gitlens.advanced.messages": {
     "suppressDebugLoggingWarning": true
   },
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.colorCustomizations": {
+    "[Catppuccin Mocha]": {
+      // dance hidden selections line backgrounds
+      "inputValidation.warningBackground": "#fab38733",
+      // dance normal mode line backgrounds
+      "editor.hoverHighlightBackground": "#89dceb1a",
+      // border between tabs
+      "tab.border": "#11111b",
+      // status bar items, swap error colours
+      "statusBarItem.errorBackground": "#f38ba8",
+      "statusBarItem.errorForeground": "#000000"
+    }
+  }
 }
