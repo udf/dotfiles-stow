@@ -31,6 +31,7 @@ if [ -z ${SKIP_ROOT_BACKUP+x} ]; then
     --exclude=/home/sam/.cache \
     --exclude=/home/sam/.local/share/Trash \
     --exclude=/home/sam/.local/share/Steam/steamapps/common \
+    --exclude=/home/sam/.local/share/Steam/steamapps/downloading \
     --exclude=/home/sam/.local/share/Steam/steamapps/shadercache \
     --exclude=/home/sam/.local/share/nicotine \
     --exclude=/home/sam/Downloads/phanes \
@@ -44,6 +45,8 @@ if [ -z ${SKIP_ROOT_BACKUP+x} ]; then
     --exclude=/var/lib/docker \
     --exclude=/var/lib/ollama \
     --exclude=/var/cache/jellyfin \
+    --exclude=/var/lib/jellyfin/metadata \
+    --exclude=/var/lib/jellyfin/data/trickplay \
     / "/$BACKUP_DATASET/"
   echo 'Syncing boot...'
   rsync -vaAXHx --delete --info=progress2 /boot/ "/$BACKUP_DATASET/boot/"
