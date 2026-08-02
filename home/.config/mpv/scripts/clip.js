@@ -58,6 +58,7 @@ function on_clip() {
 
   if (vid_track) {
     cmd = cmd.concat(['-map', '0:v:' + (vid_track.id - 1)]);
+    cmd = cmd.concat(['-movflags', '+faststart']);
     cmd = cmd.concat(['-pix_fmt', 'yuv420p']);
     cmd = cmd.concat(['-crf', '24']);
   }
