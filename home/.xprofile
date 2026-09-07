@@ -16,7 +16,7 @@ dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XA
 
 case "$(hostname)" in
 "karen-chan")
-    export PIPEWIRE_LATENCY=1024/48000
+    export PIPEWIRE_LATENCY=512/48000
     export GDK_SCALE=1
     export MOZ_USE_XINPUT2=1
     export MPD_HOST=B7WtKLYaAw7wVf4p@$HOME/.config/mpd/socket
@@ -34,7 +34,7 @@ case "$(hostname)" in
     nm-applet &
     dunst &
     xmousepasteblock &
-    xrandr --output DisplayPort-0 --primary --mode 2560x1440 -r 165 --pos 3840x210 --output HDMI-A-0 --mode 3840x2160 --pos 0x0
+    xrandr --output DisplayPort-0 --primary --mode 2560x1440 -r 165 --pos 0x450 --output HDMI-A-0 --mode 3840x2160 --pos 2560x0
     ;;
 "alice")
     xset dpms 300 300 300
