@@ -1,35 +1,59 @@
 /* Fix the fucking touchscreen-esque bullshit padding on urlbar results */
 .urlbarView-row-inner {
-    padding-block: 0px !important;
-    padding-inline: 4px !important;
+  padding-block: 0px !important;
+  padding-inline: 4px !important;
 }
 
 /* Fix search one-offs height */
 .search-one-offs {
-    padding-block: 4px !important;
+  padding-block: 4px !important;
 }
 
 /* Fix padding left of search one-off icons */
 .search-panel-one-offs {
-    padding-left: 7px !important;
+  padding-left: 7px !important;
 }
 
 /* Fix cancer margins around search one-off icons */
 .searchbar-engine-one-off-item {
-    margin: 0px !important;
+  margin: 0px !important;
 }
 
 /* Reduce spacing in dialog boxes (like http login) */
 .dialogRow {
-    margin-bottom: 8px !important;
+  margin-bottom: 8px !important;
 }
 
 /* Fix bookmark items padding */
-menupopup>.bookmark-item {
-    margin-inline: 4px !important;
-    padding: 5px !important;
+menupopup > .bookmark-item {
+  margin-inline: 4px !important;
+  padding: 5px !important;
 }
 .openintabs-menuitem {
-    margin-inline: 4px !important;
-    padding: 5px !important;
+  margin-inline: 4px !important;
+  padding: 5px !important;
+}
+
+/* Sidebar padding */
+box#sidebar-container {
+  --button-outer-padding-inline: 3px !important;
+  --button-outer-padding-inline-start: 3px !important;
+  --button-outer-padding-inline-end: 3px !important;
+}
+
+splitter#sidebar-splitter {
+  border: 2px !important;
+  width: 4px !important;
+}
+
+#sidebar-panel-header {
+  padding-right: 2px !important;
+}
+
+div.sidebar-panel {
+  padding: 0 !important;
+}
+
+sidebar-panel-header[view="viewHistorySidebar"] {
+  padding-left: 4px !important;
 }
